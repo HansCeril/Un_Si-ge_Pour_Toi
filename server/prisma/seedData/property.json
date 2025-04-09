@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Sunny Downtown Apartment",
+    "description": "A beautiful apartment in the heart of downtown with plenty of natural light.",
+    "photoUrls": [
+      "https://example.com/apartment1_1.jpg",
+      "https://example.com/apartment1_2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Berline",
+    "postedDate": "2023-05-15T00:00:00Z",
+    "averageRating": 4.5,
+    "numberOfReviews": 10,
+    "locationId": 1,
+    "managerCognitoId": "010be580-60a1-70ae-780e-18a6fd94ad32"
+  },
+  {
+    "id": 2,
+    "name": "Cozy Beach House",
+    "description": "A charming beach house with stunning ocean views.",
+    "photoUrls": [
+      "https://example.com/beachhouse1.jpg",
+      "https://example.com/beachhouse2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Coupe",
+    "postedDate": "2023-06-01T00:00:00Z",
+    "averageRating": 4.8,
+    "numberOfReviews": 5,
+    "locationId": 2,
+    "managerCognitoId": "us-east-2:23456789-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 3,
+    "name": "Modern City Loft",
+    "description": "Sleek and stylish loft in the heart of the city.",
+    "photoUrls": [
+      "https://example.com/cityloft1.jpg",
+      "https://example.com/cityloft2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Cabriolet",
+    "postedDate": "2023-07-01T00:00:00Z",
+    "averageRating": 4.7,
+    "numberOfReviews": 8,
+    "locationId": 3,
+    "managerCognitoId": "us-east-2:34567890-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 4,
+    "name": "Spacious Family Home",
+    "description": "Large family home with a beautiful backyard and modern amenities.",
+    "photoUrls": [
+      "https://example.com/familyhome1.jpg",
+      "https://example.com/familyhome2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Break",
+    "postedDate": "2023-06-15T00:00:00Z",
+    "averageRating": 4.9,
+    "numberOfReviews": 12,
+    "locationId": 4,
+    "managerCognitoId": "us-east-2:45678901-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 5,
+    "name": "Luxury Penthouse",
+    "description": "Stunning penthouse with panoramic city views and high-end finishes.",
+    "photoUrls": [
+      "https://example.com/penthouse1.jpg",
+      "https://example.com/penthouse2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Break",
+    "postedDate": "2023-07-01T00:00:00Z",
+    "averageRating": 5.0,
+    "numberOfReviews": 15,
+    "locationId": 5,
+    "managerCognitoId": "us-east-2:56789012-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 6,
+    "name": "Cozy Studio Apartment",
+    "description": "Efficient studio apartment perfect for students or young professionals.",
+    "photoUrls": [
+      "https://example.com/studio1.jpg",
+      "https://example.com/studio2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Break",
+    "postedDate": "2023-08-01T00:00:00Z",
+    "averageRating": 4.2,
+    "numberOfReviews": 6,
+    "locationId": 6,
+    "managerCognitoId": "us-east-2:67890123-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 7,
+    "name": "Historic Brownstone",
+    "description": "Charming brownstone with original features and modern updates.",
+    "photoUrls": [
+      "https://example.com/brownstone1.jpg",
+      "https://example.com/brownstone2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Suv",
+    "postedDate": "2023-09-01T00:00:00Z",
+    "averageRating": 4.6,
+    "numberOfReviews": 9,
+    "locationId": 7,
+    "managerCognitoId": "us-east-2:78901234-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 8,
+    "name": "Urban Micro-Apartment",
+    "description": "Compact and efficient living space in the heart of the city.",
+    "photoUrls": [
+      "https://example.com/micro1.jpg",
+      "https://example.com/micro2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Suv",
+    "postedDate": "2023-08-01T00:00:00Z",
+    "averageRating": 4.3,
+    "numberOfReviews": 7,
+    "locationId": 8,
+    "managerCognitoId": "us-east-2:89012345-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 9,
+    "name": "Mountain View Cabin",
+    "description": "Rustic cabin with breathtaking mountain views and modern amenities.",
+    "photoUrls": [
+      "https://example.com/cabin1.jpg",
+      "https://example.com/cabin2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Berline",
+    "postedDate": "2023-08-15T00:00:00Z",
+    "averageRating": 4.9,
+    "numberOfReviews": 11,
+    "locationId": 9,
+    "managerCognitoId": "us-east-2:90123456-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 10,
+    "name": "Eco-Friendly Tiny House",
+    "description": "Sustainable living in a compact, well-designed tiny house.",
+    "photoUrls": [
+      "https://example.com/tinyhouse1.jpg",
+      "https://example.com/tinyhouse2.jpg"
+    ],
+    "isPetsAllowed": true,
+    "carType": "Berline",
+    "postedDate": "2023-08-10T00:00:00Z",
+    "averageRating": 4.7,
+    "numberOfReviews": 8,
+    "locationId": 10,
+    "managerCognitoId": "us-east-2:01234567-90ab-cdef-1234-567890abcdef"
+  }
+]

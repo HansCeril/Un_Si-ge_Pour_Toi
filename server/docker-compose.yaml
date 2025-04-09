@@ -1,0 +1,40 @@
+services:
+  db:
+    container_name: db_unsiegepourtoi
+    image: postgis/postgis:13-3.5
+    restart: always
+    volumes:
+      - postgis-db-data:/var/lib/postgresql/data/pgdata
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=hans
+      - POSTGRES_USER=hans
+      - POSTGRES_DB=db_unsiegepourtoi
+    ports:
+      - "5433:5432"
+    networks:
+      - dev_network
+  
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4:8.9
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=anselmeceril@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=hans
+    depends_on:
+      - db
+    networks:
+      - dev_network
+
+volumes:
+  postgis-db-data:
+  pgadmin-data:
+
+networks:
+  dev_network:
+    driver: bridge

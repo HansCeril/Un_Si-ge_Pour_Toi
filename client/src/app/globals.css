@@ -259,7 +259,7 @@
   }
 }
 
-/* Amplify UI Overrides */
+
 [data-amplify-authenticator] {
   --amplify-components-button-primary-background-color: var(--primary);
   --amplify-components-button-primary-hover-background-color: hsl(
@@ -271,7 +271,7 @@
 
 [data-amplify-authenticator][data-variation="default"] {
   height: 100%;
-  padding: 2rem !important;
+  padding: 15rem !important;
 }
 
 [data-amplify-authenticator] [data-amplify-router] {
@@ -338,7 +338,6 @@
   color: #ff0000;
 }
 
-/* Sonner Toast Styles */
 [data-close-button="true"] {
   @apply bg-background border-border text-foreground hover:bg-muted;
 }

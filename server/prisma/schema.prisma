@@ -46,34 +46,34 @@ model Property {
   averageRating     Float?       @default(0)
   numberOfReviews   Int?         @default(0)
   locationId        Int
-  managerCognitoId  String
+  conducteurCognitoId  String
   location     Location      @relation(fields: [locationId], references: [id])
-  manager      Manager       @relation(fields: [managerCognitoId], references: [cognitoId])
+  conducteur      Conducteur       @relation(fields: [conducteurCognitoId], references: [cognitoId])
   leases       Lease[]
   applications Application[]
-  favoritedBy  Tenant[]      @relation("TenantFavorites")
-  tenants      Tenant[]      @relation("TenantProperties")
+  favoritedBy  Passager[]      @relation("PassagerFavorites")
+  passagers      Passager[]      @relation("PassagerProperties")
 }
 
-model Manager {
+model Conducteur {
   id          Int    @id @default(autoincrement())
   cognitoId   String @unique
   name        String
   email       String
   phoneNumber String
 
-  managedProperties Property[]
+  conducteurProperties Property[]
 }
 
-model Tenant {
+model Passager {
   id          Int    @id @default(autoincrement())
   cognitoId   String @unique
   name        String
   email       String
   phoneNumber String
 
-  properties   Property[]    @relation("TenantProperties")
-  favorites    Property[]    @relation("TenantFavorites")
+  properties   Property[]    @relation("PassagerProperties")
+  favorites    Property[]    @relation("PassagerFavorites")
   applications Application[]
   leases       Lease[]
 }
@@ -95,15 +95,14 @@ model Application {
   applicationDate DateTime
   status          ApplicationStatus
   propertyId      Int
-  tenantCognitoId String
+  passagerCognitoId String
   name            String
   email           String
   phoneNumber     String
   message         String?
   leaseId         Int?              @unique
-
   property Property @relation(fields: [propertyId], references: [id])
-  tenant   Tenant   @relation(fields: [tenantCognitoId], references: [cognitoId])
+  passager   Passager   @relation(fields: [passagerCognitoId], references: [cognitoId])
   lease    Lease?   @relation(fields: [leaseId], references: [id])
 }
 
@@ -114,10 +113,10 @@ model Lease {
   rent            Float
   deposit         Float
   propertyId      Int
-  tenantCognitoId String
+  passagerCognitoId String
 
   property    Property     @relation(fields: [propertyId], references: [id])
-  tenant      Tenant       @relation(fields: [tenantCognitoId], references: [cognitoId])
+  passager      Passager       @relation(fields: [passagerCognitoId], references: [cognitoId])
   application Application?
   payments    Payment[]
 }

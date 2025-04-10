@@ -19,15 +19,15 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type Property = $Result.DefaultSelection<Prisma.$PropertyPayload>
 /**
- * Model Manager
+ * Model Conducteur
  * 
  */
-export type Manager = $Result.DefaultSelection<Prisma.$ManagerPayload>
+export type Conducteur = $Result.DefaultSelection<Prisma.$ConducteurPayload>
 /**
- * Model Tenant
+ * Model Passager
  * 
  */
-export type Tenant = $Result.DefaultSelection<Prisma.$TenantPayload>
+export type Passager = $Result.DefaultSelection<Prisma.$PassagerPayload>
 /**
  * Model Location
  * 
@@ -244,24 +244,24 @@ export class PrismaClient<
   get property(): Prisma.PropertyDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.manager`: Exposes CRUD operations for the **Manager** model.
+   * `prisma.conducteur`: Exposes CRUD operations for the **Conducteur** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Managers
-    * const managers = await prisma.manager.findMany()
+    * // Fetch zero or more Conducteurs
+    * const conducteurs = await prisma.conducteur.findMany()
     * ```
     */
-  get manager(): Prisma.ManagerDelegate<ExtArgs, ClientOptions>;
+  get conducteur(): Prisma.ConducteurDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.tenant`: Exposes CRUD operations for the **Tenant** model.
+   * `prisma.passager`: Exposes CRUD operations for the **Passager** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Tenants
-    * const tenants = await prisma.tenant.findMany()
+    * // Fetch zero or more Passagers
+    * const passagers = await prisma.passager.findMany()
     * ```
     */
-  get tenant(): Prisma.TenantDelegate<ExtArgs, ClientOptions>;
+  get passager(): Prisma.PassagerDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.location`: Exposes CRUD operations for the **Location** model.
@@ -743,8 +743,8 @@ export namespace Prisma {
 
   export const ModelName: {
     Property: 'Property',
-    Manager: 'Manager',
-    Tenant: 'Tenant',
+    Conducteur: 'Conducteur',
+    Passager: 'Passager',
     Location: 'Location',
     Application: 'Application',
     Lease: 'Lease',
@@ -767,7 +767,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "property" | "manager" | "tenant" | "location" | "application" | "lease" | "payment"
+      modelProps: "property" | "conducteur" | "passager" | "location" | "application" | "lease" | "payment"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -845,151 +845,151 @@ export namespace Prisma {
           }
         }
       }
-      Manager: {
-        payload: Prisma.$ManagerPayload<ExtArgs>
-        fields: Prisma.ManagerFieldRefs
+      Conducteur: {
+        payload: Prisma.$ConducteurPayload<ExtArgs>
+        fields: Prisma.ConducteurFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ManagerFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload> | null
+            args: Prisma.ConducteurFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ManagerFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>
+            args: Prisma.ConducteurFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>
           }
           findFirst: {
-            args: Prisma.ManagerFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload> | null
+            args: Prisma.ConducteurFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ManagerFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>
+            args: Prisma.ConducteurFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>
           }
           findMany: {
-            args: Prisma.ManagerFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>[]
+            args: Prisma.ConducteurFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>[]
           }
           create: {
-            args: Prisma.ManagerCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>
+            args: Prisma.ConducteurCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>
           }
           createMany: {
-            args: Prisma.ManagerCreateManyArgs<ExtArgs>
+            args: Prisma.ConducteurCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.ManagerCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>[]
+            args: Prisma.ConducteurCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>[]
           }
           delete: {
-            args: Prisma.ManagerDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>
+            args: Prisma.ConducteurDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>
           }
           update: {
-            args: Prisma.ManagerUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>
+            args: Prisma.ConducteurUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>
           }
           deleteMany: {
-            args: Prisma.ManagerDeleteManyArgs<ExtArgs>
+            args: Prisma.ConducteurDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.ManagerUpdateManyArgs<ExtArgs>
+            args: Prisma.ConducteurUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.ManagerUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>[]
+            args: Prisma.ConducteurUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>[]
           }
           upsert: {
-            args: Prisma.ManagerUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ManagerPayload>
+            args: Prisma.ConducteurUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConducteurPayload>
           }
           aggregate: {
-            args: Prisma.ManagerAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateManager>
+            args: Prisma.ConducteurAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateConducteur>
           }
           groupBy: {
-            args: Prisma.ManagerGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ManagerGroupByOutputType>[]
+            args: Prisma.ConducteurGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ConducteurGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ManagerCountArgs<ExtArgs>
-            result: $Utils.Optional<ManagerCountAggregateOutputType> | number
+            args: Prisma.ConducteurCountArgs<ExtArgs>
+            result: $Utils.Optional<ConducteurCountAggregateOutputType> | number
           }
         }
       }
-      Tenant: {
-        payload: Prisma.$TenantPayload<ExtArgs>
-        fields: Prisma.TenantFieldRefs
+      Passager: {
+        payload: Prisma.$PassagerPayload<ExtArgs>
+        fields: Prisma.PassagerFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.TenantFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload> | null
+            args: Prisma.PassagerFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.TenantFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>
+            args: Prisma.PassagerFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>
           }
           findFirst: {
-            args: Prisma.TenantFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload> | null
+            args: Prisma.PassagerFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.TenantFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>
+            args: Prisma.PassagerFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>
           }
           findMany: {
-            args: Prisma.TenantFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>[]
+            args: Prisma.PassagerFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>[]
           }
           create: {
-            args: Prisma.TenantCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>
+            args: Prisma.PassagerCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>
           }
           createMany: {
-            args: Prisma.TenantCreateManyArgs<ExtArgs>
+            args: Prisma.PassagerCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.TenantCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>[]
+            args: Prisma.PassagerCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>[]
           }
           delete: {
-            args: Prisma.TenantDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>
+            args: Prisma.PassagerDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>
           }
           update: {
-            args: Prisma.TenantUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>
+            args: Prisma.PassagerUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>
           }
           deleteMany: {
-            args: Prisma.TenantDeleteManyArgs<ExtArgs>
+            args: Prisma.PassagerDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.TenantUpdateManyArgs<ExtArgs>
+            args: Prisma.PassagerUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.TenantUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>[]
+            args: Prisma.PassagerUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>[]
           }
           upsert: {
-            args: Prisma.TenantUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TenantPayload>
+            args: Prisma.PassagerUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PassagerPayload>
           }
           aggregate: {
-            args: Prisma.TenantAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateTenant>
+            args: Prisma.PassagerAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePassager>
           }
           groupBy: {
-            args: Prisma.TenantGroupByArgs<ExtArgs>
-            result: $Utils.Optional<TenantGroupByOutputType>[]
+            args: Prisma.PassagerGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PassagerGroupByOutputType>[]
           }
           count: {
-            args: Prisma.TenantCountArgs<ExtArgs>
-            result: $Utils.Optional<TenantCountAggregateOutputType> | number
+            args: Prisma.PassagerCountArgs<ExtArgs>
+            result: $Utils.Optional<PassagerCountAggregateOutputType> | number
           }
         }
       }
@@ -1358,8 +1358,8 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     property?: PropertyOmit
-    manager?: ManagerOmit
-    tenant?: TenantOmit
+    conducteur?: ConducteurOmit
+    passager?: PassagerOmit
     location?: LocationOmit
     application?: ApplicationOmit
     lease?: LeaseOmit
@@ -1461,14 +1461,14 @@ export namespace Prisma {
     leases: number
     applications: number
     favoritedBy: number
-    tenants: number
+    passagers: number
   }
 
   export type PropertyCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     leases?: boolean | PropertyCountOutputTypeCountLeasesArgs
     applications?: boolean | PropertyCountOutputTypeCountApplicationsArgs
     favoritedBy?: boolean | PropertyCountOutputTypeCountFavoritedByArgs
-    tenants?: boolean | PropertyCountOutputTypeCountTenantsArgs
+    passagers?: boolean | PropertyCountOutputTypeCountPassagersArgs
   }
 
   // Custom InputTypes
@@ -1500,102 +1500,102 @@ export namespace Prisma {
    * PropertyCountOutputType without action
    */
   export type PropertyCountOutputTypeCountFavoritedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
   }
 
   /**
    * PropertyCountOutputType without action
    */
-  export type PropertyCountOutputTypeCountTenantsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TenantWhereInput
+  export type PropertyCountOutputTypeCountPassagersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PassagerWhereInput
   }
 
 
   /**
-   * Count Type ManagerCountOutputType
+   * Count Type ConducteurCountOutputType
    */
 
-  export type ManagerCountOutputType = {
-    managedProperties: number
+  export type ConducteurCountOutputType = {
+    conducteurProperties: number
   }
 
-  export type ManagerCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    managedProperties?: boolean | ManagerCountOutputTypeCountManagedPropertiesArgs
+  export type ConducteurCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conducteurProperties?: boolean | ConducteurCountOutputTypeCountConducteurPropertiesArgs
   }
 
   // Custom InputTypes
   /**
-   * ManagerCountOutputType without action
+   * ConducteurCountOutputType without action
    */
-  export type ManagerCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ManagerCountOutputType
+     * Select specific fields to fetch from the ConducteurCountOutputType
      */
-    select?: ManagerCountOutputTypeSelect<ExtArgs> | null
+    select?: ConducteurCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * ManagerCountOutputType without action
+   * ConducteurCountOutputType without action
    */
-  export type ManagerCountOutputTypeCountManagedPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurCountOutputTypeCountConducteurPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PropertyWhereInput
   }
 
 
   /**
-   * Count Type TenantCountOutputType
+   * Count Type PassagerCountOutputType
    */
 
-  export type TenantCountOutputType = {
+  export type PassagerCountOutputType = {
     properties: number
     favorites: number
     applications: number
     leases: number
   }
 
-  export type TenantCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    properties?: boolean | TenantCountOutputTypeCountPropertiesArgs
-    favorites?: boolean | TenantCountOutputTypeCountFavoritesArgs
-    applications?: boolean | TenantCountOutputTypeCountApplicationsArgs
-    leases?: boolean | TenantCountOutputTypeCountLeasesArgs
+  export type PassagerCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    properties?: boolean | PassagerCountOutputTypeCountPropertiesArgs
+    favorites?: boolean | PassagerCountOutputTypeCountFavoritesArgs
+    applications?: boolean | PassagerCountOutputTypeCountApplicationsArgs
+    leases?: boolean | PassagerCountOutputTypeCountLeasesArgs
   }
 
   // Custom InputTypes
   /**
-   * TenantCountOutputType without action
+   * PassagerCountOutputType without action
    */
-  export type TenantCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TenantCountOutputType
+     * Select specific fields to fetch from the PassagerCountOutputType
      */
-    select?: TenantCountOutputTypeSelect<ExtArgs> | null
+    select?: PassagerCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * TenantCountOutputType without action
+   * PassagerCountOutputType without action
    */
-  export type TenantCountOutputTypeCountPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCountOutputTypeCountPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PropertyWhereInput
   }
 
   /**
-   * TenantCountOutputType without action
+   * PassagerCountOutputType without action
    */
-  export type TenantCountOutputTypeCountFavoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCountOutputTypeCountFavoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PropertyWhereInput
   }
 
   /**
-   * TenantCountOutputType without action
+   * PassagerCountOutputType without action
    */
-  export type TenantCountOutputTypeCountApplicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCountOutputTypeCountApplicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ApplicationWhereInput
   }
 
   /**
-   * TenantCountOutputType without action
+   * PassagerCountOutputType without action
    */
-  export type TenantCountOutputTypeCountLeasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCountOutputTypeCountLeasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: LeaseWhereInput
   }
 
@@ -1702,7 +1702,7 @@ export namespace Prisma {
     averageRating: number | null
     numberOfReviews: number | null
     locationId: number | null
-    managerCognitoId: string | null
+    conducteurCognitoId: string | null
   }
 
   export type PropertyMaxAggregateOutputType = {
@@ -1715,7 +1715,7 @@ export namespace Prisma {
     averageRating: number | null
     numberOfReviews: number | null
     locationId: number | null
-    managerCognitoId: string | null
+    conducteurCognitoId: string | null
   }
 
   export type PropertyCountAggregateOutputType = {
@@ -1729,7 +1729,7 @@ export namespace Prisma {
     averageRating: number
     numberOfReviews: number
     locationId: number
-    managerCognitoId: number
+    conducteurCognitoId: number
     _all: number
   }
 
@@ -1758,7 +1758,7 @@ export namespace Prisma {
     averageRating?: true
     numberOfReviews?: true
     locationId?: true
-    managerCognitoId?: true
+    conducteurCognitoId?: true
   }
 
   export type PropertyMaxAggregateInputType = {
@@ -1771,7 +1771,7 @@ export namespace Prisma {
     averageRating?: true
     numberOfReviews?: true
     locationId?: true
-    managerCognitoId?: true
+    conducteurCognitoId?: true
   }
 
   export type PropertyCountAggregateInputType = {
@@ -1785,7 +1785,7 @@ export namespace Prisma {
     averageRating?: true
     numberOfReviews?: true
     locationId?: true
-    managerCognitoId?: true
+    conducteurCognitoId?: true
     _all?: true
   }
 
@@ -1886,7 +1886,7 @@ export namespace Prisma {
     averageRating: number | null
     numberOfReviews: number | null
     locationId: number
-    managerCognitoId: string
+    conducteurCognitoId: string
     _count: PropertyCountAggregateOutputType | null
     _avg: PropertyAvgAggregateOutputType | null
     _sum: PropertySumAggregateOutputType | null
@@ -1919,13 +1919,13 @@ export namespace Prisma {
     averageRating?: boolean
     numberOfReviews?: boolean
     locationId?: boolean
-    managerCognitoId?: boolean
+    conducteurCognitoId?: boolean
     location?: boolean | LocationDefaultArgs<ExtArgs>
-    manager?: boolean | ManagerDefaultArgs<ExtArgs>
+    conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
     leases?: boolean | Property$leasesArgs<ExtArgs>
     applications?: boolean | Property$applicationsArgs<ExtArgs>
     favoritedBy?: boolean | Property$favoritedByArgs<ExtArgs>
-    tenants?: boolean | Property$tenantsArgs<ExtArgs>
+    passagers?: boolean | Property$passagersArgs<ExtArgs>
     _count?: boolean | PropertyCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["property"]>
 
@@ -1940,9 +1940,9 @@ export namespace Prisma {
     averageRating?: boolean
     numberOfReviews?: boolean
     locationId?: boolean
-    managerCognitoId?: boolean
+    conducteurCognitoId?: boolean
     location?: boolean | LocationDefaultArgs<ExtArgs>
-    manager?: boolean | ManagerDefaultArgs<ExtArgs>
+    conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["property"]>
 
   export type PropertySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1956,9 +1956,9 @@ export namespace Prisma {
     averageRating?: boolean
     numberOfReviews?: boolean
     locationId?: boolean
-    managerCognitoId?: boolean
+    conducteurCognitoId?: boolean
     location?: boolean | LocationDefaultArgs<ExtArgs>
-    manager?: boolean | ManagerDefaultArgs<ExtArgs>
+    conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["property"]>
 
   export type PropertySelectScalar = {
@@ -1972,37 +1972,37 @@ export namespace Prisma {
     averageRating?: boolean
     numberOfReviews?: boolean
     locationId?: boolean
-    managerCognitoId?: boolean
+    conducteurCognitoId?: boolean
   }
 
-  export type PropertyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "photoUrls" | "isPetsAllowed" | "carType" | "postedDate" | "averageRating" | "numberOfReviews" | "locationId" | "managerCognitoId", ExtArgs["result"]["property"]>
+  export type PropertyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "photoUrls" | "isPetsAllowed" | "carType" | "postedDate" | "averageRating" | "numberOfReviews" | "locationId" | "conducteurCognitoId", ExtArgs["result"]["property"]>
   export type PropertyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     location?: boolean | LocationDefaultArgs<ExtArgs>
-    manager?: boolean | ManagerDefaultArgs<ExtArgs>
+    conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
     leases?: boolean | Property$leasesArgs<ExtArgs>
     applications?: boolean | Property$applicationsArgs<ExtArgs>
     favoritedBy?: boolean | Property$favoritedByArgs<ExtArgs>
-    tenants?: boolean | Property$tenantsArgs<ExtArgs>
+    passagers?: boolean | Property$passagersArgs<ExtArgs>
     _count?: boolean | PropertyCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type PropertyIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     location?: boolean | LocationDefaultArgs<ExtArgs>
-    manager?: boolean | ManagerDefaultArgs<ExtArgs>
+    conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
   }
   export type PropertyIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     location?: boolean | LocationDefaultArgs<ExtArgs>
-    manager?: boolean | ManagerDefaultArgs<ExtArgs>
+    conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
   }
 
   export type $PropertyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Property"
     objects: {
       location: Prisma.$LocationPayload<ExtArgs>
-      manager: Prisma.$ManagerPayload<ExtArgs>
+      conducteur: Prisma.$ConducteurPayload<ExtArgs>
       leases: Prisma.$LeasePayload<ExtArgs>[]
       applications: Prisma.$ApplicationPayload<ExtArgs>[]
-      favoritedBy: Prisma.$TenantPayload<ExtArgs>[]
-      tenants: Prisma.$TenantPayload<ExtArgs>[]
+      favoritedBy: Prisma.$PassagerPayload<ExtArgs>[]
+      passagers: Prisma.$PassagerPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2015,7 +2015,7 @@ export namespace Prisma {
       averageRating: number | null
       numberOfReviews: number | null
       locationId: number
-      managerCognitoId: string
+      conducteurCognitoId: string
     }, ExtArgs["result"]["property"]>
     composites: {}
   }
@@ -2411,11 +2411,11 @@ export namespace Prisma {
   export interface Prisma__PropertyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     location<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    manager<T extends ManagerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ManagerDefaultArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    conducteur<T extends ConducteurDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ConducteurDefaultArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     leases<T extends Property$leasesArgs<ExtArgs> = {}>(args?: Subset<T, Property$leasesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     applications<T extends Property$applicationsArgs<ExtArgs> = {}>(args?: Subset<T, Property$applicationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    favoritedBy<T extends Property$favoritedByArgs<ExtArgs> = {}>(args?: Subset<T, Property$favoritedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    tenants<T extends Property$tenantsArgs<ExtArgs> = {}>(args?: Subset<T, Property$tenantsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favoritedBy<T extends Property$favoritedByArgs<ExtArgs> = {}>(args?: Subset<T, Property$favoritedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    passagers<T extends Property$passagersArgs<ExtArgs> = {}>(args?: Subset<T, Property$passagersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2455,7 +2455,7 @@ export namespace Prisma {
     readonly averageRating: FieldRef<"Property", 'Float'>
     readonly numberOfReviews: FieldRef<"Property", 'Int'>
     readonly locationId: FieldRef<"Property", 'Int'>
-    readonly managerCognitoId: FieldRef<"Property", 'String'>
+    readonly conducteurCognitoId: FieldRef<"Property", 'String'>
   }
     
 
@@ -2904,47 +2904,47 @@ export namespace Prisma {
    */
   export type Property$favoritedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
-    where?: TenantWhereInput
-    orderBy?: TenantOrderByWithRelationInput | TenantOrderByWithRelationInput[]
-    cursor?: TenantWhereUniqueInput
+    include?: PassagerInclude<ExtArgs> | null
+    where?: PassagerWhereInput
+    orderBy?: PassagerOrderByWithRelationInput | PassagerOrderByWithRelationInput[]
+    cursor?: PassagerWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: TenantScalarFieldEnum | TenantScalarFieldEnum[]
+    distinct?: PassagerScalarFieldEnum | PassagerScalarFieldEnum[]
   }
 
   /**
-   * Property.tenants
+   * Property.passagers
    */
-  export type Property$tenantsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Property$passagersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
-    where?: TenantWhereInput
-    orderBy?: TenantOrderByWithRelationInput | TenantOrderByWithRelationInput[]
-    cursor?: TenantWhereUniqueInput
+    include?: PassagerInclude<ExtArgs> | null
+    where?: PassagerWhereInput
+    orderBy?: PassagerOrderByWithRelationInput | PassagerOrderByWithRelationInput[]
+    cursor?: PassagerWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: TenantScalarFieldEnum | TenantScalarFieldEnum[]
+    distinct?: PassagerScalarFieldEnum | PassagerScalarFieldEnum[]
   }
 
   /**
@@ -2967,34 +2967,26 @@ export namespace Prisma {
 
 
   /**
-   * Model Manager
+   * Model Conducteur
    */
 
-  export type AggregateManager = {
-    _count: ManagerCountAggregateOutputType | null
-    _avg: ManagerAvgAggregateOutputType | null
-    _sum: ManagerSumAggregateOutputType | null
-    _min: ManagerMinAggregateOutputType | null
-    _max: ManagerMaxAggregateOutputType | null
+  export type AggregateConducteur = {
+    _count: ConducteurCountAggregateOutputType | null
+    _avg: ConducteurAvgAggregateOutputType | null
+    _sum: ConducteurSumAggregateOutputType | null
+    _min: ConducteurMinAggregateOutputType | null
+    _max: ConducteurMaxAggregateOutputType | null
   }
 
-  export type ManagerAvgAggregateOutputType = {
+  export type ConducteurAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type ManagerSumAggregateOutputType = {
+  export type ConducteurSumAggregateOutputType = {
     id: number | null
   }
 
-  export type ManagerMinAggregateOutputType = {
-    id: number | null
-    cognitoId: string | null
-    name: string | null
-    email: string | null
-    phoneNumber: string | null
-  }
-
-  export type ManagerMaxAggregateOutputType = {
+  export type ConducteurMinAggregateOutputType = {
     id: number | null
     cognitoId: string | null
     name: string | null
@@ -3002,7 +2994,15 @@ export namespace Prisma {
     phoneNumber: string | null
   }
 
-  export type ManagerCountAggregateOutputType = {
+  export type ConducteurMaxAggregateOutputType = {
+    id: number | null
+    cognitoId: string | null
+    name: string | null
+    email: string | null
+    phoneNumber: string | null
+  }
+
+  export type ConducteurCountAggregateOutputType = {
     id: number
     cognitoId: number
     name: number
@@ -3012,23 +3012,15 @@ export namespace Prisma {
   }
 
 
-  export type ManagerAvgAggregateInputType = {
+  export type ConducteurAvgAggregateInputType = {
     id?: true
   }
 
-  export type ManagerSumAggregateInputType = {
+  export type ConducteurSumAggregateInputType = {
     id?: true
   }
 
-  export type ManagerMinAggregateInputType = {
-    id?: true
-    cognitoId?: true
-    name?: true
-    email?: true
-    phoneNumber?: true
-  }
-
-  export type ManagerMaxAggregateInputType = {
+  export type ConducteurMinAggregateInputType = {
     id?: true
     cognitoId?: true
     name?: true
@@ -3036,7 +3028,15 @@ export namespace Prisma {
     phoneNumber?: true
   }
 
-  export type ManagerCountAggregateInputType = {
+  export type ConducteurMaxAggregateInputType = {
+    id?: true
+    cognitoId?: true
+    name?: true
+    email?: true
+    phoneNumber?: true
+  }
+
+  export type ConducteurCountAggregateInputType = {
     id?: true
     cognitoId?: true
     name?: true
@@ -3045,146 +3045,146 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type ManagerAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Manager to aggregate.
+     * Filter which Conducteur to aggregate.
      */
-    where?: ManagerWhereInput
+    where?: ConducteurWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Managers to fetch.
+     * Determine the order of Conducteurs to fetch.
      */
-    orderBy?: ManagerOrderByWithRelationInput | ManagerOrderByWithRelationInput[]
+    orderBy?: ConducteurOrderByWithRelationInput | ConducteurOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ManagerWhereUniqueInput
+    cursor?: ConducteurWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Managers from the position of the cursor.
+     * Take `±n` Conducteurs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Managers.
+     * Skip the first `n` Conducteurs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Managers
+     * Count returned Conducteurs
     **/
-    _count?: true | ManagerCountAggregateInputType
+    _count?: true | ConducteurCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: ManagerAvgAggregateInputType
+    _avg?: ConducteurAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: ManagerSumAggregateInputType
+    _sum?: ConducteurSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: ManagerMinAggregateInputType
+    _min?: ConducteurMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: ManagerMaxAggregateInputType
+    _max?: ConducteurMaxAggregateInputType
   }
 
-  export type GetManagerAggregateType<T extends ManagerAggregateArgs> = {
-        [P in keyof T & keyof AggregateManager]: P extends '_count' | 'count'
+  export type GetConducteurAggregateType<T extends ConducteurAggregateArgs> = {
+        [P in keyof T & keyof AggregateConducteur]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateManager[P]>
-      : GetScalarType<T[P], AggregateManager[P]>
+        : GetScalarType<T[P], AggregateConducteur[P]>
+      : GetScalarType<T[P], AggregateConducteur[P]>
   }
 
 
 
 
-  export type ManagerGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ManagerWhereInput
-    orderBy?: ManagerOrderByWithAggregationInput | ManagerOrderByWithAggregationInput[]
-    by: ManagerScalarFieldEnum[] | ManagerScalarFieldEnum
-    having?: ManagerScalarWhereWithAggregatesInput
+  export type ConducteurGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ConducteurWhereInput
+    orderBy?: ConducteurOrderByWithAggregationInput | ConducteurOrderByWithAggregationInput[]
+    by: ConducteurScalarFieldEnum[] | ConducteurScalarFieldEnum
+    having?: ConducteurScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: ManagerCountAggregateInputType | true
-    _avg?: ManagerAvgAggregateInputType
-    _sum?: ManagerSumAggregateInputType
-    _min?: ManagerMinAggregateInputType
-    _max?: ManagerMaxAggregateInputType
+    _count?: ConducteurCountAggregateInputType | true
+    _avg?: ConducteurAvgAggregateInputType
+    _sum?: ConducteurSumAggregateInputType
+    _min?: ConducteurMinAggregateInputType
+    _max?: ConducteurMaxAggregateInputType
   }
 
-  export type ManagerGroupByOutputType = {
+  export type ConducteurGroupByOutputType = {
     id: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    _count: ManagerCountAggregateOutputType | null
-    _avg: ManagerAvgAggregateOutputType | null
-    _sum: ManagerSumAggregateOutputType | null
-    _min: ManagerMinAggregateOutputType | null
-    _max: ManagerMaxAggregateOutputType | null
+    _count: ConducteurCountAggregateOutputType | null
+    _avg: ConducteurAvgAggregateOutputType | null
+    _sum: ConducteurSumAggregateOutputType | null
+    _min: ConducteurMinAggregateOutputType | null
+    _max: ConducteurMaxAggregateOutputType | null
   }
 
-  type GetManagerGroupByPayload<T extends ManagerGroupByArgs> = Prisma.PrismaPromise<
+  type GetConducteurGroupByPayload<T extends ConducteurGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<ManagerGroupByOutputType, T['by']> &
+      PickEnumerable<ConducteurGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof ManagerGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof ConducteurGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], ManagerGroupByOutputType[P]>
-            : GetScalarType<T[P], ManagerGroupByOutputType[P]>
+              : GetScalarType<T[P], ConducteurGroupByOutputType[P]>
+            : GetScalarType<T[P], ConducteurGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type ManagerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type ConducteurSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     cognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-    managedProperties?: boolean | Manager$managedPropertiesArgs<ExtArgs>
-    _count?: boolean | ManagerCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["manager"]>
+    conducteurProperties?: boolean | Conducteur$conducteurPropertiesArgs<ExtArgs>
+    _count?: boolean | ConducteurCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conducteur"]>
 
-  export type ManagerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type ConducteurSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     cognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-  }, ExtArgs["result"]["manager"]>
+  }, ExtArgs["result"]["conducteur"]>
 
-  export type ManagerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type ConducteurSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     cognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-  }, ExtArgs["result"]["manager"]>
+  }, ExtArgs["result"]["conducteur"]>
 
-  export type ManagerSelectScalar = {
+  export type ConducteurSelectScalar = {
     id?: boolean
     cognitoId?: boolean
     name?: boolean
@@ -3192,18 +3192,18 @@ export namespace Prisma {
     phoneNumber?: boolean
   }
 
-  export type ManagerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cognitoId" | "name" | "email" | "phoneNumber", ExtArgs["result"]["manager"]>
-  export type ManagerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    managedProperties?: boolean | Manager$managedPropertiesArgs<ExtArgs>
-    _count?: boolean | ManagerCountOutputTypeDefaultArgs<ExtArgs>
+  export type ConducteurOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cognitoId" | "name" | "email" | "phoneNumber", ExtArgs["result"]["conducteur"]>
+  export type ConducteurInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conducteurProperties?: boolean | Conducteur$conducteurPropertiesArgs<ExtArgs>
+    _count?: boolean | ConducteurCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type ManagerIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type ManagerIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ConducteurIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ConducteurIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $ManagerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Manager"
+  export type $ConducteurPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Conducteur"
     objects: {
-      managedProperties: Prisma.$PropertyPayload<ExtArgs>[]
+      conducteurProperties: Prisma.$PropertyPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3211,136 +3211,136 @@ export namespace Prisma {
       name: string
       email: string
       phoneNumber: string
-    }, ExtArgs["result"]["manager"]>
+    }, ExtArgs["result"]["conducteur"]>
     composites: {}
   }
 
-  type ManagerGetPayload<S extends boolean | null | undefined | ManagerDefaultArgs> = $Result.GetResult<Prisma.$ManagerPayload, S>
+  type ConducteurGetPayload<S extends boolean | null | undefined | ConducteurDefaultArgs> = $Result.GetResult<Prisma.$ConducteurPayload, S>
 
-  type ManagerCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ManagerFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ManagerCountAggregateInputType | true
+  type ConducteurCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ConducteurFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ConducteurCountAggregateInputType | true
     }
 
-  export interface ManagerDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Manager'], meta: { name: 'Manager' } }
+  export interface ConducteurDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Conducteur'], meta: { name: 'Conducteur' } }
     /**
-     * Find zero or one Manager that matches the filter.
-     * @param {ManagerFindUniqueArgs} args - Arguments to find a Manager
+     * Find zero or one Conducteur that matches the filter.
+     * @param {ConducteurFindUniqueArgs} args - Arguments to find a Conducteur
      * @example
-     * // Get one Manager
-     * const manager = await prisma.manager.findUnique({
+     * // Get one Conducteur
+     * const conducteur = await prisma.conducteur.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends ManagerFindUniqueArgs>(args: SelectSubset<T, ManagerFindUniqueArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends ConducteurFindUniqueArgs>(args: SelectSubset<T, ConducteurFindUniqueArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Manager that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Conducteur that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {ManagerFindUniqueOrThrowArgs} args - Arguments to find a Manager
+     * @param {ConducteurFindUniqueOrThrowArgs} args - Arguments to find a Conducteur
      * @example
-     * // Get one Manager
-     * const manager = await prisma.manager.findUniqueOrThrow({
+     * // Get one Conducteur
+     * const conducteur = await prisma.conducteur.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends ManagerFindUniqueOrThrowArgs>(args: SelectSubset<T, ManagerFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends ConducteurFindUniqueOrThrowArgs>(args: SelectSubset<T, ConducteurFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Manager that matches the filter.
+     * Find the first Conducteur that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ManagerFindFirstArgs} args - Arguments to find a Manager
+     * @param {ConducteurFindFirstArgs} args - Arguments to find a Conducteur
      * @example
-     * // Get one Manager
-     * const manager = await prisma.manager.findFirst({
+     * // Get one Conducteur
+     * const conducteur = await prisma.conducteur.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends ManagerFindFirstArgs>(args?: SelectSubset<T, ManagerFindFirstArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends ConducteurFindFirstArgs>(args?: SelectSubset<T, ConducteurFindFirstArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Manager that matches the filter or
+     * Find the first Conducteur that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ManagerFindFirstOrThrowArgs} args - Arguments to find a Manager
+     * @param {ConducteurFindFirstOrThrowArgs} args - Arguments to find a Conducteur
      * @example
-     * // Get one Manager
-     * const manager = await prisma.manager.findFirstOrThrow({
+     * // Get one Conducteur
+     * const conducteur = await prisma.conducteur.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends ManagerFindFirstOrThrowArgs>(args?: SelectSubset<T, ManagerFindFirstOrThrowArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends ConducteurFindFirstOrThrowArgs>(args?: SelectSubset<T, ConducteurFindFirstOrThrowArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Managers that matches the filter.
+     * Find zero or more Conducteurs that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ManagerFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {ConducteurFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Managers
-     * const managers = await prisma.manager.findMany()
+     * // Get all Conducteurs
+     * const conducteurs = await prisma.conducteur.findMany()
      * 
-     * // Get first 10 Managers
-     * const managers = await prisma.manager.findMany({ take: 10 })
+     * // Get first 10 Conducteurs
+     * const conducteurs = await prisma.conducteur.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const managerWithIdOnly = await prisma.manager.findMany({ select: { id: true } })
+     * const conducteurWithIdOnly = await prisma.conducteur.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends ManagerFindManyArgs>(args?: SelectSubset<T, ManagerFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends ConducteurFindManyArgs>(args?: SelectSubset<T, ConducteurFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Manager.
-     * @param {ManagerCreateArgs} args - Arguments to create a Manager.
+     * Create a Conducteur.
+     * @param {ConducteurCreateArgs} args - Arguments to create a Conducteur.
      * @example
-     * // Create one Manager
-     * const Manager = await prisma.manager.create({
+     * // Create one Conducteur
+     * const Conducteur = await prisma.conducteur.create({
      *   data: {
-     *     // ... data to create a Manager
+     *     // ... data to create a Conducteur
      *   }
      * })
      * 
      */
-    create<T extends ManagerCreateArgs>(args: SelectSubset<T, ManagerCreateArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends ConducteurCreateArgs>(args: SelectSubset<T, ConducteurCreateArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Managers.
-     * @param {ManagerCreateManyArgs} args - Arguments to create many Managers.
+     * Create many Conducteurs.
+     * @param {ConducteurCreateManyArgs} args - Arguments to create many Conducteurs.
      * @example
-     * // Create many Managers
-     * const manager = await prisma.manager.createMany({
+     * // Create many Conducteurs
+     * const conducteur = await prisma.conducteur.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends ManagerCreateManyArgs>(args?: SelectSubset<T, ManagerCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends ConducteurCreateManyArgs>(args?: SelectSubset<T, ConducteurCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Managers and returns the data saved in the database.
-     * @param {ManagerCreateManyAndReturnArgs} args - Arguments to create many Managers.
+     * Create many Conducteurs and returns the data saved in the database.
+     * @param {ConducteurCreateManyAndReturnArgs} args - Arguments to create many Conducteurs.
      * @example
-     * // Create many Managers
-     * const manager = await prisma.manager.createManyAndReturn({
+     * // Create many Conducteurs
+     * const conducteur = await prisma.conducteur.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Managers and only return the `id`
-     * const managerWithIdOnly = await prisma.manager.createManyAndReturn({
+     * // Create many Conducteurs and only return the `id`
+     * const conducteurWithIdOnly = await prisma.conducteur.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3350,28 +3350,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends ManagerCreateManyAndReturnArgs>(args?: SelectSubset<T, ManagerCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends ConducteurCreateManyAndReturnArgs>(args?: SelectSubset<T, ConducteurCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Manager.
-     * @param {ManagerDeleteArgs} args - Arguments to delete one Manager.
+     * Delete a Conducteur.
+     * @param {ConducteurDeleteArgs} args - Arguments to delete one Conducteur.
      * @example
-     * // Delete one Manager
-     * const Manager = await prisma.manager.delete({
+     * // Delete one Conducteur
+     * const Conducteur = await prisma.conducteur.delete({
      *   where: {
-     *     // ... filter to delete one Manager
+     *     // ... filter to delete one Conducteur
      *   }
      * })
      * 
      */
-    delete<T extends ManagerDeleteArgs>(args: SelectSubset<T, ManagerDeleteArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends ConducteurDeleteArgs>(args: SelectSubset<T, ConducteurDeleteArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Manager.
-     * @param {ManagerUpdateArgs} args - Arguments to update one Manager.
+     * Update one Conducteur.
+     * @param {ConducteurUpdateArgs} args - Arguments to update one Conducteur.
      * @example
-     * // Update one Manager
-     * const manager = await prisma.manager.update({
+     * // Update one Conducteur
+     * const conducteur = await prisma.conducteur.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3381,30 +3381,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends ManagerUpdateArgs>(args: SelectSubset<T, ManagerUpdateArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends ConducteurUpdateArgs>(args: SelectSubset<T, ConducteurUpdateArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Managers.
-     * @param {ManagerDeleteManyArgs} args - Arguments to filter Managers to delete.
+     * Delete zero or more Conducteurs.
+     * @param {ConducteurDeleteManyArgs} args - Arguments to filter Conducteurs to delete.
      * @example
-     * // Delete a few Managers
-     * const { count } = await prisma.manager.deleteMany({
+     * // Delete a few Conducteurs
+     * const { count } = await prisma.conducteur.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends ManagerDeleteManyArgs>(args?: SelectSubset<T, ManagerDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends ConducteurDeleteManyArgs>(args?: SelectSubset<T, ConducteurDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Managers.
+     * Update zero or more Conducteurs.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ManagerUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {ConducteurUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Managers
-     * const manager = await prisma.manager.updateMany({
+     * // Update many Conducteurs
+     * const conducteur = await prisma.conducteur.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3414,14 +3414,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends ManagerUpdateManyArgs>(args: SelectSubset<T, ManagerUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends ConducteurUpdateManyArgs>(args: SelectSubset<T, ConducteurUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Managers and returns the data updated in the database.
-     * @param {ManagerUpdateManyAndReturnArgs} args - Arguments to update many Managers.
+     * Update zero or more Conducteurs and returns the data updated in the database.
+     * @param {ConducteurUpdateManyAndReturnArgs} args - Arguments to update many Conducteurs.
      * @example
-     * // Update many Managers
-     * const manager = await prisma.manager.updateManyAndReturn({
+     * // Update many Conducteurs
+     * const conducteur = await prisma.conducteur.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3430,8 +3430,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Managers and only return the `id`
-     * const managerWithIdOnly = await prisma.manager.updateManyAndReturn({
+     * // Update zero or more Conducteurs and only return the `id`
+     * const conducteurWithIdOnly = await prisma.conducteur.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -3444,56 +3444,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends ManagerUpdateManyAndReturnArgs>(args: SelectSubset<T, ManagerUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends ConducteurUpdateManyAndReturnArgs>(args: SelectSubset<T, ConducteurUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Manager.
-     * @param {ManagerUpsertArgs} args - Arguments to update or create a Manager.
+     * Create or update one Conducteur.
+     * @param {ConducteurUpsertArgs} args - Arguments to update or create a Conducteur.
      * @example
-     * // Update or create a Manager
-     * const manager = await prisma.manager.upsert({
+     * // Update or create a Conducteur
+     * const conducteur = await prisma.conducteur.upsert({
      *   create: {
-     *     // ... data to create a Manager
+     *     // ... data to create a Conducteur
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Manager we want to update
+     *     // ... the filter for the Conducteur we want to update
      *   }
      * })
      */
-    upsert<T extends ManagerUpsertArgs>(args: SelectSubset<T, ManagerUpsertArgs<ExtArgs>>): Prisma__ManagerClient<$Result.GetResult<Prisma.$ManagerPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends ConducteurUpsertArgs>(args: SelectSubset<T, ConducteurUpsertArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Managers.
+     * Count the number of Conducteurs.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ManagerCountArgs} args - Arguments to filter Managers to count.
+     * @param {ConducteurCountArgs} args - Arguments to filter Conducteurs to count.
      * @example
-     * // Count the number of Managers
-     * const count = await prisma.manager.count({
+     * // Count the number of Conducteurs
+     * const count = await prisma.conducteur.count({
      *   where: {
-     *     // ... the filter for the Managers we want to count
+     *     // ... the filter for the Conducteurs we want to count
      *   }
      * })
     **/
-    count<T extends ManagerCountArgs>(
-      args?: Subset<T, ManagerCountArgs>,
+    count<T extends ConducteurCountArgs>(
+      args?: Subset<T, ConducteurCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], ManagerCountAggregateOutputType>
+          : GetScalarType<T['select'], ConducteurCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Manager.
+     * Allows you to perform aggregations operations on a Conducteur.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ManagerAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {ConducteurAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3513,13 +3513,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends ManagerAggregateArgs>(args: Subset<T, ManagerAggregateArgs>): Prisma.PrismaPromise<GetManagerAggregateType<T>>
+    aggregate<T extends ConducteurAggregateArgs>(args: Subset<T, ConducteurAggregateArgs>): Prisma.PrismaPromise<GetConducteurAggregateType<T>>
 
     /**
-     * Group by Manager.
+     * Group by Conducteur.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ManagerGroupByArgs} args - Group by arguments.
+     * @param {ConducteurGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3534,14 +3534,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ManagerGroupByArgs,
+      T extends ConducteurGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ManagerGroupByArgs['orderBy'] }
-        : { orderBy?: ManagerGroupByArgs['orderBy'] },
+        ? { orderBy: ConducteurGroupByArgs['orderBy'] }
+        : { orderBy?: ConducteurGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3590,22 +3590,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ManagerGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetManagerGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, ConducteurGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConducteurGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Manager model
+   * Fields of the Conducteur model
    */
-  readonly fields: ManagerFieldRefs;
+  readonly fields: ConducteurFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Manager.
+   * The delegate class that acts as a "Promise-like" for Conducteur.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ManagerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__ConducteurClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    managedProperties<T extends Manager$managedPropertiesArgs<ExtArgs> = {}>(args?: Subset<T, Manager$managedPropertiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    conducteurProperties<T extends Conducteur$conducteurPropertiesArgs<ExtArgs> = {}>(args?: Subset<T, Conducteur$conducteurPropertiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3632,405 +3632,405 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Manager model
+   * Fields of the Conducteur model
    */
-  interface ManagerFieldRefs {
-    readonly id: FieldRef<"Manager", 'Int'>
-    readonly cognitoId: FieldRef<"Manager", 'String'>
-    readonly name: FieldRef<"Manager", 'String'>
-    readonly email: FieldRef<"Manager", 'String'>
-    readonly phoneNumber: FieldRef<"Manager", 'String'>
+  interface ConducteurFieldRefs {
+    readonly id: FieldRef<"Conducteur", 'Int'>
+    readonly cognitoId: FieldRef<"Conducteur", 'String'>
+    readonly name: FieldRef<"Conducteur", 'String'>
+    readonly email: FieldRef<"Conducteur", 'String'>
+    readonly phoneNumber: FieldRef<"Conducteur", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Manager findUnique
+   * Conducteur findUnique
    */
-  export type ManagerFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * Filter, which Manager to fetch.
+     * Filter, which Conducteur to fetch.
      */
-    where: ManagerWhereUniqueInput
+    where: ConducteurWhereUniqueInput
   }
 
   /**
-   * Manager findUniqueOrThrow
+   * Conducteur findUniqueOrThrow
    */
-  export type ManagerFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * Filter, which Manager to fetch.
+     * Filter, which Conducteur to fetch.
      */
-    where: ManagerWhereUniqueInput
+    where: ConducteurWhereUniqueInput
   }
 
   /**
-   * Manager findFirst
+   * Conducteur findFirst
    */
-  export type ManagerFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * Filter, which Manager to fetch.
+     * Filter, which Conducteur to fetch.
      */
-    where?: ManagerWhereInput
+    where?: ConducteurWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Managers to fetch.
+     * Determine the order of Conducteurs to fetch.
      */
-    orderBy?: ManagerOrderByWithRelationInput | ManagerOrderByWithRelationInput[]
+    orderBy?: ConducteurOrderByWithRelationInput | ConducteurOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Managers.
+     * Sets the position for searching for Conducteurs.
      */
-    cursor?: ManagerWhereUniqueInput
+    cursor?: ConducteurWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Managers from the position of the cursor.
+     * Take `±n` Conducteurs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Managers.
+     * Skip the first `n` Conducteurs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Managers.
+     * Filter by unique combinations of Conducteurs.
      */
-    distinct?: ManagerScalarFieldEnum | ManagerScalarFieldEnum[]
+    distinct?: ConducteurScalarFieldEnum | ConducteurScalarFieldEnum[]
   }
 
   /**
-   * Manager findFirstOrThrow
+   * Conducteur findFirstOrThrow
    */
-  export type ManagerFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * Filter, which Manager to fetch.
+     * Filter, which Conducteur to fetch.
      */
-    where?: ManagerWhereInput
+    where?: ConducteurWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Managers to fetch.
+     * Determine the order of Conducteurs to fetch.
      */
-    orderBy?: ManagerOrderByWithRelationInput | ManagerOrderByWithRelationInput[]
+    orderBy?: ConducteurOrderByWithRelationInput | ConducteurOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Managers.
+     * Sets the position for searching for Conducteurs.
      */
-    cursor?: ManagerWhereUniqueInput
+    cursor?: ConducteurWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Managers from the position of the cursor.
+     * Take `±n` Conducteurs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Managers.
+     * Skip the first `n` Conducteurs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Managers.
+     * Filter by unique combinations of Conducteurs.
      */
-    distinct?: ManagerScalarFieldEnum | ManagerScalarFieldEnum[]
+    distinct?: ConducteurScalarFieldEnum | ConducteurScalarFieldEnum[]
   }
 
   /**
-   * Manager findMany
+   * Conducteur findMany
    */
-  export type ManagerFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * Filter, which Managers to fetch.
+     * Filter, which Conducteurs to fetch.
      */
-    where?: ManagerWhereInput
+    where?: ConducteurWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Managers to fetch.
+     * Determine the order of Conducteurs to fetch.
      */
-    orderBy?: ManagerOrderByWithRelationInput | ManagerOrderByWithRelationInput[]
+    orderBy?: ConducteurOrderByWithRelationInput | ConducteurOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Managers.
+     * Sets the position for listing Conducteurs.
      */
-    cursor?: ManagerWhereUniqueInput
+    cursor?: ConducteurWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Managers from the position of the cursor.
+     * Take `±n` Conducteurs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Managers.
+     * Skip the first `n` Conducteurs.
      */
     skip?: number
-    distinct?: ManagerScalarFieldEnum | ManagerScalarFieldEnum[]
+    distinct?: ConducteurScalarFieldEnum | ConducteurScalarFieldEnum[]
   }
 
   /**
-   * Manager create
+   * Conducteur create
    */
-  export type ManagerCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * The data needed to create a Manager.
+     * The data needed to create a Conducteur.
      */
-    data: XOR<ManagerCreateInput, ManagerUncheckedCreateInput>
+    data: XOR<ConducteurCreateInput, ConducteurUncheckedCreateInput>
   }
 
   /**
-   * Manager createMany
+   * Conducteur createMany
    */
-  export type ManagerCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Managers.
+     * The data used to create many Conducteurs.
      */
-    data: ManagerCreateManyInput | ManagerCreateManyInput[]
+    data: ConducteurCreateManyInput | ConducteurCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Manager createManyAndReturn
+   * Conducteur createManyAndReturn
    */
-  export type ManagerCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelectCreateManyAndReturn<ExtArgs> | null
+    select?: ConducteurSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
-     * The data used to create many Managers.
+     * The data used to create many Conducteurs.
      */
-    data: ManagerCreateManyInput | ManagerCreateManyInput[]
+    data: ConducteurCreateManyInput | ConducteurCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Manager update
+   * Conducteur update
    */
-  export type ManagerUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * The data needed to update a Manager.
+     * The data needed to update a Conducteur.
      */
-    data: XOR<ManagerUpdateInput, ManagerUncheckedUpdateInput>
+    data: XOR<ConducteurUpdateInput, ConducteurUncheckedUpdateInput>
     /**
-     * Choose, which Manager to update.
+     * Choose, which Conducteur to update.
      */
-    where: ManagerWhereUniqueInput
+    where: ConducteurWhereUniqueInput
   }
 
   /**
-   * Manager updateMany
+   * Conducteur updateMany
    */
-  export type ManagerUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Managers.
+     * The data used to update Conducteurs.
      */
-    data: XOR<ManagerUpdateManyMutationInput, ManagerUncheckedUpdateManyInput>
+    data: XOR<ConducteurUpdateManyMutationInput, ConducteurUncheckedUpdateManyInput>
     /**
-     * Filter which Managers to update
+     * Filter which Conducteurs to update
      */
-    where?: ManagerWhereInput
+    where?: ConducteurWhereInput
     /**
-     * Limit how many Managers to update.
+     * Limit how many Conducteurs to update.
      */
     limit?: number
   }
 
   /**
-   * Manager updateManyAndReturn
+   * Conducteur updateManyAndReturn
    */
-  export type ManagerUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: ConducteurSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
-     * The data used to update Managers.
+     * The data used to update Conducteurs.
      */
-    data: XOR<ManagerUpdateManyMutationInput, ManagerUncheckedUpdateManyInput>
+    data: XOR<ConducteurUpdateManyMutationInput, ConducteurUncheckedUpdateManyInput>
     /**
-     * Filter which Managers to update
+     * Filter which Conducteurs to update
      */
-    where?: ManagerWhereInput
+    where?: ConducteurWhereInput
     /**
-     * Limit how many Managers to update.
+     * Limit how many Conducteurs to update.
      */
     limit?: number
   }
 
   /**
-   * Manager upsert
+   * Conducteur upsert
    */
-  export type ManagerUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * The filter to search for the Manager to update in case it exists.
+     * The filter to search for the Conducteur to update in case it exists.
      */
-    where: ManagerWhereUniqueInput
+    where: ConducteurWhereUniqueInput
     /**
-     * In case the Manager found by the `where` argument doesn't exist, create a new Manager with this data.
+     * In case the Conducteur found by the `where` argument doesn't exist, create a new Conducteur with this data.
      */
-    create: XOR<ManagerCreateInput, ManagerUncheckedCreateInput>
+    create: XOR<ConducteurCreateInput, ConducteurUncheckedCreateInput>
     /**
-     * In case the Manager was found with the provided `where` argument, update it with this data.
+     * In case the Conducteur was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ManagerUpdateInput, ManagerUncheckedUpdateInput>
+    update: XOR<ConducteurUpdateInput, ConducteurUncheckedUpdateInput>
   }
 
   /**
-   * Manager delete
+   * Conducteur delete
    */
-  export type ManagerDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
     /**
-     * Filter which Manager to delete.
+     * Filter which Conducteur to delete.
      */
-    where: ManagerWhereUniqueInput
+    where: ConducteurWhereUniqueInput
   }
 
   /**
-   * Manager deleteMany
+   * Conducteur deleteMany
    */
-  export type ManagerDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Managers to delete
+     * Filter which Conducteurs to delete
      */
-    where?: ManagerWhereInput
+    where?: ConducteurWhereInput
     /**
-     * Limit how many Managers to delete.
+     * Limit how many Conducteurs to delete.
      */
     limit?: number
   }
 
   /**
-   * Manager.managedProperties
+   * Conducteur.conducteurProperties
    */
-  export type Manager$managedPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Conducteur$conducteurPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Property
      */
@@ -4052,53 +4052,45 @@ export namespace Prisma {
   }
 
   /**
-   * Manager without action
+   * Conducteur without action
    */
-  export type ManagerDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ConducteurDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Manager
+     * Select specific fields to fetch from the Conducteur
      */
-    select?: ManagerSelect<ExtArgs> | null
+    select?: ConducteurSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Manager
+     * Omit specific fields from the Conducteur
      */
-    omit?: ManagerOmit<ExtArgs> | null
+    omit?: ConducteurOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ManagerInclude<ExtArgs> | null
+    include?: ConducteurInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Tenant
+   * Model Passager
    */
 
-  export type AggregateTenant = {
-    _count: TenantCountAggregateOutputType | null
-    _avg: TenantAvgAggregateOutputType | null
-    _sum: TenantSumAggregateOutputType | null
-    _min: TenantMinAggregateOutputType | null
-    _max: TenantMaxAggregateOutputType | null
+  export type AggregatePassager = {
+    _count: PassagerCountAggregateOutputType | null
+    _avg: PassagerAvgAggregateOutputType | null
+    _sum: PassagerSumAggregateOutputType | null
+    _min: PassagerMinAggregateOutputType | null
+    _max: PassagerMaxAggregateOutputType | null
   }
 
-  export type TenantAvgAggregateOutputType = {
+  export type PassagerAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type TenantSumAggregateOutputType = {
+  export type PassagerSumAggregateOutputType = {
     id: number | null
   }
 
-  export type TenantMinAggregateOutputType = {
-    id: number | null
-    cognitoId: string | null
-    name: string | null
-    email: string | null
-    phoneNumber: string | null
-  }
-
-  export type TenantMaxAggregateOutputType = {
+  export type PassagerMinAggregateOutputType = {
     id: number | null
     cognitoId: string | null
     name: string | null
@@ -4106,7 +4098,15 @@ export namespace Prisma {
     phoneNumber: string | null
   }
 
-  export type TenantCountAggregateOutputType = {
+  export type PassagerMaxAggregateOutputType = {
+    id: number | null
+    cognitoId: string | null
+    name: string | null
+    email: string | null
+    phoneNumber: string | null
+  }
+
+  export type PassagerCountAggregateOutputType = {
     id: number
     cognitoId: number
     name: number
@@ -4116,23 +4116,15 @@ export namespace Prisma {
   }
 
 
-  export type TenantAvgAggregateInputType = {
+  export type PassagerAvgAggregateInputType = {
     id?: true
   }
 
-  export type TenantSumAggregateInputType = {
+  export type PassagerSumAggregateInputType = {
     id?: true
   }
 
-  export type TenantMinAggregateInputType = {
-    id?: true
-    cognitoId?: true
-    name?: true
-    email?: true
-    phoneNumber?: true
-  }
-
-  export type TenantMaxAggregateInputType = {
+  export type PassagerMinAggregateInputType = {
     id?: true
     cognitoId?: true
     name?: true
@@ -4140,7 +4132,15 @@ export namespace Prisma {
     phoneNumber?: true
   }
 
-  export type TenantCountAggregateInputType = {
+  export type PassagerMaxAggregateInputType = {
+    id?: true
+    cognitoId?: true
+    name?: true
+    email?: true
+    phoneNumber?: true
+  }
+
+  export type PassagerCountAggregateInputType = {
     id?: true
     cognitoId?: true
     name?: true
@@ -4149,149 +4149,149 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type TenantAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tenant to aggregate.
+     * Filter which Passager to aggregate.
      */
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tenants to fetch.
+     * Determine the order of Passagers to fetch.
      */
-    orderBy?: TenantOrderByWithRelationInput | TenantOrderByWithRelationInput[]
+    orderBy?: PassagerOrderByWithRelationInput | PassagerOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: TenantWhereUniqueInput
+    cursor?: PassagerWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tenants from the position of the cursor.
+     * Take `±n` Passagers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tenants.
+     * Skip the first `n` Passagers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Tenants
+     * Count returned Passagers
     **/
-    _count?: true | TenantCountAggregateInputType
+    _count?: true | PassagerCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: TenantAvgAggregateInputType
+    _avg?: PassagerAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: TenantSumAggregateInputType
+    _sum?: PassagerSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: TenantMinAggregateInputType
+    _min?: PassagerMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: TenantMaxAggregateInputType
+    _max?: PassagerMaxAggregateInputType
   }
 
-  export type GetTenantAggregateType<T extends TenantAggregateArgs> = {
-        [P in keyof T & keyof AggregateTenant]: P extends '_count' | 'count'
+  export type GetPassagerAggregateType<T extends PassagerAggregateArgs> = {
+        [P in keyof T & keyof AggregatePassager]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTenant[P]>
-      : GetScalarType<T[P], AggregateTenant[P]>
+        : GetScalarType<T[P], AggregatePassager[P]>
+      : GetScalarType<T[P], AggregatePassager[P]>
   }
 
 
 
 
-  export type TenantGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TenantWhereInput
-    orderBy?: TenantOrderByWithAggregationInput | TenantOrderByWithAggregationInput[]
-    by: TenantScalarFieldEnum[] | TenantScalarFieldEnum
-    having?: TenantScalarWhereWithAggregatesInput
+  export type PassagerGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PassagerWhereInput
+    orderBy?: PassagerOrderByWithAggregationInput | PassagerOrderByWithAggregationInput[]
+    by: PassagerScalarFieldEnum[] | PassagerScalarFieldEnum
+    having?: PassagerScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: TenantCountAggregateInputType | true
-    _avg?: TenantAvgAggregateInputType
-    _sum?: TenantSumAggregateInputType
-    _min?: TenantMinAggregateInputType
-    _max?: TenantMaxAggregateInputType
+    _count?: PassagerCountAggregateInputType | true
+    _avg?: PassagerAvgAggregateInputType
+    _sum?: PassagerSumAggregateInputType
+    _min?: PassagerMinAggregateInputType
+    _max?: PassagerMaxAggregateInputType
   }
 
-  export type TenantGroupByOutputType = {
+  export type PassagerGroupByOutputType = {
     id: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    _count: TenantCountAggregateOutputType | null
-    _avg: TenantAvgAggregateOutputType | null
-    _sum: TenantSumAggregateOutputType | null
-    _min: TenantMinAggregateOutputType | null
-    _max: TenantMaxAggregateOutputType | null
+    _count: PassagerCountAggregateOutputType | null
+    _avg: PassagerAvgAggregateOutputType | null
+    _sum: PassagerSumAggregateOutputType | null
+    _min: PassagerMinAggregateOutputType | null
+    _max: PassagerMaxAggregateOutputType | null
   }
 
-  type GetTenantGroupByPayload<T extends TenantGroupByArgs> = Prisma.PrismaPromise<
+  type GetPassagerGroupByPayload<T extends PassagerGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<TenantGroupByOutputType, T['by']> &
+      PickEnumerable<PassagerGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof TenantGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof PassagerGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], TenantGroupByOutputType[P]>
-            : GetScalarType<T[P], TenantGroupByOutputType[P]>
+              : GetScalarType<T[P], PassagerGroupByOutputType[P]>
+            : GetScalarType<T[P], PassagerGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type TenantSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type PassagerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     cognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-    properties?: boolean | Tenant$propertiesArgs<ExtArgs>
-    favorites?: boolean | Tenant$favoritesArgs<ExtArgs>
-    applications?: boolean | Tenant$applicationsArgs<ExtArgs>
-    leases?: boolean | Tenant$leasesArgs<ExtArgs>
-    _count?: boolean | TenantCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["tenant"]>
+    properties?: boolean | Passager$propertiesArgs<ExtArgs>
+    favorites?: boolean | Passager$favoritesArgs<ExtArgs>
+    applications?: boolean | Passager$applicationsArgs<ExtArgs>
+    leases?: boolean | Passager$leasesArgs<ExtArgs>
+    _count?: boolean | PassagerCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["passager"]>
 
-  export type TenantSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type PassagerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     cognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-  }, ExtArgs["result"]["tenant"]>
+  }, ExtArgs["result"]["passager"]>
 
-  export type TenantSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type PassagerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     cognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-  }, ExtArgs["result"]["tenant"]>
+  }, ExtArgs["result"]["passager"]>
 
-  export type TenantSelectScalar = {
+  export type PassagerSelectScalar = {
     id?: boolean
     cognitoId?: boolean
     name?: boolean
@@ -4299,19 +4299,19 @@ export namespace Prisma {
     phoneNumber?: boolean
   }
 
-  export type TenantOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cognitoId" | "name" | "email" | "phoneNumber", ExtArgs["result"]["tenant"]>
-  export type TenantInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    properties?: boolean | Tenant$propertiesArgs<ExtArgs>
-    favorites?: boolean | Tenant$favoritesArgs<ExtArgs>
-    applications?: boolean | Tenant$applicationsArgs<ExtArgs>
-    leases?: boolean | Tenant$leasesArgs<ExtArgs>
-    _count?: boolean | TenantCountOutputTypeDefaultArgs<ExtArgs>
+  export type PassagerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cognitoId" | "name" | "email" | "phoneNumber", ExtArgs["result"]["passager"]>
+  export type PassagerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    properties?: boolean | Passager$propertiesArgs<ExtArgs>
+    favorites?: boolean | Passager$favoritesArgs<ExtArgs>
+    applications?: boolean | Passager$applicationsArgs<ExtArgs>
+    leases?: boolean | Passager$leasesArgs<ExtArgs>
+    _count?: boolean | PassagerCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type TenantIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type TenantIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type PassagerIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type PassagerIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $TenantPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Tenant"
+  export type $PassagerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Passager"
     objects: {
       properties: Prisma.$PropertyPayload<ExtArgs>[]
       favorites: Prisma.$PropertyPayload<ExtArgs>[]
@@ -4324,136 +4324,136 @@ export namespace Prisma {
       name: string
       email: string
       phoneNumber: string
-    }, ExtArgs["result"]["tenant"]>
+    }, ExtArgs["result"]["passager"]>
     composites: {}
   }
 
-  type TenantGetPayload<S extends boolean | null | undefined | TenantDefaultArgs> = $Result.GetResult<Prisma.$TenantPayload, S>
+  type PassagerGetPayload<S extends boolean | null | undefined | PassagerDefaultArgs> = $Result.GetResult<Prisma.$PassagerPayload, S>
 
-  type TenantCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<TenantFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: TenantCountAggregateInputType | true
+  type PassagerCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PassagerFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PassagerCountAggregateInputType | true
     }
 
-  export interface TenantDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Tenant'], meta: { name: 'Tenant' } }
+  export interface PassagerDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Passager'], meta: { name: 'Passager' } }
     /**
-     * Find zero or one Tenant that matches the filter.
-     * @param {TenantFindUniqueArgs} args - Arguments to find a Tenant
+     * Find zero or one Passager that matches the filter.
+     * @param {PassagerFindUniqueArgs} args - Arguments to find a Passager
      * @example
-     * // Get one Tenant
-     * const tenant = await prisma.tenant.findUnique({
+     * // Get one Passager
+     * const passager = await prisma.passager.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends TenantFindUniqueArgs>(args: SelectSubset<T, TenantFindUniqueArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends PassagerFindUniqueArgs>(args: SelectSubset<T, PassagerFindUniqueArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Tenant that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Passager that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {TenantFindUniqueOrThrowArgs} args - Arguments to find a Tenant
+     * @param {PassagerFindUniqueOrThrowArgs} args - Arguments to find a Passager
      * @example
-     * // Get one Tenant
-     * const tenant = await prisma.tenant.findUniqueOrThrow({
+     * // Get one Passager
+     * const passager = await prisma.passager.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends TenantFindUniqueOrThrowArgs>(args: SelectSubset<T, TenantFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends PassagerFindUniqueOrThrowArgs>(args: SelectSubset<T, PassagerFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tenant that matches the filter.
+     * Find the first Passager that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantFindFirstArgs} args - Arguments to find a Tenant
+     * @param {PassagerFindFirstArgs} args - Arguments to find a Passager
      * @example
-     * // Get one Tenant
-     * const tenant = await prisma.tenant.findFirst({
+     * // Get one Passager
+     * const passager = await prisma.passager.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends TenantFindFirstArgs>(args?: SelectSubset<T, TenantFindFirstArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends PassagerFindFirstArgs>(args?: SelectSubset<T, PassagerFindFirstArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tenant that matches the filter or
+     * Find the first Passager that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantFindFirstOrThrowArgs} args - Arguments to find a Tenant
+     * @param {PassagerFindFirstOrThrowArgs} args - Arguments to find a Passager
      * @example
-     * // Get one Tenant
-     * const tenant = await prisma.tenant.findFirstOrThrow({
+     * // Get one Passager
+     * const passager = await prisma.passager.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends TenantFindFirstOrThrowArgs>(args?: SelectSubset<T, TenantFindFirstOrThrowArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends PassagerFindFirstOrThrowArgs>(args?: SelectSubset<T, PassagerFindFirstOrThrowArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Tenants that matches the filter.
+     * Find zero or more Passagers that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {PassagerFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Tenants
-     * const tenants = await prisma.tenant.findMany()
+     * // Get all Passagers
+     * const passagers = await prisma.passager.findMany()
      * 
-     * // Get first 10 Tenants
-     * const tenants = await prisma.tenant.findMany({ take: 10 })
+     * // Get first 10 Passagers
+     * const passagers = await prisma.passager.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const tenantWithIdOnly = await prisma.tenant.findMany({ select: { id: true } })
+     * const passagerWithIdOnly = await prisma.passager.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends TenantFindManyArgs>(args?: SelectSubset<T, TenantFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends PassagerFindManyArgs>(args?: SelectSubset<T, PassagerFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Tenant.
-     * @param {TenantCreateArgs} args - Arguments to create a Tenant.
+     * Create a Passager.
+     * @param {PassagerCreateArgs} args - Arguments to create a Passager.
      * @example
-     * // Create one Tenant
-     * const Tenant = await prisma.tenant.create({
+     * // Create one Passager
+     * const Passager = await prisma.passager.create({
      *   data: {
-     *     // ... data to create a Tenant
+     *     // ... data to create a Passager
      *   }
      * })
      * 
      */
-    create<T extends TenantCreateArgs>(args: SelectSubset<T, TenantCreateArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends PassagerCreateArgs>(args: SelectSubset<T, PassagerCreateArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Tenants.
-     * @param {TenantCreateManyArgs} args - Arguments to create many Tenants.
+     * Create many Passagers.
+     * @param {PassagerCreateManyArgs} args - Arguments to create many Passagers.
      * @example
-     * // Create many Tenants
-     * const tenant = await prisma.tenant.createMany({
+     * // Create many Passagers
+     * const passager = await prisma.passager.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends TenantCreateManyArgs>(args?: SelectSubset<T, TenantCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends PassagerCreateManyArgs>(args?: SelectSubset<T, PassagerCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Tenants and returns the data saved in the database.
-     * @param {TenantCreateManyAndReturnArgs} args - Arguments to create many Tenants.
+     * Create many Passagers and returns the data saved in the database.
+     * @param {PassagerCreateManyAndReturnArgs} args - Arguments to create many Passagers.
      * @example
-     * // Create many Tenants
-     * const tenant = await prisma.tenant.createManyAndReturn({
+     * // Create many Passagers
+     * const passager = await prisma.passager.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Tenants and only return the `id`
-     * const tenantWithIdOnly = await prisma.tenant.createManyAndReturn({
+     * // Create many Passagers and only return the `id`
+     * const passagerWithIdOnly = await prisma.passager.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -4463,28 +4463,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends TenantCreateManyAndReturnArgs>(args?: SelectSubset<T, TenantCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends PassagerCreateManyAndReturnArgs>(args?: SelectSubset<T, PassagerCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Tenant.
-     * @param {TenantDeleteArgs} args - Arguments to delete one Tenant.
+     * Delete a Passager.
+     * @param {PassagerDeleteArgs} args - Arguments to delete one Passager.
      * @example
-     * // Delete one Tenant
-     * const Tenant = await prisma.tenant.delete({
+     * // Delete one Passager
+     * const Passager = await prisma.passager.delete({
      *   where: {
-     *     // ... filter to delete one Tenant
+     *     // ... filter to delete one Passager
      *   }
      * })
      * 
      */
-    delete<T extends TenantDeleteArgs>(args: SelectSubset<T, TenantDeleteArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends PassagerDeleteArgs>(args: SelectSubset<T, PassagerDeleteArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Tenant.
-     * @param {TenantUpdateArgs} args - Arguments to update one Tenant.
+     * Update one Passager.
+     * @param {PassagerUpdateArgs} args - Arguments to update one Passager.
      * @example
-     * // Update one Tenant
-     * const tenant = await prisma.tenant.update({
+     * // Update one Passager
+     * const passager = await prisma.passager.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4494,30 +4494,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends TenantUpdateArgs>(args: SelectSubset<T, TenantUpdateArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends PassagerUpdateArgs>(args: SelectSubset<T, PassagerUpdateArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Tenants.
-     * @param {TenantDeleteManyArgs} args - Arguments to filter Tenants to delete.
+     * Delete zero or more Passagers.
+     * @param {PassagerDeleteManyArgs} args - Arguments to filter Passagers to delete.
      * @example
-     * // Delete a few Tenants
-     * const { count } = await prisma.tenant.deleteMany({
+     * // Delete a few Passagers
+     * const { count } = await prisma.passager.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends TenantDeleteManyArgs>(args?: SelectSubset<T, TenantDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends PassagerDeleteManyArgs>(args?: SelectSubset<T, PassagerDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Tenants.
+     * Update zero or more Passagers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {PassagerUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Tenants
-     * const tenant = await prisma.tenant.updateMany({
+     * // Update many Passagers
+     * const passager = await prisma.passager.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4527,14 +4527,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends TenantUpdateManyArgs>(args: SelectSubset<T, TenantUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends PassagerUpdateManyArgs>(args: SelectSubset<T, PassagerUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Tenants and returns the data updated in the database.
-     * @param {TenantUpdateManyAndReturnArgs} args - Arguments to update many Tenants.
+     * Update zero or more Passagers and returns the data updated in the database.
+     * @param {PassagerUpdateManyAndReturnArgs} args - Arguments to update many Passagers.
      * @example
-     * // Update many Tenants
-     * const tenant = await prisma.tenant.updateManyAndReturn({
+     * // Update many Passagers
+     * const passager = await prisma.passager.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4543,8 +4543,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Tenants and only return the `id`
-     * const tenantWithIdOnly = await prisma.tenant.updateManyAndReturn({
+     * // Update zero or more Passagers and only return the `id`
+     * const passagerWithIdOnly = await prisma.passager.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -4557,56 +4557,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends TenantUpdateManyAndReturnArgs>(args: SelectSubset<T, TenantUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends PassagerUpdateManyAndReturnArgs>(args: SelectSubset<T, PassagerUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Tenant.
-     * @param {TenantUpsertArgs} args - Arguments to update or create a Tenant.
+     * Create or update one Passager.
+     * @param {PassagerUpsertArgs} args - Arguments to update or create a Passager.
      * @example
-     * // Update or create a Tenant
-     * const tenant = await prisma.tenant.upsert({
+     * // Update or create a Passager
+     * const passager = await prisma.passager.upsert({
      *   create: {
-     *     // ... data to create a Tenant
+     *     // ... data to create a Passager
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Tenant we want to update
+     *     // ... the filter for the Passager we want to update
      *   }
      * })
      */
-    upsert<T extends TenantUpsertArgs>(args: SelectSubset<T, TenantUpsertArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends PassagerUpsertArgs>(args: SelectSubset<T, PassagerUpsertArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Tenants.
+     * Count the number of Passagers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantCountArgs} args - Arguments to filter Tenants to count.
+     * @param {PassagerCountArgs} args - Arguments to filter Passagers to count.
      * @example
-     * // Count the number of Tenants
-     * const count = await prisma.tenant.count({
+     * // Count the number of Passagers
+     * const count = await prisma.passager.count({
      *   where: {
-     *     // ... the filter for the Tenants we want to count
+     *     // ... the filter for the Passagers we want to count
      *   }
      * })
     **/
-    count<T extends TenantCountArgs>(
-      args?: Subset<T, TenantCountArgs>,
+    count<T extends PassagerCountArgs>(
+      args?: Subset<T, PassagerCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], TenantCountAggregateOutputType>
+          : GetScalarType<T['select'], PassagerCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Tenant.
+     * Allows you to perform aggregations operations on a Passager.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {PassagerAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -4626,13 +4626,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends TenantAggregateArgs>(args: Subset<T, TenantAggregateArgs>): Prisma.PrismaPromise<GetTenantAggregateType<T>>
+    aggregate<T extends PassagerAggregateArgs>(args: Subset<T, PassagerAggregateArgs>): Prisma.PrismaPromise<GetPassagerAggregateType<T>>
 
     /**
-     * Group by Tenant.
+     * Group by Passager.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TenantGroupByArgs} args - Group by arguments.
+     * @param {PassagerGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4647,14 +4647,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends TenantGroupByArgs,
+      T extends PassagerGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: TenantGroupByArgs['orderBy'] }
-        : { orderBy?: TenantGroupByArgs['orderBy'] },
+        ? { orderBy: PassagerGroupByArgs['orderBy'] }
+        : { orderBy?: PassagerGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4703,25 +4703,25 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, TenantGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTenantGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, PassagerGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPassagerGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Tenant model
+   * Fields of the Passager model
    */
-  readonly fields: TenantFieldRefs;
+  readonly fields: PassagerFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Tenant.
+   * The delegate class that acts as a "Promise-like" for Passager.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__TenantClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__PassagerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    properties<T extends Tenant$propertiesArgs<ExtArgs> = {}>(args?: Subset<T, Tenant$propertiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    favorites<T extends Tenant$favoritesArgs<ExtArgs> = {}>(args?: Subset<T, Tenant$favoritesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    applications<T extends Tenant$applicationsArgs<ExtArgs> = {}>(args?: Subset<T, Tenant$applicationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    leases<T extends Tenant$leasesArgs<ExtArgs> = {}>(args?: Subset<T, Tenant$leasesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    properties<T extends Passager$propertiesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$propertiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favorites<T extends Passager$favoritesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$favoritesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    applications<T extends Passager$applicationsArgs<ExtArgs> = {}>(args?: Subset<T, Passager$applicationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    leases<T extends Passager$leasesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$leasesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4748,405 +4748,405 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Tenant model
+   * Fields of the Passager model
    */
-  interface TenantFieldRefs {
-    readonly id: FieldRef<"Tenant", 'Int'>
-    readonly cognitoId: FieldRef<"Tenant", 'String'>
-    readonly name: FieldRef<"Tenant", 'String'>
-    readonly email: FieldRef<"Tenant", 'String'>
-    readonly phoneNumber: FieldRef<"Tenant", 'String'>
+  interface PassagerFieldRefs {
+    readonly id: FieldRef<"Passager", 'Int'>
+    readonly cognitoId: FieldRef<"Passager", 'String'>
+    readonly name: FieldRef<"Passager", 'String'>
+    readonly email: FieldRef<"Passager", 'String'>
+    readonly phoneNumber: FieldRef<"Passager", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Tenant findUnique
+   * Passager findUnique
    */
-  export type TenantFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * Filter, which Tenant to fetch.
+     * Filter, which Passager to fetch.
      */
-    where: TenantWhereUniqueInput
+    where: PassagerWhereUniqueInput
   }
 
   /**
-   * Tenant findUniqueOrThrow
+   * Passager findUniqueOrThrow
    */
-  export type TenantFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * Filter, which Tenant to fetch.
+     * Filter, which Passager to fetch.
      */
-    where: TenantWhereUniqueInput
+    where: PassagerWhereUniqueInput
   }
 
   /**
-   * Tenant findFirst
+   * Passager findFirst
    */
-  export type TenantFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * Filter, which Tenant to fetch.
+     * Filter, which Passager to fetch.
      */
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tenants to fetch.
+     * Determine the order of Passagers to fetch.
      */
-    orderBy?: TenantOrderByWithRelationInput | TenantOrderByWithRelationInput[]
+    orderBy?: PassagerOrderByWithRelationInput | PassagerOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Tenants.
+     * Sets the position for searching for Passagers.
      */
-    cursor?: TenantWhereUniqueInput
+    cursor?: PassagerWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tenants from the position of the cursor.
+     * Take `±n` Passagers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tenants.
+     * Skip the first `n` Passagers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Tenants.
+     * Filter by unique combinations of Passagers.
      */
-    distinct?: TenantScalarFieldEnum | TenantScalarFieldEnum[]
+    distinct?: PassagerScalarFieldEnum | PassagerScalarFieldEnum[]
   }
 
   /**
-   * Tenant findFirstOrThrow
+   * Passager findFirstOrThrow
    */
-  export type TenantFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * Filter, which Tenant to fetch.
+     * Filter, which Passager to fetch.
      */
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tenants to fetch.
+     * Determine the order of Passagers to fetch.
      */
-    orderBy?: TenantOrderByWithRelationInput | TenantOrderByWithRelationInput[]
+    orderBy?: PassagerOrderByWithRelationInput | PassagerOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Tenants.
+     * Sets the position for searching for Passagers.
      */
-    cursor?: TenantWhereUniqueInput
+    cursor?: PassagerWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tenants from the position of the cursor.
+     * Take `±n` Passagers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tenants.
+     * Skip the first `n` Passagers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Tenants.
+     * Filter by unique combinations of Passagers.
      */
-    distinct?: TenantScalarFieldEnum | TenantScalarFieldEnum[]
+    distinct?: PassagerScalarFieldEnum | PassagerScalarFieldEnum[]
   }
 
   /**
-   * Tenant findMany
+   * Passager findMany
    */
-  export type TenantFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * Filter, which Tenants to fetch.
+     * Filter, which Passagers to fetch.
      */
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tenants to fetch.
+     * Determine the order of Passagers to fetch.
      */
-    orderBy?: TenantOrderByWithRelationInput | TenantOrderByWithRelationInput[]
+    orderBy?: PassagerOrderByWithRelationInput | PassagerOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Tenants.
+     * Sets the position for listing Passagers.
      */
-    cursor?: TenantWhereUniqueInput
+    cursor?: PassagerWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tenants from the position of the cursor.
+     * Take `±n` Passagers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tenants.
+     * Skip the first `n` Passagers.
      */
     skip?: number
-    distinct?: TenantScalarFieldEnum | TenantScalarFieldEnum[]
+    distinct?: PassagerScalarFieldEnum | PassagerScalarFieldEnum[]
   }
 
   /**
-   * Tenant create
+   * Passager create
    */
-  export type TenantCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * The data needed to create a Tenant.
+     * The data needed to create a Passager.
      */
-    data: XOR<TenantCreateInput, TenantUncheckedCreateInput>
+    data: XOR<PassagerCreateInput, PassagerUncheckedCreateInput>
   }
 
   /**
-   * Tenant createMany
+   * Passager createMany
    */
-  export type TenantCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Tenants.
+     * The data used to create many Passagers.
      */
-    data: TenantCreateManyInput | TenantCreateManyInput[]
+    data: PassagerCreateManyInput | PassagerCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Tenant createManyAndReturn
+   * Passager createManyAndReturn
    */
-  export type TenantCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelectCreateManyAndReturn<ExtArgs> | null
+    select?: PassagerSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
-     * The data used to create many Tenants.
+     * The data used to create many Passagers.
      */
-    data: TenantCreateManyInput | TenantCreateManyInput[]
+    data: PassagerCreateManyInput | PassagerCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Tenant update
+   * Passager update
    */
-  export type TenantUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * The data needed to update a Tenant.
+     * The data needed to update a Passager.
      */
-    data: XOR<TenantUpdateInput, TenantUncheckedUpdateInput>
+    data: XOR<PassagerUpdateInput, PassagerUncheckedUpdateInput>
     /**
-     * Choose, which Tenant to update.
+     * Choose, which Passager to update.
      */
-    where: TenantWhereUniqueInput
+    where: PassagerWhereUniqueInput
   }
 
   /**
-   * Tenant updateMany
+   * Passager updateMany
    */
-  export type TenantUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Tenants.
+     * The data used to update Passagers.
      */
-    data: XOR<TenantUpdateManyMutationInput, TenantUncheckedUpdateManyInput>
+    data: XOR<PassagerUpdateManyMutationInput, PassagerUncheckedUpdateManyInput>
     /**
-     * Filter which Tenants to update
+     * Filter which Passagers to update
      */
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
     /**
-     * Limit how many Tenants to update.
+     * Limit how many Passagers to update.
      */
     limit?: number
   }
 
   /**
-   * Tenant updateManyAndReturn
+   * Passager updateManyAndReturn
    */
-  export type TenantUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: PassagerSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
-     * The data used to update Tenants.
+     * The data used to update Passagers.
      */
-    data: XOR<TenantUpdateManyMutationInput, TenantUncheckedUpdateManyInput>
+    data: XOR<PassagerUpdateManyMutationInput, PassagerUncheckedUpdateManyInput>
     /**
-     * Filter which Tenants to update
+     * Filter which Passagers to update
      */
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
     /**
-     * Limit how many Tenants to update.
+     * Limit how many Passagers to update.
      */
     limit?: number
   }
 
   /**
-   * Tenant upsert
+   * Passager upsert
    */
-  export type TenantUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * The filter to search for the Tenant to update in case it exists.
+     * The filter to search for the Passager to update in case it exists.
      */
-    where: TenantWhereUniqueInput
+    where: PassagerWhereUniqueInput
     /**
-     * In case the Tenant found by the `where` argument doesn't exist, create a new Tenant with this data.
+     * In case the Passager found by the `where` argument doesn't exist, create a new Passager with this data.
      */
-    create: XOR<TenantCreateInput, TenantUncheckedCreateInput>
+    create: XOR<PassagerCreateInput, PassagerUncheckedCreateInput>
     /**
-     * In case the Tenant was found with the provided `where` argument, update it with this data.
+     * In case the Passager was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<TenantUpdateInput, TenantUncheckedUpdateInput>
+    update: XOR<PassagerUpdateInput, PassagerUncheckedUpdateInput>
   }
 
   /**
-   * Tenant delete
+   * Passager delete
    */
-  export type TenantDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
     /**
-     * Filter which Tenant to delete.
+     * Filter which Passager to delete.
      */
-    where: TenantWhereUniqueInput
+    where: PassagerWhereUniqueInput
   }
 
   /**
-   * Tenant deleteMany
+   * Passager deleteMany
    */
-  export type TenantDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tenants to delete
+     * Filter which Passagers to delete
      */
-    where?: TenantWhereInput
+    where?: PassagerWhereInput
     /**
-     * Limit how many Tenants to delete.
+     * Limit how many Passagers to delete.
      */
     limit?: number
   }
 
   /**
-   * Tenant.properties
+   * Passager.properties
    */
-  export type Tenant$propertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Passager$propertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Property
      */
@@ -5168,9 +5168,9 @@ export namespace Prisma {
   }
 
   /**
-   * Tenant.favorites
+   * Passager.favorites
    */
-  export type Tenant$favoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Passager$favoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Property
      */
@@ -5192,9 +5192,9 @@ export namespace Prisma {
   }
 
   /**
-   * Tenant.applications
+   * Passager.applications
    */
-  export type Tenant$applicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Passager$applicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Application
      */
@@ -5216,9 +5216,9 @@ export namespace Prisma {
   }
 
   /**
-   * Tenant.leases
+   * Passager.leases
    */
-  export type Tenant$leasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Passager$leasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Lease
      */
@@ -5240,21 +5240,21 @@ export namespace Prisma {
   }
 
   /**
-   * Tenant without action
+   * Passager without action
    */
-  export type TenantDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PassagerDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tenant
+     * Select specific fields to fetch from the Passager
      */
-    select?: TenantSelect<ExtArgs> | null
+    select?: PassagerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tenant
+     * Omit specific fields from the Passager
      */
-    omit?: TenantOmit<ExtArgs> | null
+    omit?: PassagerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: TenantInclude<ExtArgs> | null
+    include?: PassagerInclude<ExtArgs> | null
   }
 
 
@@ -6242,7 +6242,7 @@ export namespace Prisma {
     applicationDate: Date | null
     status: $Enums.ApplicationStatus | null
     propertyId: number | null
-    tenantCognitoId: string | null
+    passagerCognitoId: string | null
     name: string | null
     email: string | null
     phoneNumber: string | null
@@ -6255,7 +6255,7 @@ export namespace Prisma {
     applicationDate: Date | null
     status: $Enums.ApplicationStatus | null
     propertyId: number | null
-    tenantCognitoId: string | null
+    passagerCognitoId: string | null
     name: string | null
     email: string | null
     phoneNumber: string | null
@@ -6268,7 +6268,7 @@ export namespace Prisma {
     applicationDate: number
     status: number
     propertyId: number
-    tenantCognitoId: number
+    passagerCognitoId: number
     name: number
     email: number
     phoneNumber: number
@@ -6295,7 +6295,7 @@ export namespace Prisma {
     applicationDate?: true
     status?: true
     propertyId?: true
-    tenantCognitoId?: true
+    passagerCognitoId?: true
     name?: true
     email?: true
     phoneNumber?: true
@@ -6308,7 +6308,7 @@ export namespace Prisma {
     applicationDate?: true
     status?: true
     propertyId?: true
-    tenantCognitoId?: true
+    passagerCognitoId?: true
     name?: true
     email?: true
     phoneNumber?: true
@@ -6321,7 +6321,7 @@ export namespace Prisma {
     applicationDate?: true
     status?: true
     propertyId?: true
-    tenantCognitoId?: true
+    passagerCognitoId?: true
     name?: true
     email?: true
     phoneNumber?: true
@@ -6421,7 +6421,7 @@ export namespace Prisma {
     applicationDate: Date
     status: $Enums.ApplicationStatus
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     name: string
     email: string
     phoneNumber: string
@@ -6453,14 +6453,14 @@ export namespace Prisma {
     applicationDate?: boolean
     status?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
     message?: boolean
     leaseId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }, ExtArgs["result"]["application"]>
 
@@ -6469,14 +6469,14 @@ export namespace Prisma {
     applicationDate?: boolean
     status?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
     message?: boolean
     leaseId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }, ExtArgs["result"]["application"]>
 
@@ -6485,14 +6485,14 @@ export namespace Prisma {
     applicationDate?: boolean
     status?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
     message?: boolean
     leaseId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }, ExtArgs["result"]["application"]>
 
@@ -6501,7 +6501,7 @@ export namespace Prisma {
     applicationDate?: boolean
     status?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
@@ -6509,20 +6509,20 @@ export namespace Prisma {
     leaseId?: boolean
   }
 
-  export type ApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "applicationDate" | "status" | "propertyId" | "tenantCognitoId" | "name" | "email" | "phoneNumber" | "message" | "leaseId", ExtArgs["result"]["application"]>
+  export type ApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "applicationDate" | "status" | "propertyId" | "passagerCognitoId" | "name" | "email" | "phoneNumber" | "message" | "leaseId", ExtArgs["result"]["application"]>
   export type ApplicationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }
   export type ApplicationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }
   export type ApplicationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }
 
@@ -6530,7 +6530,7 @@ export namespace Prisma {
     name: "Application"
     objects: {
       property: Prisma.$PropertyPayload<ExtArgs>
-      tenant: Prisma.$TenantPayload<ExtArgs>
+      passager: Prisma.$PassagerPayload<ExtArgs>
       lease: Prisma.$LeasePayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -6538,7 +6538,7 @@ export namespace Prisma {
       applicationDate: Date
       status: $Enums.ApplicationStatus
       propertyId: number
-      tenantCognitoId: string
+      passagerCognitoId: string
       name: string
       email: string
       phoneNumber: string
@@ -6939,7 +6939,7 @@ export namespace Prisma {
   export interface Prisma__ApplicationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     property<T extends PropertyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PropertyDefaultArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    tenant<T extends TenantDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TenantDefaultArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    passager<T extends PassagerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PassagerDefaultArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     lease<T extends Application$leaseArgs<ExtArgs> = {}>(args?: Subset<T, Application$leaseArgs<ExtArgs>>): Prisma__LeaseClient<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -6974,7 +6974,7 @@ export namespace Prisma {
     readonly applicationDate: FieldRef<"Application", 'DateTime'>
     readonly status: FieldRef<"Application", 'ApplicationStatus'>
     readonly propertyId: FieldRef<"Application", 'Int'>
-    readonly tenantCognitoId: FieldRef<"Application", 'String'>
+    readonly passagerCognitoId: FieldRef<"Application", 'String'>
     readonly name: FieldRef<"Application", 'String'>
     readonly email: FieldRef<"Application", 'String'>
     readonly phoneNumber: FieldRef<"Application", 'String'>
@@ -7446,7 +7446,7 @@ export namespace Prisma {
     rent: number | null
     deposit: number | null
     propertyId: number | null
-    tenantCognitoId: string | null
+    passagerCognitoId: string | null
   }
 
   export type LeaseMaxAggregateOutputType = {
@@ -7456,7 +7456,7 @@ export namespace Prisma {
     rent: number | null
     deposit: number | null
     propertyId: number | null
-    tenantCognitoId: string | null
+    passagerCognitoId: string | null
   }
 
   export type LeaseCountAggregateOutputType = {
@@ -7466,7 +7466,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     propertyId: number
-    tenantCognitoId: number
+    passagerCognitoId: number
     _all: number
   }
 
@@ -7492,7 +7492,7 @@ export namespace Prisma {
     rent?: true
     deposit?: true
     propertyId?: true
-    tenantCognitoId?: true
+    passagerCognitoId?: true
   }
 
   export type LeaseMaxAggregateInputType = {
@@ -7502,7 +7502,7 @@ export namespace Prisma {
     rent?: true
     deposit?: true
     propertyId?: true
-    tenantCognitoId?: true
+    passagerCognitoId?: true
   }
 
   export type LeaseCountAggregateInputType = {
@@ -7512,7 +7512,7 @@ export namespace Prisma {
     rent?: true
     deposit?: true
     propertyId?: true
-    tenantCognitoId?: true
+    passagerCognitoId?: true
     _all?: true
   }
 
@@ -7609,7 +7609,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     _count: LeaseCountAggregateOutputType | null
     _avg: LeaseAvgAggregateOutputType | null
     _sum: LeaseSumAggregateOutputType | null
@@ -7638,9 +7638,9 @@ export namespace Prisma {
     rent?: boolean
     deposit?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     application?: boolean | Lease$applicationArgs<ExtArgs>
     payments?: boolean | Lease$paymentsArgs<ExtArgs>
     _count?: boolean | LeaseCountOutputTypeDefaultArgs<ExtArgs>
@@ -7653,9 +7653,9 @@ export namespace Prisma {
     rent?: boolean
     deposit?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["lease"]>
 
   export type LeaseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -7665,9 +7665,9 @@ export namespace Prisma {
     rent?: boolean
     deposit?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["lease"]>
 
   export type LeaseSelectScalar = {
@@ -7677,31 +7677,31 @@ export namespace Prisma {
     rent?: boolean
     deposit?: boolean
     propertyId?: boolean
-    tenantCognitoId?: boolean
+    passagerCognitoId?: boolean
   }
 
-  export type LeaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startDate" | "endDate" | "rent" | "deposit" | "propertyId" | "tenantCognitoId", ExtArgs["result"]["lease"]>
+  export type LeaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startDate" | "endDate" | "rent" | "deposit" | "propertyId" | "passagerCognitoId", ExtArgs["result"]["lease"]>
   export type LeaseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
     application?: boolean | Lease$applicationArgs<ExtArgs>
     payments?: boolean | Lease$paymentsArgs<ExtArgs>
     _count?: boolean | LeaseCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type LeaseIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }
   export type LeaseIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     property?: boolean | PropertyDefaultArgs<ExtArgs>
-    tenant?: boolean | TenantDefaultArgs<ExtArgs>
+    passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }
 
   export type $LeasePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Lease"
     objects: {
       property: Prisma.$PropertyPayload<ExtArgs>
-      tenant: Prisma.$TenantPayload<ExtArgs>
+      passager: Prisma.$PassagerPayload<ExtArgs>
       application: Prisma.$ApplicationPayload<ExtArgs> | null
       payments: Prisma.$PaymentPayload<ExtArgs>[]
     }
@@ -7712,7 +7712,7 @@ export namespace Prisma {
       rent: number
       deposit: number
       propertyId: number
-      tenantCognitoId: string
+      passagerCognitoId: string
     }, ExtArgs["result"]["lease"]>
     composites: {}
   }
@@ -8108,7 +8108,7 @@ export namespace Prisma {
   export interface Prisma__LeaseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     property<T extends PropertyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PropertyDefaultArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    tenant<T extends TenantDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TenantDefaultArgs<ExtArgs>>): Prisma__TenantClient<$Result.GetResult<Prisma.$TenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    passager<T extends PassagerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PassagerDefaultArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     application<T extends Lease$applicationArgs<ExtArgs> = {}>(args?: Subset<T, Lease$applicationArgs<ExtArgs>>): Prisma__ApplicationClient<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     payments<T extends Lease$paymentsArgs<ExtArgs> = {}>(args?: Subset<T, Lease$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
@@ -8146,7 +8146,7 @@ export namespace Prisma {
     readonly rent: FieldRef<"Lease", 'Float'>
     readonly deposit: FieldRef<"Lease", 'Float'>
     readonly propertyId: FieldRef<"Lease", 'Int'>
-    readonly tenantCognitoId: FieldRef<"Lease", 'String'>
+    readonly passagerCognitoId: FieldRef<"Lease", 'String'>
   }
     
 
@@ -9759,13 +9759,13 @@ export namespace Prisma {
     averageRating: 'averageRating',
     numberOfReviews: 'numberOfReviews',
     locationId: 'locationId',
-    managerCognitoId: 'managerCognitoId'
+    conducteurCognitoId: 'conducteurCognitoId'
   };
 
   export type PropertyScalarFieldEnum = (typeof PropertyScalarFieldEnum)[keyof typeof PropertyScalarFieldEnum]
 
 
-  export const ManagerScalarFieldEnum: {
+  export const ConducteurScalarFieldEnum: {
     id: 'id',
     cognitoId: 'cognitoId',
     name: 'name',
@@ -9773,10 +9773,10 @@ export namespace Prisma {
     phoneNumber: 'phoneNumber'
   };
 
-  export type ManagerScalarFieldEnum = (typeof ManagerScalarFieldEnum)[keyof typeof ManagerScalarFieldEnum]
+  export type ConducteurScalarFieldEnum = (typeof ConducteurScalarFieldEnum)[keyof typeof ConducteurScalarFieldEnum]
 
 
-  export const TenantScalarFieldEnum: {
+  export const PassagerScalarFieldEnum: {
     id: 'id',
     cognitoId: 'cognitoId',
     name: 'name',
@@ -9784,7 +9784,7 @@ export namespace Prisma {
     phoneNumber: 'phoneNumber'
   };
 
-  export type TenantScalarFieldEnum = (typeof TenantScalarFieldEnum)[keyof typeof TenantScalarFieldEnum]
+  export type PassagerScalarFieldEnum = (typeof PassagerScalarFieldEnum)[keyof typeof PassagerScalarFieldEnum]
 
 
   export const LocationScalarFieldEnum: {
@@ -9804,7 +9804,7 @@ export namespace Prisma {
     applicationDate: 'applicationDate',
     status: 'status',
     propertyId: 'propertyId',
-    tenantCognitoId: 'tenantCognitoId',
+    passagerCognitoId: 'passagerCognitoId',
     name: 'name',
     email: 'email',
     phoneNumber: 'phoneNumber',
@@ -9822,7 +9822,7 @@ export namespace Prisma {
     rent: 'rent',
     deposit: 'deposit',
     propertyId: 'propertyId',
-    tenantCognitoId: 'tenantCognitoId'
+    passagerCognitoId: 'passagerCognitoId'
   };
 
   export type LeaseScalarFieldEnum = (typeof LeaseScalarFieldEnum)[keyof typeof LeaseScalarFieldEnum]
@@ -9992,13 +9992,13 @@ export namespace Prisma {
     averageRating?: FloatNullableFilter<"Property"> | number | null
     numberOfReviews?: IntNullableFilter<"Property"> | number | null
     locationId?: IntFilter<"Property"> | number
-    managerCognitoId?: StringFilter<"Property"> | string
+    conducteurCognitoId?: StringFilter<"Property"> | string
     location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
-    manager?: XOR<ManagerScalarRelationFilter, ManagerWhereInput>
+    conducteur?: XOR<ConducteurScalarRelationFilter, ConducteurWhereInput>
     leases?: LeaseListRelationFilter
     applications?: ApplicationListRelationFilter
-    favoritedBy?: TenantListRelationFilter
-    tenants?: TenantListRelationFilter
+    favoritedBy?: PassagerListRelationFilter
+    passagers?: PassagerListRelationFilter
   }
 
   export type PropertyOrderByWithRelationInput = {
@@ -10012,13 +10012,13 @@ export namespace Prisma {
     averageRating?: SortOrderInput | SortOrder
     numberOfReviews?: SortOrderInput | SortOrder
     locationId?: SortOrder
-    managerCognitoId?: SortOrder
+    conducteurCognitoId?: SortOrder
     location?: LocationOrderByWithRelationInput
-    manager?: ManagerOrderByWithRelationInput
+    conducteur?: ConducteurOrderByWithRelationInput
     leases?: LeaseOrderByRelationAggregateInput
     applications?: ApplicationOrderByRelationAggregateInput
-    favoritedBy?: TenantOrderByRelationAggregateInput
-    tenants?: TenantOrderByRelationAggregateInput
+    favoritedBy?: PassagerOrderByRelationAggregateInput
+    passagers?: PassagerOrderByRelationAggregateInput
   }
 
   export type PropertyWhereUniqueInput = Prisma.AtLeast<{
@@ -10035,13 +10035,13 @@ export namespace Prisma {
     averageRating?: FloatNullableFilter<"Property"> | number | null
     numberOfReviews?: IntNullableFilter<"Property"> | number | null
     locationId?: IntFilter<"Property"> | number
-    managerCognitoId?: StringFilter<"Property"> | string
+    conducteurCognitoId?: StringFilter<"Property"> | string
     location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
-    manager?: XOR<ManagerScalarRelationFilter, ManagerWhereInput>
+    conducteur?: XOR<ConducteurScalarRelationFilter, ConducteurWhereInput>
     leases?: LeaseListRelationFilter
     applications?: ApplicationListRelationFilter
-    favoritedBy?: TenantListRelationFilter
-    tenants?: TenantListRelationFilter
+    favoritedBy?: PassagerListRelationFilter
+    passagers?: PassagerListRelationFilter
   }, "id">
 
   export type PropertyOrderByWithAggregationInput = {
@@ -10055,7 +10055,7 @@ export namespace Prisma {
     averageRating?: SortOrderInput | SortOrder
     numberOfReviews?: SortOrderInput | SortOrder
     locationId?: SortOrder
-    managerCognitoId?: SortOrder
+    conducteurCognitoId?: SortOrder
     _count?: PropertyCountOrderByAggregateInput
     _avg?: PropertyAvgOrderByAggregateInput
     _max?: PropertyMaxOrderByAggregateInput
@@ -10077,82 +10077,82 @@ export namespace Prisma {
     averageRating?: FloatNullableWithAggregatesFilter<"Property"> | number | null
     numberOfReviews?: IntNullableWithAggregatesFilter<"Property"> | number | null
     locationId?: IntWithAggregatesFilter<"Property"> | number
-    managerCognitoId?: StringWithAggregatesFilter<"Property"> | string
+    conducteurCognitoId?: StringWithAggregatesFilter<"Property"> | string
   }
 
-  export type ManagerWhereInput = {
-    AND?: ManagerWhereInput | ManagerWhereInput[]
-    OR?: ManagerWhereInput[]
-    NOT?: ManagerWhereInput | ManagerWhereInput[]
-    id?: IntFilter<"Manager"> | number
-    cognitoId?: StringFilter<"Manager"> | string
-    name?: StringFilter<"Manager"> | string
-    email?: StringFilter<"Manager"> | string
-    phoneNumber?: StringFilter<"Manager"> | string
-    managedProperties?: PropertyListRelationFilter
+  export type ConducteurWhereInput = {
+    AND?: ConducteurWhereInput | ConducteurWhereInput[]
+    OR?: ConducteurWhereInput[]
+    NOT?: ConducteurWhereInput | ConducteurWhereInput[]
+    id?: IntFilter<"Conducteur"> | number
+    cognitoId?: StringFilter<"Conducteur"> | string
+    name?: StringFilter<"Conducteur"> | string
+    email?: StringFilter<"Conducteur"> | string
+    phoneNumber?: StringFilter<"Conducteur"> | string
+    conducteurProperties?: PropertyListRelationFilter
   }
 
-  export type ManagerOrderByWithRelationInput = {
+  export type ConducteurOrderByWithRelationInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
-    managedProperties?: PropertyOrderByRelationAggregateInput
+    conducteurProperties?: PropertyOrderByRelationAggregateInput
   }
 
-  export type ManagerWhereUniqueInput = Prisma.AtLeast<{
+  export type ConducteurWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     cognitoId?: string
-    AND?: ManagerWhereInput | ManagerWhereInput[]
-    OR?: ManagerWhereInput[]
-    NOT?: ManagerWhereInput | ManagerWhereInput[]
-    name?: StringFilter<"Manager"> | string
-    email?: StringFilter<"Manager"> | string
-    phoneNumber?: StringFilter<"Manager"> | string
-    managedProperties?: PropertyListRelationFilter
+    AND?: ConducteurWhereInput | ConducteurWhereInput[]
+    OR?: ConducteurWhereInput[]
+    NOT?: ConducteurWhereInput | ConducteurWhereInput[]
+    name?: StringFilter<"Conducteur"> | string
+    email?: StringFilter<"Conducteur"> | string
+    phoneNumber?: StringFilter<"Conducteur"> | string
+    conducteurProperties?: PropertyListRelationFilter
   }, "id" | "cognitoId">
 
-  export type ManagerOrderByWithAggregationInput = {
+  export type ConducteurOrderByWithAggregationInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
-    _count?: ManagerCountOrderByAggregateInput
-    _avg?: ManagerAvgOrderByAggregateInput
-    _max?: ManagerMaxOrderByAggregateInput
-    _min?: ManagerMinOrderByAggregateInput
-    _sum?: ManagerSumOrderByAggregateInput
+    _count?: ConducteurCountOrderByAggregateInput
+    _avg?: ConducteurAvgOrderByAggregateInput
+    _max?: ConducteurMaxOrderByAggregateInput
+    _min?: ConducteurMinOrderByAggregateInput
+    _sum?: ConducteurSumOrderByAggregateInput
   }
 
-  export type ManagerScalarWhereWithAggregatesInput = {
-    AND?: ManagerScalarWhereWithAggregatesInput | ManagerScalarWhereWithAggregatesInput[]
-    OR?: ManagerScalarWhereWithAggregatesInput[]
-    NOT?: ManagerScalarWhereWithAggregatesInput | ManagerScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Manager"> | number
-    cognitoId?: StringWithAggregatesFilter<"Manager"> | string
-    name?: StringWithAggregatesFilter<"Manager"> | string
-    email?: StringWithAggregatesFilter<"Manager"> | string
-    phoneNumber?: StringWithAggregatesFilter<"Manager"> | string
+  export type ConducteurScalarWhereWithAggregatesInput = {
+    AND?: ConducteurScalarWhereWithAggregatesInput | ConducteurScalarWhereWithAggregatesInput[]
+    OR?: ConducteurScalarWhereWithAggregatesInput[]
+    NOT?: ConducteurScalarWhereWithAggregatesInput | ConducteurScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Conducteur"> | number
+    cognitoId?: StringWithAggregatesFilter<"Conducteur"> | string
+    name?: StringWithAggregatesFilter<"Conducteur"> | string
+    email?: StringWithAggregatesFilter<"Conducteur"> | string
+    phoneNumber?: StringWithAggregatesFilter<"Conducteur"> | string
   }
 
-  export type TenantWhereInput = {
-    AND?: TenantWhereInput | TenantWhereInput[]
-    OR?: TenantWhereInput[]
-    NOT?: TenantWhereInput | TenantWhereInput[]
-    id?: IntFilter<"Tenant"> | number
-    cognitoId?: StringFilter<"Tenant"> | string
-    name?: StringFilter<"Tenant"> | string
-    email?: StringFilter<"Tenant"> | string
-    phoneNumber?: StringFilter<"Tenant"> | string
+  export type PassagerWhereInput = {
+    AND?: PassagerWhereInput | PassagerWhereInput[]
+    OR?: PassagerWhereInput[]
+    NOT?: PassagerWhereInput | PassagerWhereInput[]
+    id?: IntFilter<"Passager"> | number
+    cognitoId?: StringFilter<"Passager"> | string
+    name?: StringFilter<"Passager"> | string
+    email?: StringFilter<"Passager"> | string
+    phoneNumber?: StringFilter<"Passager"> | string
     properties?: PropertyListRelationFilter
     favorites?: PropertyListRelationFilter
     applications?: ApplicationListRelationFilter
     leases?: LeaseListRelationFilter
   }
 
-  export type TenantOrderByWithRelationInput = {
+  export type PassagerOrderByWithRelationInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
@@ -10164,43 +10164,43 @@ export namespace Prisma {
     leases?: LeaseOrderByRelationAggregateInput
   }
 
-  export type TenantWhereUniqueInput = Prisma.AtLeast<{
+  export type PassagerWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     cognitoId?: string
-    AND?: TenantWhereInput | TenantWhereInput[]
-    OR?: TenantWhereInput[]
-    NOT?: TenantWhereInput | TenantWhereInput[]
-    name?: StringFilter<"Tenant"> | string
-    email?: StringFilter<"Tenant"> | string
-    phoneNumber?: StringFilter<"Tenant"> | string
+    AND?: PassagerWhereInput | PassagerWhereInput[]
+    OR?: PassagerWhereInput[]
+    NOT?: PassagerWhereInput | PassagerWhereInput[]
+    name?: StringFilter<"Passager"> | string
+    email?: StringFilter<"Passager"> | string
+    phoneNumber?: StringFilter<"Passager"> | string
     properties?: PropertyListRelationFilter
     favorites?: PropertyListRelationFilter
     applications?: ApplicationListRelationFilter
     leases?: LeaseListRelationFilter
   }, "id" | "cognitoId">
 
-  export type TenantOrderByWithAggregationInput = {
+  export type PassagerOrderByWithAggregationInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
-    _count?: TenantCountOrderByAggregateInput
-    _avg?: TenantAvgOrderByAggregateInput
-    _max?: TenantMaxOrderByAggregateInput
-    _min?: TenantMinOrderByAggregateInput
-    _sum?: TenantSumOrderByAggregateInput
+    _count?: PassagerCountOrderByAggregateInput
+    _avg?: PassagerAvgOrderByAggregateInput
+    _max?: PassagerMaxOrderByAggregateInput
+    _min?: PassagerMinOrderByAggregateInput
+    _sum?: PassagerSumOrderByAggregateInput
   }
 
-  export type TenantScalarWhereWithAggregatesInput = {
-    AND?: TenantScalarWhereWithAggregatesInput | TenantScalarWhereWithAggregatesInput[]
-    OR?: TenantScalarWhereWithAggregatesInput[]
-    NOT?: TenantScalarWhereWithAggregatesInput | TenantScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Tenant"> | number
-    cognitoId?: StringWithAggregatesFilter<"Tenant"> | string
-    name?: StringWithAggregatesFilter<"Tenant"> | string
-    email?: StringWithAggregatesFilter<"Tenant"> | string
-    phoneNumber?: StringWithAggregatesFilter<"Tenant"> | string
+  export type PassagerScalarWhereWithAggregatesInput = {
+    AND?: PassagerScalarWhereWithAggregatesInput | PassagerScalarWhereWithAggregatesInput[]
+    OR?: PassagerScalarWhereWithAggregatesInput[]
+    NOT?: PassagerScalarWhereWithAggregatesInput | PassagerScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Passager"> | number
+    cognitoId?: StringWithAggregatesFilter<"Passager"> | string
+    name?: StringWithAggregatesFilter<"Passager"> | string
+    email?: StringWithAggregatesFilter<"Passager"> | string
+    phoneNumber?: StringWithAggregatesFilter<"Passager"> | string
   }
 
   export type LocationWhereInput = {
@@ -10273,14 +10273,14 @@ export namespace Prisma {
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
     propertyId?: IntFilter<"Application"> | number
-    tenantCognitoId?: StringFilter<"Application"> | string
+    passagerCognitoId?: StringFilter<"Application"> | string
     name?: StringFilter<"Application"> | string
     email?: StringFilter<"Application"> | string
     phoneNumber?: StringFilter<"Application"> | string
     message?: StringNullableFilter<"Application"> | string | null
     leaseId?: IntNullableFilter<"Application"> | number | null
     property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
-    tenant?: XOR<TenantScalarRelationFilter, TenantWhereInput>
+    passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     lease?: XOR<LeaseNullableScalarRelationFilter, LeaseWhereInput> | null
   }
 
@@ -10289,14 +10289,14 @@ export namespace Prisma {
     applicationDate?: SortOrder
     status?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
     message?: SortOrderInput | SortOrder
     leaseId?: SortOrderInput | SortOrder
     property?: PropertyOrderByWithRelationInput
-    tenant?: TenantOrderByWithRelationInput
+    passager?: PassagerOrderByWithRelationInput
     lease?: LeaseOrderByWithRelationInput
   }
 
@@ -10309,13 +10309,13 @@ export namespace Prisma {
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
     propertyId?: IntFilter<"Application"> | number
-    tenantCognitoId?: StringFilter<"Application"> | string
+    passagerCognitoId?: StringFilter<"Application"> | string
     name?: StringFilter<"Application"> | string
     email?: StringFilter<"Application"> | string
     phoneNumber?: StringFilter<"Application"> | string
     message?: StringNullableFilter<"Application"> | string | null
     property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
-    tenant?: XOR<TenantScalarRelationFilter, TenantWhereInput>
+    passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     lease?: XOR<LeaseNullableScalarRelationFilter, LeaseWhereInput> | null
   }, "id" | "leaseId">
 
@@ -10324,7 +10324,7 @@ export namespace Prisma {
     applicationDate?: SortOrder
     status?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
@@ -10345,7 +10345,7 @@ export namespace Prisma {
     applicationDate?: DateTimeWithAggregatesFilter<"Application"> | Date | string
     status?: EnumApplicationStatusWithAggregatesFilter<"Application"> | $Enums.ApplicationStatus
     propertyId?: IntWithAggregatesFilter<"Application"> | number
-    tenantCognitoId?: StringWithAggregatesFilter<"Application"> | string
+    passagerCognitoId?: StringWithAggregatesFilter<"Application"> | string
     name?: StringWithAggregatesFilter<"Application"> | string
     email?: StringWithAggregatesFilter<"Application"> | string
     phoneNumber?: StringWithAggregatesFilter<"Application"> | string
@@ -10363,9 +10363,9 @@ export namespace Prisma {
     rent?: FloatFilter<"Lease"> | number
     deposit?: FloatFilter<"Lease"> | number
     propertyId?: IntFilter<"Lease"> | number
-    tenantCognitoId?: StringFilter<"Lease"> | string
+    passagerCognitoId?: StringFilter<"Lease"> | string
     property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
-    tenant?: XOR<TenantScalarRelationFilter, TenantWhereInput>
+    passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     application?: XOR<ApplicationNullableScalarRelationFilter, ApplicationWhereInput> | null
     payments?: PaymentListRelationFilter
   }
@@ -10377,9 +10377,9 @@ export namespace Prisma {
     rent?: SortOrder
     deposit?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
     property?: PropertyOrderByWithRelationInput
-    tenant?: TenantOrderByWithRelationInput
+    passager?: PassagerOrderByWithRelationInput
     application?: ApplicationOrderByWithRelationInput
     payments?: PaymentOrderByRelationAggregateInput
   }
@@ -10394,9 +10394,9 @@ export namespace Prisma {
     rent?: FloatFilter<"Lease"> | number
     deposit?: FloatFilter<"Lease"> | number
     propertyId?: IntFilter<"Lease"> | number
-    tenantCognitoId?: StringFilter<"Lease"> | string
+    passagerCognitoId?: StringFilter<"Lease"> | string
     property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
-    tenant?: XOR<TenantScalarRelationFilter, TenantWhereInput>
+    passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     application?: XOR<ApplicationNullableScalarRelationFilter, ApplicationWhereInput> | null
     payments?: PaymentListRelationFilter
   }, "id">
@@ -10408,7 +10408,7 @@ export namespace Prisma {
     rent?: SortOrder
     deposit?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
     _count?: LeaseCountOrderByAggregateInput
     _avg?: LeaseAvgOrderByAggregateInput
     _max?: LeaseMaxOrderByAggregateInput
@@ -10426,7 +10426,7 @@ export namespace Prisma {
     rent?: FloatWithAggregatesFilter<"Lease"> | number
     deposit?: FloatWithAggregatesFilter<"Lease"> | number
     propertyId?: IntWithAggregatesFilter<"Lease"> | number
-    tenantCognitoId?: StringWithAggregatesFilter<"Lease"> | string
+    passagerCognitoId?: StringWithAggregatesFilter<"Lease"> | string
   }
 
   export type PaymentWhereInput = {
@@ -10506,11 +10506,11 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     location: LocationCreateNestedOneWithoutPropertiesInput
-    manager: ManagerCreateNestedOneWithoutManagedPropertiesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
     leases?: LeaseCreateNestedManyWithoutPropertyInput
     applications?: ApplicationCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyUncheckedCreateInput = {
@@ -10524,11 +10524,11 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     locationId: number
-    managerCognitoId: string
+    conducteurCognitoId: string
     leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantUncheckedCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantUncheckedCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyUpdateInput = {
@@ -10541,11 +10541,11 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    manager?: ManagerUpdateOneRequiredWithoutManagedPropertiesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
     leases?: LeaseUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyUncheckedUpdateInput = {
@@ -10559,11 +10559,11 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
     leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUncheckedUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUncheckedUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyCreateManyInput = {
@@ -10577,7 +10577,7 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     locationId: number
-    managerCognitoId: string
+    conducteurCognitoId: string
   }
 
   export type PropertyUpdateManyMutationInput = {
@@ -10602,44 +10602,44 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ManagerCreateInput = {
+  export type ConducteurCreateInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    managedProperties?: PropertyCreateNestedManyWithoutManagerInput
+    conducteurProperties?: PropertyCreateNestedManyWithoutConducteurInput
   }
 
-  export type ManagerUncheckedCreateInput = {
+  export type ConducteurUncheckedCreateInput = {
     id?: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    managedProperties?: PropertyUncheckedCreateNestedManyWithoutManagerInput
+    conducteurProperties?: PropertyUncheckedCreateNestedManyWithoutConducteurInput
   }
 
-  export type ManagerUpdateInput = {
+  export type ConducteurUpdateInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    managedProperties?: PropertyUpdateManyWithoutManagerNestedInput
+    conducteurProperties?: PropertyUpdateManyWithoutConducteurNestedInput
   }
 
-  export type ManagerUncheckedUpdateInput = {
+  export type ConducteurUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    managedProperties?: PropertyUncheckedUpdateManyWithoutManagerNestedInput
+    conducteurProperties?: PropertyUncheckedUpdateManyWithoutConducteurNestedInput
   }
 
-  export type ManagerCreateManyInput = {
+  export type ConducteurCreateManyInput = {
     id?: number
     cognitoId: string
     name: string
@@ -10647,14 +10647,14 @@ export namespace Prisma {
     phoneNumber: string
   }
 
-  export type ManagerUpdateManyMutationInput = {
+  export type ConducteurUpdateManyMutationInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ManagerUncheckedUpdateManyInput = {
+  export type ConducteurUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -10662,53 +10662,53 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type TenantCreateInput = {
+  export type PassagerCreateInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutTenantsInput
+    properties?: PropertyCreateNestedManyWithoutPassagersInput
     favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
-    applications?: ApplicationCreateNestedManyWithoutTenantInput
-    leases?: LeaseCreateNestedManyWithoutTenantInput
+    applications?: ApplicationCreateNestedManyWithoutPassagerInput
+    leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantUncheckedCreateInput = {
+  export type PassagerUncheckedCreateInput = {
     id?: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutTenantsInput
+    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
     favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutTenantInput
-    leases?: LeaseUncheckedCreateNestedManyWithoutTenantInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantUpdateInput = {
+  export type PassagerUpdateInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutTenantsNestedInput
+    properties?: PropertyUpdateManyWithoutPassagersNestedInput
     favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
-    applications?: ApplicationUpdateManyWithoutTenantNestedInput
-    leases?: LeaseUpdateManyWithoutTenantNestedInput
+    applications?: ApplicationUpdateManyWithoutPassagerNestedInput
+    leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantUncheckedUpdateInput = {
+  export type PassagerUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutTenantsNestedInput
+    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
     favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutTenantNestedInput
-    leases?: LeaseUncheckedUpdateManyWithoutTenantNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantCreateManyInput = {
+  export type PassagerCreateManyInput = {
     id?: number
     cognitoId: string
     name: string
@@ -10716,14 +10716,14 @@ export namespace Prisma {
     phoneNumber: string
   }
 
-  export type TenantUpdateManyMutationInput = {
+  export type PassagerUpdateManyMutationInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type TenantUncheckedUpdateManyInput = {
+  export type PassagerUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -10775,7 +10775,7 @@ export namespace Prisma {
     phoneNumber: string
     message?: string | null
     property: PropertyCreateNestedOneWithoutApplicationsInput
-    tenant: TenantCreateNestedOneWithoutApplicationsInput
+    passager: PassagerCreateNestedOneWithoutApplicationsInput
     lease?: LeaseCreateNestedOneWithoutApplicationInput
   }
 
@@ -10784,7 +10784,7 @@ export namespace Prisma {
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     name: string
     email: string
     phoneNumber: string
@@ -10800,7 +10800,7 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
     message?: NullableStringFieldUpdateOperationsInput | string | null
     property?: PropertyUpdateOneRequiredWithoutApplicationsNestedInput
-    tenant?: TenantUpdateOneRequiredWithoutApplicationsNestedInput
+    passager?: PassagerUpdateOneRequiredWithoutApplicationsNestedInput
     lease?: LeaseUpdateOneWithoutApplicationNestedInput
   }
 
@@ -10809,7 +10809,7 @@ export namespace Prisma {
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
     propertyId?: IntFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -10822,7 +10822,7 @@ export namespace Prisma {
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     name: string
     email: string
     phoneNumber: string
@@ -10844,7 +10844,7 @@ export namespace Prisma {
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
     propertyId?: IntFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -10858,7 +10858,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     property: PropertyCreateNestedOneWithoutLeasesInput
-    tenant: TenantCreateNestedOneWithoutLeasesInput
+    passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
   }
@@ -10870,7 +10870,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
   }
@@ -10881,7 +10881,7 @@ export namespace Prisma {
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
     property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
-    tenant?: TenantUpdateOneRequiredWithoutLeasesNestedInput
+    passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
   }
@@ -10893,7 +10893,7 @@ export namespace Prisma {
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
   }
@@ -10905,7 +10905,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
   }
 
   export type LeaseUpdateManyMutationInput = {
@@ -10922,7 +10922,7 @@ export namespace Prisma {
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
   export type PaymentCreateInput = {
@@ -11075,9 +11075,9 @@ export namespace Prisma {
     isNot?: LocationWhereInput
   }
 
-  export type ManagerScalarRelationFilter = {
-    is?: ManagerWhereInput
-    isNot?: ManagerWhereInput
+  export type ConducteurScalarRelationFilter = {
+    is?: ConducteurWhereInput
+    isNot?: ConducteurWhereInput
   }
 
   export type LeaseListRelationFilter = {
@@ -11092,10 +11092,10 @@ export namespace Prisma {
     none?: ApplicationWhereInput
   }
 
-  export type TenantListRelationFilter = {
-    every?: TenantWhereInput
-    some?: TenantWhereInput
-    none?: TenantWhereInput
+  export type PassagerListRelationFilter = {
+    every?: PassagerWhereInput
+    some?: PassagerWhereInput
+    none?: PassagerWhereInput
   }
 
   export type SortOrderInput = {
@@ -11111,7 +11111,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type TenantOrderByRelationAggregateInput = {
+  export type PassagerOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -11126,7 +11126,7 @@ export namespace Prisma {
     averageRating?: SortOrder
     numberOfReviews?: SortOrder
     locationId?: SortOrder
-    managerCognitoId?: SortOrder
+    conducteurCognitoId?: SortOrder
   }
 
   export type PropertyAvgOrderByAggregateInput = {
@@ -11146,7 +11146,7 @@ export namespace Prisma {
     averageRating?: SortOrder
     numberOfReviews?: SortOrder
     locationId?: SortOrder
-    managerCognitoId?: SortOrder
+    conducteurCognitoId?: SortOrder
   }
 
   export type PropertyMinOrderByAggregateInput = {
@@ -11159,7 +11159,7 @@ export namespace Prisma {
     averageRating?: SortOrder
     numberOfReviews?: SortOrder
     locationId?: SortOrder
-    managerCognitoId?: SortOrder
+    conducteurCognitoId?: SortOrder
   }
 
   export type PropertySumOrderByAggregateInput = {
@@ -11277,7 +11277,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type ManagerCountOrderByAggregateInput = {
+  export type ConducteurCountOrderByAggregateInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
@@ -11285,19 +11285,11 @@ export namespace Prisma {
     phoneNumber?: SortOrder
   }
 
-  export type ManagerAvgOrderByAggregateInput = {
+  export type ConducteurAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type ManagerMaxOrderByAggregateInput = {
-    id?: SortOrder
-    cognitoId?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    phoneNumber?: SortOrder
-  }
-
-  export type ManagerMinOrderByAggregateInput = {
+  export type ConducteurMaxOrderByAggregateInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
@@ -11305,11 +11297,7 @@ export namespace Prisma {
     phoneNumber?: SortOrder
   }
 
-  export type ManagerSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type TenantCountOrderByAggregateInput = {
+  export type ConducteurMinOrderByAggregateInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
@@ -11317,19 +11305,11 @@ export namespace Prisma {
     phoneNumber?: SortOrder
   }
 
-  export type TenantAvgOrderByAggregateInput = {
+  export type ConducteurSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type TenantMaxOrderByAggregateInput = {
-    id?: SortOrder
-    cognitoId?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    phoneNumber?: SortOrder
-  }
-
-  export type TenantMinOrderByAggregateInput = {
+  export type PassagerCountOrderByAggregateInput = {
     id?: SortOrder
     cognitoId?: SortOrder
     name?: SortOrder
@@ -11337,7 +11317,27 @@ export namespace Prisma {
     phoneNumber?: SortOrder
   }
 
-  export type TenantSumOrderByAggregateInput = {
+  export type PassagerAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type PassagerMaxOrderByAggregateInput = {
+    id?: SortOrder
+    cognitoId?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    phoneNumber?: SortOrder
+  }
+
+  export type PassagerMinOrderByAggregateInput = {
+    id?: SortOrder
+    cognitoId?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    phoneNumber?: SortOrder
+  }
+
+  export type PassagerSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -11403,9 +11403,9 @@ export namespace Prisma {
     isNot?: PropertyWhereInput
   }
 
-  export type TenantScalarRelationFilter = {
-    is?: TenantWhereInput
-    isNot?: TenantWhereInput
+  export type PassagerScalarRelationFilter = {
+    is?: PassagerWhereInput
+    isNot?: PassagerWhereInput
   }
 
   export type LeaseNullableScalarRelationFilter = {
@@ -11418,7 +11418,7 @@ export namespace Prisma {
     applicationDate?: SortOrder
     status?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
@@ -11437,7 +11437,7 @@ export namespace Prisma {
     applicationDate?: SortOrder
     status?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
@@ -11450,7 +11450,7 @@ export namespace Prisma {
     applicationDate?: SortOrder
     status?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
@@ -11525,7 +11525,7 @@ export namespace Prisma {
     rent?: SortOrder
     deposit?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
   }
 
   export type LeaseAvgOrderByAggregateInput = {
@@ -11542,7 +11542,7 @@ export namespace Prisma {
     rent?: SortOrder
     deposit?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
   }
 
   export type LeaseMinOrderByAggregateInput = {
@@ -11552,7 +11552,7 @@ export namespace Prisma {
     rent?: SortOrder
     deposit?: SortOrder
     propertyId?: SortOrder
-    tenantCognitoId?: SortOrder
+    passagerCognitoId?: SortOrder
   }
 
   export type LeaseSumOrderByAggregateInput = {
@@ -11652,10 +11652,10 @@ export namespace Prisma {
     connect?: LocationWhereUniqueInput
   }
 
-  export type ManagerCreateNestedOneWithoutManagedPropertiesInput = {
-    create?: XOR<ManagerCreateWithoutManagedPropertiesInput, ManagerUncheckedCreateWithoutManagedPropertiesInput>
-    connectOrCreate?: ManagerCreateOrConnectWithoutManagedPropertiesInput
-    connect?: ManagerWhereUniqueInput
+  export type ConducteurCreateNestedOneWithoutConducteurPropertiesInput = {
+    create?: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
+    connectOrCreate?: ConducteurCreateOrConnectWithoutConducteurPropertiesInput
+    connect?: ConducteurWhereUniqueInput
   }
 
   export type LeaseCreateNestedManyWithoutPropertyInput = {
@@ -11672,16 +11672,16 @@ export namespace Prisma {
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
   }
 
-  export type TenantCreateNestedManyWithoutFavoritesInput = {
-    create?: XOR<TenantCreateWithoutFavoritesInput, TenantUncheckedCreateWithoutFavoritesInput> | TenantCreateWithoutFavoritesInput[] | TenantUncheckedCreateWithoutFavoritesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutFavoritesInput | TenantCreateOrConnectWithoutFavoritesInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
+  export type PassagerCreateNestedManyWithoutFavoritesInput = {
+    create?: XOR<PassagerCreateWithoutFavoritesInput, PassagerUncheckedCreateWithoutFavoritesInput> | PassagerCreateWithoutFavoritesInput[] | PassagerUncheckedCreateWithoutFavoritesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutFavoritesInput | PassagerCreateOrConnectWithoutFavoritesInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
-  export type TenantCreateNestedManyWithoutPropertiesInput = {
-    create?: XOR<TenantCreateWithoutPropertiesInput, TenantUncheckedCreateWithoutPropertiesInput> | TenantCreateWithoutPropertiesInput[] | TenantUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutPropertiesInput | TenantCreateOrConnectWithoutPropertiesInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
+  export type PassagerCreateNestedManyWithoutPropertiesInput = {
+    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
   export type LeaseUncheckedCreateNestedManyWithoutPropertyInput = {
@@ -11698,16 +11698,16 @@ export namespace Prisma {
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
   }
 
-  export type TenantUncheckedCreateNestedManyWithoutFavoritesInput = {
-    create?: XOR<TenantCreateWithoutFavoritesInput, TenantUncheckedCreateWithoutFavoritesInput> | TenantCreateWithoutFavoritesInput[] | TenantUncheckedCreateWithoutFavoritesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutFavoritesInput | TenantCreateOrConnectWithoutFavoritesInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
+  export type PassagerUncheckedCreateNestedManyWithoutFavoritesInput = {
+    create?: XOR<PassagerCreateWithoutFavoritesInput, PassagerUncheckedCreateWithoutFavoritesInput> | PassagerCreateWithoutFavoritesInput[] | PassagerUncheckedCreateWithoutFavoritesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutFavoritesInput | PassagerCreateOrConnectWithoutFavoritesInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
-  export type TenantUncheckedCreateNestedManyWithoutPropertiesInput = {
-    create?: XOR<TenantCreateWithoutPropertiesInput, TenantUncheckedCreateWithoutPropertiesInput> | TenantCreateWithoutPropertiesInput[] | TenantUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutPropertiesInput | TenantCreateOrConnectWithoutPropertiesInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
+  export type PassagerUncheckedCreateNestedManyWithoutPropertiesInput = {
+    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -11752,12 +11752,12 @@ export namespace Prisma {
     update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutPropertiesInput, LocationUpdateWithoutPropertiesInput>, LocationUncheckedUpdateWithoutPropertiesInput>
   }
 
-  export type ManagerUpdateOneRequiredWithoutManagedPropertiesNestedInput = {
-    create?: XOR<ManagerCreateWithoutManagedPropertiesInput, ManagerUncheckedCreateWithoutManagedPropertiesInput>
-    connectOrCreate?: ManagerCreateOrConnectWithoutManagedPropertiesInput
-    upsert?: ManagerUpsertWithoutManagedPropertiesInput
-    connect?: ManagerWhereUniqueInput
-    update?: XOR<XOR<ManagerUpdateToOneWithWhereWithoutManagedPropertiesInput, ManagerUpdateWithoutManagedPropertiesInput>, ManagerUncheckedUpdateWithoutManagedPropertiesInput>
+  export type ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput = {
+    create?: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
+    connectOrCreate?: ConducteurCreateOrConnectWithoutConducteurPropertiesInput
+    upsert?: ConducteurUpsertWithoutConducteurPropertiesInput
+    connect?: ConducteurWhereUniqueInput
+    update?: XOR<XOR<ConducteurUpdateToOneWithWhereWithoutConducteurPropertiesInput, ConducteurUpdateWithoutConducteurPropertiesInput>, ConducteurUncheckedUpdateWithoutConducteurPropertiesInput>
   }
 
   export type LeaseUpdateManyWithoutPropertyNestedInput = {
@@ -11788,30 +11788,30 @@ export namespace Prisma {
     deleteMany?: ApplicationScalarWhereInput | ApplicationScalarWhereInput[]
   }
 
-  export type TenantUpdateManyWithoutFavoritesNestedInput = {
-    create?: XOR<TenantCreateWithoutFavoritesInput, TenantUncheckedCreateWithoutFavoritesInput> | TenantCreateWithoutFavoritesInput[] | TenantUncheckedCreateWithoutFavoritesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutFavoritesInput | TenantCreateOrConnectWithoutFavoritesInput[]
-    upsert?: TenantUpsertWithWhereUniqueWithoutFavoritesInput | TenantUpsertWithWhereUniqueWithoutFavoritesInput[]
-    set?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    disconnect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    delete?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    update?: TenantUpdateWithWhereUniqueWithoutFavoritesInput | TenantUpdateWithWhereUniqueWithoutFavoritesInput[]
-    updateMany?: TenantUpdateManyWithWhereWithoutFavoritesInput | TenantUpdateManyWithWhereWithoutFavoritesInput[]
-    deleteMany?: TenantScalarWhereInput | TenantScalarWhereInput[]
+  export type PassagerUpdateManyWithoutFavoritesNestedInput = {
+    create?: XOR<PassagerCreateWithoutFavoritesInput, PassagerUncheckedCreateWithoutFavoritesInput> | PassagerCreateWithoutFavoritesInput[] | PassagerUncheckedCreateWithoutFavoritesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutFavoritesInput | PassagerCreateOrConnectWithoutFavoritesInput[]
+    upsert?: PassagerUpsertWithWhereUniqueWithoutFavoritesInput | PassagerUpsertWithWhereUniqueWithoutFavoritesInput[]
+    set?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    disconnect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    delete?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    update?: PassagerUpdateWithWhereUniqueWithoutFavoritesInput | PassagerUpdateWithWhereUniqueWithoutFavoritesInput[]
+    updateMany?: PassagerUpdateManyWithWhereWithoutFavoritesInput | PassagerUpdateManyWithWhereWithoutFavoritesInput[]
+    deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
-  export type TenantUpdateManyWithoutPropertiesNestedInput = {
-    create?: XOR<TenantCreateWithoutPropertiesInput, TenantUncheckedCreateWithoutPropertiesInput> | TenantCreateWithoutPropertiesInput[] | TenantUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutPropertiesInput | TenantCreateOrConnectWithoutPropertiesInput[]
-    upsert?: TenantUpsertWithWhereUniqueWithoutPropertiesInput | TenantUpsertWithWhereUniqueWithoutPropertiesInput[]
-    set?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    disconnect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    delete?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    update?: TenantUpdateWithWhereUniqueWithoutPropertiesInput | TenantUpdateWithWhereUniqueWithoutPropertiesInput[]
-    updateMany?: TenantUpdateManyWithWhereWithoutPropertiesInput | TenantUpdateManyWithWhereWithoutPropertiesInput[]
-    deleteMany?: TenantScalarWhereInput | TenantScalarWhereInput[]
+  export type PassagerUpdateManyWithoutPropertiesNestedInput = {
+    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
+    upsert?: PassagerUpsertWithWhereUniqueWithoutPropertiesInput | PassagerUpsertWithWhereUniqueWithoutPropertiesInput[]
+    set?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    disconnect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    delete?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    update?: PassagerUpdateWithWhereUniqueWithoutPropertiesInput | PassagerUpdateWithWhereUniqueWithoutPropertiesInput[]
+    updateMany?: PassagerUpdateManyWithWhereWithoutPropertiesInput | PassagerUpdateManyWithWhereWithoutPropertiesInput[]
+    deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -11850,77 +11850,77 @@ export namespace Prisma {
     deleteMany?: ApplicationScalarWhereInput | ApplicationScalarWhereInput[]
   }
 
-  export type TenantUncheckedUpdateManyWithoutFavoritesNestedInput = {
-    create?: XOR<TenantCreateWithoutFavoritesInput, TenantUncheckedCreateWithoutFavoritesInput> | TenantCreateWithoutFavoritesInput[] | TenantUncheckedCreateWithoutFavoritesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutFavoritesInput | TenantCreateOrConnectWithoutFavoritesInput[]
-    upsert?: TenantUpsertWithWhereUniqueWithoutFavoritesInput | TenantUpsertWithWhereUniqueWithoutFavoritesInput[]
-    set?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    disconnect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    delete?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    update?: TenantUpdateWithWhereUniqueWithoutFavoritesInput | TenantUpdateWithWhereUniqueWithoutFavoritesInput[]
-    updateMany?: TenantUpdateManyWithWhereWithoutFavoritesInput | TenantUpdateManyWithWhereWithoutFavoritesInput[]
-    deleteMany?: TenantScalarWhereInput | TenantScalarWhereInput[]
+  export type PassagerUncheckedUpdateManyWithoutFavoritesNestedInput = {
+    create?: XOR<PassagerCreateWithoutFavoritesInput, PassagerUncheckedCreateWithoutFavoritesInput> | PassagerCreateWithoutFavoritesInput[] | PassagerUncheckedCreateWithoutFavoritesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutFavoritesInput | PassagerCreateOrConnectWithoutFavoritesInput[]
+    upsert?: PassagerUpsertWithWhereUniqueWithoutFavoritesInput | PassagerUpsertWithWhereUniqueWithoutFavoritesInput[]
+    set?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    disconnect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    delete?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    update?: PassagerUpdateWithWhereUniqueWithoutFavoritesInput | PassagerUpdateWithWhereUniqueWithoutFavoritesInput[]
+    updateMany?: PassagerUpdateManyWithWhereWithoutFavoritesInput | PassagerUpdateManyWithWhereWithoutFavoritesInput[]
+    deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
-  export type TenantUncheckedUpdateManyWithoutPropertiesNestedInput = {
-    create?: XOR<TenantCreateWithoutPropertiesInput, TenantUncheckedCreateWithoutPropertiesInput> | TenantCreateWithoutPropertiesInput[] | TenantUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: TenantCreateOrConnectWithoutPropertiesInput | TenantCreateOrConnectWithoutPropertiesInput[]
-    upsert?: TenantUpsertWithWhereUniqueWithoutPropertiesInput | TenantUpsertWithWhereUniqueWithoutPropertiesInput[]
-    set?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    disconnect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    delete?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    connect?: TenantWhereUniqueInput | TenantWhereUniqueInput[]
-    update?: TenantUpdateWithWhereUniqueWithoutPropertiesInput | TenantUpdateWithWhereUniqueWithoutPropertiesInput[]
-    updateMany?: TenantUpdateManyWithWhereWithoutPropertiesInput | TenantUpdateManyWithWhereWithoutPropertiesInput[]
-    deleteMany?: TenantScalarWhereInput | TenantScalarWhereInput[]
+  export type PassagerUncheckedUpdateManyWithoutPropertiesNestedInput = {
+    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
+    upsert?: PassagerUpsertWithWhereUniqueWithoutPropertiesInput | PassagerUpsertWithWhereUniqueWithoutPropertiesInput[]
+    set?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    disconnect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    delete?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
+    update?: PassagerUpdateWithWhereUniqueWithoutPropertiesInput | PassagerUpdateWithWhereUniqueWithoutPropertiesInput[]
+    updateMany?: PassagerUpdateManyWithWhereWithoutPropertiesInput | PassagerUpdateManyWithWhereWithoutPropertiesInput[]
+    deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
-  export type PropertyCreateNestedManyWithoutManagerInput = {
-    create?: XOR<PropertyCreateWithoutManagerInput, PropertyUncheckedCreateWithoutManagerInput> | PropertyCreateWithoutManagerInput[] | PropertyUncheckedCreateWithoutManagerInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutManagerInput | PropertyCreateOrConnectWithoutManagerInput[]
-    createMany?: PropertyCreateManyManagerInputEnvelope
+  export type PropertyCreateNestedManyWithoutConducteurInput = {
+    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
+    createMany?: PropertyCreateManyConducteurInputEnvelope
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
   }
 
-  export type PropertyUncheckedCreateNestedManyWithoutManagerInput = {
-    create?: XOR<PropertyCreateWithoutManagerInput, PropertyUncheckedCreateWithoutManagerInput> | PropertyCreateWithoutManagerInput[] | PropertyUncheckedCreateWithoutManagerInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutManagerInput | PropertyCreateOrConnectWithoutManagerInput[]
-    createMany?: PropertyCreateManyManagerInputEnvelope
+  export type PropertyUncheckedCreateNestedManyWithoutConducteurInput = {
+    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
+    createMany?: PropertyCreateManyConducteurInputEnvelope
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
   }
 
-  export type PropertyUpdateManyWithoutManagerNestedInput = {
-    create?: XOR<PropertyCreateWithoutManagerInput, PropertyUncheckedCreateWithoutManagerInput> | PropertyCreateWithoutManagerInput[] | PropertyUncheckedCreateWithoutManagerInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutManagerInput | PropertyCreateOrConnectWithoutManagerInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutManagerInput | PropertyUpsertWithWhereUniqueWithoutManagerInput[]
-    createMany?: PropertyCreateManyManagerInputEnvelope
+  export type PropertyUpdateManyWithoutConducteurNestedInput = {
+    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
+    upsert?: PropertyUpsertWithWhereUniqueWithoutConducteurInput | PropertyUpsertWithWhereUniqueWithoutConducteurInput[]
+    createMany?: PropertyCreateManyConducteurInputEnvelope
     set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutManagerInput | PropertyUpdateWithWhereUniqueWithoutManagerInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutManagerInput | PropertyUpdateManyWithWhereWithoutManagerInput[]
+    update?: PropertyUpdateWithWhereUniqueWithoutConducteurInput | PropertyUpdateWithWhereUniqueWithoutConducteurInput[]
+    updateMany?: PropertyUpdateManyWithWhereWithoutConducteurInput | PropertyUpdateManyWithWhereWithoutConducteurInput[]
     deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
   }
 
-  export type PropertyUncheckedUpdateManyWithoutManagerNestedInput = {
-    create?: XOR<PropertyCreateWithoutManagerInput, PropertyUncheckedCreateWithoutManagerInput> | PropertyCreateWithoutManagerInput[] | PropertyUncheckedCreateWithoutManagerInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutManagerInput | PropertyCreateOrConnectWithoutManagerInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutManagerInput | PropertyUpsertWithWhereUniqueWithoutManagerInput[]
-    createMany?: PropertyCreateManyManagerInputEnvelope
+  export type PropertyUncheckedUpdateManyWithoutConducteurNestedInput = {
+    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
+    upsert?: PropertyUpsertWithWhereUniqueWithoutConducteurInput | PropertyUpsertWithWhereUniqueWithoutConducteurInput[]
+    createMany?: PropertyCreateManyConducteurInputEnvelope
     set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutManagerInput | PropertyUpdateWithWhereUniqueWithoutManagerInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutManagerInput | PropertyUpdateManyWithWhereWithoutManagerInput[]
+    update?: PropertyUpdateWithWhereUniqueWithoutConducteurInput | PropertyUpdateWithWhereUniqueWithoutConducteurInput[]
+    updateMany?: PropertyUpdateManyWithWhereWithoutConducteurInput | PropertyUpdateManyWithWhereWithoutConducteurInput[]
     deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
   }
 
-  export type PropertyCreateNestedManyWithoutTenantsInput = {
-    create?: XOR<PropertyCreateWithoutTenantsInput, PropertyUncheckedCreateWithoutTenantsInput> | PropertyCreateWithoutTenantsInput[] | PropertyUncheckedCreateWithoutTenantsInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutTenantsInput | PropertyCreateOrConnectWithoutTenantsInput[]
+  export type PropertyCreateNestedManyWithoutPassagersInput = {
+    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
   }
 
@@ -11930,23 +11930,23 @@ export namespace Prisma {
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
   }
 
-  export type ApplicationCreateNestedManyWithoutTenantInput = {
-    create?: XOR<ApplicationCreateWithoutTenantInput, ApplicationUncheckedCreateWithoutTenantInput> | ApplicationCreateWithoutTenantInput[] | ApplicationUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutTenantInput | ApplicationCreateOrConnectWithoutTenantInput[]
-    createMany?: ApplicationCreateManyTenantInputEnvelope
+  export type ApplicationCreateNestedManyWithoutPassagerInput = {
+    create?: XOR<ApplicationCreateWithoutPassagerInput, ApplicationUncheckedCreateWithoutPassagerInput> | ApplicationCreateWithoutPassagerInput[] | ApplicationUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutPassagerInput | ApplicationCreateOrConnectWithoutPassagerInput[]
+    createMany?: ApplicationCreateManyPassagerInputEnvelope
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
   }
 
-  export type LeaseCreateNestedManyWithoutTenantInput = {
-    create?: XOR<LeaseCreateWithoutTenantInput, LeaseUncheckedCreateWithoutTenantInput> | LeaseCreateWithoutTenantInput[] | LeaseUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutTenantInput | LeaseCreateOrConnectWithoutTenantInput[]
-    createMany?: LeaseCreateManyTenantInputEnvelope
+  export type LeaseCreateNestedManyWithoutPassagerInput = {
+    create?: XOR<LeaseCreateWithoutPassagerInput, LeaseUncheckedCreateWithoutPassagerInput> | LeaseCreateWithoutPassagerInput[] | LeaseUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutPassagerInput | LeaseCreateOrConnectWithoutPassagerInput[]
+    createMany?: LeaseCreateManyPassagerInputEnvelope
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
   }
 
-  export type PropertyUncheckedCreateNestedManyWithoutTenantsInput = {
-    create?: XOR<PropertyCreateWithoutTenantsInput, PropertyUncheckedCreateWithoutTenantsInput> | PropertyCreateWithoutTenantsInput[] | PropertyUncheckedCreateWithoutTenantsInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutTenantsInput | PropertyCreateOrConnectWithoutTenantsInput[]
+  export type PropertyUncheckedCreateNestedManyWithoutPassagersInput = {
+    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
   }
 
@@ -11956,30 +11956,30 @@ export namespace Prisma {
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
   }
 
-  export type ApplicationUncheckedCreateNestedManyWithoutTenantInput = {
-    create?: XOR<ApplicationCreateWithoutTenantInput, ApplicationUncheckedCreateWithoutTenantInput> | ApplicationCreateWithoutTenantInput[] | ApplicationUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutTenantInput | ApplicationCreateOrConnectWithoutTenantInput[]
-    createMany?: ApplicationCreateManyTenantInputEnvelope
+  export type ApplicationUncheckedCreateNestedManyWithoutPassagerInput = {
+    create?: XOR<ApplicationCreateWithoutPassagerInput, ApplicationUncheckedCreateWithoutPassagerInput> | ApplicationCreateWithoutPassagerInput[] | ApplicationUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutPassagerInput | ApplicationCreateOrConnectWithoutPassagerInput[]
+    createMany?: ApplicationCreateManyPassagerInputEnvelope
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
   }
 
-  export type LeaseUncheckedCreateNestedManyWithoutTenantInput = {
-    create?: XOR<LeaseCreateWithoutTenantInput, LeaseUncheckedCreateWithoutTenantInput> | LeaseCreateWithoutTenantInput[] | LeaseUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutTenantInput | LeaseCreateOrConnectWithoutTenantInput[]
-    createMany?: LeaseCreateManyTenantInputEnvelope
+  export type LeaseUncheckedCreateNestedManyWithoutPassagerInput = {
+    create?: XOR<LeaseCreateWithoutPassagerInput, LeaseUncheckedCreateWithoutPassagerInput> | LeaseCreateWithoutPassagerInput[] | LeaseUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutPassagerInput | LeaseCreateOrConnectWithoutPassagerInput[]
+    createMany?: LeaseCreateManyPassagerInputEnvelope
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
   }
 
-  export type PropertyUpdateManyWithoutTenantsNestedInput = {
-    create?: XOR<PropertyCreateWithoutTenantsInput, PropertyUncheckedCreateWithoutTenantsInput> | PropertyCreateWithoutTenantsInput[] | PropertyUncheckedCreateWithoutTenantsInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutTenantsInput | PropertyCreateOrConnectWithoutTenantsInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutTenantsInput | PropertyUpsertWithWhereUniqueWithoutTenantsInput[]
+  export type PropertyUpdateManyWithoutPassagersNestedInput = {
+    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
+    upsert?: PropertyUpsertWithWhereUniqueWithoutPassagersInput | PropertyUpsertWithWhereUniqueWithoutPassagersInput[]
     set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutTenantsInput | PropertyUpdateWithWhereUniqueWithoutTenantsInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutTenantsInput | PropertyUpdateManyWithWhereWithoutTenantsInput[]
+    update?: PropertyUpdateWithWhereUniqueWithoutPassagersInput | PropertyUpdateWithWhereUniqueWithoutPassagersInput[]
+    updateMany?: PropertyUpdateManyWithWhereWithoutPassagersInput | PropertyUpdateManyWithWhereWithoutPassagersInput[]
     deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
   }
 
@@ -11996,44 +11996,44 @@ export namespace Prisma {
     deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
   }
 
-  export type ApplicationUpdateManyWithoutTenantNestedInput = {
-    create?: XOR<ApplicationCreateWithoutTenantInput, ApplicationUncheckedCreateWithoutTenantInput> | ApplicationCreateWithoutTenantInput[] | ApplicationUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutTenantInput | ApplicationCreateOrConnectWithoutTenantInput[]
-    upsert?: ApplicationUpsertWithWhereUniqueWithoutTenantInput | ApplicationUpsertWithWhereUniqueWithoutTenantInput[]
-    createMany?: ApplicationCreateManyTenantInputEnvelope
+  export type ApplicationUpdateManyWithoutPassagerNestedInput = {
+    create?: XOR<ApplicationCreateWithoutPassagerInput, ApplicationUncheckedCreateWithoutPassagerInput> | ApplicationCreateWithoutPassagerInput[] | ApplicationUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutPassagerInput | ApplicationCreateOrConnectWithoutPassagerInput[]
+    upsert?: ApplicationUpsertWithWhereUniqueWithoutPassagerInput | ApplicationUpsertWithWhereUniqueWithoutPassagerInput[]
+    createMany?: ApplicationCreateManyPassagerInputEnvelope
     set?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     disconnect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     delete?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
-    update?: ApplicationUpdateWithWhereUniqueWithoutTenantInput | ApplicationUpdateWithWhereUniqueWithoutTenantInput[]
-    updateMany?: ApplicationUpdateManyWithWhereWithoutTenantInput | ApplicationUpdateManyWithWhereWithoutTenantInput[]
+    update?: ApplicationUpdateWithWhereUniqueWithoutPassagerInput | ApplicationUpdateWithWhereUniqueWithoutPassagerInput[]
+    updateMany?: ApplicationUpdateManyWithWhereWithoutPassagerInput | ApplicationUpdateManyWithWhereWithoutPassagerInput[]
     deleteMany?: ApplicationScalarWhereInput | ApplicationScalarWhereInput[]
   }
 
-  export type LeaseUpdateManyWithoutTenantNestedInput = {
-    create?: XOR<LeaseCreateWithoutTenantInput, LeaseUncheckedCreateWithoutTenantInput> | LeaseCreateWithoutTenantInput[] | LeaseUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutTenantInput | LeaseCreateOrConnectWithoutTenantInput[]
-    upsert?: LeaseUpsertWithWhereUniqueWithoutTenantInput | LeaseUpsertWithWhereUniqueWithoutTenantInput[]
-    createMany?: LeaseCreateManyTenantInputEnvelope
+  export type LeaseUpdateManyWithoutPassagerNestedInput = {
+    create?: XOR<LeaseCreateWithoutPassagerInput, LeaseUncheckedCreateWithoutPassagerInput> | LeaseCreateWithoutPassagerInput[] | LeaseUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutPassagerInput | LeaseCreateOrConnectWithoutPassagerInput[]
+    upsert?: LeaseUpsertWithWhereUniqueWithoutPassagerInput | LeaseUpsertWithWhereUniqueWithoutPassagerInput[]
+    createMany?: LeaseCreateManyPassagerInputEnvelope
     set?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     disconnect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     delete?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
-    update?: LeaseUpdateWithWhereUniqueWithoutTenantInput | LeaseUpdateWithWhereUniqueWithoutTenantInput[]
-    updateMany?: LeaseUpdateManyWithWhereWithoutTenantInput | LeaseUpdateManyWithWhereWithoutTenantInput[]
+    update?: LeaseUpdateWithWhereUniqueWithoutPassagerInput | LeaseUpdateWithWhereUniqueWithoutPassagerInput[]
+    updateMany?: LeaseUpdateManyWithWhereWithoutPassagerInput | LeaseUpdateManyWithWhereWithoutPassagerInput[]
     deleteMany?: LeaseScalarWhereInput | LeaseScalarWhereInput[]
   }
 
-  export type PropertyUncheckedUpdateManyWithoutTenantsNestedInput = {
-    create?: XOR<PropertyCreateWithoutTenantsInput, PropertyUncheckedCreateWithoutTenantsInput> | PropertyCreateWithoutTenantsInput[] | PropertyUncheckedCreateWithoutTenantsInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutTenantsInput | PropertyCreateOrConnectWithoutTenantsInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutTenantsInput | PropertyUpsertWithWhereUniqueWithoutTenantsInput[]
+  export type PropertyUncheckedUpdateManyWithoutPassagersNestedInput = {
+    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
+    upsert?: PropertyUpsertWithWhereUniqueWithoutPassagersInput | PropertyUpsertWithWhereUniqueWithoutPassagersInput[]
     set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
     connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutTenantsInput | PropertyUpdateWithWhereUniqueWithoutTenantsInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutTenantsInput | PropertyUpdateManyWithWhereWithoutTenantsInput[]
+    update?: PropertyUpdateWithWhereUniqueWithoutPassagersInput | PropertyUpdateWithWhereUniqueWithoutPassagersInput[]
+    updateMany?: PropertyUpdateManyWithWhereWithoutPassagersInput | PropertyUpdateManyWithWhereWithoutPassagersInput[]
     deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
   }
 
@@ -12050,31 +12050,31 @@ export namespace Prisma {
     deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
   }
 
-  export type ApplicationUncheckedUpdateManyWithoutTenantNestedInput = {
-    create?: XOR<ApplicationCreateWithoutTenantInput, ApplicationUncheckedCreateWithoutTenantInput> | ApplicationCreateWithoutTenantInput[] | ApplicationUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutTenantInput | ApplicationCreateOrConnectWithoutTenantInput[]
-    upsert?: ApplicationUpsertWithWhereUniqueWithoutTenantInput | ApplicationUpsertWithWhereUniqueWithoutTenantInput[]
-    createMany?: ApplicationCreateManyTenantInputEnvelope
+  export type ApplicationUncheckedUpdateManyWithoutPassagerNestedInput = {
+    create?: XOR<ApplicationCreateWithoutPassagerInput, ApplicationUncheckedCreateWithoutPassagerInput> | ApplicationCreateWithoutPassagerInput[] | ApplicationUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutPassagerInput | ApplicationCreateOrConnectWithoutPassagerInput[]
+    upsert?: ApplicationUpsertWithWhereUniqueWithoutPassagerInput | ApplicationUpsertWithWhereUniqueWithoutPassagerInput[]
+    createMany?: ApplicationCreateManyPassagerInputEnvelope
     set?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     disconnect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     delete?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
-    update?: ApplicationUpdateWithWhereUniqueWithoutTenantInput | ApplicationUpdateWithWhereUniqueWithoutTenantInput[]
-    updateMany?: ApplicationUpdateManyWithWhereWithoutTenantInput | ApplicationUpdateManyWithWhereWithoutTenantInput[]
+    update?: ApplicationUpdateWithWhereUniqueWithoutPassagerInput | ApplicationUpdateWithWhereUniqueWithoutPassagerInput[]
+    updateMany?: ApplicationUpdateManyWithWhereWithoutPassagerInput | ApplicationUpdateManyWithWhereWithoutPassagerInput[]
     deleteMany?: ApplicationScalarWhereInput | ApplicationScalarWhereInput[]
   }
 
-  export type LeaseUncheckedUpdateManyWithoutTenantNestedInput = {
-    create?: XOR<LeaseCreateWithoutTenantInput, LeaseUncheckedCreateWithoutTenantInput> | LeaseCreateWithoutTenantInput[] | LeaseUncheckedCreateWithoutTenantInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutTenantInput | LeaseCreateOrConnectWithoutTenantInput[]
-    upsert?: LeaseUpsertWithWhereUniqueWithoutTenantInput | LeaseUpsertWithWhereUniqueWithoutTenantInput[]
-    createMany?: LeaseCreateManyTenantInputEnvelope
+  export type LeaseUncheckedUpdateManyWithoutPassagerNestedInput = {
+    create?: XOR<LeaseCreateWithoutPassagerInput, LeaseUncheckedCreateWithoutPassagerInput> | LeaseCreateWithoutPassagerInput[] | LeaseUncheckedCreateWithoutPassagerInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutPassagerInput | LeaseCreateOrConnectWithoutPassagerInput[]
+    upsert?: LeaseUpsertWithWhereUniqueWithoutPassagerInput | LeaseUpsertWithWhereUniqueWithoutPassagerInput[]
+    createMany?: LeaseCreateManyPassagerInputEnvelope
     set?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     disconnect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     delete?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
-    update?: LeaseUpdateWithWhereUniqueWithoutTenantInput | LeaseUpdateWithWhereUniqueWithoutTenantInput[]
-    updateMany?: LeaseUpdateManyWithWhereWithoutTenantInput | LeaseUpdateManyWithWhereWithoutTenantInput[]
+    update?: LeaseUpdateWithWhereUniqueWithoutPassagerInput | LeaseUpdateWithWhereUniqueWithoutPassagerInput[]
+    updateMany?: LeaseUpdateManyWithWhereWithoutPassagerInput | LeaseUpdateManyWithWhereWithoutPassagerInput[]
     deleteMany?: LeaseScalarWhereInput | LeaseScalarWhereInput[]
   }
 
@@ -12112,10 +12112,10 @@ export namespace Prisma {
     connect?: PropertyWhereUniqueInput
   }
 
-  export type TenantCreateNestedOneWithoutApplicationsInput = {
-    create?: XOR<TenantCreateWithoutApplicationsInput, TenantUncheckedCreateWithoutApplicationsInput>
-    connectOrCreate?: TenantCreateOrConnectWithoutApplicationsInput
-    connect?: TenantWhereUniqueInput
+  export type PassagerCreateNestedOneWithoutApplicationsInput = {
+    create?: XOR<PassagerCreateWithoutApplicationsInput, PassagerUncheckedCreateWithoutApplicationsInput>
+    connectOrCreate?: PassagerCreateOrConnectWithoutApplicationsInput
+    connect?: PassagerWhereUniqueInput
   }
 
   export type LeaseCreateNestedOneWithoutApplicationInput = {
@@ -12140,12 +12140,12 @@ export namespace Prisma {
     update?: XOR<XOR<PropertyUpdateToOneWithWhereWithoutApplicationsInput, PropertyUpdateWithoutApplicationsInput>, PropertyUncheckedUpdateWithoutApplicationsInput>
   }
 
-  export type TenantUpdateOneRequiredWithoutApplicationsNestedInput = {
-    create?: XOR<TenantCreateWithoutApplicationsInput, TenantUncheckedCreateWithoutApplicationsInput>
-    connectOrCreate?: TenantCreateOrConnectWithoutApplicationsInput
-    upsert?: TenantUpsertWithoutApplicationsInput
-    connect?: TenantWhereUniqueInput
-    update?: XOR<XOR<TenantUpdateToOneWithWhereWithoutApplicationsInput, TenantUpdateWithoutApplicationsInput>, TenantUncheckedUpdateWithoutApplicationsInput>
+  export type PassagerUpdateOneRequiredWithoutApplicationsNestedInput = {
+    create?: XOR<PassagerCreateWithoutApplicationsInput, PassagerUncheckedCreateWithoutApplicationsInput>
+    connectOrCreate?: PassagerCreateOrConnectWithoutApplicationsInput
+    upsert?: PassagerUpsertWithoutApplicationsInput
+    connect?: PassagerWhereUniqueInput
+    update?: XOR<XOR<PassagerUpdateToOneWithWhereWithoutApplicationsInput, PassagerUpdateWithoutApplicationsInput>, PassagerUncheckedUpdateWithoutApplicationsInput>
   }
 
   export type LeaseUpdateOneWithoutApplicationNestedInput = {
@@ -12164,10 +12164,10 @@ export namespace Prisma {
     connect?: PropertyWhereUniqueInput
   }
 
-  export type TenantCreateNestedOneWithoutLeasesInput = {
-    create?: XOR<TenantCreateWithoutLeasesInput, TenantUncheckedCreateWithoutLeasesInput>
-    connectOrCreate?: TenantCreateOrConnectWithoutLeasesInput
-    connect?: TenantWhereUniqueInput
+  export type PassagerCreateNestedOneWithoutLeasesInput = {
+    create?: XOR<PassagerCreateWithoutLeasesInput, PassagerUncheckedCreateWithoutLeasesInput>
+    connectOrCreate?: PassagerCreateOrConnectWithoutLeasesInput
+    connect?: PassagerWhereUniqueInput
   }
 
   export type ApplicationCreateNestedOneWithoutLeaseInput = {
@@ -12212,12 +12212,12 @@ export namespace Prisma {
     update?: XOR<XOR<PropertyUpdateToOneWithWhereWithoutLeasesInput, PropertyUpdateWithoutLeasesInput>, PropertyUncheckedUpdateWithoutLeasesInput>
   }
 
-  export type TenantUpdateOneRequiredWithoutLeasesNestedInput = {
-    create?: XOR<TenantCreateWithoutLeasesInput, TenantUncheckedCreateWithoutLeasesInput>
-    connectOrCreate?: TenantCreateOrConnectWithoutLeasesInput
-    upsert?: TenantUpsertWithoutLeasesInput
-    connect?: TenantWhereUniqueInput
-    update?: XOR<XOR<TenantUpdateToOneWithWhereWithoutLeasesInput, TenantUpdateWithoutLeasesInput>, TenantUncheckedUpdateWithoutLeasesInput>
+  export type PassagerUpdateOneRequiredWithoutLeasesNestedInput = {
+    create?: XOR<PassagerCreateWithoutLeasesInput, PassagerUncheckedCreateWithoutLeasesInput>
+    connectOrCreate?: PassagerCreateOrConnectWithoutLeasesInput
+    upsert?: PassagerUpsertWithoutLeasesInput
+    connect?: PassagerWhereUniqueInput
+    update?: XOR<XOR<PassagerUpdateToOneWithWhereWithoutLeasesInput, PassagerUpdateWithoutLeasesInput>, PassagerUncheckedUpdateWithoutLeasesInput>
   }
 
   export type ApplicationUpdateOneWithoutLeaseNestedInput = {
@@ -12545,14 +12545,14 @@ export namespace Prisma {
     _max?: NestedEnumPaymentStatusFilter<$PrismaModel>
   }
 
-  export type ManagerCreateWithoutManagedPropertiesInput = {
+  export type ConducteurCreateWithoutConducteurPropertiesInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
   }
 
-  export type ManagerUncheckedCreateWithoutManagedPropertiesInput = {
+  export type ConducteurUncheckedCreateWithoutConducteurPropertiesInput = {
     id?: number
     cognitoId: string
     name: string
@@ -12560,9 +12560,9 @@ export namespace Prisma {
     phoneNumber: string
   }
 
-  export type ManagerCreateOrConnectWithoutManagedPropertiesInput = {
-    where: ManagerWhereUniqueInput
-    create: XOR<ManagerCreateWithoutManagedPropertiesInput, ManagerUncheckedCreateWithoutManagedPropertiesInput>
+  export type ConducteurCreateOrConnectWithoutConducteurPropertiesInput = {
+    where: ConducteurWhereUniqueInput
+    create: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
   }
 
   export type LeaseCreateWithoutPropertyInput = {
@@ -12570,7 +12570,7 @@ export namespace Prisma {
     endDate: Date | string
     rent: number
     deposit: number
-    tenant: TenantCreateNestedOneWithoutLeasesInput
+    passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
   }
@@ -12581,7 +12581,7 @@ export namespace Prisma {
     endDate: Date | string
     rent: number
     deposit: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
   }
@@ -12603,7 +12603,7 @@ export namespace Prisma {
     email: string
     phoneNumber: string
     message?: string | null
-    tenant: TenantCreateNestedOneWithoutApplicationsInput
+    passager: PassagerCreateNestedOneWithoutApplicationsInput
     lease?: LeaseCreateNestedOneWithoutApplicationInput
   }
 
@@ -12611,7 +12611,7 @@ export namespace Prisma {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
-    tenantCognitoId: string
+    passagerCognitoId: string
     name: string
     email: string
     phoneNumber: string
@@ -12629,56 +12629,56 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type TenantCreateWithoutFavoritesInput = {
+  export type PassagerCreateWithoutFavoritesInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutTenantsInput
-    applications?: ApplicationCreateNestedManyWithoutTenantInput
-    leases?: LeaseCreateNestedManyWithoutTenantInput
+    properties?: PropertyCreateNestedManyWithoutPassagersInput
+    applications?: ApplicationCreateNestedManyWithoutPassagerInput
+    leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantUncheckedCreateWithoutFavoritesInput = {
+  export type PassagerUncheckedCreateWithoutFavoritesInput = {
     id?: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutTenantsInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutTenantInput
-    leases?: LeaseUncheckedCreateNestedManyWithoutTenantInput
+    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantCreateOrConnectWithoutFavoritesInput = {
-    where: TenantWhereUniqueInput
-    create: XOR<TenantCreateWithoutFavoritesInput, TenantUncheckedCreateWithoutFavoritesInput>
+  export type PassagerCreateOrConnectWithoutFavoritesInput = {
+    where: PassagerWhereUniqueInput
+    create: XOR<PassagerCreateWithoutFavoritesInput, PassagerUncheckedCreateWithoutFavoritesInput>
   }
 
-  export type TenantCreateWithoutPropertiesInput = {
+  export type PassagerCreateWithoutPropertiesInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
     favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
-    applications?: ApplicationCreateNestedManyWithoutTenantInput
-    leases?: LeaseCreateNestedManyWithoutTenantInput
+    applications?: ApplicationCreateNestedManyWithoutPassagerInput
+    leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantUncheckedCreateWithoutPropertiesInput = {
+  export type PassagerUncheckedCreateWithoutPropertiesInput = {
     id?: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
     favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutTenantInput
-    leases?: LeaseUncheckedCreateNestedManyWithoutTenantInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantCreateOrConnectWithoutPropertiesInput = {
-    where: TenantWhereUniqueInput
-    create: XOR<TenantCreateWithoutPropertiesInput, TenantUncheckedCreateWithoutPropertiesInput>
+  export type PassagerCreateOrConnectWithoutPropertiesInput = {
+    where: PassagerWhereUniqueInput
+    create: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput>
   }
 
   export type LocationUpdateToOneWithWhereWithoutPropertiesInput = {
@@ -12703,25 +12703,25 @@ export namespace Prisma {
     postalCode?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ManagerUpsertWithoutManagedPropertiesInput = {
-    update: XOR<ManagerUpdateWithoutManagedPropertiesInput, ManagerUncheckedUpdateWithoutManagedPropertiesInput>
-    create: XOR<ManagerCreateWithoutManagedPropertiesInput, ManagerUncheckedCreateWithoutManagedPropertiesInput>
-    where?: ManagerWhereInput
+  export type ConducteurUpsertWithoutConducteurPropertiesInput = {
+    update: XOR<ConducteurUpdateWithoutConducteurPropertiesInput, ConducteurUncheckedUpdateWithoutConducteurPropertiesInput>
+    create: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
+    where?: ConducteurWhereInput
   }
 
-  export type ManagerUpdateToOneWithWhereWithoutManagedPropertiesInput = {
-    where?: ManagerWhereInput
-    data: XOR<ManagerUpdateWithoutManagedPropertiesInput, ManagerUncheckedUpdateWithoutManagedPropertiesInput>
+  export type ConducteurUpdateToOneWithWhereWithoutConducteurPropertiesInput = {
+    where?: ConducteurWhereInput
+    data: XOR<ConducteurUpdateWithoutConducteurPropertiesInput, ConducteurUncheckedUpdateWithoutConducteurPropertiesInput>
   }
 
-  export type ManagerUpdateWithoutManagedPropertiesInput = {
+  export type ConducteurUpdateWithoutConducteurPropertiesInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ManagerUncheckedUpdateWithoutManagedPropertiesInput = {
+  export type ConducteurUncheckedUpdateWithoutConducteurPropertiesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -12755,7 +12755,7 @@ export namespace Prisma {
     rent?: FloatFilter<"Lease"> | number
     deposit?: FloatFilter<"Lease"> | number
     propertyId?: IntFilter<"Lease"> | number
-    tenantCognitoId?: StringFilter<"Lease"> | string
+    passagerCognitoId?: StringFilter<"Lease"> | string
   }
 
   export type ApplicationUpsertWithWhereUniqueWithoutPropertyInput = {
@@ -12782,7 +12782,7 @@ export namespace Prisma {
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
     propertyId?: IntFilter<"Application"> | number
-    tenantCognitoId?: StringFilter<"Application"> | string
+    passagerCognitoId?: StringFilter<"Application"> | string
     name?: StringFilter<"Application"> | string
     email?: StringFilter<"Application"> | string
     phoneNumber?: StringFilter<"Application"> | string
@@ -12790,50 +12790,50 @@ export namespace Prisma {
     leaseId?: IntNullableFilter<"Application"> | number | null
   }
 
-  export type TenantUpsertWithWhereUniqueWithoutFavoritesInput = {
-    where: TenantWhereUniqueInput
-    update: XOR<TenantUpdateWithoutFavoritesInput, TenantUncheckedUpdateWithoutFavoritesInput>
-    create: XOR<TenantCreateWithoutFavoritesInput, TenantUncheckedCreateWithoutFavoritesInput>
+  export type PassagerUpsertWithWhereUniqueWithoutFavoritesInput = {
+    where: PassagerWhereUniqueInput
+    update: XOR<PassagerUpdateWithoutFavoritesInput, PassagerUncheckedUpdateWithoutFavoritesInput>
+    create: XOR<PassagerCreateWithoutFavoritesInput, PassagerUncheckedCreateWithoutFavoritesInput>
   }
 
-  export type TenantUpdateWithWhereUniqueWithoutFavoritesInput = {
-    where: TenantWhereUniqueInput
-    data: XOR<TenantUpdateWithoutFavoritesInput, TenantUncheckedUpdateWithoutFavoritesInput>
+  export type PassagerUpdateWithWhereUniqueWithoutFavoritesInput = {
+    where: PassagerWhereUniqueInput
+    data: XOR<PassagerUpdateWithoutFavoritesInput, PassagerUncheckedUpdateWithoutFavoritesInput>
   }
 
-  export type TenantUpdateManyWithWhereWithoutFavoritesInput = {
-    where: TenantScalarWhereInput
-    data: XOR<TenantUpdateManyMutationInput, TenantUncheckedUpdateManyWithoutFavoritesInput>
+  export type PassagerUpdateManyWithWhereWithoutFavoritesInput = {
+    where: PassagerScalarWhereInput
+    data: XOR<PassagerUpdateManyMutationInput, PassagerUncheckedUpdateManyWithoutFavoritesInput>
   }
 
-  export type TenantScalarWhereInput = {
-    AND?: TenantScalarWhereInput | TenantScalarWhereInput[]
-    OR?: TenantScalarWhereInput[]
-    NOT?: TenantScalarWhereInput | TenantScalarWhereInput[]
-    id?: IntFilter<"Tenant"> | number
-    cognitoId?: StringFilter<"Tenant"> | string
-    name?: StringFilter<"Tenant"> | string
-    email?: StringFilter<"Tenant"> | string
-    phoneNumber?: StringFilter<"Tenant"> | string
+  export type PassagerScalarWhereInput = {
+    AND?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
+    OR?: PassagerScalarWhereInput[]
+    NOT?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
+    id?: IntFilter<"Passager"> | number
+    cognitoId?: StringFilter<"Passager"> | string
+    name?: StringFilter<"Passager"> | string
+    email?: StringFilter<"Passager"> | string
+    phoneNumber?: StringFilter<"Passager"> | string
   }
 
-  export type TenantUpsertWithWhereUniqueWithoutPropertiesInput = {
-    where: TenantWhereUniqueInput
-    update: XOR<TenantUpdateWithoutPropertiesInput, TenantUncheckedUpdateWithoutPropertiesInput>
-    create: XOR<TenantCreateWithoutPropertiesInput, TenantUncheckedCreateWithoutPropertiesInput>
+  export type PassagerUpsertWithWhereUniqueWithoutPropertiesInput = {
+    where: PassagerWhereUniqueInput
+    update: XOR<PassagerUpdateWithoutPropertiesInput, PassagerUncheckedUpdateWithoutPropertiesInput>
+    create: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput>
   }
 
-  export type TenantUpdateWithWhereUniqueWithoutPropertiesInput = {
-    where: TenantWhereUniqueInput
-    data: XOR<TenantUpdateWithoutPropertiesInput, TenantUncheckedUpdateWithoutPropertiesInput>
+  export type PassagerUpdateWithWhereUniqueWithoutPropertiesInput = {
+    where: PassagerWhereUniqueInput
+    data: XOR<PassagerUpdateWithoutPropertiesInput, PassagerUncheckedUpdateWithoutPropertiesInput>
   }
 
-  export type TenantUpdateManyWithWhereWithoutPropertiesInput = {
-    where: TenantScalarWhereInput
-    data: XOR<TenantUpdateManyMutationInput, TenantUncheckedUpdateManyWithoutPropertiesInput>
+  export type PassagerUpdateManyWithWhereWithoutPropertiesInput = {
+    where: PassagerScalarWhereInput
+    data: XOR<PassagerUpdateManyMutationInput, PassagerUncheckedUpdateManyWithoutPropertiesInput>
   }
 
-  export type PropertyCreateWithoutManagerInput = {
+  export type PropertyCreateWithoutConducteurInput = {
     name: string
     description: string
     photoUrls?: PropertyCreatephotoUrlsInput | string[]
@@ -12845,11 +12845,11 @@ export namespace Prisma {
     location: LocationCreateNestedOneWithoutPropertiesInput
     leases?: LeaseCreateNestedManyWithoutPropertyInput
     applications?: ApplicationCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
   }
 
-  export type PropertyUncheckedCreateWithoutManagerInput = {
+  export type PropertyUncheckedCreateWithoutConducteurInput = {
     id?: number
     name: string
     description: string
@@ -12862,34 +12862,34 @@ export namespace Prisma {
     locationId: number
     leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantUncheckedCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantUncheckedCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
   }
 
-  export type PropertyCreateOrConnectWithoutManagerInput = {
+  export type PropertyCreateOrConnectWithoutConducteurInput = {
     where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutManagerInput, PropertyUncheckedCreateWithoutManagerInput>
+    create: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput>
   }
 
-  export type PropertyCreateManyManagerInputEnvelope = {
-    data: PropertyCreateManyManagerInput | PropertyCreateManyManagerInput[]
+  export type PropertyCreateManyConducteurInputEnvelope = {
+    data: PropertyCreateManyConducteurInput | PropertyCreateManyConducteurInput[]
     skipDuplicates?: boolean
   }
 
-  export type PropertyUpsertWithWhereUniqueWithoutManagerInput = {
+  export type PropertyUpsertWithWhereUniqueWithoutConducteurInput = {
     where: PropertyWhereUniqueInput
-    update: XOR<PropertyUpdateWithoutManagerInput, PropertyUncheckedUpdateWithoutManagerInput>
-    create: XOR<PropertyCreateWithoutManagerInput, PropertyUncheckedCreateWithoutManagerInput>
+    update: XOR<PropertyUpdateWithoutConducteurInput, PropertyUncheckedUpdateWithoutConducteurInput>
+    create: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput>
   }
 
-  export type PropertyUpdateWithWhereUniqueWithoutManagerInput = {
+  export type PropertyUpdateWithWhereUniqueWithoutConducteurInput = {
     where: PropertyWhereUniqueInput
-    data: XOR<PropertyUpdateWithoutManagerInput, PropertyUncheckedUpdateWithoutManagerInput>
+    data: XOR<PropertyUpdateWithoutConducteurInput, PropertyUncheckedUpdateWithoutConducteurInput>
   }
 
-  export type PropertyUpdateManyWithWhereWithoutManagerInput = {
+  export type PropertyUpdateManyWithWhereWithoutConducteurInput = {
     where: PropertyScalarWhereInput
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutManagerInput>
+    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutConducteurInput>
   }
 
   export type PropertyScalarWhereInput = {
@@ -12906,10 +12906,10 @@ export namespace Prisma {
     averageRating?: FloatNullableFilter<"Property"> | number | null
     numberOfReviews?: IntNullableFilter<"Property"> | number | null
     locationId?: IntFilter<"Property"> | number
-    managerCognitoId?: StringFilter<"Property"> | string
+    conducteurCognitoId?: StringFilter<"Property"> | string
   }
 
-  export type PropertyCreateWithoutTenantsInput = {
+  export type PropertyCreateWithoutPassagersInput = {
     name: string
     description: string
     photoUrls?: PropertyCreatephotoUrlsInput | string[]
@@ -12919,13 +12919,13 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     location: LocationCreateNestedOneWithoutPropertiesInput
-    manager: ManagerCreateNestedOneWithoutManagedPropertiesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
     leases?: LeaseCreateNestedManyWithoutPropertyInput
     applications?: ApplicationCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantCreateNestedManyWithoutFavoritesInput
+    favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
   }
 
-  export type PropertyUncheckedCreateWithoutTenantsInput = {
+  export type PropertyUncheckedCreateWithoutPassagersInput = {
     id?: number
     name: string
     description: string
@@ -12936,15 +12936,15 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     locationId: number
-    managerCognitoId: string
+    conducteurCognitoId: string
     leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantUncheckedCreateNestedManyWithoutFavoritesInput
+    favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
   }
 
-  export type PropertyCreateOrConnectWithoutTenantsInput = {
+  export type PropertyCreateOrConnectWithoutPassagersInput = {
     where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutTenantsInput, PropertyUncheckedCreateWithoutTenantsInput>
+    create: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput>
   }
 
   export type PropertyCreateWithoutFavoritedByInput = {
@@ -12957,10 +12957,10 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     location: LocationCreateNestedOneWithoutPropertiesInput
-    manager: ManagerCreateNestedOneWithoutManagedPropertiesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
     leases?: LeaseCreateNestedManyWithoutPropertyInput
     applications?: ApplicationCreateNestedManyWithoutPropertyInput
-    tenants?: TenantCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyUncheckedCreateWithoutFavoritedByInput = {
@@ -12974,10 +12974,10 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     locationId: number
-    managerCognitoId: string
+    conducteurCognitoId: string
     leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
-    tenants?: TenantUncheckedCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyCreateOrConnectWithoutFavoritedByInput = {
@@ -12985,7 +12985,7 @@ export namespace Prisma {
     create: XOR<PropertyCreateWithoutFavoritedByInput, PropertyUncheckedCreateWithoutFavoritedByInput>
   }
 
-  export type ApplicationCreateWithoutTenantInput = {
+  export type ApplicationCreateWithoutPassagerInput = {
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
     name: string
@@ -12996,7 +12996,7 @@ export namespace Prisma {
     lease?: LeaseCreateNestedOneWithoutApplicationInput
   }
 
-  export type ApplicationUncheckedCreateWithoutTenantInput = {
+  export type ApplicationUncheckedCreateWithoutPassagerInput = {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
@@ -13008,17 +13008,17 @@ export namespace Prisma {
     leaseId?: number | null
   }
 
-  export type ApplicationCreateOrConnectWithoutTenantInput = {
+  export type ApplicationCreateOrConnectWithoutPassagerInput = {
     where: ApplicationWhereUniqueInput
-    create: XOR<ApplicationCreateWithoutTenantInput, ApplicationUncheckedCreateWithoutTenantInput>
+    create: XOR<ApplicationCreateWithoutPassagerInput, ApplicationUncheckedCreateWithoutPassagerInput>
   }
 
-  export type ApplicationCreateManyTenantInputEnvelope = {
-    data: ApplicationCreateManyTenantInput | ApplicationCreateManyTenantInput[]
+  export type ApplicationCreateManyPassagerInputEnvelope = {
+    data: ApplicationCreateManyPassagerInput | ApplicationCreateManyPassagerInput[]
     skipDuplicates?: boolean
   }
 
-  export type LeaseCreateWithoutTenantInput = {
+  export type LeaseCreateWithoutPassagerInput = {
     startDate: Date | string
     endDate: Date | string
     rent: number
@@ -13028,7 +13028,7 @@ export namespace Prisma {
     payments?: PaymentCreateNestedManyWithoutLeaseInput
   }
 
-  export type LeaseUncheckedCreateWithoutTenantInput = {
+  export type LeaseUncheckedCreateWithoutPassagerInput = {
     id?: number
     startDate: Date | string
     endDate: Date | string
@@ -13039,30 +13039,30 @@ export namespace Prisma {
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
   }
 
-  export type LeaseCreateOrConnectWithoutTenantInput = {
+  export type LeaseCreateOrConnectWithoutPassagerInput = {
     where: LeaseWhereUniqueInput
-    create: XOR<LeaseCreateWithoutTenantInput, LeaseUncheckedCreateWithoutTenantInput>
+    create: XOR<LeaseCreateWithoutPassagerInput, LeaseUncheckedCreateWithoutPassagerInput>
   }
 
-  export type LeaseCreateManyTenantInputEnvelope = {
-    data: LeaseCreateManyTenantInput | LeaseCreateManyTenantInput[]
+  export type LeaseCreateManyPassagerInputEnvelope = {
+    data: LeaseCreateManyPassagerInput | LeaseCreateManyPassagerInput[]
     skipDuplicates?: boolean
   }
 
-  export type PropertyUpsertWithWhereUniqueWithoutTenantsInput = {
+  export type PropertyUpsertWithWhereUniqueWithoutPassagersInput = {
     where: PropertyWhereUniqueInput
-    update: XOR<PropertyUpdateWithoutTenantsInput, PropertyUncheckedUpdateWithoutTenantsInput>
-    create: XOR<PropertyCreateWithoutTenantsInput, PropertyUncheckedCreateWithoutTenantsInput>
+    update: XOR<PropertyUpdateWithoutPassagersInput, PropertyUncheckedUpdateWithoutPassagersInput>
+    create: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput>
   }
 
-  export type PropertyUpdateWithWhereUniqueWithoutTenantsInput = {
+  export type PropertyUpdateWithWhereUniqueWithoutPassagersInput = {
     where: PropertyWhereUniqueInput
-    data: XOR<PropertyUpdateWithoutTenantsInput, PropertyUncheckedUpdateWithoutTenantsInput>
+    data: XOR<PropertyUpdateWithoutPassagersInput, PropertyUncheckedUpdateWithoutPassagersInput>
   }
 
-  export type PropertyUpdateManyWithWhereWithoutTenantsInput = {
+  export type PropertyUpdateManyWithWhereWithoutPassagersInput = {
     where: PropertyScalarWhereInput
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutTenantsInput>
+    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutPassagersInput>
   }
 
   export type PropertyUpsertWithWhereUniqueWithoutFavoritedByInput = {
@@ -13081,36 +13081,36 @@ export namespace Prisma {
     data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutFavoritedByInput>
   }
 
-  export type ApplicationUpsertWithWhereUniqueWithoutTenantInput = {
+  export type ApplicationUpsertWithWhereUniqueWithoutPassagerInput = {
     where: ApplicationWhereUniqueInput
-    update: XOR<ApplicationUpdateWithoutTenantInput, ApplicationUncheckedUpdateWithoutTenantInput>
-    create: XOR<ApplicationCreateWithoutTenantInput, ApplicationUncheckedCreateWithoutTenantInput>
+    update: XOR<ApplicationUpdateWithoutPassagerInput, ApplicationUncheckedUpdateWithoutPassagerInput>
+    create: XOR<ApplicationCreateWithoutPassagerInput, ApplicationUncheckedCreateWithoutPassagerInput>
   }
 
-  export type ApplicationUpdateWithWhereUniqueWithoutTenantInput = {
+  export type ApplicationUpdateWithWhereUniqueWithoutPassagerInput = {
     where: ApplicationWhereUniqueInput
-    data: XOR<ApplicationUpdateWithoutTenantInput, ApplicationUncheckedUpdateWithoutTenantInput>
+    data: XOR<ApplicationUpdateWithoutPassagerInput, ApplicationUncheckedUpdateWithoutPassagerInput>
   }
 
-  export type ApplicationUpdateManyWithWhereWithoutTenantInput = {
+  export type ApplicationUpdateManyWithWhereWithoutPassagerInput = {
     where: ApplicationScalarWhereInput
-    data: XOR<ApplicationUpdateManyMutationInput, ApplicationUncheckedUpdateManyWithoutTenantInput>
+    data: XOR<ApplicationUpdateManyMutationInput, ApplicationUncheckedUpdateManyWithoutPassagerInput>
   }
 
-  export type LeaseUpsertWithWhereUniqueWithoutTenantInput = {
+  export type LeaseUpsertWithWhereUniqueWithoutPassagerInput = {
     where: LeaseWhereUniqueInput
-    update: XOR<LeaseUpdateWithoutTenantInput, LeaseUncheckedUpdateWithoutTenantInput>
-    create: XOR<LeaseCreateWithoutTenantInput, LeaseUncheckedCreateWithoutTenantInput>
+    update: XOR<LeaseUpdateWithoutPassagerInput, LeaseUncheckedUpdateWithoutPassagerInput>
+    create: XOR<LeaseCreateWithoutPassagerInput, LeaseUncheckedCreateWithoutPassagerInput>
   }
 
-  export type LeaseUpdateWithWhereUniqueWithoutTenantInput = {
+  export type LeaseUpdateWithWhereUniqueWithoutPassagerInput = {
     where: LeaseWhereUniqueInput
-    data: XOR<LeaseUpdateWithoutTenantInput, LeaseUncheckedUpdateWithoutTenantInput>
+    data: XOR<LeaseUpdateWithoutPassagerInput, LeaseUncheckedUpdateWithoutPassagerInput>
   }
 
-  export type LeaseUpdateManyWithWhereWithoutTenantInput = {
+  export type LeaseUpdateManyWithWhereWithoutPassagerInput = {
     where: LeaseScalarWhereInput
-    data: XOR<LeaseUpdateManyMutationInput, LeaseUncheckedUpdateManyWithoutTenantInput>
+    data: XOR<LeaseUpdateManyMutationInput, LeaseUncheckedUpdateManyWithoutPassagerInput>
   }
 
   export type PropertyCreateWithoutLocationInput = {
@@ -13122,11 +13122,11 @@ export namespace Prisma {
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    manager: ManagerCreateNestedOneWithoutManagedPropertiesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
     leases?: LeaseCreateNestedManyWithoutPropertyInput
     applications?: ApplicationCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyUncheckedCreateWithoutLocationInput = {
@@ -13139,11 +13139,11 @@ export namespace Prisma {
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    managerCognitoId: string
+    conducteurCognitoId: string
     leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantUncheckedCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantUncheckedCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyCreateOrConnectWithoutLocationInput = {
@@ -13182,10 +13182,10 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     location: LocationCreateNestedOneWithoutPropertiesInput
-    manager: ManagerCreateNestedOneWithoutManagedPropertiesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
     leases?: LeaseCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyUncheckedCreateWithoutApplicationsInput = {
@@ -13199,10 +13199,10 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     locationId: number
-    managerCognitoId: string
+    conducteurCognitoId: string
     leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantUncheckedCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantUncheckedCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyCreateOrConnectWithoutApplicationsInput = {
@@ -13210,30 +13210,30 @@ export namespace Prisma {
     create: XOR<PropertyCreateWithoutApplicationsInput, PropertyUncheckedCreateWithoutApplicationsInput>
   }
 
-  export type TenantCreateWithoutApplicationsInput = {
+  export type PassagerCreateWithoutApplicationsInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutTenantsInput
+    properties?: PropertyCreateNestedManyWithoutPassagersInput
     favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
-    leases?: LeaseCreateNestedManyWithoutTenantInput
+    leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantUncheckedCreateWithoutApplicationsInput = {
+  export type PassagerUncheckedCreateWithoutApplicationsInput = {
     id?: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutTenantsInput
+    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
     favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
-    leases?: LeaseUncheckedCreateNestedManyWithoutTenantInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantCreateOrConnectWithoutApplicationsInput = {
-    where: TenantWhereUniqueInput
-    create: XOR<TenantCreateWithoutApplicationsInput, TenantUncheckedCreateWithoutApplicationsInput>
+  export type PassagerCreateOrConnectWithoutApplicationsInput = {
+    where: PassagerWhereUniqueInput
+    create: XOR<PassagerCreateWithoutApplicationsInput, PassagerUncheckedCreateWithoutApplicationsInput>
   }
 
   export type LeaseCreateWithoutApplicationInput = {
@@ -13242,7 +13242,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     property: PropertyCreateNestedOneWithoutLeasesInput
-    tenant: TenantCreateNestedOneWithoutLeasesInput
+    passager: PassagerCreateNestedOneWithoutLeasesInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
   }
 
@@ -13253,7 +13253,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
   }
 
@@ -13283,10 +13283,10 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    manager?: ManagerUpdateOneRequiredWithoutManagedPropertiesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
     leases?: LeaseUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyUncheckedUpdateWithoutApplicationsInput = {
@@ -13300,42 +13300,42 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
     leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUncheckedUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUncheckedUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
   }
 
-  export type TenantUpsertWithoutApplicationsInput = {
-    update: XOR<TenantUpdateWithoutApplicationsInput, TenantUncheckedUpdateWithoutApplicationsInput>
-    create: XOR<TenantCreateWithoutApplicationsInput, TenantUncheckedCreateWithoutApplicationsInput>
-    where?: TenantWhereInput
+  export type PassagerUpsertWithoutApplicationsInput = {
+    update: XOR<PassagerUpdateWithoutApplicationsInput, PassagerUncheckedUpdateWithoutApplicationsInput>
+    create: XOR<PassagerCreateWithoutApplicationsInput, PassagerUncheckedCreateWithoutApplicationsInput>
+    where?: PassagerWhereInput
   }
 
-  export type TenantUpdateToOneWithWhereWithoutApplicationsInput = {
-    where?: TenantWhereInput
-    data: XOR<TenantUpdateWithoutApplicationsInput, TenantUncheckedUpdateWithoutApplicationsInput>
+  export type PassagerUpdateToOneWithWhereWithoutApplicationsInput = {
+    where?: PassagerWhereInput
+    data: XOR<PassagerUpdateWithoutApplicationsInput, PassagerUncheckedUpdateWithoutApplicationsInput>
   }
 
-  export type TenantUpdateWithoutApplicationsInput = {
+  export type PassagerUpdateWithoutApplicationsInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutTenantsNestedInput
+    properties?: PropertyUpdateManyWithoutPassagersNestedInput
     favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
-    leases?: LeaseUpdateManyWithoutTenantNestedInput
+    leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantUncheckedUpdateWithoutApplicationsInput = {
+  export type PassagerUncheckedUpdateWithoutApplicationsInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutTenantsNestedInput
+    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
     favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
-    leases?: LeaseUncheckedUpdateManyWithoutTenantNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
   export type LeaseUpsertWithoutApplicationInput = {
@@ -13355,7 +13355,7 @@ export namespace Prisma {
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
     property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
-    tenant?: TenantUpdateOneRequiredWithoutLeasesNestedInput
+    passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
   }
 
@@ -13366,7 +13366,7 @@ export namespace Prisma {
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
   }
 
@@ -13380,10 +13380,10 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     location: LocationCreateNestedOneWithoutPropertiesInput
-    manager: ManagerCreateNestedOneWithoutManagedPropertiesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
     applications?: ApplicationCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyUncheckedCreateWithoutLeasesInput = {
@@ -13397,10 +13397,10 @@ export namespace Prisma {
     averageRating?: number | null
     numberOfReviews?: number | null
     locationId: number
-    managerCognitoId: string
+    conducteurCognitoId: string
     applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
-    favoritedBy?: TenantUncheckedCreateNestedManyWithoutFavoritesInput
-    tenants?: TenantUncheckedCreateNestedManyWithoutPropertiesInput
+    favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
   }
 
   export type PropertyCreateOrConnectWithoutLeasesInput = {
@@ -13408,30 +13408,30 @@ export namespace Prisma {
     create: XOR<PropertyCreateWithoutLeasesInput, PropertyUncheckedCreateWithoutLeasesInput>
   }
 
-  export type TenantCreateWithoutLeasesInput = {
+  export type PassagerCreateWithoutLeasesInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutTenantsInput
+    properties?: PropertyCreateNestedManyWithoutPassagersInput
     favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
-    applications?: ApplicationCreateNestedManyWithoutTenantInput
+    applications?: ApplicationCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantUncheckedCreateWithoutLeasesInput = {
+  export type PassagerUncheckedCreateWithoutLeasesInput = {
     id?: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutTenantsInput
+    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
     favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutTenantInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
   }
 
-  export type TenantCreateOrConnectWithoutLeasesInput = {
-    where: TenantWhereUniqueInput
-    create: XOR<TenantCreateWithoutLeasesInput, TenantUncheckedCreateWithoutLeasesInput>
+  export type PassagerCreateOrConnectWithoutLeasesInput = {
+    where: PassagerWhereUniqueInput
+    create: XOR<PassagerCreateWithoutLeasesInput, PassagerUncheckedCreateWithoutLeasesInput>
   }
 
   export type ApplicationCreateWithoutLeaseInput = {
@@ -13442,7 +13442,7 @@ export namespace Prisma {
     phoneNumber: string
     message?: string | null
     property: PropertyCreateNestedOneWithoutApplicationsInput
-    tenant: TenantCreateNestedOneWithoutApplicationsInput
+    passager: PassagerCreateNestedOneWithoutApplicationsInput
   }
 
   export type ApplicationUncheckedCreateWithoutLeaseInput = {
@@ -13450,7 +13450,7 @@ export namespace Prisma {
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     name: string
     email: string
     phoneNumber: string
@@ -13510,10 +13510,10 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    manager?: ManagerUpdateOneRequiredWithoutManagedPropertiesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
     applications?: ApplicationUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyUncheckedUpdateWithoutLeasesInput = {
@@ -13527,42 +13527,42 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
     applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUncheckedUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUncheckedUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
   }
 
-  export type TenantUpsertWithoutLeasesInput = {
-    update: XOR<TenantUpdateWithoutLeasesInput, TenantUncheckedUpdateWithoutLeasesInput>
-    create: XOR<TenantCreateWithoutLeasesInput, TenantUncheckedCreateWithoutLeasesInput>
-    where?: TenantWhereInput
+  export type PassagerUpsertWithoutLeasesInput = {
+    update: XOR<PassagerUpdateWithoutLeasesInput, PassagerUncheckedUpdateWithoutLeasesInput>
+    create: XOR<PassagerCreateWithoutLeasesInput, PassagerUncheckedCreateWithoutLeasesInput>
+    where?: PassagerWhereInput
   }
 
-  export type TenantUpdateToOneWithWhereWithoutLeasesInput = {
-    where?: TenantWhereInput
-    data: XOR<TenantUpdateWithoutLeasesInput, TenantUncheckedUpdateWithoutLeasesInput>
+  export type PassagerUpdateToOneWithWhereWithoutLeasesInput = {
+    where?: PassagerWhereInput
+    data: XOR<PassagerUpdateWithoutLeasesInput, PassagerUncheckedUpdateWithoutLeasesInput>
   }
 
-  export type TenantUpdateWithoutLeasesInput = {
+  export type PassagerUpdateWithoutLeasesInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutTenantsNestedInput
+    properties?: PropertyUpdateManyWithoutPassagersNestedInput
     favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
-    applications?: ApplicationUpdateManyWithoutTenantNestedInput
+    applications?: ApplicationUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantUncheckedUpdateWithoutLeasesInput = {
+  export type PassagerUncheckedUpdateWithoutLeasesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutTenantsNestedInput
+    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
     favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutTenantNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
   export type ApplicationUpsertWithoutLeaseInput = {
@@ -13584,7 +13584,7 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
     message?: NullableStringFieldUpdateOperationsInput | string | null
     property?: PropertyUpdateOneRequiredWithoutApplicationsNestedInput
-    tenant?: TenantUpdateOneRequiredWithoutApplicationsNestedInput
+    passager?: PassagerUpdateOneRequiredWithoutApplicationsNestedInput
   }
 
   export type ApplicationUncheckedUpdateWithoutLeaseInput = {
@@ -13592,7 +13592,7 @@ export namespace Prisma {
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
     propertyId?: IntFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -13634,7 +13634,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     property: PropertyCreateNestedOneWithoutLeasesInput
-    tenant: TenantCreateNestedOneWithoutLeasesInput
+    passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
   }
 
@@ -13645,7 +13645,7 @@ export namespace Prisma {
     rent: number
     deposit: number
     propertyId: number
-    tenantCognitoId: string
+    passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
   }
 
@@ -13671,7 +13671,7 @@ export namespace Prisma {
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
     property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
-    tenant?: TenantUpdateOneRequiredWithoutLeasesNestedInput
+    passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
   }
 
@@ -13682,7 +13682,7 @@ export namespace Prisma {
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
   }
 
@@ -13692,14 +13692,14 @@ export namespace Prisma {
     endDate: Date | string
     rent: number
     deposit: number
-    tenantCognitoId: string
+    passagerCognitoId: string
   }
 
   export type ApplicationCreateManyPropertyInput = {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
-    tenantCognitoId: string
+    passagerCognitoId: string
     name: string
     email: string
     phoneNumber: string
@@ -13712,7 +13712,7 @@ export namespace Prisma {
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
-    tenant?: TenantUpdateOneRequiredWithoutLeasesNestedInput
+    passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
   }
@@ -13723,7 +13723,7 @@ export namespace Prisma {
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
   }
@@ -13734,7 +13734,7 @@ export namespace Prisma {
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
     rent?: FloatFieldUpdateOperationsInput | number
     deposit?: FloatFieldUpdateOperationsInput | number
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
   export type ApplicationUpdateWithoutPropertyInput = {
@@ -13744,7 +13744,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
     message?: NullableStringFieldUpdateOperationsInput | string | null
-    tenant?: TenantUpdateOneRequiredWithoutApplicationsNestedInput
+    passager?: PassagerUpdateOneRequiredWithoutApplicationsNestedInput
     lease?: LeaseUpdateOneWithoutApplicationNestedInput
   }
 
@@ -13752,7 +13752,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -13764,7 +13764,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
-    tenantCognitoId?: StringFieldUpdateOperationsInput | string
+    passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -13772,28 +13772,28 @@ export namespace Prisma {
     leaseId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type TenantUpdateWithoutFavoritesInput = {
+  export type PassagerUpdateWithoutFavoritesInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutTenantsNestedInput
-    applications?: ApplicationUpdateManyWithoutTenantNestedInput
-    leases?: LeaseUpdateManyWithoutTenantNestedInput
+    properties?: PropertyUpdateManyWithoutPassagersNestedInput
+    applications?: ApplicationUpdateManyWithoutPassagerNestedInput
+    leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantUncheckedUpdateWithoutFavoritesInput = {
+  export type PassagerUncheckedUpdateWithoutFavoritesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutTenantsNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutTenantNestedInput
-    leases?: LeaseUncheckedUpdateManyWithoutTenantNestedInput
+    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantUncheckedUpdateManyWithoutFavoritesInput = {
+  export type PassagerUncheckedUpdateManyWithoutFavoritesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -13801,28 +13801,28 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type TenantUpdateWithoutPropertiesInput = {
+  export type PassagerUpdateWithoutPropertiesInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
     favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
-    applications?: ApplicationUpdateManyWithoutTenantNestedInput
-    leases?: LeaseUpdateManyWithoutTenantNestedInput
+    applications?: ApplicationUpdateManyWithoutPassagerNestedInput
+    leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantUncheckedUpdateWithoutPropertiesInput = {
+  export type PassagerUncheckedUpdateWithoutPropertiesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
     favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutTenantNestedInput
-    leases?: LeaseUncheckedUpdateManyWithoutTenantNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
-  export type TenantUncheckedUpdateManyWithoutPropertiesInput = {
+  export type PassagerUncheckedUpdateManyWithoutPropertiesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -13830,7 +13830,7 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type PropertyCreateManyManagerInput = {
+  export type PropertyCreateManyConducteurInput = {
     id?: number
     name: string
     description: string
@@ -13843,7 +13843,7 @@ export namespace Prisma {
     locationId: number
   }
 
-  export type PropertyUpdateWithoutManagerInput = {
+  export type PropertyUpdateWithoutConducteurInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     photoUrls?: PropertyUpdatephotoUrlsInput | string[]
@@ -13855,11 +13855,11 @@ export namespace Prisma {
     location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
     leases?: LeaseUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutManagerInput = {
+  export type PropertyUncheckedUpdateWithoutConducteurInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -13872,11 +13872,11 @@ export namespace Prisma {
     locationId?: IntFieldUpdateOperationsInput | number
     leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUncheckedUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUncheckedUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
   }
 
-  export type PropertyUncheckedUpdateManyWithoutManagerInput = {
+  export type PropertyUncheckedUpdateManyWithoutConducteurInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -13889,7 +13889,7 @@ export namespace Prisma {
     locationId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ApplicationCreateManyTenantInput = {
+  export type ApplicationCreateManyPassagerInput = {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
@@ -13901,7 +13901,7 @@ export namespace Prisma {
     leaseId?: number | null
   }
 
-  export type LeaseCreateManyTenantInput = {
+  export type LeaseCreateManyPassagerInput = {
     id?: number
     startDate: Date | string
     endDate: Date | string
@@ -13910,7 +13910,7 @@ export namespace Prisma {
     propertyId: number
   }
 
-  export type PropertyUpdateWithoutTenantsInput = {
+  export type PropertyUpdateWithoutPassagersInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     photoUrls?: PropertyUpdatephotoUrlsInput | string[]
@@ -13920,13 +13920,13 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    manager?: ManagerUpdateOneRequiredWithoutManagedPropertiesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
     leases?: LeaseUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUpdateManyWithoutFavoritesNestedInput
+    favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutTenantsInput = {
+  export type PropertyUncheckedUpdateWithoutPassagersInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -13937,13 +13937,13 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
     leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUncheckedUpdateManyWithoutFavoritesNestedInput
+    favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
   }
 
-  export type PropertyUncheckedUpdateManyWithoutTenantsInput = {
+  export type PropertyUncheckedUpdateManyWithoutPassagersInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -13954,7 +13954,7 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
   export type PropertyUpdateWithoutFavoritedByInput = {
@@ -13967,10 +13967,10 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    manager?: ManagerUpdateOneRequiredWithoutManagedPropertiesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
     leases?: LeaseUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUpdateManyWithoutPropertyNestedInput
-    tenants?: TenantUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyUncheckedUpdateWithoutFavoritedByInput = {
@@ -13984,10 +13984,10 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
     leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
-    tenants?: TenantUncheckedUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyUncheckedUpdateManyWithoutFavoritedByInput = {
@@ -14001,10 +14001,10 @@ export namespace Prisma {
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ApplicationUpdateWithoutTenantInput = {
+  export type ApplicationUpdateWithoutPassagerInput = {
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
     name?: StringFieldUpdateOperationsInput | string
@@ -14015,7 +14015,7 @@ export namespace Prisma {
     lease?: LeaseUpdateOneWithoutApplicationNestedInput
   }
 
-  export type ApplicationUncheckedUpdateWithoutTenantInput = {
+  export type ApplicationUncheckedUpdateWithoutPassagerInput = {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
@@ -14027,7 +14027,7 @@ export namespace Prisma {
     leaseId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type ApplicationUncheckedUpdateManyWithoutTenantInput = {
+  export type ApplicationUncheckedUpdateManyWithoutPassagerInput = {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
@@ -14039,7 +14039,7 @@ export namespace Prisma {
     leaseId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type LeaseUpdateWithoutTenantInput = {
+  export type LeaseUpdateWithoutPassagerInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
     rent?: FloatFieldUpdateOperationsInput | number
@@ -14049,7 +14049,7 @@ export namespace Prisma {
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
   }
 
-  export type LeaseUncheckedUpdateWithoutTenantInput = {
+  export type LeaseUncheckedUpdateWithoutPassagerInput = {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14060,7 +14060,7 @@ export namespace Prisma {
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
   }
 
-  export type LeaseUncheckedUpdateManyWithoutTenantInput = {
+  export type LeaseUncheckedUpdateManyWithoutPassagerInput = {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14078,11 +14078,11 @@ export namespace Prisma {
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    manager?: ManagerUpdateOneRequiredWithoutManagedPropertiesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
     leases?: LeaseUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyUncheckedUpdateWithoutLocationInput = {
@@ -14095,11 +14095,11 @@ export namespace Prisma {
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
     leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
-    favoritedBy?: TenantUncheckedUpdateManyWithoutFavoritesNestedInput
-    tenants?: TenantUncheckedUpdateManyWithoutPropertiesNestedInput
+    favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
   }
 
   export type PropertyCreateManyLocationInput = {
@@ -14112,7 +14112,7 @@ export namespace Prisma {
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    managerCognitoId: string
+    conducteurCognitoId: string
   }
 
   export type PropertyUncheckedUpdateManyWithoutLocationInput = {
@@ -14125,7 +14125,7 @@ export namespace Prisma {
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    managerCognitoId?: StringFieldUpdateOperationsInput | string
+    conducteurCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
   export type PaymentCreateManyLeaseInput = {

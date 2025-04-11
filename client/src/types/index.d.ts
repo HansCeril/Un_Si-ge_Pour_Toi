@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 import { AuthUser } from "aws-amplify/auth";
-import { Manager, Tenant, Property, Application } from "./prismaTypes";
+import { Manager, Tenant, Property, Application, Passager } from "./prismaTypes";
 import { MotionProps as OriginalMotionProps } from "framer-motion";
 
 declare module "framer-motion" {
@@ -91,7 +91,7 @@ declare global {
 
   interface ApplicationCardProps {
     application: Application;
-    userType: "manager" | "renter";
+    userType: "passager" | "conducteur";
     children: React.ReactNode;
   }
 
@@ -121,18 +121,18 @@ declare global {
   }
 
   interface AppSidebarProps {
-    userType: "manager" | "tenant";
+    userType: "conducteur" | "passager";
   }
 
   interface SettingsFormProps {
     initialData: SettingsFormData;
     onSubmit: (data: SettingsFormData) => Promise<void>;
-    userType: "manager" | "tenant";
+    userType: "conducteur" | "passager";
   }
 
   interface User {
     cognitoInfo: AuthUser;
-    userInfo: Tenant | Manager;
+    userInfo: Passager | Conducteur;
     userRole: JsonObject | JsonPrimitive | JsonArray;
   }
 }

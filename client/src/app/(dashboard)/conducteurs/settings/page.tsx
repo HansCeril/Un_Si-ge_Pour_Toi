@@ -1,13 +1,13 @@
 "use client";
 
 import SettingsForm from '@/components/SettingsForm';
-import { useGetAuthUserQuery, useUpdatePassagerSettingsMutation } from '@/state/api';
+import { useGetAuthUserQuery, useUpdateConducteurSettingsMutation, useUpdatePassagerSettingsMutation } from '@/state/api';
 import React from 'react'
 
-const PassagerSettings = () => {
+const ConducteurSettings = () => {
 
     const { data: authUser, isLoading } = useGetAuthUserQuery();
-    const [updatePassager] = useUpdatePassagerSettingsMutation();
+    const [updateConducteur] = useUpdateConducteurSettingsMutation();
     
     if (isLoading) return <>Loading...</>;
 
@@ -18,7 +18,7 @@ const PassagerSettings = () => {
     };
 
     const handleSubmit = async (data: typeof initialData) => {
-        await updatePassager({
+        await updateConducteur({
           cognitoId: authUser?.cognitoInfo?.userId,
           ...data,
         });
@@ -31,9 +31,9 @@ const PassagerSettings = () => {
         <SettingsForm
             initialData={initialData}
             onSubmit={handleSubmit}
-            userType="passager"
+            userType="conducteur"
         />
     )
 }
 
-export default PassagerSettings;
+export default ConducteurSettings;

@@ -92,22 +92,20 @@ export const HighlightIcons: Record<HighlightEnum, LucideIcon> = {
   QuietNeighborhood: VolumeX,
 };
 
-export enum PropertyTypeEnum {
-  Rooms = "Rooms",
-  Tinyhouse = "Tinyhouse",
-  Apartment = "Apartment",
-  Villa = "Villa",
-  Townhouse = "Townhouse",
-  Cottage = "Cottage",
+export enum CarTypeEnum {
+  Berline = "Berline",
+  Break = "Break",
+  Coupe = "Coupe",
+  Cabriolet = "Cabriolet",
+  Suv = "Suv",
 }
 
-export const PropertyTypeIcons: Record<PropertyTypeEnum, LucideIcon> = {
-  Rooms: Home,
-  Tinyhouse: Warehouse,
-  Apartment: Building,
-  Villa: Castle,
-  Townhouse: Home,
-  Cottage: Trees,
+export const CarTypeIcons: Record<CarTypeEnum, LucideIcon> = {
+  Berline: Car,
+  Break: Car,
+  Coupe: Car,
+  Cabriolet: Car,
+  Suv: Car,
 };
 
 // Add this constant at the end of the file

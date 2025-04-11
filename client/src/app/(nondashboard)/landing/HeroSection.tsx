@@ -10,14 +10,15 @@ import React from 'react'
 const HeroSection = () => {
   return (
     <div className="relative h-screen">
-        <Image
-            src="/landing-splash.jpg"
-            alt="Rentiful Rental Platform Hero Section"
-            fill
-            className="object-cover object-center"
-            priority
-
+        <video
+          src='/hero.mp4'
+          className='w-full h-full object-cover'
+          preload='metadata'
+          autoPlay
+          loop
+          muted
         />
+        <div className="absolute inset-0 bg-black/50"></div>
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

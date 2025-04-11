@@ -1,7 +1,8 @@
-import { createNewUserInDatabase, withToast } from "@/lib/utils";
-import { Conducteur, Passager } from "@/types/prismaTypes";
+import { cleanParams, createNewUserInDatabase, withToast } from "@/lib/utils";
+import { Conducteur, Passager, Property } from "@/types/prismaTypes";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { fetchAuthSession, getCurrentUser } from "aws-amplify/auth";
+import { FiltersState } from ".";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
@@ -16,7 +17,7 @@ export const api = createApi({
     }
   }),
   reducerPath: "api",
-  tagTypes: ["Passagers", "Conducteurs"],
+  tagTypes: ["Passagers", "Conducteurs", "Properties"],
   endpoints: (build) => ({
     getAuthUser: build.query<User, void>({
       queryFn: async(_, _queryApi, _extraoptions, fetchWithBQ) => {
@@ -56,6 +57,37 @@ export const api = createApi({
         }
       }
     }),
+
+    // property related endpoints
+    getProperties: build.query<
+      Property[],
+      Partial<FiltersState> & { favoriteIds?: number[] }
+    >({
+      query: (filters) => {
+        const params = cleanParams({
+          location: filters.location,
+          propertyType: filters.propertyType,
+          favoriteIds: filters.favoriteIds?.join(","),
+          latitude: filters.coordinates?.[1],
+          longitude: filters.coordinates?.[0],
+        });
+
+        return { url: "properties", params };
+      },
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Properties" as const, id })),
+              { type: "Properties", id: "LIST" },
+            ]
+          : [{ type: "Properties", id: "LIST" }],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to fetch properties.",
+        });
+      },
+    }),
+
     updatePassagerSettings: build.mutation<
       Passager,
       { cognitoId: string } & Partial<Passager>
@@ -98,4 +130,5 @@ export const {
   useGetAuthUserQuery,
   useUpdatePassagerSettingsMutation,
   useUpdateConducteurSettingsMutation,
+  useGetPropertiesQuery,
 } = api;

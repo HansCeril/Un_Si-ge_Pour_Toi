@@ -3,9 +3,9 @@ import {
     getPassager,
     createPassager,
     updatePassager,
-    // getCurrentCourse,
-    // addFavoriteProperty,
-    // removeFavoriteProperty,
+    getCurrentProperties,
+    addFavoriteProperty,
+    removeFavoriteProperty,
 } from "../controllers/passagerControllers";
 
 const router = express.Router();
@@ -13,8 +13,8 @@ const router = express.Router();
 router.get("/:cognitoId", getPassager);
 router.put("/:cognitoId", updatePassager);
 router.post("/", createPassager);
-// router.get("/:cognitoId/current-residences", getCurrentCourse);
-// router.post("/:cognitoId/favorites/:propertyId", addFavoriteProperty);
-// router.delete("/:cognitoId/favorites/:propertyId", removeFavoriteProperty);
+router.get("/:cognitoId/current-course", getCurrentProperties);
+router.post("/:cognitoId/favorites/:propertyId", addFavoriteProperty);
+router.delete("/:cognitoId/favorites/:propertyId", removeFavoriteProperty);
 
 export default router;

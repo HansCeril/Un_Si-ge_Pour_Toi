@@ -11,6 +11,7 @@ import passagerRoutes from "./routes/passagerRoutes";
 import conducteurRoutes from "./routes/conducteurRoutes"
 // import managerRoutes from "./routes/managerRoutes";
 import propertyRoutes from "./routes/propertyRoutes";
+import leaseRoutes from "./routes/leaseRoutes";
 // import leaseRoutes from "./routes/leaseRoutes";
 // import applicationRoutes from "./routes/applicationRoutes";
 
@@ -33,9 +34,9 @@ app.get("/", (req, res) => {
 
 // app.use("/applications", applicationRoutes);
 app.use("/properties", propertyRoutes);
-// app.use("/leases", leaseRoutes);
+app.use("/leases", leaseRoutes);
 app.use("/passagers", authMiddleware(["passager"]), passagerRoutes);
-app.use("/conducteurs", authMiddleware(["manager"]), conducteurRoutes);
+app.use("/conducteurs", authMiddleware(["conducteur"]), conducteurRoutes);
 
 /* SERVER */
 const port = Number(process.env.PORT) || 3002;

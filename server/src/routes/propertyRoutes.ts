@@ -16,7 +16,7 @@ router.get("/", getProperties);
 router.get("/:id", getProperty);
 router.post(
   "/",
-  authMiddleware(["manager"]),
+  authMiddleware(["conducteur"]),
   upload.array("photos"),
   createProperty
 );

@@ -1,5 +1,5 @@
 import { cleanParams, createNewUserInDatabase, withToast } from "@/lib/utils";
-import { Conducteur, Passager, Property } from "@/types/prismaTypes";
+import { Conducteur, Lease, Passager, Payment, Property } from "@/types/prismaTypes";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { fetchAuthSession, getCurrentUser } from "aws-amplify/auth";
 import { FiltersState } from ".";
@@ -18,7 +18,7 @@ export const api = createApi({
     }
   }),
   reducerPath: "api",
-  tagTypes: ["Passagers", "Conducteurs", "Properties", "CovoiturageDetails"],
+  tagTypes: ["Passagers", "Conducteurs", "Properties", "CovoiturageDetails", "Payments", "Leases"],
   endpoints: (build) => ({
     getAuthUser: build.query<User, void>({
       queryFn: async(_, _queryApi, _extraoptions, fetchWithBQ) => {
@@ -171,6 +171,37 @@ export const api = createApi({
       },
     }),
 
+    // lease related enpoints
+    getLeases: build.query<Lease[], number>({
+      query: () => "leases",
+      providesTags: ["Leases"],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to fetch leases.",
+        });
+      },
+    }),
+
+    getPropertyLeases: build.query<Lease[], number>({
+      query: (propertyId) => `properties/${propertyId}/leases`,
+      providesTags: ["Leases"],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to fetch property leases.",
+        });
+      },
+    }),
+
+    getPayments: build.query<Payment[], number>({
+      query: (leaseId) => `leases/${leaseId}/payments`,
+      providesTags: ["Payments"],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to fetch payment info.",
+        });
+      },
+    }),
+    
     getCurrentCovoiturage: build.query<Property[], string>({
       query: (cognitoId) => `passagers/${cognitoId}/current-course`,
       providesTags: (result) =>
@@ -186,6 +217,42 @@ export const api = createApi({
         });
       },
     }),
+
+    // Conducteur related endpoints
+    getConducteurProperties: build.query<Property[], string>({
+      query: (cognitoId) => `conducteurs/${cognitoId}/properties`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Properties" as const, id })),
+              { type: "Properties", id: "LIST" },
+            ]
+          : [{ type: "Properties", id: "LIST" }],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to load conducteur profile.",
+        });
+      },
+    }),
+
+    createProperty: build.mutation<Property, FormData>({
+      query: (newProperty) => ({
+        url: `properties`,
+        method: "POST",
+        body: newProperty,
+      }),
+      invalidatesTags: (result) => [
+        { type: "Properties", id: "LIST" },
+        { type: "Conducteurs", id: result?.conducteur?.id },
+      ],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          success: "Covoiturage created successfully!",
+          error: "Failed to create Covoiturage.",
+        });
+      },
+    }),
+
 
     updateConducteurSettings: build.mutation<
       Conducteur,
@@ -218,4 +285,9 @@ export const {
   useRemoveFavoritePropertyMutation,
   useGetCovoiturageQuery,
   useGetCurrentCovoiturageQuery,
+  useGetLeasesQuery,
+  useGetPropertyLeasesQuery,
+  useGetPaymentsQuery,
+  useGetConducteurPropertiesQuery,
+  useCreatePropertyMutation
 } = api;

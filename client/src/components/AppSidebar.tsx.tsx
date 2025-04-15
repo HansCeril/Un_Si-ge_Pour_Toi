@@ -69,7 +69,7 @@ const AppSidebar = ({ userType }: AppSidebarProps) => {
               {open ? (
                 <>
                   <h1 className="text-xl font-bold text-gray-800">
-                    {userType === "manager" ? "Manager View" : "Renter View"}
+                    {userType === "conducteur" ? "Conducteur" : "Passager"}
                   </h1>
                   <button
                     className="hover:bg-gray-100 p-2 rounded-md"

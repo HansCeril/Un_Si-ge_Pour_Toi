@@ -8,6 +8,8 @@ const ConducteurSettings = () => {
 
     const { data: authUser, isLoading } = useGetAuthUserQuery();
     const [updateConducteur] = useUpdateConducteurSettingsMutation();
+
+    console.log(authUser)
     
     if (isLoading) return <>Loading...</>;
 

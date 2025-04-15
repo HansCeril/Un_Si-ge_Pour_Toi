@@ -108,6 +108,24 @@ export const CarTypeIcons: Record<CarTypeEnum, LucideIcon> = {
   Suv: Car,
 };
 
+export enum PropertyTypeEnum {
+  Rooms = "Rooms",
+  Tinyhouse = "Tinyhouse",
+  Apartment = "Apartment",
+  Villa = "Villa",
+  Townhouse = "Townhouse",
+  Cottage = "Cottage",
+}
+
+export const PropertyTypeIcons: Record<PropertyTypeEnum, LucideIcon> = {
+  Rooms: Home,
+  Tinyhouse: Warehouse,
+  Apartment: Building,
+  Villa: Castle,
+  Townhouse: Home,
+  Cottage: Trees,
+};
+
 // Add this constant at the end of the file
 export const NAVBAR_HEIGHT = 52; // in pixels
 

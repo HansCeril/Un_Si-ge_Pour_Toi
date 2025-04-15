@@ -170,6 +170,23 @@ export const api = createApi({
         });
       },
     }),
+
+    getCurrentCovoiturage: build.query<Property[], string>({
+      query: (cognitoId) => `passagers/${cognitoId}/current-course`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Properties" as const, id })),
+              { type: "Properties", id: "LIST" },
+            ]
+          : [{ type: "Properties", id: "LIST" }],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to fetch current residences.",
+        });
+      },
+    }),
+
     updateConducteurSettings: build.mutation<
       Conducteur,
       { cognitoId: string } & Partial<Conducteur>
@@ -200,4 +217,5 @@ export const {
   useAddFavoritePropertyMutation,
   useRemoveFavoritePropertyMutation,
   useGetCovoiturageQuery,
+  useGetCurrentCovoiturageQuery,
 } = api;

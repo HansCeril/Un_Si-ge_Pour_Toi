@@ -27,25 +27,25 @@ const AppSidebar = ({ userType }: AppSidebarProps) => {
   const { toggleSidebar, open } = useSidebar();
 
   const navLinks =
-    userType === "manager"
+    userType === "conducteur"
       ? [
-          { icon: Building, label: "Properties", href: "/managers/properties" },
+          { icon: Building, label: "Properties", href: "/conducteurs/properties" },
           {
             icon: FileText,
             label: "Applications",
-            href: "/managers/applications",
+            href: "/conducteurs/applications",
           },
-          { icon: Settings, label: "Settings", href: "/managers/settings" },
+          { icon: Settings, label: "Settings", href: "/conducteurs/settings" },
         ]
       : [
-          { icon: Heart, label: "Favorites", href: "/tenants/favorites" },
+          { icon: Heart, label: "Favorites", href: "/passagers/favorites" },
           {
             icon: FileText,
             label: "Applications",
-            href: "/tenants/applications",
+            href: "/passagers/applications",
           },
-          { icon: Home, label: "Residences", href: "/tenants/residences" },
-          { icon: Settings, label: "Settings", href: "/tenants/settings" },
+          { icon: Home, label: "Residences", href: "/passagers/courses" },
+          { icon: Settings, label: "Settings", href: "/passagers/settings" },
         ];
 
   return (

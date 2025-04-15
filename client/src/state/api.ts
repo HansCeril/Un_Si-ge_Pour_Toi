@@ -18,7 +18,7 @@ export const api = createApi({
     }
   }),
   reducerPath: "api",
-  tagTypes: ["Passagers", "Conducteurs", "Properties"],
+  tagTypes: ["Passagers", "Conducteurs", "Properties", "CovoiturageDetails"],
   endpoints: (build) => ({
     getAuthUser: build.query<User, void>({
       queryFn: async(_, _queryApi, _extraoptions, fetchWithBQ) => {
@@ -87,6 +87,17 @@ export const api = createApi({
           error: "Failed to fetch properties.",
         });
       },
+    }),
+
+    getCovoiturage: build.query<Property, number> ({
+      query: (id) => `properties/${id}`,
+      providesTags: (result, error, id) => [{ type: "CovoiturageDetails", id }],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to load property details.",
+        });
+      },
+
     }),
 
     // Passager related endpoints
@@ -188,4 +199,5 @@ export const {
   useGetPassagerQuery,
   useAddFavoritePropertyMutation,
   useRemoveFavoritePropertyMutation,
+  useGetCovoiturageQuery,
 } = api;

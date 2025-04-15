@@ -3,6 +3,7 @@ import { Conducteur, Passager, Property } from "@/types/prismaTypes";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { fetchAuthSession, getCurrentUser } from "aws-amplify/auth";
 import { FiltersState } from ".";
+import { result } from "lodash";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
@@ -88,6 +89,59 @@ export const api = createApi({
       },
     }),
 
+    // Passager related endpoints
+    getPassager: build.query<Passager, string>({
+      query: (cognitoId) => `passagers/${cognitoId}`,
+      providesTags: (result) => [{ type: "Passagers", id: result?.id }],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          error: "Failed to load passager profile.",
+        });
+      },
+    }),
+
+    // Add favorite property to passager
+    addFavoriteProperty: build.mutation<
+      Passager,
+      { cognitoId: string; propertyId: number }
+    >({
+      query: ({ cognitoId, propertyId }) => ({
+        url: `passagers/${cognitoId}/favorites/${propertyId}`,
+        method: "POST",
+      }),
+      invalidatesTags: (result) => [
+        { type: "Passagers", id: result?.id },
+        { type: "Properties", id: "LIST" },
+      ],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          success: "Added to favorites!!",
+          error: "Failed to add to favorites",
+        });
+      },
+    }),
+
+    // remove favorite property from passager
+    removeFavoriteProperty: build.mutation<
+      Passager,
+      { cognitoId: string; propertyId: number }
+    >({
+      query: ({ cognitoId, propertyId }) => ({
+        url: `passagers/${cognitoId}/favorites/${propertyId}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: (result) => [
+        { type: "Passagers", id: result?.id },
+        { type: "Properties", id: "LIST" },
+      ],
+      async onQueryStarted(_, { queryFulfilled }) {
+        await withToast(queryFulfilled, {
+          success: "Removed from favorites!",
+          error: "Failed to remove from favorites.",
+        });
+      },
+    }),
+
     updatePassagerSettings: build.mutation<
       Passager,
       { cognitoId: string } & Partial<Passager>
@@ -131,4 +185,7 @@ export const {
   useUpdatePassagerSettingsMutation,
   useUpdateConducteurSettingsMutation,
   useGetPropertiesQuery,
+  useGetPassagerQuery,
+  useAddFavoritePropertyMutation,
+  useRemoveFavoritePropertyMutation,
 } = api;

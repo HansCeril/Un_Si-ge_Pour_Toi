@@ -9,6 +9,7 @@ import FiltersFull from './FiltersFull';
 import { cleanParams } from '@/lib/utils';
 import { setFilters } from '@/state';
 import GoogleMap from './Map';
+import Listings from './Listings';
 
 const SearchPage = () => {
     const searchParams = useSearchParams();
@@ -56,9 +57,16 @@ const SearchPage = () => {
                 >
                     <FiltersFull />
                 </div>
-                <GoogleMap />
+                <GoogleMap 
+                  center={{ lat: 43.6, lng: 1.4333 }} 
+                  locations={[
+                    { id: 1, lat: 43.601, lng: 1.432, title: "Car Stop 1" },
+                    { id: 2, lat: 43.603, lng: 1.434, title: "Car Stop 2" }
+                  ]}
+                />
                 <div className="basis-4/12 overflow-y-auto">
-                {/* <Listings /> */}
+                  <Listings />
+
                 </div>
             </div>
             page

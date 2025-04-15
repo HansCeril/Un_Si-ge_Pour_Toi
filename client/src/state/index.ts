@@ -14,9 +14,9 @@ interface InitialStateTypes {
 
 export const initialState: InitialStateTypes = {
   filters: {
-    location: "Toulouse",
+    location: "Los Angeles",
     propertyType: "any",
-    coordinates: [43.599998, 1.43333],
+    coordinates: [-118.25, 34.05],
   },
   isFiltersFullOpen: false,
   viewMode: "grid",

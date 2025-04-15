@@ -1,5 +1,6 @@
 import {
     FiltersState,
+    initialState,
     setFilters,
     setViewMode,
     toggleFiltersFullOpen,
@@ -26,6 +27,7 @@ import {
     const dispatch = useDispatch();
     const router = useRouter();
     const pathname = usePathname();
+    
     const filters = useAppSelector((state) => state.global.filters);
     const isFiltersFullOpen = useAppSelector(
       (state) => state.global.isFiltersFullOpen
@@ -66,17 +68,20 @@ import {
     };
   
     const handleLocationSearch = async () => {
+      console.log("click")
       try {
         const response = await fetch(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
+          `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
             searchInput
-          )}.json?access_token=${
-            process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
-          }&fuzzyMatch=true`
+          )}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY}`
         );
+    
         const data = await response.json();
-        if (data.features && data.features.length > 0) {
-          const [lng, lat] = data.features[0].center;
+        console.log(data)
+    
+        if (data.results && data.results.length > 0) {
+          const { lat, lng } = data.results[0].geometry.location;
+    
           dispatch(
             setFilters({
               location: searchInput,
@@ -85,9 +90,10 @@ import {
           );
         }
       } catch (err) {
-        console.error("Error search location:", err);
+        console.error("Error searching location:", err);
       }
     };
+
   
     return (
       <div className="flex justify-between items-center w-full py-5">

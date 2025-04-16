@@ -110,8 +110,6 @@ model Lease {
   id              Int      @id @default(autoincrement())
   startDate       DateTime
   endDate         DateTime
-  rent            Float
-  deposit         Float
   propertyId      Int
   passagerCognitoId String
 

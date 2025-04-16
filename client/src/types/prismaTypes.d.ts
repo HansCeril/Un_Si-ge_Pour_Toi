@@ -7427,15 +7427,11 @@ export namespace Prisma {
 
   export type LeaseAvgAggregateOutputType = {
     id: number | null
-    rent: number | null
-    deposit: number | null
     propertyId: number | null
   }
 
   export type LeaseSumAggregateOutputType = {
     id: number | null
-    rent: number | null
-    deposit: number | null
     propertyId: number | null
   }
 
@@ -7443,8 +7439,6 @@ export namespace Prisma {
     id: number | null
     startDate: Date | null
     endDate: Date | null
-    rent: number | null
-    deposit: number | null
     propertyId: number | null
     passagerCognitoId: string | null
   }
@@ -7453,8 +7447,6 @@ export namespace Prisma {
     id: number | null
     startDate: Date | null
     endDate: Date | null
-    rent: number | null
-    deposit: number | null
     propertyId: number | null
     passagerCognitoId: string | null
   }
@@ -7463,8 +7455,6 @@ export namespace Prisma {
     id: number
     startDate: number
     endDate: number
-    rent: number
-    deposit: number
     propertyId: number
     passagerCognitoId: number
     _all: number
@@ -7473,15 +7463,11 @@ export namespace Prisma {
 
   export type LeaseAvgAggregateInputType = {
     id?: true
-    rent?: true
-    deposit?: true
     propertyId?: true
   }
 
   export type LeaseSumAggregateInputType = {
     id?: true
-    rent?: true
-    deposit?: true
     propertyId?: true
   }
 
@@ -7489,8 +7475,6 @@ export namespace Prisma {
     id?: true
     startDate?: true
     endDate?: true
-    rent?: true
-    deposit?: true
     propertyId?: true
     passagerCognitoId?: true
   }
@@ -7499,8 +7483,6 @@ export namespace Prisma {
     id?: true
     startDate?: true
     endDate?: true
-    rent?: true
-    deposit?: true
     propertyId?: true
     passagerCognitoId?: true
   }
@@ -7509,8 +7491,6 @@ export namespace Prisma {
     id?: true
     startDate?: true
     endDate?: true
-    rent?: true
-    deposit?: true
     propertyId?: true
     passagerCognitoId?: true
     _all?: true
@@ -7606,8 +7586,6 @@ export namespace Prisma {
     id: number
     startDate: Date
     endDate: Date
-    rent: number
-    deposit: number
     propertyId: number
     passagerCognitoId: string
     _count: LeaseCountAggregateOutputType | null
@@ -7635,8 +7613,6 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    rent?: boolean
-    deposit?: boolean
     propertyId?: boolean
     passagerCognitoId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
@@ -7650,8 +7626,6 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    rent?: boolean
-    deposit?: boolean
     propertyId?: boolean
     passagerCognitoId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
@@ -7662,8 +7636,6 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    rent?: boolean
-    deposit?: boolean
     propertyId?: boolean
     passagerCognitoId?: boolean
     property?: boolean | PropertyDefaultArgs<ExtArgs>
@@ -7674,13 +7646,11 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    rent?: boolean
-    deposit?: boolean
     propertyId?: boolean
     passagerCognitoId?: boolean
   }
 
-  export type LeaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startDate" | "endDate" | "rent" | "deposit" | "propertyId" | "passagerCognitoId", ExtArgs["result"]["lease"]>
+  export type LeaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startDate" | "endDate" | "propertyId" | "passagerCognitoId", ExtArgs["result"]["lease"]>
   export type LeaseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     property?: boolean | PropertyDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
@@ -7709,8 +7679,6 @@ export namespace Prisma {
       id: number
       startDate: Date
       endDate: Date
-      rent: number
-      deposit: number
       propertyId: number
       passagerCognitoId: string
     }, ExtArgs["result"]["lease"]>
@@ -8143,8 +8111,6 @@ export namespace Prisma {
     readonly id: FieldRef<"Lease", 'Int'>
     readonly startDate: FieldRef<"Lease", 'DateTime'>
     readonly endDate: FieldRef<"Lease", 'DateTime'>
-    readonly rent: FieldRef<"Lease", 'Float'>
-    readonly deposit: FieldRef<"Lease", 'Float'>
     readonly propertyId: FieldRef<"Lease", 'Int'>
     readonly passagerCognitoId: FieldRef<"Lease", 'String'>
   }
@@ -9819,8 +9785,6 @@ export namespace Prisma {
     id: 'id',
     startDate: 'startDate',
     endDate: 'endDate',
-    rent: 'rent',
-    deposit: 'deposit',
     propertyId: 'propertyId',
     passagerCognitoId: 'passagerCognitoId'
   };
@@ -10360,8 +10324,6 @@ export namespace Prisma {
     id?: IntFilter<"Lease"> | number
     startDate?: DateTimeFilter<"Lease"> | Date | string
     endDate?: DateTimeFilter<"Lease"> | Date | string
-    rent?: FloatFilter<"Lease"> | number
-    deposit?: FloatFilter<"Lease"> | number
     propertyId?: IntFilter<"Lease"> | number
     passagerCognitoId?: StringFilter<"Lease"> | string
     property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
@@ -10374,8 +10336,6 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    rent?: SortOrder
-    deposit?: SortOrder
     propertyId?: SortOrder
     passagerCognitoId?: SortOrder
     property?: PropertyOrderByWithRelationInput
@@ -10391,8 +10351,6 @@ export namespace Prisma {
     NOT?: LeaseWhereInput | LeaseWhereInput[]
     startDate?: DateTimeFilter<"Lease"> | Date | string
     endDate?: DateTimeFilter<"Lease"> | Date | string
-    rent?: FloatFilter<"Lease"> | number
-    deposit?: FloatFilter<"Lease"> | number
     propertyId?: IntFilter<"Lease"> | number
     passagerCognitoId?: StringFilter<"Lease"> | string
     property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
@@ -10405,8 +10363,6 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    rent?: SortOrder
-    deposit?: SortOrder
     propertyId?: SortOrder
     passagerCognitoId?: SortOrder
     _count?: LeaseCountOrderByAggregateInput
@@ -10423,8 +10379,6 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Lease"> | number
     startDate?: DateTimeWithAggregatesFilter<"Lease"> | Date | string
     endDate?: DateTimeWithAggregatesFilter<"Lease"> | Date | string
-    rent?: FloatWithAggregatesFilter<"Lease"> | number
-    deposit?: FloatWithAggregatesFilter<"Lease"> | number
     propertyId?: IntWithAggregatesFilter<"Lease"> | number
     passagerCognitoId?: StringWithAggregatesFilter<"Lease"> | string
   }
@@ -10855,8 +10809,6 @@ export namespace Prisma {
   export type LeaseCreateInput = {
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     property: PropertyCreateNestedOneWithoutLeasesInput
     passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
@@ -10867,8 +10819,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     propertyId: number
     passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
@@ -10878,8 +10828,6 @@ export namespace Prisma {
   export type LeaseUpdateInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
@@ -10890,8 +10838,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
@@ -10902,8 +10848,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     propertyId: number
     passagerCognitoId: string
   }
@@ -10911,16 +10855,12 @@ export namespace Prisma {
   export type LeaseUpdateManyMutationInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
   }
 
   export type LeaseUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
   }
@@ -11492,17 +11432,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type FloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
   export type ApplicationNullableScalarRelationFilter = {
     is?: ApplicationWhereInput | null
     isNot?: ApplicationWhereInput | null
@@ -11522,16 +11451,12 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    rent?: SortOrder
-    deposit?: SortOrder
     propertyId?: SortOrder
     passagerCognitoId?: SortOrder
   }
 
   export type LeaseAvgOrderByAggregateInput = {
     id?: SortOrder
-    rent?: SortOrder
-    deposit?: SortOrder
     propertyId?: SortOrder
   }
 
@@ -11539,8 +11464,6 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    rent?: SortOrder
-    deposit?: SortOrder
     propertyId?: SortOrder
     passagerCognitoId?: SortOrder
   }
@@ -11549,20 +11472,16 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    rent?: SortOrder
-    deposit?: SortOrder
     propertyId?: SortOrder
     passagerCognitoId?: SortOrder
   }
 
   export type LeaseSumOrderByAggregateInput = {
     id?: SortOrder
-    rent?: SortOrder
-    deposit?: SortOrder
     propertyId?: SortOrder
   }
 
-  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+  export type FloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
     notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -11570,12 +11489,7 @@ export namespace Prisma {
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type EnumPaymentStatusFilter<$PrismaModel = never> = {
@@ -11632,6 +11546,22 @@ export namespace Prisma {
     amountDue?: SortOrder
     amountPaid?: SortOrder
     leaseId?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type EnumPaymentStatusWithAggregatesFilter<$PrismaModel = never> = {
@@ -12196,14 +12126,6 @@ export namespace Prisma {
     connect?: PaymentWhereUniqueInput | PaymentWhereUniqueInput[]
   }
 
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
   export type PropertyUpdateOneRequiredWithoutLeasesNestedInput = {
     create?: XOR<PropertyCreateWithoutLeasesInput, PropertyUncheckedCreateWithoutLeasesInput>
     connectOrCreate?: PropertyCreateOrConnectWithoutLeasesInput
@@ -12272,6 +12194,14 @@ export namespace Prisma {
     create?: XOR<LeaseCreateWithoutPaymentsInput, LeaseUncheckedCreateWithoutPaymentsInput>
     connectOrCreate?: LeaseCreateOrConnectWithoutPaymentsInput
     connect?: LeaseWhereUniqueInput
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type EnumPaymentStatusFieldUpdateOperationsInput = {
@@ -12512,6 +12442,13 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type NestedEnumPaymentStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentStatus | EnumPaymentStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentStatusFilter<$PrismaModel> | $Enums.PaymentStatus
+  }
+
   export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -12526,13 +12463,6 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
-  }
-
-  export type NestedEnumPaymentStatusFilter<$PrismaModel = never> = {
-    equals?: $Enums.PaymentStatus | EnumPaymentStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumPaymentStatusFilter<$PrismaModel> | $Enums.PaymentStatus
   }
 
   export type NestedEnumPaymentStatusWithAggregatesFilter<$PrismaModel = never> = {
@@ -12568,8 +12498,6 @@ export namespace Prisma {
   export type LeaseCreateWithoutPropertyInput = {
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
@@ -12579,8 +12507,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
@@ -12752,8 +12678,6 @@ export namespace Prisma {
     id?: IntFilter<"Lease"> | number
     startDate?: DateTimeFilter<"Lease"> | Date | string
     endDate?: DateTimeFilter<"Lease"> | Date | string
-    rent?: FloatFilter<"Lease"> | number
-    deposit?: FloatFilter<"Lease"> | number
     propertyId?: IntFilter<"Lease"> | number
     passagerCognitoId?: StringFilter<"Lease"> | string
   }
@@ -13021,8 +12945,6 @@ export namespace Prisma {
   export type LeaseCreateWithoutPassagerInput = {
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     property: PropertyCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
@@ -13032,8 +12954,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     propertyId: number
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
@@ -13239,8 +13159,6 @@ export namespace Prisma {
   export type LeaseCreateWithoutApplicationInput = {
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     property: PropertyCreateNestedOneWithoutLeasesInput
     passager: PassagerCreateNestedOneWithoutLeasesInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
@@ -13250,8 +13168,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     propertyId: number
     passagerCognitoId: string
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
@@ -13352,8 +13268,6 @@ export namespace Prisma {
   export type LeaseUpdateWithoutApplicationInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
@@ -13363,8 +13277,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
@@ -13631,8 +13543,6 @@ export namespace Prisma {
   export type LeaseCreateWithoutPaymentsInput = {
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     property: PropertyCreateNestedOneWithoutLeasesInput
     passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
@@ -13642,8 +13552,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     propertyId: number
     passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
@@ -13668,8 +13576,6 @@ export namespace Prisma {
   export type LeaseUpdateWithoutPaymentsInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
@@ -13679,8 +13585,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
@@ -13690,8 +13594,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     passagerCognitoId: string
   }
 
@@ -13710,8 +13612,6 @@ export namespace Prisma {
   export type LeaseUpdateWithoutPropertyInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
@@ -13721,8 +13621,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
@@ -13732,8 +13630,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -13905,8 +13801,6 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    rent: number
-    deposit: number
     propertyId: number
   }
 
@@ -14042,8 +13936,6 @@ export namespace Prisma {
   export type LeaseUpdateWithoutPassagerInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
@@ -14053,8 +13945,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
@@ -14064,8 +13954,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    rent?: FloatFieldUpdateOperationsInput | number
-    deposit?: FloatFieldUpdateOperationsInput | number
     propertyId?: IntFieldUpdateOperationsInput | number
   }
 

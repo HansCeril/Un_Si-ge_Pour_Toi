@@ -86,8 +86,6 @@ CREATE TABLE "Lease" (
     "id" SERIAL NOT NULL,
     "startDate" TIMESTAMP(3) NOT NULL,
     "endDate" TIMESTAMP(3) NOT NULL,
-    "rent" DOUBLE PRECISION NOT NULL,
-    "deposit" DOUBLE PRECISION NOT NULL,
     "propertyId" INTEGER NOT NULL,
     "passagerCognitoId" TEXT NOT NULL,
 

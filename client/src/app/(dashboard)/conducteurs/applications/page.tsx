@@ -30,6 +30,8 @@ const Applications = () => {
       skip: !authUser?.cognitoInfo?.userId,
     }
   );
+
+  console.log(isError)
   const [updateApplicationStatus] = useUpdateApplicationStatusMutation();
 
   const handleStatusChange = async (id: number, status: string) => {
@@ -47,8 +49,8 @@ const Applications = () => {
   return (
     <div className="dashboard-container">
       <Header
-        title="Applications"
-        subtitle="View and manage applications for your properties"
+        title="Les candidatures"
+        subtitle="Suivez les demandes des passagers sur vos trajets"
       />
       <Tabs
         value={activeTab}
@@ -56,10 +58,10 @@ const Applications = () => {
         className="w-full my-5"
       >
         <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="pending">Pending</TabsTrigger>
-          <TabsTrigger value="approved">Approved</TabsTrigger>
-          <TabsTrigger value="denied">Denied</TabsTrigger>
+          <TabsTrigger value="all">Tous les trajets</TabsTrigger>
+          <TabsTrigger value="pending">En attente</TabsTrigger>
+          <TabsTrigger value="approved">Acceptées</TabsTrigger>
+          <TabsTrigger value="denied">Refusées</TabsTrigger>
         </TabsList>
         {["all", "pending", "approved", "denied"].map((tab) => (
           <TabsContent key={tab} value={tab} className="mt-5 w-full">
@@ -88,7 +90,7 @@ const Applications = () => {
                       <div className="flex flex-wrap items-center">
                         <File className="w-5 h-5 mr-2 flex-shrink-0" />
                         <span className="mr-2">
-                          Application submitted on{" "}
+                          Réservation effectuée le{" "}
                           {new Date(
                             application.applicationDate
                           ).toLocaleDateString()}
@@ -105,11 +107,11 @@ const Applications = () => {
                           }`}
                         >
                           {application.status === "Approved" &&
-                            "This application has been approved."}
+                            "Cette réservation a été validée."}
                           {application.status === "Denied" &&
-                            "This application has been denied."}
+                            "Cette réservation a été Refusées."}
                           {application.status === "Pending" &&
-                            "This application is pending review."}
+                            "Cette demande est en attente de validation."}
                         </span>
                       </div>
                     </div>

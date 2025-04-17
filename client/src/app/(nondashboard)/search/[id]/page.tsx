@@ -8,6 +8,7 @@ import ImagePreviews from './ImagePreviews';
 import CovoiturageOverview from './CovoiturageOverview';
 import CovoiturageLocation from './CovoiturageLocation';
 import ContactWidget from './ContactWidget';
+import ApplicationModal from './ApplicationModal';
 
 
 
@@ -30,6 +31,13 @@ const DetailSearch = () => {
                     <ContactWidget onOpenModal={() => setIsModalOpen(true)} />
                 </div>
             </div>
+            {authUser && (
+                <ApplicationModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    propertyId={propertyId}
+                />
+            )}
         </div>
     )
 }

@@ -22,8 +22,8 @@ const Properties = () => {
   return (
     <div className="dashboard-container">
       <Header
-        title="My Properties"
-        subtitle="View and manage your property listings"
+        title="Mes covoiturages"
+        subtitle="Gérer mes offres de covoiturage"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {conducteurProperties?.map((property) => (
@@ -38,7 +38,7 @@ const Properties = () => {
         ))}
       </div>
       {(!conducteurProperties || conducteurProperties.length === 0) && (
-        <p>You don&lsquo;t manage any properties</p>
+        <p>Vous n&lsquo;avez encore proposé aucun trajet</p>
       )}
     </div>
   );

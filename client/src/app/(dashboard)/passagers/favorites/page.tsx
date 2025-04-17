@@ -12,7 +12,7 @@ import React from "react";
 
 const Favorites = () => {
   const { data: authUser } = useGetAuthUserQuery();
-  const { data: tenant } = useGetPassagerQuery(
+  const { data: passager } = useGetPassagerQuery(
     authUser?.cognitoInfo?.userId || "",
     {
       skip: !authUser?.cognitoInfo?.userId,
@@ -24,8 +24,8 @@ const Favorites = () => {
     isLoading,
     error,
   } = useGetPropertiesQuery(
-    { favoriteIds: tenant?.favorites?.map((fav: { id: number }) => fav.id) },
-    { skip: !tenant?.favorites || tenant?.favorites.length === 0 }
+    { favoriteIds: passager?.favorites?.map((fav: { id: number }) => fav.id) },
+    { skip: !passager?.favorites || passager?.favorites.length === 0 }
   );
 
   if (isLoading) return <Loading />;

@@ -18,6 +18,9 @@ const SearchPage = () => {
         (state) => state.global.isFiltersFullOpen
     );
 
+    {/* Get Filters */}
+    const filters = useAppSelector((state) => state.global.filters);
+
     useEffect(() => {
         const initialFilters = Array.from(searchParams.entries()).reduce(
           (acc: any, [key, value]) => {
@@ -57,13 +60,7 @@ const SearchPage = () => {
                 >
                     <FiltersFull />
                 </div>
-                <GoogleMap 
-                  center={{ lat: 43.6, lng: 1.4333 }} 
-                  locations={[
-                    { id: 1, lat: 43.601, lng: 1.432, title: "Car Stop 1" },
-                    { id: 2, lat: 43.603, lng: 1.434, title: "Car Stop 2" }
-                  ]}
-                />
+                <GoogleMap />
                 <div className="basis-4/12 overflow-y-auto">
                   <Listings />
 

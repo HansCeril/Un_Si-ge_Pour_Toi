@@ -286,6 +286,7 @@ export const api = createApi({
     >({
       query: (params) => {
         const queryParams = new URLSearchParams();
+        console.log(params)
         if (params.userId) {
           queryParams.append("userId", params.userId.toString());
         }

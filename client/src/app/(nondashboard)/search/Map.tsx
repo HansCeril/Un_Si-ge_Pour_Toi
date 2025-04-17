@@ -8,12 +8,8 @@ import { Map, Marker } from "@vis.gl/react-google-maps";
 
 import React from "react";
 
-type GoogleMapProps = {
-  center: { lat: number; lng: number };
-  locations: { id: number; lat: number; lng: number; title: string }[];
-};
 
-const GoogleMap = ({ center, locations }: GoogleMapProps) => {
+const GoogleMap = () => {
 
   const filters = useAppSelector((state) => state.global.filters);
   {/* Get Properties by filters */}
@@ -33,7 +29,7 @@ const GoogleMap = ({ center, locations }: GoogleMapProps) => {
         <GoogleMapProvider apiKey="AIzaSyAgGu8x5z4EUb3NefC1VZ4CQzg4apnFXkg">
             <Map
                 defaultZoom={11}
-                defaultCenter={{ lat: filters.coordinates[1], lng: filters.coordinates[0] }}
+                center={{ lat: filters.coordinates[1], lng: filters.coordinates[0] }}
                 gestureHandling={"cooperative"}
                 disableDefaultUI={false}
             >

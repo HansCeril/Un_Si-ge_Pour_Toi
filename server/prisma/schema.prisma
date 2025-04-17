@@ -112,7 +112,6 @@ model Lease {
   endDate         DateTime
   propertyId      Int
   passagerCognitoId String
-
   property    Property     @relation(fields: [propertyId], references: [id])
   passager      Passager       @relation(fields: [passagerCognitoId], references: [cognitoId])
   application Application?

@@ -12,7 +12,7 @@ import React from "react";
 
 const Residences = () => {
   const { data: authUser } = useGetAuthUserQuery();
-  const { data: tenant } = useGetPassagerQuery(
+  const { data: passager } = useGetPassagerQuery(
     authUser?.cognitoInfo?.userId || "",
     {
       skip: !authUser?.cognitoInfo?.userId,
@@ -43,7 +43,7 @@ const Residences = () => {
           <Card
             key={covoiturage.id}
             property={covoiturage}
-            isFavorite={tenant?.favorites.includes(covoiturage.id) || false}
+            isFavorite={passager?.favorites.includes(covoiturage.id) || false}
             onFavoriteToggle={() => {}}
             showFavoriteButton={false}
             propertyLink={`/passagers/courses/${covoiturage.id}`}

@@ -29,23 +29,23 @@ const AppSidebar = ({ userType }: AppSidebarProps) => {
   const navLinks =
     userType === "conducteur"
       ? [
-          { icon: Building, label: "Properties", href: "/conducteurs/properties" },
+          { icon: Building, label: "Covoiturages", href: "/conducteurs/properties" },
           {
             icon: FileText,
-            label: "Applications",
+            label: "Réservations",
             href: "/conducteurs/applications",
           },
-          { icon: Settings, label: "Settings", href: "/conducteurs/settings" },
+          { icon: Settings, label: "Paramètres", href: "/conducteurs/settings" },
         ]
       : [
-          { icon: Heart, label: "Favorites", href: "/passagers/favorites" },
+          { icon: Heart, label: "Favories", href: "/passagers/favorites" },
           {
             icon: FileText,
-            label: "Applications",
-            href: "/passagers/applications",
+            label: "Réservations",
+            href: "/passagers/reservations",
           },
-          { icon: Home, label: "Residences", href: "/passagers/courses" },
-          { icon: Settings, label: "Settings", href: "/passagers/settings" },
+          { icon: Home, label: "Vos coboiturages", href: "/passagers/courses" },
+          { icon: Settings, label: "Paramètres", href: "/passagers/settings" },
         ];
 
   return (

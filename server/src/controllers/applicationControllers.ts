@@ -14,11 +14,11 @@ export const listApplications = async (
 
     if (userId && userType) {
       if (userType === "passager") {
-        whereClause = { tenantCognitoId: String(userId) };
+        whereClause = { passagerCognitoId: String(userId) };
       } else if (userType === "conducteur") {
         whereClause = {
           property: {
-            managerCognitoId: String(userId),
+            conducteurCognitoId: String(userId),
           },
         };
       }
@@ -64,7 +64,7 @@ export const listApplications = async (
             ...app.property,
             address: app.property.location.address,
           },
-          manager: app.property.conducteur,
+          conducteur: app.property.conducteur,
           lease: lease
             ? {
                 ...lease,
@@ -92,17 +92,16 @@ export const createApplication = async (
       applicationDate,
       status,
       propertyId,
-      tenantCognitoId,
+      passagerCognitoId,
       name,
       email,
       phoneNumber,
       message,
     } = req.body;
-
+    
     const property = await prisma.property.findUnique({
       where: { id: propertyId }
-    });
-
+    })
     if (!property) {
       res.status(404).json({ message: "Property not found" });
       return;
@@ -120,10 +119,12 @@ export const createApplication = async (
             connect: { id: propertyId },
           },
           passager: {
-            connect: { cognitoId: tenantCognitoId },
+            connect: { cognitoId: passagerCognitoId },
           },
         },
       });
+
+      console.log("PASS2")
 
       // Then create application with lease connection
       const application = await prisma.application.create({
@@ -138,7 +139,7 @@ export const createApplication = async (
             connect: { id: propertyId },
           },
           passager: {
-            connect: { cognitoId: tenantCognitoId },
+            connect: { cognitoId: passagerCognitoId },
           },
           lease: {
             connect: { id: lease.id },
@@ -150,6 +151,8 @@ export const createApplication = async (
           lease: true,
         },
       });
+
+      console.log(application)
 
       return application;
     });
@@ -196,7 +199,7 @@ export const updateApplicationStatus = async (
         },
       });
 
-      // Update the property to connect the tenant
+      // Update the property to connect the passager
       await prisma.property.update({
         where: { id: application.propertyId },
         data: {

@@ -25,12 +25,9 @@ const PropertyTenants = () => {
   const { id } = useParams();
   const propertyId = Number(id);
 
-  const { data: property, isLoading: propertyLoading } =
-  useGetCovoiturageQuery(propertyId);
-  const { data: leases, isLoading: leasesLoading } =
-    useGetPropertyLeasesQuery(propertyId);
-  const { data: payments, isLoading: paymentsLoading } =
-    useGetPaymentsQuery(propertyId);
+  const { data: property, isLoading: propertyLoading } = useGetCovoiturageQuery(propertyId);
+  const { data: leases, isLoading: leasesLoading } = useGetPropertyLeasesQuery(propertyId);
+  const { data: payments, isLoading: paymentsLoading } = useGetPaymentsQuery(propertyId);
 
   if (propertyLoading || leasesLoading || paymentsLoading) return <Loading />;
 
@@ -54,21 +51,21 @@ const PropertyTenants = () => {
         scroll={false}
       >
         <ArrowLeft className="w-4 h-4 mr-2" />
-        <span>Back to Properties</span>
+        <span>Retour aux trajets</span>
       </Link>
 
       <Header
         title={property?.name || "My Property"}
-        subtitle="Manage COnducteurs and leases for this property"
+        subtitle="Voir les détails et historiques des trajets"
       />
 
       <div className="w-full space-y-6">
         <div className="mt-8 bg-white rounded-xl shadow-md overflow-hidden p-6">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <h2 className="text-2xl font-bold mb-1">Conducteur Overview</h2>
+              <h2 className="text-2xl font-bold mb-1">Fiche conducteur</h2>
               <p className="text-sm text-gray-500">
-                Manage and view all conducteurs for this property.
+                Aperçu de vos trajets
               </p>
             </div>
             <div>
@@ -77,7 +74,7 @@ const PropertyTenants = () => {
               px-4 rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50`}
               >
                 <Download className="w-5 h-5 mr-2" />
-                <span>Download All</span>
+                <span>Télécharger le PDF</span>
               </button>
             </div>
           </div>
@@ -86,68 +83,19 @@ const PropertyTenants = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Conducteur</TableHead>
-                  <TableHead>Lease Period</TableHead>
-                  <TableHead>Current Month Status</TableHead>
-                  <TableHead>Contact</TableHead>
-                  <TableHead>Action</TableHead>
+                  <TableHead>Nom complet du conducteur</TableHead>
+                  <TableHead>Période du trajet</TableHead>
+                  <TableHead>Point de départ</TableHead>
+                  <TableHead>Point d’arrivée</TableHead>
+                  <TableHead>Animaux autorisés</TableHead>
+                  <TableHead>Statut du trajet</TableHead>
+                  <TableHead>Immatriculation véhicule</TableHead>
+                  <TableHead>Date de soumission</TableHead>
+                  <TableHead>Contact (tèl.)	</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {leases?.map((lease) => (
-                  <TableRow key={lease.id} className="h-24">
-                    <TableCell>
-                      <div className="flex items-center space-x-3">
-                        <Image
-                          src="/landing-i1.png"
-                          alt={lease.conducteur.name}
-                          width={40}
-                          height={40}
-                          className="rounded-full"
-                        />
-                        <div>
-                          <div className="font-semibold">
-                            {lease.conducteur.name}
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            {lease.conducteur.email}
-                          </div>
-                        </div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div>
-                        {new Date(lease.startDate).toLocaleDateString()} -
-                      </div>
-                      <div>{new Date(lease.endDate).toLocaleDateString()}</div>
-                    </TableCell>
-                    <TableCell>${lease.rent.toFixed(2)}</TableCell>
-                    <TableCell>
-                      <span
-                        className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                          getCurrentMonthPaymentStatus(lease.id) === "Paid"
-                            ? "bg-green-100 text-green-800 border-green-300"
-                            : "bg-red-100 text-red-800 border-red-300"
-                        }`}
-                      >
-                        {getCurrentMonthPaymentStatus(lease.id) === "Paid" && (
-                          <Check className="w-4 h-4 inline-block mr-1" />
-                        )}
-                        {getCurrentMonthPaymentStatus(lease.id)}
-                      </span>
-                    </TableCell>
-                    <TableCell>{lease.conducteur.phoneNumber}</TableCell>
-                    <TableCell>
-                      <button
-                        className={`border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex 
-                      items-center justify-center font-semibold hover:bg-primary-700 hover:text-primary-50`}
-                      >
-                        <ArrowDownToLine className="w-4 h-4 mr-1" />
-                        Download Agreement
-                      </button>
-                    </TableCell>
-                  </TableRow>
-                ))}
+                
               </TableBody>
             </Table>
           </div>

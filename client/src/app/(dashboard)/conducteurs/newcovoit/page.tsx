@@ -59,8 +59,8 @@ const NewProperty = () => {
   return (
     <div className="dashboard-container">
       <Header
-        title="Add New Property"
-        subtitle="Create a new property listing with detailed information"
+        title="Ajouter un nouveau trajet"
+        subtitle="Publiez une offre de covoiturage avec tous les détails"
       />
       <div className="bg-white rounded-xl p-6">
         <Form {...form}>
@@ -68,11 +68,11 @@ const NewProperty = () => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="p-4 space-y-10"
           >
-            {/* Basic Information */}
+            {/* Informations principales */}
             <div>
-              <h2 className="text-lg font-semibold mb-4">Basic Information</h2>
+              <h2 className="text-lg font-semibold mb-4">Informations principales</h2>
               <div className="space-y-4">
-                <CustomFormField name="name" label="Name" />
+                <CustomFormField name="name" label="Nom du conducteur" />
                 <CustomFormField
                   name="description"
                   label="Description"
@@ -85,12 +85,12 @@ const NewProperty = () => {
 
             {/* Property Details */}
             <div className="space-y-6">
-              <h2 className="text-lg font-semibold mb-4">Details</h2>
+              <h2 className="text-lg font-semibold mb-4">Détails</h2>
         
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                 <CustomFormField
                   name="isPetsAllowed"
-                  label="Pets Allowed"
+                  label="Animaux autorisés"
                   type="switch"
                 />
               </div>
@@ -114,7 +114,7 @@ const NewProperty = () => {
               <h2 className="text-lg font-semibold mb-4">Photos</h2>
               <CustomFormField
                 name="photoUrls"
-                label="Property Photos"
+                label="Photos du conducteur"
                 type="file"
                 accept="image/*"
               />
@@ -125,30 +125,30 @@ const NewProperty = () => {
             {/* Additional Information */}
             <div className="space-y-6">
               <h2 className="text-lg font-semibold mb-4">
-                Additional Information
+                Informations supplémentaires
               </h2>
-              <CustomFormField name="address" label="Address" />
+              <CustomFormField name="address" label="Adresse" />
               <div className="flex justify-between gap-4">
-                <CustomFormField name="city" label="City" className="w-full" />
+                <CustomFormField name="city" label="Ville" className="w-full" />
                 <CustomFormField
                   name="state"
-                  label="State"
+                  label="Région"
                   className="w-full"
                 />
                 <CustomFormField
                   name="postalCode"
-                  label="Postal Code"
+                  label="Code postal"
                   className="w-full"
                 />
               </div>
-              <CustomFormField name="country" label="Country" />
+              <CustomFormField name="country" label="Pays" />
             </div>
 
             <Button
                 type="submit"
                 className="bg-primary-700 text-white w-full mt-8"                  
             >
-              Create Property
+              Publier le trajet
             </Button>
           </form>
         </Form>

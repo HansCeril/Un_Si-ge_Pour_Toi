@@ -19,13 +19,13 @@ const Reservations = () => {
   });
 
   if (isLoading) return <Loading />;
-  if (isError || !applications) return <div>Error fetching applications</div>;
+  if (isError || !applications) return <div>Erreur lors du chargement des candidatures réservations</div>;
 
   return (
     <div className="dashboard-container">
       <Header
-        title="Applications"
-        subtitle="Track and manage your property rental applications"
+        title="Vos Réservations"
+        subtitle="Suivez et gérez vos réservations effectuées"
       />
       <div className="w-full">
         {applications?.map((application) => (
@@ -38,18 +38,18 @@ const Reservations = () => {
               {application.status === "Approved" ? (
                 <div className="bg-green-100 p-4 text-green-700 grow flex items-center">
                   <CircleCheckBig className="w-5 h-5 mr-2" />
-                  The property is being rented by you until{" "}
+                  Ce trajet vous est réservé jusqu&rsquo;au{" "}
                   {new Date(application.lease?.endDate).toLocaleDateString()}
                 </div>
               ) : application.status === "Pending" ? (
                 <div className="bg-yellow-100 p-4 text-yellow-700 grow flex items-center">
                   <Clock className="w-5 h-5 mr-2" />
-                  Your application is pending approval
+                  Votre demande est en attente de validation
                 </div>
               ) : (
                 <div className="bg-red-100 p-4 text-red-700 grow flex items-center">
                   <XCircle className="w-5 h-5 mr-2" />
-                  Your application has been denied
+                  Votre demande a été refusée
                 </div>
               )}
 

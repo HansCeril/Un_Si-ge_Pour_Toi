@@ -29,13 +29,13 @@ const Favorites = () => {
   );
 
   if (isLoading) return <Loading />;
-  if (error) return <div>Error loading favorites</div>;
+  if (error) return <div>Impossible de charger vos trajets enregistrés</div>;
 
   return (
     <div className="dashboard-container">
       <Header
-        title="Favorited Properties"
-        subtitle="Browse and manage your saved property listings"
+        title="Trajets ajoutés aux favoris"
+        subtitle="Parcourir et gérer vos trajets enregistrés"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {favoriteProperties?.map((property) => (
@@ -50,7 +50,9 @@ const Favorites = () => {
         ))}
       </div>
       {(!favoriteProperties || favoriteProperties.length === 0) && (
-        <p>You don&lsquo;t have any favorited properties</p>
+        <p>Vous n’&lsquo;avez enregistré aucun trajet pour le moment
+
+        </p>
       )}
     </div>
   );

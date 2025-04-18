@@ -30,13 +30,13 @@ const Residences = () => {
   console.log(currentCovoiturages);
 
   if (isLoading) return <Loading />;
-  if (error) return <div>Error loading current residences</div>;
+  if (error) return <div>Erreur de chargment de vos trajets en cours</div>;
 
   return (
     <div className="dashboard-container">
       <Header
-        title="Current Residences"
-        subtitle="View and manage your current living spaces"
+        title="Trajets en cours"
+        subtitle="Consultez et gérez vos trajets réservés"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {currentCovoiturages?.map((covoiturage) => (
@@ -51,7 +51,7 @@ const Residences = () => {
         ))}
       </div>
       {(!currentCovoiturages || currentCovoiturages.length === 0) && (
-        <p>You don&lsquo;t have any current residences</p>
+        <p>Vous n&lsquo;avez aucune réservation en cours</p>
       )}
     </div>
   );

@@ -153,7 +153,7 @@ const Navbar = () => {
                         variant="outline"
                         className="text-white border-white bg-transparent hover:bg-white hover:text-primary-700 rounded-lg"
                         >
-                            Se connectez
+                            Se connecter
                         </Button>
                     </Link>
                     <Link href="/signup">
@@ -161,7 +161,7 @@ const Navbar = () => {
                         variant="secondary"
                         className="text-white bg-secondary-600 hover:bg-white hover:text-primary-700 rounded-lg"
                         >
-                            S'enrengistrez
+                            S'enrengistrer
                         </Button>
                     </Link>
                     </>

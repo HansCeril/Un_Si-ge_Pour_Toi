@@ -33,8 +33,8 @@ import React from "react";
 const PaymentMethod = () => {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden p-6 mt-10 md:mt-0 flex-1">
-      <h2 className="text-2xl font-bold mb-4">Payment method</h2>
-      <p className="mb-4">Change how you pay for your plan.</p>
+      <h2 className="text-2xl font-bold mb-4">Méthode de paiement</h2>
+      <p className="mb-4">Changer votre mode de paiement.</p>
       <div className="border rounded-lg p-6">
         <div>
           {/* Card Info */}
@@ -45,19 +45,19 @@ const PaymentMethod = () => {
             <div className="flex flex-col justify-between">
               <div>
                 <div className="flex items-start gap-5">
-                  <h3 className="text-lg font-semibold">Visa ending in 2024</h3>
+                  <h3 className="text-lg font-semibold">Information de la carte</h3>
                   <span className="text-sm font-medium border border-primary-700 text-primary-700 px-3 py-1 rounded-full">
                     Default
                   </span>
                 </div>
                 <div className="text-sm text-gray-500 flex items-center">
                   <CreditCard className="w-4 h-4 mr-1" />
-                  <span>Expiry • 26/06/2024</span>
+                  <span>Expire le • 26/06/2024</span>
                 </div>
               </div>
               <div className="text-sm text-gray-500 flex items-center">
                 <Mail className="w-4 h-4 mr-1" />
-                <span>billing@baseclub.com</span>
+                <span>anselmeceril@gmail.com</span>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ const PaymentMethod = () => {
           <div className="flex justify-end">
             <button className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50">
               <Edit className="w-5 h-5 mr-2" />
-              <span>Edit</span>
+              <span>Modifier</span>
             </button>
           </div>
         </div>
@@ -113,21 +113,21 @@ const ResidenceCard = ({
         <hr className="my-4" />
         <div className="flex justify-between items-center">
           <div className="xl:flex">
-            <div className="text-gray-500 mr-2">Start Date: </div>
+            <div className="text-gray-500 mr-2">Date de début: </div>
             <div className="font-semibold">
               {new Date(currentLease.startDate).toLocaleDateString()}
             </div>
           </div>
           <div className="border-[0.5px] border-primary-300 h-4" />
           <div className="xl:flex">
-            <div className="text-gray-500 mr-2">End Date: </div>
+            <div className="text-gray-500 mr-2"> Date de fin: </div>
             <div className="font-semibold">
               {new Date(currentLease.endDate).toLocaleDateString()}
             </div>
           </div>
           <div className="border-[0.5px] border-primary-300 h-4" />
           <div className="xl:flex">
-            <div className="text-gray-500 mr-2">Next Payment: </div>
+            <div className="text-gray-500 mr-2">Prochain paiement: </div>
             <div className="font-semibold">
               {new Date(currentLease.endDate).toLocaleDateString()}
             </div>
@@ -139,11 +139,11 @@ const ResidenceCard = ({
       <div className="flex justify-end gap-2 w-full">
         <button className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50">
           <User className="w-5 h-5 mr-2" />
-          Manager
+          Passager
         </button>
         <button className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50">
           <Download className="w-5 h-5 mr-2" />
-          Download Agreement
+          Télécharger le contrat
         </button>
       </div>
     </div>
@@ -156,15 +156,15 @@ const BillingHistory = ({ payments }: { payments: Payment[] }) => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-bold mb-1">Billing History</h2>
+          <h2 className="text-2xl font-bold mb-1">Historique de facturation</h2>
           <p className="text-sm text-gray-500">
-            Download your previous plan receipts and usage details.
+          Téléchargez vos anciennes factures et les détails de vos trajets.
           </p>
         </div>
         <div>
           <button className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50">
             <Download className="w-5 h-5 mr-2" />
-            <span>Download All</span>
+            <span>Tout télécharger</span>
           </button>
         </div>
       </div>
@@ -173,10 +173,10 @@ const BillingHistory = ({ payments }: { payments: Payment[] }) => {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Invoice</TableHead>
+              <TableHead>Facture</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>Billing Date</TableHead>
-              <TableHead>Amount</TableHead>
+              <TableHead>Date de facturation</TableHead>
+              <TableHead>Montant</TableHead>
               <TableHead>Action</TableHead>
             </TableRow>
           </TableHeader>

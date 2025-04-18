@@ -47,7 +47,7 @@ const ApplicationCard = ({
             </div>
             <div className="text-xl font-semibold">
               ${application.property.pricePerMonth}{" "}
-              <span className="text-sm font-normal">/ month</span>
+              <span className="text-sm font-normal">/ mois</span>
             </div>
           </div>
         </div>
@@ -69,15 +69,15 @@ const ApplicationCard = ({
             <hr className="mt-3" />
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">Start Date:</span>{" "}
+            <span className="text-gray-500">Date de début:</span>{" "}
             {new Date(application.lease?.startDate).toLocaleDateString()}
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">End Date:</span>{" "}
+            <span className="text-gray-500">Date de fin:</span>{" "}
             {new Date(application.lease?.endDate).toLocaleDateString()}
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">Next Payment:</span>{" "}
+            <span className="text-gray-500">Prochain paiement:</span>{" "}
             {new Date(application.lease?.nextPaymentDate).toLocaleDateString()}
           </div>
         </div>

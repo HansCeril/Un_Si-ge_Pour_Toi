@@ -144,7 +144,7 @@ const Applications = () => {
                               handleStatusChange(application.id, "Approved")
                             }
                           >
-                            Approve
+                            Approuver
                           </button>
                           <button
                             className="px-4 py-2 text-sm text-white bg-red-600 rounded hover:bg-red-500"
@@ -161,7 +161,7 @@ const Applications = () => {
                           className={`bg-gray-800 text-white py-2 px-4 rounded-md flex items-center
                           justify-center hover:bg-secondary-500 hover:text-primary-50`}
                         >
-                          Contact User
+                          Contacter l’utilisateur
                         </button>
                       )}
                     </div>

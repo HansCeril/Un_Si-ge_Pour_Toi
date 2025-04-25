@@ -4,14 +4,14 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const CardCompact = ({
-  property,
+  covoiturage,
   isFavorite,
   onFavoriteToggle,
   showFavoriteButton = true,
-  propertyLink,
+  covoiturageLink,
 }: CardCompactProps) => {
   const [imgSrc, setImgSrc] = useState(
-    property.photoUrls?.[0] || "/placeholder.jpg"
+    covoiturage.photoUrls?.[0] || "/placeholder.jpg"
   );
 
   return (
@@ -19,14 +19,14 @@ const CardCompact = ({
       <div className="relative w-1/3">
         <Image
           src={imgSrc}
-          alt={property.name}
+          alt={covoiturage.name}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           onError={() => setImgSrc("/placeholder.jpg")}
         />
         <div className="absolute bottom-2 left-2 flex gap-1 flex-col">
-          {property.isPetsAllowed && (
+          {covoiturage.isPetsAllowed && (
             <span className="bg-white/80 text-black text-xs font-semibold px-2 py-1 rounded-full w-fit">
               Pets
             </span>
@@ -38,16 +38,16 @@ const CardCompact = ({
         <div>
           <div className="flex justify-between items-start">
             <h2 className="text-xl font-bold mb-1">
-              {propertyLink ? (
+              {covoiturageLink ? (
                 <Link
-                  href={propertyLink}
+                  href={covoiturageLink}
                   className="hover:underline hover:text-blue-600"
                   scroll={false}
                 >
-                  {property.name}
+                  {covoiturage.name}
                 </Link>
               ) : (
-                property.name
+                covoiturage.name
               )}
             </h2>
             {showFavoriteButton && (
@@ -64,15 +64,15 @@ const CardCompact = ({
             )}
           </div>
           <p className="text-gray-600 mb-1 text-sm">
-            {property?.location?.address}, {property?.location?.city}
+            {covoiturage?.location?.address}, {covoiturage?.location?.city}
           </p>
           <div className="flex text-sm items-center">
             <Star className="w-3 h-3 text-yellow-400 mr-1" />
             <span className="font-semibold">
-              {property.averageRating.toFixed(1)}
+              {covoiturage.averageRating.toFixed(1)}
             </span>
             <span className="text-gray-600 ml-1">
-              ({property.numberOfReviews})
+              ({covoiturage.numberOfReviews})
             </span>
           </div>
         </div>

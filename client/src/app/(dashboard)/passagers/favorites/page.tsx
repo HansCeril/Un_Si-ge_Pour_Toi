@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Loading from "@/components/Loading";
 import {
   useGetAuthUserQuery,
-  useGetPropertiesQuery,
+  useGetCovoituragesQuery,
   useGetPassagerQuery,
 } from "@/state/api";
 import React from "react";
@@ -20,10 +20,10 @@ const Favorites = () => {
   );
 
   const {
-    data: favoriteProperties,
+    data: favoriteCovoiturages,
     isLoading,
     error,
-  } = useGetPropertiesQuery(
+  } = useGetCovoituragesQuery(
     { favoriteIds: passager?.favorites?.map((fav: { id: number }) => fav.id) },
     { skip: !passager?.favorites || passager?.favorites.length === 0 }
   );
@@ -38,18 +38,18 @@ const Favorites = () => {
         subtitle="Parcourir et gérer vos trajets enregistrés"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {favoriteProperties?.map((property) => (
+        {favoriteCovoiturages?.map((covoiturage) => (
           <Card
-            key={property.id}
-            property={property}
+            key={covoiturage.id}
+            covoiturage={covoiturage}
             isFavorite={true}
             onFavoriteToggle={() => {}}
             showFavoriteButton={false}
-            propertyLink={`/passagers/courses/${property.id}`}
+            covoiturageLink={`/passagers/courses/${covoiturage.id}`}
           />
         ))}
       </div>
-      {(!favoriteProperties || favoriteProperties.length === 0) && (
+      {(!favoriteCovoiturages || favoriteCovoiturages.length === 0) && (
         <p>Vous n’&lsquo;avez enregistré aucun trajet pour le moment
 
         </p>

@@ -8,21 +8,21 @@ import React, { useEffect, useRef } from "react";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN as string;
 
-const CovoiturageLocation = ({ propertyId }: PropertyDetailsProps) => {
+const CovoiturageLocation = ({ covoiturageId }: CovoiturageDetailsProps) => {
     const {
-        data: property,
+        data: covoiturage,
         isError,
         isLoading,
-    } = useGetCovoiturageQuery(propertyId);
+    } = useGetCovoiturageQuery(covoiturageId);
 
 
     if (isLoading) return <>Loading...</>;
 
-    if (isError || !property) return <>Property not Found</>;
+    if (isError || !covoiturage) return <>Covoiturage not Found</>;
 
     const position = {
-        lat: property.location.coordinates.latitude,
-        lng: property.location.coordinates.longitude,
+        lat: covoiturage.location.coordinates.latitude,
+        lng: covoiturage.location.coordinates.longitude,
     };
 
     return (
@@ -33,15 +33,15 @@ const CovoiturageLocation = ({ propertyId }: PropertyDetailsProps) => {
             <div className="flex justify-between items-center text-sm text-primary-500 mt-2">
                 <div className="flex items-center text-gray-500">
                     <MapPin className="w-4 h-4 mr-1 text-gray-700" />
-                    Property Address:
+                    Covoiturage Address:
                     <span className="ml-2 font-semibold text-gray-700">
-                        {property.location?.address || "Address not available"}
+                        {covoiturage.location?.address || "Address not available"}
                     </span>
                 </div>
 
                 <a
                     href={`https://maps.google.com/?q=${encodeURIComponent(
-                        property.location?.address || ""
+                        covoiturage.location?.address || ""
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

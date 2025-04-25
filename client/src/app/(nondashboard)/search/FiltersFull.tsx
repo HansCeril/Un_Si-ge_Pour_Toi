@@ -109,7 +109,7 @@ const FiltersFull = () => {
           </div>
         </div>
 
-        {/* Property Type */}
+        {/* Covoiturage Type */}
         <div>
           <h4 className="font-bold mb-2">Type de Véhicule</h4>
           <div className="grid grid-cols-2 gap-4">
@@ -118,14 +118,14 @@ const FiltersFull = () => {
                 key={type}
                 className={cn(
                   "flex flex-col items-center justify-center p-4 border rounded-xl cursor-pointer",
-                  localFilters.propertyType === type
+                  localFilters.covoiturageType === type
                     ? "border-black"
                     : "border-gray-200"
                 )}
                 onClick={() =>
                   setLocalFilters((prev) => ({
                     ...prev,
-                    propertyType: type as PropertyTypeEnum,
+                    covoiturageType: type as CovoiturageTypeEnum,
                   }))
                 }
               >

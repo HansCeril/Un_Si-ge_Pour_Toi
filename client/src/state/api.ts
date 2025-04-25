@@ -1,5 +1,5 @@
 import { cleanParams, createNewUserInDatabase, withToast } from "@/lib/utils";
-import { Application, Conducteur, Lease, Passager, Payment, Property } from "@/types/prismaTypes";
+import { Application, Conducteur, Lease, Passager, Payment, Covoiturage } from "@/types/prismaTypes";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { fetchAuthSession, getCurrentUser } from "aws-amplify/auth";
 import { FiltersState } from ".";
@@ -22,7 +22,7 @@ export const api = createApi({
     "Applications",
     "Passagers",
     "Conducteurs",
-    "Properties",
+    "Covoiturages",
     "CovoiturageDetails",
     "Payments",
     "Leases"
@@ -67,42 +67,42 @@ export const api = createApi({
       }
     }),
 
-    // property related endpoints
-    getProperties: build.query<
-      Property[],
+    // Covoiturage related endpoints
+    getCovoiturages: build.query<
+      Covoiturage[],
       Partial<FiltersState> & { favoriteIds?: number[] }
     >({
       query: (filters) => {
         const params = cleanParams({
           location: filters.location,
-          propertyType: filters.propertyType,
+          covoiturageType: filters.covoiturageType,
           favoriteIds: filters.favoriteIds?.join(","),
           latitude: filters.coordinates?.[1],
           longitude: filters.coordinates?.[0],
         });
 
-        return { url: "properties", params };
+        return { url: "covoiturages", params };
       },
       providesTags: (result) =>
         result
           ? [
-              ...result.map(({ id }) => ({ type: "Properties" as const, id })),
-              { type: "Properties", id: "LIST" },
+              ...result.map(({ id }) => ({ type: "Covoiturages" as const, id })),
+              { type: "Covoiturages", id: "LIST" },
             ]
-          : [{ type: "Properties", id: "LIST" }],
+          : [{ type: "Covoiturages", id: "LIST" }],
       async onQueryStarted(_, { queryFulfilled }) {
         await withToast(queryFulfilled, {
-          error: "Failed to fetch properties.",
+          error: "Failed to fetch covoiturages.",
         });
       },
     }),
 
-    getCovoiturage: build.query<Property, number> ({
-      query: (id) => `properties/${id}`,
+    getCovoiturage: build.query<Covoiturage, number> ({
+      query: (id) => `covoiturages/${id}`,
       providesTags: (result, error, id) => [{ type: "CovoiturageDetails", id }],
       async onQueryStarted(_, { queryFulfilled }) {
         await withToast(queryFulfilled, {
-          error: "Failed to load property details.",
+          error: "Failed to load covoiturage details.",
         });
       },
 
@@ -119,18 +119,18 @@ export const api = createApi({
       },
     }),
 
-    // Add favorite property to passager
-    addFavoriteProperty: build.mutation<
+    // Add favorite Covoiturage to passager
+    addFavoriteCovoiturage: build.mutation<
       Passager,
-      { cognitoId: string; propertyId: number }
+      { cognitoId: string; covoiturageId: number }
     >({
-      query: ({ cognitoId, propertyId }) => ({
-        url: `passagers/${cognitoId}/favorites/${propertyId}`,
+      query: ({ cognitoId, covoiturageId }) => ({
+        url: `passagers/${cognitoId}/favorites/${covoiturageId}`,
         method: "POST",
       }),
       invalidatesTags: (result) => [
         { type: "Passagers", id: result?.id },
-        { type: "Properties", id: "LIST" },
+        { type: "Covoiturages", id: "LIST" },
       ],
       async onQueryStarted(_, { queryFulfilled }) {
         await withToast(queryFulfilled, {
@@ -140,18 +140,18 @@ export const api = createApi({
       },
     }),
 
-    // remove favorite property from passager
-    removeFavoriteProperty: build.mutation<
+    // remove favorite Covoiturage from passager
+    removeFavoriteCovoiturage: build.mutation<
       Passager,
-      { cognitoId: string; propertyId: number }
+      { cognitoId: string; covoiturageId: number }
     >({
-      query: ({ cognitoId, propertyId }) => ({
-        url: `passagers/${cognitoId}/favorites/${propertyId}`,
+      query: ({ cognitoId, covoiturageId }) => ({
+        url: `passagers/${cognitoId}/favorites/${covoiturageId}`,
         method: "DELETE",
       }),
       invalidatesTags: (result) => [
         { type: "Passagers", id: result?.id },
-        { type: "Properties", id: "LIST" },
+        { type: "Covoiturages", id: "LIST" },
       ],
       async onQueryStarted(_, { queryFulfilled }) {
         await withToast(queryFulfilled, {
@@ -190,12 +190,12 @@ export const api = createApi({
       },
     }),
 
-    getPropertyLeases: build.query<Lease[], number>({
-      query: (propertyId) => `properties/${propertyId}/leases`,
+    getCovoiturageLeases: build.query<Lease[], number>({
+      query: (covoiturageId) => `covoiturages/${covoiturageId}/leases`,
       providesTags: ["Leases"],
       async onQueryStarted(_, { queryFulfilled }) {
         await withToast(queryFulfilled, {
-          error: "Failed to fetch property leases.",
+          error: "Failed to fetch covoiturage leases.",
         });
       },
     }),
@@ -210,15 +210,15 @@ export const api = createApi({
       },
     }),
     
-    getCurrentCovoiturage: build.query<Property[], string>({
+    getCurrentCovoiturage: build.query<Covoiturage[], string>({
       query: (cognitoId) => `passagers/${cognitoId}/current-course`,
       providesTags: (result) =>
         result
           ? [
-              ...result.map(({ id }) => ({ type: "Properties" as const, id })),
-              { type: "Properties", id: "LIST" },
+              ...result.map(({ id }) => ({ type: "Covoiturages" as const, id })),
+              { type: "Covoiturages", id: "LIST" },
             ]
-          : [{ type: "Properties", id: "LIST" }],
+          : [{ type: "Covoiturages", id: "LIST" }],
       async onQueryStarted(_, { queryFulfilled }) {
         await withToast(queryFulfilled, {
           error: "Failed to fetch current residences.",
@@ -227,15 +227,15 @@ export const api = createApi({
     }),
 
     // Conducteur related endpoints
-    getConducteurProperties: build.query<Property[], string>({
-      query: (cognitoId) => `conducteurs/${cognitoId}/properties`,
+    getConducteurCovoiturages: build.query<Covoiturage[], string>({
+      query: (cognitoId) => `conducteurs/${cognitoId}/covoituragess`,
       providesTags: (result) =>
         result
           ? [
-              ...result.map(({ id }) => ({ type: "Properties" as const, id })),
-              { type: "Properties", id: "LIST" },
+              ...result.map(({ id }) => ({ type: "Covoiturages" as const, id })),
+              { type: "Covoiturages", id: "LIST" },
             ]
-          : [{ type: "Properties", id: "LIST" }],
+          : [{ type: "Covoiturages", id: "LIST" }],
       async onQueryStarted(_, { queryFulfilled }) {
         await withToast(queryFulfilled, {
           error: "Failed to load conducteur profile.",
@@ -243,14 +243,14 @@ export const api = createApi({
       },
     }),
 
-    createProperty: build.mutation<Property, FormData>({
-      query: (newProperty) => ({
-        url: `properties`,
+    createCovoiturage: build.mutation<Covoiturage, FormData>({
+      query: (newCovoiturage) => ({
+        url: `covoiturages`,
         method: "POST",
-        body: newProperty,
+        body: newCovoiturage,
       }),
       invalidatesTags: (result) => [
-        { type: "Properties", id: "LIST" },
+        { type: "Covoiturages", id: "LIST" },
         { type: "Conducteurs", id: result?.conducteur?.id },
       ],
       async onQueryStarted(_, { queryFulfilled }) {
@@ -344,17 +344,17 @@ export const {
   useGetAuthUserQuery,
   useUpdatePassagerSettingsMutation,
   useUpdateConducteurSettingsMutation,
-  useGetPropertiesQuery,
+  useGetCovoituragesQuery,
   useGetPassagerQuery,
-  useAddFavoritePropertyMutation,
-  useRemoveFavoritePropertyMutation,
+  useAddFavoriteCovoiturageMutation,
+  useRemoveFavoriteCovoiturageMutation,
   useGetCovoiturageQuery,
   useGetCurrentCovoiturageQuery,
   useGetLeasesQuery,
-  useGetPropertyLeasesQuery,
+  useGetCovoiturageLeasesQuery,
   useGetPaymentsQuery,
-  useGetConducteurPropertiesQuery,
-  useCreatePropertyMutation,
+  useGetConducteurCovoituragesQuery,
+  useCreateCovoiturageMutation,
   useCreateApplicationMutation,
   useGetApplicationsQuery,
   useLazyGetApplicationsQuery,

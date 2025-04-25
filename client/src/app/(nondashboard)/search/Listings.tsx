@@ -1,9 +1,8 @@
 import Card from '@/components/Card';
 import CardCompact from '@/components/CardCompact';
-import { useAddFavoritePropertyMutation, useGetAuthUserQuery, useGetPassagerQuery, useGetPropertiesQuery, useRemoveFavoritePropertyMutation } from '@/state/api'
+import { useAddFavoriteCovoiturageMutation, useGetAuthUserQuery, useGetCovoituragesQuery, useGetPassagerQuery, useRemoveFavoriteCovoiturageMutation } from '@/state/api'
 import { useAppSelector } from '@/state/redux'
-import { Property } from '@/types/prismaTypes';
-import { property } from 'lodash';
+import { Covoiturage } from '@/types/prismaTypes';
 import React from 'react'
 
 const Listings = () => {
@@ -15,84 +14,84 @@ const Listings = () => {
             skip: !authUser?.cognitoInfo?.userId
         }
     );
-    const [addFavorite] = useAddFavoritePropertyMutation();
-    const[removeFavorite] = useRemoveFavoritePropertyMutation();
+    const [addFavorite] = useAddFavoriteCovoiturageMutation();
+    const[removeFavorite] = useRemoveFavoriteCovoiturageMutation();
 
     {/* Get View Mode */}
     const viewMode = useAppSelector((state) => state.global.viewMode);
     {/* Get Filters */}
     const filters = useAppSelector((state) => state.global.filters);
 
-    {/* Get Properties by filters */}
+    {/* Get Covoiturages by filters */}
     const {
-        data: properties,
+        data: covoiturages,
         isLoading,
         isError
-    } = useGetPropertiesQuery(filters);
+    } = useGetCovoituragesQuery(filters);
     
-    const handleFavoriteToggle = async (propertyId: number) => {
+    const handleFavoriteToggle = async (covoiturageId: number) => {
         if(!authUser) return;
 
         const isFavorite = passager?.favorites?.some(
-            (fav: Property) => fav.id === propertyId
+            (fav: Covoiturage) => fav.id === covoiturageId
         );
 
         if (isFavorite) {
             await removeFavorite(
                 {
                     cognitoId: authUser.cognitoInfo.userId,
-                    propertyId
+                    covoiturageId
                 }
             );
         } else {
             await addFavorite(
                 {
                     cognitoId: authUser.cognitoInfo.userId,
-                    propertyId
+                    covoiturageId
                 }
             );
         }
     };
 
     if (isLoading) return <>Loading ...</>;
-    if (isError || !properties) return <div> Failed to fetch location </div>
+    if (isError || !covoiturages) return <div> Failed to fetch location </div>
 
     return (
         <div className='w-full'>
             <h3 className='text-sm px-4 font-bold'>
-                {properties.length}{" "}
+                {covoiturages.length}{" "}
                 <span className='text-gray-700 font-normal'>
                     Places in {filters.location}
                 </span>
             </h3>
             <div className='flex'>
                 <div className='p-4 w-full'>
-                    {properties?.map((property) =>
+                    {covoiturages?.map((covoiturage) =>
                         viewMode === "grid" ? (
                             <Card 
-                                key={property.id}
-                                property={property}
+                                key={covoiturage.id}
+                                covoiturage={covoiturage}
                                 isFavorite={
                                     passager?.favorites?.some(
-                                        (fav: Property) => fav.id === property.id
+                                        (fav: Covoiturage) => fav.id === covoiturage.id
                                     ) || false
                                 }
-                                onFavoriteToggle={() => handleFavoriteToggle(property.id)}
+                                onFavoriteToggle={() => handleFavoriteToggle(covoiturage.id)}
                                 showFavoriteButton={!!authUser}
-                                propertyLink={`/search/${property.id}`}
+                                covoiturageLink={`/search/${covoiturage.id}`}
                             />
                         ) : (
                             <CardCompact
-                              key={property.id}
-                              property={property}
+                              key={covoiturage.id}
+                              covoiturage={covoiturage}
                               isFavorite={
                                 passager?.favorites?.some(
-                                  (fav: Property) => fav.id === property.id
+                                  (fav: Covoiturage) => fav.id === covoiturage.id
                                 ) || false
                               }
-                              onFavoriteToggle={() => handleFavoriteToggle(property.id)}
+                              onFavoriteToggle={() => handleFavoriteToggle(covoiturage.id)}
                               showFavoriteButton={!!authUser}
-                              propertyLink={`/search/${property.id}`}
+                              covoiturageLink={`/search/${covoiturage.id}`}
                             />
                           )
                     )}

@@ -29,7 +29,7 @@ const AppSidebar = ({ userType }: AppSidebarProps) => {
   const navLinks =
     userType === "conducteur"
       ? [
-          { icon: Building, label: "Covoiturages", href: "/conducteurs/properties" },
+          { icon: Building, label: "Covoiturages", href: "/conducteurs/covoiturages" },
           {
             icon: FileText,
             label: "Réservations",

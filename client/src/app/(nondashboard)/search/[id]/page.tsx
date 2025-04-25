@@ -14,7 +14,7 @@ import ApplicationModal from './ApplicationModal';
 
 const DetailSearch = () => {
     const { id }  = useParams();
-    const propertyId = Number(id);
+    const covoiturageId = Number(id);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const { data: authUser } = useGetAuthUserQuery();
@@ -24,8 +24,8 @@ const DetailSearch = () => {
             <ImagePreviews images={["/singlelisting-2.jpg", "/singlelisting-3.jpg"]}/>
             <div className="flex flex-col md:flex-row justify-center gap-10 mx-10 md:w-2/3 md:mx-auto mt-16 mb-8">
                 <div className="order-2 md:order-1">
-                    <CovoiturageOverview propertyId={propertyId} />
-                    <CovoiturageLocation propertyId={propertyId} />
+                    <CovoiturageOverview covoiturageId={covoiturageId} />
+                    <CovoiturageLocation covoiturageId={covoiturageId} />
                 </div>
                 <div className="order-1 md:order-2">
                     <ContactWidget onOpenModal={() => setIsModalOpen(true)} />
@@ -35,7 +35,7 @@ const DetailSearch = () => {
                 <ApplicationModal
                     isOpen={isModalOpen}
                     onClose={() => setIsModalOpen(false)}
-                    propertyId={propertyId}
+                    covoiturageId={covoiturageId}
                 />
             )}
         </div>

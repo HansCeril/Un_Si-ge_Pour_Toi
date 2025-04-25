@@ -15,7 +15,7 @@ import {
   useGetPaymentsQuery,
   useGetCovoiturageQuery,
 } from "@/state/api";
-import { Lease, Payment, Property } from "@/types/prismaTypes";
+import { Lease, Payment, Covoiturage } from "@/types/prismaTypes";
 import {
   ArrowDownToLineIcon,
   Check,
@@ -76,10 +76,10 @@ const PaymentMethod = () => {
 };
 
 const ResidenceCard = ({
-  property,
+  covoiturage,
   currentLease,
 }: {
-  property: Property;
+  covoiturage: Covoiturage;
   currentLease: Lease;
 }) => {
   return (
@@ -94,11 +94,11 @@ const ResidenceCard = ({
               Active Leases
             </div>
 
-            <h2 className="text-2xl font-bold my-2">{property.name}</h2>
+            <h2 className="text-2xl font-bold my-2">{covoiturage.name}</h2>
             <div className="flex items-center mb-2">
               <MapPin className="w-5 h-5 mr-1" />
               <span>
-                {property.location.city}, {property.location.country}
+                {covoiturage.location.city}, {covoiturage.location.country}
               </span>
             </div>
           </div>
@@ -230,9 +230,9 @@ const Residence = () => {
   const { id } = useParams();
   const { data: authUser } = useGetAuthUserQuery();
   const {
-    data: property,
-    isLoading: propertyLoading,
-    error: propertyError,
+    data: covoiturage,
+    isLoading: covoiturageLoading,
+    error: covoiturageError,
   } = useGetCovoiturageQuery(Number(id));
 
   const { data: leases, isLoading: leasesLoading } = useGetLeasesQuery(
@@ -244,11 +244,11 @@ const Residence = () => {
     { skip: !leases?.[0]?.id }
   );
 
-  if (propertyLoading || leasesLoading || paymentsLoading) return <Loading />;
-  if (!property || propertyError) return <div>Error loading property</div>;
+  if (covoiturageLoading || leasesLoading || paymentsLoading) return <Loading />;
+  if (!covoiturage || covoiturageError) return <div>Error loading Covoiturage</div>;
 
   const currentLease = leases?.find(
-    (lease) => lease.propertyId === property.id
+    (lease) => lease.covoiturageId === covoiturage.id
   );
 
   return (
@@ -256,7 +256,7 @@ const Residence = () => {
       <div className="w-full mx-auto">
         <div className="md:flex gap-10">
           {currentLease && (
-            <ResidenceCard property={property} currentLease={currentLease} />
+            <ResidenceCard covoiturage={covoiturage} currentLease={currentLease} />
           )}
           <PaymentMethod />
         </div>

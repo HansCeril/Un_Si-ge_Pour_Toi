@@ -108,7 +108,7 @@ export const CarTypeIcons: Record<CarTypeEnum, LucideIcon> = {
   Suv: Car,
 };
 
-export enum PropertyTypeEnum {
+export enum CovoiturageTypeEnum {
   Rooms = "Rooms",
   Tinyhouse = "Tinyhouse",
   Apartment = "Apartment",
@@ -117,7 +117,7 @@ export enum PropertyTypeEnum {
   Cottage = "Cottage",
 }
 
-export const PropertyTypeIcons: Record<PropertyTypeEnum, LucideIcon> = {
+export const CovoiturageTypeIcons: Record<CovoiturageTypeEnum, LucideIcon> = {
   Rooms: Home,
   Tinyhouse: Warehouse,
   Apartment: Building,

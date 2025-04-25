@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/table";
 import {
   useGetPaymentsQuery,
-  useGetPropertyLeasesQuery,
+  useGetCovoiturageLeasesQuery,
   useGetCovoiturageQuery,
 } from "@/state/api";
 import { ArrowDownToLine, ArrowLeft, Check, Download } from "lucide-react";
@@ -21,15 +21,15 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React from "react";
 
-const PropertyTenants = () => {
+const CovoiturageTenants = () => {
   const { id } = useParams();
-  const propertyId = Number(id);
+  const covoiturageId = Number(id);
 
-  const { data: property, isLoading: propertyLoading } = useGetCovoiturageQuery(propertyId);
-  const { data: leases, isLoading: leasesLoading } = useGetPropertyLeasesQuery(propertyId);
-  const { data: payments, isLoading: paymentsLoading } = useGetPaymentsQuery(propertyId);
+  const { data: covoiturage, isLoading: covoiturageLoading } = useGetCovoiturageQuery(covoiturageId);
+  const { data: leases, isLoading: leasesLoading } = useGetCovoiturageLeasesQuery(covoiturageId);
+  const { data: payments, isLoading: paymentsLoading } = useGetPaymentsQuery(covoiturageId);
 
-  if (propertyLoading || leasesLoading || paymentsLoading) return <Loading />;
+  if (covoiturageLoading || leasesLoading || paymentsLoading) return <Loading />;
 
   const getCurrentMonthPaymentStatus = (leaseId: number) => {
     const currentDate = new Date();
@@ -44,9 +44,9 @@ const PropertyTenants = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Back to properties page */}
+      {/* Back to covoiturages page */}
       <Link
-        href="/conducteurs/properties"
+        href="/conducteurs/covoiturages"
         className="flex items-center mb-4 hover:text-primary-500"
         scroll={false}
       >
@@ -55,7 +55,7 @@ const PropertyTenants = () => {
       </Link>
 
       <Header
-        title={property?.name || "My Property"}
+        title={covoiturage?.name || "My Covoiturage"}
         subtitle="Voir les détails et historiques des trajets"
       />
 
@@ -105,4 +105,4 @@ const PropertyTenants = () => {
   );
 };
 
-export default PropertyTenants;
+export default CovoiturageTenants;

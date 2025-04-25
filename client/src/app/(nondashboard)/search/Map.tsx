@@ -1,6 +1,6 @@
 "use client";
 import { GoogleMapProvider } from "@/providers/google-map-provider";
-import { useGetPropertiesQuery } from "@/state/api";
+import { useGetCovoituragesQuery } from "@/state/api";
 import { useAppSelector } from "@/state/redux";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import { Map, Marker } from "@vis.gl/react-google-maps";
@@ -12,17 +12,16 @@ import React from "react";
 const GoogleMap = () => {
 
   const filters = useAppSelector((state) => state.global.filters);
-  {/* Get Properties by filters */}
+  {/* Get Covoiturages by filters */}
   const {
-      data: properties,
+      data: covoiturages,
       isLoading,
       isError
-  } = useGetPropertiesQuery(filters);
+  } = useGetCovoituragesQuery(filters);
 
-  console.log(filters)
-  console.log(properties)
+
   if (isLoading) return <>Loading ...</>;
-  if (isError || !properties) return <div> Failed to fetch location </div>
+  if (isError || !covoiturages) return <div> Failed to fetch location </div>
   
   return (
     <div className="w-full h-screen">
@@ -34,11 +33,11 @@ const GoogleMap = () => {
                 disableDefaultUI={false}
             >
               
-              {properties?.map((property) => (
+              {covoiturages?.map((covoiturage) => (
                 <Marker
-                  key={property.locationId}
-                  position={{lat: property.location.coordinates.latitude, lng: property.location.coordinates.longitude}}
-                  title={property.name}
+                  key={covoiturage.locationId}
+                  position={{lat: covoiturage.location.coordinates.latitude, lng: covoiturage.location.coordinates.longitude}}
+                  title={covoiturage.name}
                 />
               ))}
             </Map>

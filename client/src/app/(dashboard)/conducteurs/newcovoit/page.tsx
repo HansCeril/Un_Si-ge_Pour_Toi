@@ -3,21 +3,21 @@
 import { CustomFormField } from "@/components/FormField";
 import Header from "@/components/Header";
 import { Form } from "@/components/ui/form";
-import { PropertyFormData, propertySchema } from "@/lib/schemas";
-import { useCreatePropertyMutation, useGetAuthUserQuery } from "@/state/api";
+import { CovoiturageFormData, covoiturageSchema } from "@/lib/schemas";
+import { useCreateCovoiturageMutation, useGetAuthUserQuery } from "@/state/api";
 import { CarTypeEnum } from "@/lib/constants";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 
-const NewProperty = () => {
-  const [createProperty] = useCreatePropertyMutation();
+const NewCovoiturage = () => {
+  const [createCovoiturage] = useCreateCovoiturageMutation();
   const { data: authUser } = useGetAuthUserQuery();
   console.log(authUser)
 
-  const form = useForm<PropertyFormData>({
-    resolver: zodResolver(propertySchema),
+  const form = useForm<CovoiturageFormData>({
+    resolver: zodResolver(covoiturageSchema),
     defaultValues: {
       name: "",
       description: "",
@@ -31,7 +31,7 @@ const NewProperty = () => {
     },
   });
   
-  const onSubmit = async (data: PropertyFormData) => {
+  const onSubmit = async (data: CovoiturageFormData) => {
     console.log("heeel")
     if (!authUser?.cognitoInfo?.userId) {
       throw new Error("No manager ID found");
@@ -53,7 +53,7 @@ const NewProperty = () => {
 
     formData.append("conducteurCognitoId", authUser.cognitoInfo.userId);
 
-    await createProperty(formData);
+    await createCovoiturage(formData);
   };
 
   return (
@@ -83,7 +83,7 @@ const NewProperty = () => {
 
             <hr className="my-6 border-gray-200" />
 
-            {/* Property Details */}
+            {/* Covoiturage Details */}
             <div className="space-y-6">
               <h2 className="text-lg font-semibold mb-4">Détails</h2>
         
@@ -157,4 +157,4 @@ const NewProperty = () => {
   );
 };
 
-export default NewProperty;
+export default NewCovoiturage;

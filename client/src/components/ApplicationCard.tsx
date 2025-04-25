@@ -8,7 +8,7 @@ const ApplicationCard = ({
   children,
 }: ApplicationCardProps) => {
   const [imgSrc, setImgSrc] = useState(
-    application.property.photoUrls?.[0] || "/placeholder.jpg"
+    application.covoiturage.photoUrls?.[0] || "/placeholder.jpg"
   );
 
   const statusColor =
@@ -24,11 +24,11 @@ const ApplicationCard = ({
   return (
     <div className="border rounded-xl overflow-hidden shadow-sm bg-white mb-4">
       <div className="flex flex-col lg:flex-row  items-start lg:items-center justify-between px-6 md:px-4 py-6 gap-6 lg:gap-4">
-        {/* Property Info Section */}
+        {/* covoiturage Info Section */}
         <div className="flex flex-col lg:flex-row gap-5 w-full lg:w-auto">
           <Image
             src={imgSrc}
-            alt={application.property.name}
+            alt={application.covoiturage.name}
             width={200}
             height={150}
             className="rounded-xl object-cover w-full lg:w-[200px] h-[150px]"
@@ -38,15 +38,15 @@ const ApplicationCard = ({
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="text-xl font-bold my-2">
-                {application.property.name}
+                {application.covoiturage.name}
               </h2>
               <div className="flex items-center mb-2">
                 <MapPin className="w-5 h-5 mr-1" />
-                <span>{`${application.property.location.city}, ${application.property.location.country}`}</span>
+                <span>{`${application.covoiturage.location.city}, ${application.covoiturage.location.country}`}</span>
               </div>
             </div>
             <div className="text-xl font-semibold">
-              ${application.property.pricePerMonth}{" "}
+              ${application.covoiturage.pricePerMonth}{" "}
               <span className="text-sm font-normal">/ mois</span>
             </div>
           </div>

@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Property
+ * Model Covoiturage
  * 
  */
-export type Property = $Result.DefaultSelection<Prisma.$PropertyPayload>
+export type Covoiturage = $Result.DefaultSelection<Prisma.$CovoituragePayload>
 /**
  * Model Conducteur
  * 
@@ -53,15 +53,7 @@ export type Payment = $Result.DefaultSelection<Prisma.$PaymentPayload>
  * Enums
  */
 export namespace $Enums {
-  export const Highlight: {
-  eating: 'eating',
-  SmokeFree: 'SmokeFree'
-};
-
-export type Highlight = (typeof Highlight)[keyof typeof Highlight]
-
-
-export const CarType: {
+  export const CarType: {
   Berline: 'Berline',
   Break: 'Break',
   Coupe: 'Coupe',
@@ -92,10 +84,6 @@ export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]
 
 }
 
-export type Highlight = $Enums.Highlight
-
-export const Highlight: typeof $Enums.Highlight
-
 export type CarType = $Enums.CarType
 
 export const CarType: typeof $Enums.CarType
@@ -115,8 +103,8 @@ export const PaymentStatus: typeof $Enums.PaymentStatus
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Properties
- * const properties = await prisma.property.findMany()
+ * // Fetch zero or more Covoiturages
+ * const covoiturages = await prisma.covoiturage.findMany()
  * ```
  *
  *
@@ -136,8 +124,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Properties
-   * const properties = await prisma.property.findMany()
+   * // Fetch zero or more Covoiturages
+   * const covoiturages = await prisma.covoiturage.findMany()
    * ```
    *
    *
@@ -234,14 +222,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.property`: Exposes CRUD operations for the **Property** model.
+   * `prisma.covoiturage`: Exposes CRUD operations for the **Covoiturage** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Properties
-    * const properties = await prisma.property.findMany()
+    * // Fetch zero or more Covoiturages
+    * const covoiturages = await prisma.covoiturage.findMany()
     * ```
     */
-  get property(): Prisma.PropertyDelegate<ExtArgs, ClientOptions>;
+  get covoiturage(): Prisma.CovoiturageDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.conducteur`: Exposes CRUD operations for the **Conducteur** model.
@@ -742,7 +730,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Property: 'Property',
+    Covoiturage: 'Covoiturage',
     Conducteur: 'Conducteur',
     Passager: 'Passager',
     Location: 'Location',
@@ -767,81 +755,81 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "property" | "conducteur" | "passager" | "location" | "application" | "lease" | "payment"
+      modelProps: "covoiturage" | "conducteur" | "passager" | "location" | "application" | "lease" | "payment"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Property: {
-        payload: Prisma.$PropertyPayload<ExtArgs>
-        fields: Prisma.PropertyFieldRefs
+      Covoiturage: {
+        payload: Prisma.$CovoituragePayload<ExtArgs>
+        fields: Prisma.CovoiturageFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.PropertyFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload> | null
+            args: Prisma.CovoiturageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.PropertyFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>
+            args: Prisma.CovoiturageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>
           }
           findFirst: {
-            args: Prisma.PropertyFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload> | null
+            args: Prisma.CovoiturageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.PropertyFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>
+            args: Prisma.CovoiturageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>
           }
           findMany: {
-            args: Prisma.PropertyFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>[]
+            args: Prisma.CovoiturageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>[]
           }
           create: {
-            args: Prisma.PropertyCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>
+            args: Prisma.CovoiturageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>
           }
           createMany: {
-            args: Prisma.PropertyCreateManyArgs<ExtArgs>
+            args: Prisma.CovoiturageCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.PropertyCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>[]
+            args: Prisma.CovoiturageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>[]
           }
           delete: {
-            args: Prisma.PropertyDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>
+            args: Prisma.CovoiturageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>
           }
           update: {
-            args: Prisma.PropertyUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>
+            args: Prisma.CovoiturageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>
           }
           deleteMany: {
-            args: Prisma.PropertyDeleteManyArgs<ExtArgs>
+            args: Prisma.CovoiturageDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.PropertyUpdateManyArgs<ExtArgs>
+            args: Prisma.CovoiturageUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.PropertyUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>[]
+            args: Prisma.CovoiturageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>[]
           }
           upsert: {
-            args: Prisma.PropertyUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PropertyPayload>
+            args: Prisma.CovoiturageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CovoituragePayload>
           }
           aggregate: {
-            args: Prisma.PropertyAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateProperty>
+            args: Prisma.CovoiturageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCovoiturage>
           }
           groupBy: {
-            args: Prisma.PropertyGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PropertyGroupByOutputType>[]
+            args: Prisma.CovoiturageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CovoiturageGroupByOutputType>[]
           }
           count: {
-            args: Prisma.PropertyCountArgs<ExtArgs>
-            result: $Utils.Optional<PropertyCountAggregateOutputType> | number
+            args: Prisma.CovoiturageCountArgs<ExtArgs>
+            result: $Utils.Optional<CovoiturageCountAggregateOutputType> | number
           }
         }
       }
@@ -1357,7 +1345,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    property?: PropertyOmit
+    covoiturage?: CovoiturageOmit
     conducteur?: ConducteurOmit
     passager?: PassagerOmit
     location?: LocationOmit
@@ -1454,59 +1442,59 @@ export namespace Prisma {
 
 
   /**
-   * Count Type PropertyCountOutputType
+   * Count Type CovoiturageCountOutputType
    */
 
-  export type PropertyCountOutputType = {
+  export type CovoiturageCountOutputType = {
     leases: number
     applications: number
     favoritedBy: number
     passagers: number
   }
 
-  export type PropertyCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    leases?: boolean | PropertyCountOutputTypeCountLeasesArgs
-    applications?: boolean | PropertyCountOutputTypeCountApplicationsArgs
-    favoritedBy?: boolean | PropertyCountOutputTypeCountFavoritedByArgs
-    passagers?: boolean | PropertyCountOutputTypeCountPassagersArgs
+  export type CovoiturageCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    leases?: boolean | CovoiturageCountOutputTypeCountLeasesArgs
+    applications?: boolean | CovoiturageCountOutputTypeCountApplicationsArgs
+    favoritedBy?: boolean | CovoiturageCountOutputTypeCountFavoritedByArgs
+    passagers?: boolean | CovoiturageCountOutputTypeCountPassagersArgs
   }
 
   // Custom InputTypes
   /**
-   * PropertyCountOutputType without action
+   * CovoiturageCountOutputType without action
    */
-  export type PropertyCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the PropertyCountOutputType
+     * Select specific fields to fetch from the CovoiturageCountOutputType
      */
-    select?: PropertyCountOutputTypeSelect<ExtArgs> | null
+    select?: CovoiturageCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * PropertyCountOutputType without action
+   * CovoiturageCountOutputType without action
    */
-  export type PropertyCountOutputTypeCountLeasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCountOutputTypeCountLeasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: LeaseWhereInput
   }
 
   /**
-   * PropertyCountOutputType without action
+   * CovoiturageCountOutputType without action
    */
-  export type PropertyCountOutputTypeCountApplicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCountOutputTypeCountApplicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ApplicationWhereInput
   }
 
   /**
-   * PropertyCountOutputType without action
+   * CovoiturageCountOutputType without action
    */
-  export type PropertyCountOutputTypeCountFavoritedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCountOutputTypeCountFavoritedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PassagerWhereInput
   }
 
   /**
-   * PropertyCountOutputType without action
+   * CovoiturageCountOutputType without action
    */
-  export type PropertyCountOutputTypeCountPassagersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCountOutputTypeCountPassagersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PassagerWhereInput
   }
 
@@ -1516,11 +1504,11 @@ export namespace Prisma {
    */
 
   export type ConducteurCountOutputType = {
-    conducteurProperties: number
+    conducteurCovoiturages: number
   }
 
   export type ConducteurCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    conducteurProperties?: boolean | ConducteurCountOutputTypeCountConducteurPropertiesArgs
+    conducteurCovoiturages?: boolean | ConducteurCountOutputTypeCountConducteurCovoituragesArgs
   }
 
   // Custom InputTypes
@@ -1537,8 +1525,8 @@ export namespace Prisma {
   /**
    * ConducteurCountOutputType without action
    */
-  export type ConducteurCountOutputTypeCountConducteurPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PropertyWhereInput
+  export type ConducteurCountOutputTypeCountConducteurCovoituragesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CovoiturageWhereInput
   }
 
 
@@ -1547,14 +1535,14 @@ export namespace Prisma {
    */
 
   export type PassagerCountOutputType = {
-    properties: number
+    covoiturages: number
     favorites: number
     applications: number
     leases: number
   }
 
   export type PassagerCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    properties?: boolean | PassagerCountOutputTypeCountPropertiesArgs
+    covoiturages?: boolean | PassagerCountOutputTypeCountCovoituragesArgs
     favorites?: boolean | PassagerCountOutputTypeCountFavoritesArgs
     applications?: boolean | PassagerCountOutputTypeCountApplicationsArgs
     leases?: boolean | PassagerCountOutputTypeCountLeasesArgs
@@ -1574,15 +1562,15 @@ export namespace Prisma {
   /**
    * PassagerCountOutputType without action
    */
-  export type PassagerCountOutputTypeCountPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PropertyWhereInput
+  export type PassagerCountOutputTypeCountCovoituragesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CovoiturageWhereInput
   }
 
   /**
    * PassagerCountOutputType without action
    */
   export type PassagerCountOutputTypeCountFavoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
   }
 
   /**
@@ -1605,11 +1593,11 @@ export namespace Prisma {
    */
 
   export type LocationCountOutputType = {
-    properties: number
+    covoiturages: number
   }
 
   export type LocationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    properties?: boolean | LocationCountOutputTypeCountPropertiesArgs
+    covoiturages?: boolean | LocationCountOutputTypeCountCovoituragesArgs
   }
 
   // Custom InputTypes
@@ -1626,8 +1614,8 @@ export namespace Prisma {
   /**
    * LocationCountOutputType without action
    */
-  export type LocationCountOutputTypeCountPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PropertyWhereInput
+  export type LocationCountOutputTypeCountCovoituragesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CovoiturageWhereInput
   }
 
 
@@ -1667,45 +1655,32 @@ export namespace Prisma {
    */
 
   /**
-   * Model Property
+   * Model Covoiturage
    */
 
-  export type AggregateProperty = {
-    _count: PropertyCountAggregateOutputType | null
-    _avg: PropertyAvgAggregateOutputType | null
-    _sum: PropertySumAggregateOutputType | null
-    _min: PropertyMinAggregateOutputType | null
-    _max: PropertyMaxAggregateOutputType | null
+  export type AggregateCovoiturage = {
+    _count: CovoiturageCountAggregateOutputType | null
+    _avg: CovoiturageAvgAggregateOutputType | null
+    _sum: CovoiturageSumAggregateOutputType | null
+    _min: CovoiturageMinAggregateOutputType | null
+    _max: CovoiturageMaxAggregateOutputType | null
   }
 
-  export type PropertyAvgAggregateOutputType = {
+  export type CovoiturageAvgAggregateOutputType = {
     id: number | null
     averageRating: number | null
     numberOfReviews: number | null
     locationId: number | null
   }
 
-  export type PropertySumAggregateOutputType = {
+  export type CovoiturageSumAggregateOutputType = {
     id: number | null
     averageRating: number | null
     numberOfReviews: number | null
     locationId: number | null
   }
 
-  export type PropertyMinAggregateOutputType = {
-    id: number | null
-    name: string | null
-    description: string | null
-    isPetsAllowed: boolean | null
-    carType: $Enums.CarType | null
-    postedDate: Date | null
-    averageRating: number | null
-    numberOfReviews: number | null
-    locationId: number | null
-    conducteurCognitoId: string | null
-  }
-
-  export type PropertyMaxAggregateOutputType = {
+  export type CovoiturageMinAggregateOutputType = {
     id: number | null
     name: string | null
     description: string | null
@@ -1718,7 +1693,20 @@ export namespace Prisma {
     conducteurCognitoId: string | null
   }
 
-  export type PropertyCountAggregateOutputType = {
+  export type CovoiturageMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    description: string | null
+    isPetsAllowed: boolean | null
+    carType: $Enums.CarType | null
+    postedDate: Date | null
+    averageRating: number | null
+    numberOfReviews: number | null
+    locationId: number | null
+    conducteurCognitoId: string | null
+  }
+
+  export type CovoiturageCountAggregateOutputType = {
     id: number
     name: number
     description: number
@@ -1734,34 +1722,21 @@ export namespace Prisma {
   }
 
 
-  export type PropertyAvgAggregateInputType = {
+  export type CovoiturageAvgAggregateInputType = {
     id?: true
     averageRating?: true
     numberOfReviews?: true
     locationId?: true
   }
 
-  export type PropertySumAggregateInputType = {
+  export type CovoiturageSumAggregateInputType = {
     id?: true
     averageRating?: true
     numberOfReviews?: true
     locationId?: true
   }
 
-  export type PropertyMinAggregateInputType = {
-    id?: true
-    name?: true
-    description?: true
-    isPetsAllowed?: true
-    carType?: true
-    postedDate?: true
-    averageRating?: true
-    numberOfReviews?: true
-    locationId?: true
-    conducteurCognitoId?: true
-  }
-
-  export type PropertyMaxAggregateInputType = {
+  export type CovoiturageMinAggregateInputType = {
     id?: true
     name?: true
     description?: true
@@ -1774,7 +1749,20 @@ export namespace Prisma {
     conducteurCognitoId?: true
   }
 
-  export type PropertyCountAggregateInputType = {
+  export type CovoiturageMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    isPetsAllowed?: true
+    carType?: true
+    postedDate?: true
+    averageRating?: true
+    numberOfReviews?: true
+    locationId?: true
+    conducteurCognitoId?: true
+  }
+
+  export type CovoiturageCountAggregateInputType = {
     id?: true
     name?: true
     description?: true
@@ -1789,93 +1777,93 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type PropertyAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Property to aggregate.
+     * Filter which Covoiturage to aggregate.
      */
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Properties to fetch.
+     * Determine the order of Covoiturages to fetch.
      */
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: PropertyWhereUniqueInput
+    cursor?: CovoiturageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Properties from the position of the cursor.
+     * Take `±n` Covoiturages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Properties.
+     * Skip the first `n` Covoiturages.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Properties
+     * Count returned Covoiturages
     **/
-    _count?: true | PropertyCountAggregateInputType
+    _count?: true | CovoiturageCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: PropertyAvgAggregateInputType
+    _avg?: CovoiturageAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: PropertySumAggregateInputType
+    _sum?: CovoiturageSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: PropertyMinAggregateInputType
+    _min?: CovoiturageMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: PropertyMaxAggregateInputType
+    _max?: CovoiturageMaxAggregateInputType
   }
 
-  export type GetPropertyAggregateType<T extends PropertyAggregateArgs> = {
-        [P in keyof T & keyof AggregateProperty]: P extends '_count' | 'count'
+  export type GetCovoiturageAggregateType<T extends CovoiturageAggregateArgs> = {
+        [P in keyof T & keyof AggregateCovoiturage]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateProperty[P]>
-      : GetScalarType<T[P], AggregateProperty[P]>
+        : GetScalarType<T[P], AggregateCovoiturage[P]>
+      : GetScalarType<T[P], AggregateCovoiturage[P]>
   }
 
 
 
 
-  export type PropertyGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PropertyWhereInput
-    orderBy?: PropertyOrderByWithAggregationInput | PropertyOrderByWithAggregationInput[]
-    by: PropertyScalarFieldEnum[] | PropertyScalarFieldEnum
-    having?: PropertyScalarWhereWithAggregatesInput
+  export type CovoiturageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CovoiturageWhereInput
+    orderBy?: CovoiturageOrderByWithAggregationInput | CovoiturageOrderByWithAggregationInput[]
+    by: CovoiturageScalarFieldEnum[] | CovoiturageScalarFieldEnum
+    having?: CovoiturageScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: PropertyCountAggregateInputType | true
-    _avg?: PropertyAvgAggregateInputType
-    _sum?: PropertySumAggregateInputType
-    _min?: PropertyMinAggregateInputType
-    _max?: PropertyMaxAggregateInputType
+    _count?: CovoiturageCountAggregateInputType | true
+    _avg?: CovoiturageAvgAggregateInputType
+    _sum?: CovoiturageSumAggregateInputType
+    _min?: CovoiturageMinAggregateInputType
+    _max?: CovoiturageMaxAggregateInputType
   }
 
-  export type PropertyGroupByOutputType = {
+  export type CovoiturageGroupByOutputType = {
     id: number
     name: string
     description: string
@@ -1887,28 +1875,28 @@ export namespace Prisma {
     numberOfReviews: number | null
     locationId: number
     conducteurCognitoId: string
-    _count: PropertyCountAggregateOutputType | null
-    _avg: PropertyAvgAggregateOutputType | null
-    _sum: PropertySumAggregateOutputType | null
-    _min: PropertyMinAggregateOutputType | null
-    _max: PropertyMaxAggregateOutputType | null
+    _count: CovoiturageCountAggregateOutputType | null
+    _avg: CovoiturageAvgAggregateOutputType | null
+    _sum: CovoiturageSumAggregateOutputType | null
+    _min: CovoiturageMinAggregateOutputType | null
+    _max: CovoiturageMaxAggregateOutputType | null
   }
 
-  type GetPropertyGroupByPayload<T extends PropertyGroupByArgs> = Prisma.PrismaPromise<
+  type GetCovoiturageGroupByPayload<T extends CovoiturageGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<PropertyGroupByOutputType, T['by']> &
+      PickEnumerable<CovoiturageGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof PropertyGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof CovoiturageGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], PropertyGroupByOutputType[P]>
-            : GetScalarType<T[P], PropertyGroupByOutputType[P]>
+              : GetScalarType<T[P], CovoiturageGroupByOutputType[P]>
+            : GetScalarType<T[P], CovoiturageGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type PropertySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CovoiturageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     description?: boolean
@@ -1922,14 +1910,14 @@ export namespace Prisma {
     conducteurCognitoId?: boolean
     location?: boolean | LocationDefaultArgs<ExtArgs>
     conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
-    leases?: boolean | Property$leasesArgs<ExtArgs>
-    applications?: boolean | Property$applicationsArgs<ExtArgs>
-    favoritedBy?: boolean | Property$favoritedByArgs<ExtArgs>
-    passagers?: boolean | Property$passagersArgs<ExtArgs>
-    _count?: boolean | PropertyCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["property"]>
+    leases?: boolean | Covoiturage$leasesArgs<ExtArgs>
+    applications?: boolean | Covoiturage$applicationsArgs<ExtArgs>
+    favoritedBy?: boolean | Covoiturage$favoritedByArgs<ExtArgs>
+    passagers?: boolean | Covoiturage$passagersArgs<ExtArgs>
+    _count?: boolean | CovoiturageCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["covoiturage"]>
 
-  export type PropertySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CovoiturageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     description?: boolean
@@ -1943,9 +1931,9 @@ export namespace Prisma {
     conducteurCognitoId?: boolean
     location?: boolean | LocationDefaultArgs<ExtArgs>
     conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["property"]>
+  }, ExtArgs["result"]["covoiturage"]>
 
-  export type PropertySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CovoiturageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     description?: boolean
@@ -1959,9 +1947,9 @@ export namespace Prisma {
     conducteurCognitoId?: boolean
     location?: boolean | LocationDefaultArgs<ExtArgs>
     conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["property"]>
+  }, ExtArgs["result"]["covoiturage"]>
 
-  export type PropertySelectScalar = {
+  export type CovoiturageSelectScalar = {
     id?: boolean
     name?: boolean
     description?: boolean
@@ -1975,27 +1963,27 @@ export namespace Prisma {
     conducteurCognitoId?: boolean
   }
 
-  export type PropertyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "photoUrls" | "isPetsAllowed" | "carType" | "postedDate" | "averageRating" | "numberOfReviews" | "locationId" | "conducteurCognitoId", ExtArgs["result"]["property"]>
-  export type PropertyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "photoUrls" | "isPetsAllowed" | "carType" | "postedDate" | "averageRating" | "numberOfReviews" | "locationId" | "conducteurCognitoId", ExtArgs["result"]["covoiturage"]>
+  export type CovoiturageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     location?: boolean | LocationDefaultArgs<ExtArgs>
     conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
-    leases?: boolean | Property$leasesArgs<ExtArgs>
-    applications?: boolean | Property$applicationsArgs<ExtArgs>
-    favoritedBy?: boolean | Property$favoritedByArgs<ExtArgs>
-    passagers?: boolean | Property$passagersArgs<ExtArgs>
-    _count?: boolean | PropertyCountOutputTypeDefaultArgs<ExtArgs>
+    leases?: boolean | Covoiturage$leasesArgs<ExtArgs>
+    applications?: boolean | Covoiturage$applicationsArgs<ExtArgs>
+    favoritedBy?: boolean | Covoiturage$favoritedByArgs<ExtArgs>
+    passagers?: boolean | Covoiturage$passagersArgs<ExtArgs>
+    _count?: boolean | CovoiturageCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type PropertyIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     location?: boolean | LocationDefaultArgs<ExtArgs>
     conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
   }
-  export type PropertyIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     location?: boolean | LocationDefaultArgs<ExtArgs>
     conducteur?: boolean | ConducteurDefaultArgs<ExtArgs>
   }
 
-  export type $PropertyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Property"
+  export type $CovoituragePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Covoiturage"
     objects: {
       location: Prisma.$LocationPayload<ExtArgs>
       conducteur: Prisma.$ConducteurPayload<ExtArgs>
@@ -2016,136 +2004,136 @@ export namespace Prisma {
       numberOfReviews: number | null
       locationId: number
       conducteurCognitoId: string
-    }, ExtArgs["result"]["property"]>
+    }, ExtArgs["result"]["covoiturage"]>
     composites: {}
   }
 
-  type PropertyGetPayload<S extends boolean | null | undefined | PropertyDefaultArgs> = $Result.GetResult<Prisma.$PropertyPayload, S>
+  type CovoiturageGetPayload<S extends boolean | null | undefined | CovoiturageDefaultArgs> = $Result.GetResult<Prisma.$CovoituragePayload, S>
 
-  type PropertyCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PropertyFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: PropertyCountAggregateInputType | true
+  type CovoiturageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CovoiturageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CovoiturageCountAggregateInputType | true
     }
 
-  export interface PropertyDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Property'], meta: { name: 'Property' } }
+  export interface CovoiturageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Covoiturage'], meta: { name: 'Covoiturage' } }
     /**
-     * Find zero or one Property that matches the filter.
-     * @param {PropertyFindUniqueArgs} args - Arguments to find a Property
+     * Find zero or one Covoiturage that matches the filter.
+     * @param {CovoiturageFindUniqueArgs} args - Arguments to find a Covoiturage
      * @example
-     * // Get one Property
-     * const property = await prisma.property.findUnique({
+     * // Get one Covoiturage
+     * const covoiturage = await prisma.covoiturage.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends PropertyFindUniqueArgs>(args: SelectSubset<T, PropertyFindUniqueArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends CovoiturageFindUniqueArgs>(args: SelectSubset<T, CovoiturageFindUniqueArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Property that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Covoiturage that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {PropertyFindUniqueOrThrowArgs} args - Arguments to find a Property
+     * @param {CovoiturageFindUniqueOrThrowArgs} args - Arguments to find a Covoiturage
      * @example
-     * // Get one Property
-     * const property = await prisma.property.findUniqueOrThrow({
+     * // Get one Covoiturage
+     * const covoiturage = await prisma.covoiturage.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends PropertyFindUniqueOrThrowArgs>(args: SelectSubset<T, PropertyFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends CovoiturageFindUniqueOrThrowArgs>(args: SelectSubset<T, CovoiturageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Property that matches the filter.
+     * Find the first Covoiturage that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PropertyFindFirstArgs} args - Arguments to find a Property
+     * @param {CovoiturageFindFirstArgs} args - Arguments to find a Covoiturage
      * @example
-     * // Get one Property
-     * const property = await prisma.property.findFirst({
+     * // Get one Covoiturage
+     * const covoiturage = await prisma.covoiturage.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends PropertyFindFirstArgs>(args?: SelectSubset<T, PropertyFindFirstArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends CovoiturageFindFirstArgs>(args?: SelectSubset<T, CovoiturageFindFirstArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Property that matches the filter or
+     * Find the first Covoiturage that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PropertyFindFirstOrThrowArgs} args - Arguments to find a Property
+     * @param {CovoiturageFindFirstOrThrowArgs} args - Arguments to find a Covoiturage
      * @example
-     * // Get one Property
-     * const property = await prisma.property.findFirstOrThrow({
+     * // Get one Covoiturage
+     * const covoiturage = await prisma.covoiturage.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends PropertyFindFirstOrThrowArgs>(args?: SelectSubset<T, PropertyFindFirstOrThrowArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends CovoiturageFindFirstOrThrowArgs>(args?: SelectSubset<T, CovoiturageFindFirstOrThrowArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Properties that matches the filter.
+     * Find zero or more Covoiturages that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PropertyFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {CovoiturageFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Properties
-     * const properties = await prisma.property.findMany()
+     * // Get all Covoiturages
+     * const covoiturages = await prisma.covoiturage.findMany()
      * 
-     * // Get first 10 Properties
-     * const properties = await prisma.property.findMany({ take: 10 })
+     * // Get first 10 Covoiturages
+     * const covoiturages = await prisma.covoiturage.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const propertyWithIdOnly = await prisma.property.findMany({ select: { id: true } })
+     * const covoiturageWithIdOnly = await prisma.covoiturage.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends PropertyFindManyArgs>(args?: SelectSubset<T, PropertyFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends CovoiturageFindManyArgs>(args?: SelectSubset<T, CovoiturageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Property.
-     * @param {PropertyCreateArgs} args - Arguments to create a Property.
+     * Create a Covoiturage.
+     * @param {CovoiturageCreateArgs} args - Arguments to create a Covoiturage.
      * @example
-     * // Create one Property
-     * const Property = await prisma.property.create({
+     * // Create one Covoiturage
+     * const Covoiturage = await prisma.covoiturage.create({
      *   data: {
-     *     // ... data to create a Property
+     *     // ... data to create a Covoiturage
      *   }
      * })
      * 
      */
-    create<T extends PropertyCreateArgs>(args: SelectSubset<T, PropertyCreateArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends CovoiturageCreateArgs>(args: SelectSubset<T, CovoiturageCreateArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Properties.
-     * @param {PropertyCreateManyArgs} args - Arguments to create many Properties.
+     * Create many Covoiturages.
+     * @param {CovoiturageCreateManyArgs} args - Arguments to create many Covoiturages.
      * @example
-     * // Create many Properties
-     * const property = await prisma.property.createMany({
+     * // Create many Covoiturages
+     * const covoiturage = await prisma.covoiturage.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends PropertyCreateManyArgs>(args?: SelectSubset<T, PropertyCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends CovoiturageCreateManyArgs>(args?: SelectSubset<T, CovoiturageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Properties and returns the data saved in the database.
-     * @param {PropertyCreateManyAndReturnArgs} args - Arguments to create many Properties.
+     * Create many Covoiturages and returns the data saved in the database.
+     * @param {CovoiturageCreateManyAndReturnArgs} args - Arguments to create many Covoiturages.
      * @example
-     * // Create many Properties
-     * const property = await prisma.property.createManyAndReturn({
+     * // Create many Covoiturages
+     * const covoiturage = await prisma.covoiturage.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Properties and only return the `id`
-     * const propertyWithIdOnly = await prisma.property.createManyAndReturn({
+     * // Create many Covoiturages and only return the `id`
+     * const covoiturageWithIdOnly = await prisma.covoiturage.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2155,28 +2143,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends PropertyCreateManyAndReturnArgs>(args?: SelectSubset<T, PropertyCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends CovoiturageCreateManyAndReturnArgs>(args?: SelectSubset<T, CovoiturageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Property.
-     * @param {PropertyDeleteArgs} args - Arguments to delete one Property.
+     * Delete a Covoiturage.
+     * @param {CovoiturageDeleteArgs} args - Arguments to delete one Covoiturage.
      * @example
-     * // Delete one Property
-     * const Property = await prisma.property.delete({
+     * // Delete one Covoiturage
+     * const Covoiturage = await prisma.covoiturage.delete({
      *   where: {
-     *     // ... filter to delete one Property
+     *     // ... filter to delete one Covoiturage
      *   }
      * })
      * 
      */
-    delete<T extends PropertyDeleteArgs>(args: SelectSubset<T, PropertyDeleteArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends CovoiturageDeleteArgs>(args: SelectSubset<T, CovoiturageDeleteArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Property.
-     * @param {PropertyUpdateArgs} args - Arguments to update one Property.
+     * Update one Covoiturage.
+     * @param {CovoiturageUpdateArgs} args - Arguments to update one Covoiturage.
      * @example
-     * // Update one Property
-     * const property = await prisma.property.update({
+     * // Update one Covoiturage
+     * const covoiturage = await prisma.covoiturage.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2186,30 +2174,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends PropertyUpdateArgs>(args: SelectSubset<T, PropertyUpdateArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends CovoiturageUpdateArgs>(args: SelectSubset<T, CovoiturageUpdateArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Properties.
-     * @param {PropertyDeleteManyArgs} args - Arguments to filter Properties to delete.
+     * Delete zero or more Covoiturages.
+     * @param {CovoiturageDeleteManyArgs} args - Arguments to filter Covoiturages to delete.
      * @example
-     * // Delete a few Properties
-     * const { count } = await prisma.property.deleteMany({
+     * // Delete a few Covoiturages
+     * const { count } = await prisma.covoiturage.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends PropertyDeleteManyArgs>(args?: SelectSubset<T, PropertyDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends CovoiturageDeleteManyArgs>(args?: SelectSubset<T, CovoiturageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Properties.
+     * Update zero or more Covoiturages.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PropertyUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {CovoiturageUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Properties
-     * const property = await prisma.property.updateMany({
+     * // Update many Covoiturages
+     * const covoiturage = await prisma.covoiturage.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2219,14 +2207,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends PropertyUpdateManyArgs>(args: SelectSubset<T, PropertyUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends CovoiturageUpdateManyArgs>(args: SelectSubset<T, CovoiturageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Properties and returns the data updated in the database.
-     * @param {PropertyUpdateManyAndReturnArgs} args - Arguments to update many Properties.
+     * Update zero or more Covoiturages and returns the data updated in the database.
+     * @param {CovoiturageUpdateManyAndReturnArgs} args - Arguments to update many Covoiturages.
      * @example
-     * // Update many Properties
-     * const property = await prisma.property.updateManyAndReturn({
+     * // Update many Covoiturages
+     * const covoiturage = await prisma.covoiturage.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2235,8 +2223,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Properties and only return the `id`
-     * const propertyWithIdOnly = await prisma.property.updateManyAndReturn({
+     * // Update zero or more Covoiturages and only return the `id`
+     * const covoiturageWithIdOnly = await prisma.covoiturage.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2249,56 +2237,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends PropertyUpdateManyAndReturnArgs>(args: SelectSubset<T, PropertyUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends CovoiturageUpdateManyAndReturnArgs>(args: SelectSubset<T, CovoiturageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Property.
-     * @param {PropertyUpsertArgs} args - Arguments to update or create a Property.
+     * Create or update one Covoiturage.
+     * @param {CovoiturageUpsertArgs} args - Arguments to update or create a Covoiturage.
      * @example
-     * // Update or create a Property
-     * const property = await prisma.property.upsert({
+     * // Update or create a Covoiturage
+     * const covoiturage = await prisma.covoiturage.upsert({
      *   create: {
-     *     // ... data to create a Property
+     *     // ... data to create a Covoiturage
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Property we want to update
+     *     // ... the filter for the Covoiturage we want to update
      *   }
      * })
      */
-    upsert<T extends PropertyUpsertArgs>(args: SelectSubset<T, PropertyUpsertArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends CovoiturageUpsertArgs>(args: SelectSubset<T, CovoiturageUpsertArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Properties.
+     * Count the number of Covoiturages.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PropertyCountArgs} args - Arguments to filter Properties to count.
+     * @param {CovoiturageCountArgs} args - Arguments to filter Covoiturages to count.
      * @example
-     * // Count the number of Properties
-     * const count = await prisma.property.count({
+     * // Count the number of Covoiturages
+     * const count = await prisma.covoiturage.count({
      *   where: {
-     *     // ... the filter for the Properties we want to count
+     *     // ... the filter for the Covoiturages we want to count
      *   }
      * })
     **/
-    count<T extends PropertyCountArgs>(
-      args?: Subset<T, PropertyCountArgs>,
+    count<T extends CovoiturageCountArgs>(
+      args?: Subset<T, CovoiturageCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], PropertyCountAggregateOutputType>
+          : GetScalarType<T['select'], CovoiturageCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Property.
+     * Allows you to perform aggregations operations on a Covoiturage.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PropertyAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {CovoiturageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2318,13 +2306,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends PropertyAggregateArgs>(args: Subset<T, PropertyAggregateArgs>): Prisma.PrismaPromise<GetPropertyAggregateType<T>>
+    aggregate<T extends CovoiturageAggregateArgs>(args: Subset<T, CovoiturageAggregateArgs>): Prisma.PrismaPromise<GetCovoiturageAggregateType<T>>
 
     /**
-     * Group by Property.
+     * Group by Covoiturage.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PropertyGroupByArgs} args - Group by arguments.
+     * @param {CovoiturageGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2339,14 +2327,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends PropertyGroupByArgs,
+      T extends CovoiturageGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PropertyGroupByArgs['orderBy'] }
-        : { orderBy?: PropertyGroupByArgs['orderBy'] },
+        ? { orderBy: CovoiturageGroupByArgs['orderBy'] }
+        : { orderBy?: CovoiturageGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2395,27 +2383,27 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, PropertyGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPropertyGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, CovoiturageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCovoiturageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Property model
+   * Fields of the Covoiturage model
    */
-  readonly fields: PropertyFieldRefs;
+  readonly fields: CovoiturageFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Property.
+   * The delegate class that acts as a "Promise-like" for Covoiturage.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__PropertyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__CovoiturageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     location<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     conducteur<T extends ConducteurDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ConducteurDefaultArgs<ExtArgs>>): Prisma__ConducteurClient<$Result.GetResult<Prisma.$ConducteurPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    leases<T extends Property$leasesArgs<ExtArgs> = {}>(args?: Subset<T, Property$leasesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    applications<T extends Property$applicationsArgs<ExtArgs> = {}>(args?: Subset<T, Property$applicationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    favoritedBy<T extends Property$favoritedByArgs<ExtArgs> = {}>(args?: Subset<T, Property$favoritedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    passagers<T extends Property$passagersArgs<ExtArgs> = {}>(args?: Subset<T, Property$passagersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    leases<T extends Covoiturage$leasesArgs<ExtArgs> = {}>(args?: Subset<T, Covoiturage$leasesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    applications<T extends Covoiturage$applicationsArgs<ExtArgs> = {}>(args?: Subset<T, Covoiturage$applicationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favoritedBy<T extends Covoiturage$favoritedByArgs<ExtArgs> = {}>(args?: Subset<T, Covoiturage$favoritedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    passagers<T extends Covoiturage$passagersArgs<ExtArgs> = {}>(args?: Subset<T, Covoiturage$passagersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2442,419 +2430,419 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Property model
+   * Fields of the Covoiturage model
    */
-  interface PropertyFieldRefs {
-    readonly id: FieldRef<"Property", 'Int'>
-    readonly name: FieldRef<"Property", 'String'>
-    readonly description: FieldRef<"Property", 'String'>
-    readonly photoUrls: FieldRef<"Property", 'String[]'>
-    readonly isPetsAllowed: FieldRef<"Property", 'Boolean'>
-    readonly carType: FieldRef<"Property", 'CarType'>
-    readonly postedDate: FieldRef<"Property", 'DateTime'>
-    readonly averageRating: FieldRef<"Property", 'Float'>
-    readonly numberOfReviews: FieldRef<"Property", 'Int'>
-    readonly locationId: FieldRef<"Property", 'Int'>
-    readonly conducteurCognitoId: FieldRef<"Property", 'String'>
+  interface CovoiturageFieldRefs {
+    readonly id: FieldRef<"Covoiturage", 'Int'>
+    readonly name: FieldRef<"Covoiturage", 'String'>
+    readonly description: FieldRef<"Covoiturage", 'String'>
+    readonly photoUrls: FieldRef<"Covoiturage", 'String[]'>
+    readonly isPetsAllowed: FieldRef<"Covoiturage", 'Boolean'>
+    readonly carType: FieldRef<"Covoiturage", 'CarType'>
+    readonly postedDate: FieldRef<"Covoiturage", 'DateTime'>
+    readonly averageRating: FieldRef<"Covoiturage", 'Float'>
+    readonly numberOfReviews: FieldRef<"Covoiturage", 'Int'>
+    readonly locationId: FieldRef<"Covoiturage", 'Int'>
+    readonly conducteurCognitoId: FieldRef<"Covoiturage", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Property findUnique
+   * Covoiturage findUnique
    */
-  export type PropertyFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * Filter, which Property to fetch.
+     * Filter, which Covoiturage to fetch.
      */
-    where: PropertyWhereUniqueInput
+    where: CovoiturageWhereUniqueInput
   }
 
   /**
-   * Property findUniqueOrThrow
+   * Covoiturage findUniqueOrThrow
    */
-  export type PropertyFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * Filter, which Property to fetch.
+     * Filter, which Covoiturage to fetch.
      */
-    where: PropertyWhereUniqueInput
+    where: CovoiturageWhereUniqueInput
   }
 
   /**
-   * Property findFirst
+   * Covoiturage findFirst
    */
-  export type PropertyFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * Filter, which Property to fetch.
+     * Filter, which Covoiturage to fetch.
      */
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Properties to fetch.
+     * Determine the order of Covoiturages to fetch.
      */
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Properties.
+     * Sets the position for searching for Covoiturages.
      */
-    cursor?: PropertyWhereUniqueInput
+    cursor?: CovoiturageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Properties from the position of the cursor.
+     * Take `±n` Covoiturages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Properties.
+     * Skip the first `n` Covoiturages.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Properties.
+     * Filter by unique combinations of Covoiturages.
      */
-    distinct?: PropertyScalarFieldEnum | PropertyScalarFieldEnum[]
+    distinct?: CovoiturageScalarFieldEnum | CovoiturageScalarFieldEnum[]
   }
 
   /**
-   * Property findFirstOrThrow
+   * Covoiturage findFirstOrThrow
    */
-  export type PropertyFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * Filter, which Property to fetch.
+     * Filter, which Covoiturage to fetch.
      */
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Properties to fetch.
+     * Determine the order of Covoiturages to fetch.
      */
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Properties.
+     * Sets the position for searching for Covoiturages.
      */
-    cursor?: PropertyWhereUniqueInput
+    cursor?: CovoiturageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Properties from the position of the cursor.
+     * Take `±n` Covoiturages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Properties.
+     * Skip the first `n` Covoiturages.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Properties.
+     * Filter by unique combinations of Covoiturages.
      */
-    distinct?: PropertyScalarFieldEnum | PropertyScalarFieldEnum[]
+    distinct?: CovoiturageScalarFieldEnum | CovoiturageScalarFieldEnum[]
   }
 
   /**
-   * Property findMany
+   * Covoiturage findMany
    */
-  export type PropertyFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * Filter, which Properties to fetch.
+     * Filter, which Covoiturages to fetch.
      */
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Properties to fetch.
+     * Determine the order of Covoiturages to fetch.
      */
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Properties.
+     * Sets the position for listing Covoiturages.
      */
-    cursor?: PropertyWhereUniqueInput
+    cursor?: CovoiturageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Properties from the position of the cursor.
+     * Take `±n` Covoiturages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Properties.
+     * Skip the first `n` Covoiturages.
      */
     skip?: number
-    distinct?: PropertyScalarFieldEnum | PropertyScalarFieldEnum[]
+    distinct?: CovoiturageScalarFieldEnum | CovoiturageScalarFieldEnum[]
   }
 
   /**
-   * Property create
+   * Covoiturage create
    */
-  export type PropertyCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * The data needed to create a Property.
+     * The data needed to create a Covoiturage.
      */
-    data: XOR<PropertyCreateInput, PropertyUncheckedCreateInput>
+    data: XOR<CovoiturageCreateInput, CovoiturageUncheckedCreateInput>
   }
 
   /**
-   * Property createMany
+   * Covoiturage createMany
    */
-  export type PropertyCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Properties.
+     * The data used to create many Covoiturages.
      */
-    data: PropertyCreateManyInput | PropertyCreateManyInput[]
+    data: CovoiturageCreateManyInput | CovoiturageCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Property createManyAndReturn
+   * Covoiturage createManyAndReturn
    */
-  export type PropertyCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelectCreateManyAndReturn<ExtArgs> | null
+    select?: CovoiturageSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
-     * The data used to create many Properties.
+     * The data used to create many Covoiturages.
      */
-    data: PropertyCreateManyInput | PropertyCreateManyInput[]
+    data: CovoiturageCreateManyInput | CovoiturageCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: CovoiturageIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Property update
+   * Covoiturage update
    */
-  export type PropertyUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * The data needed to update a Property.
+     * The data needed to update a Covoiturage.
      */
-    data: XOR<PropertyUpdateInput, PropertyUncheckedUpdateInput>
+    data: XOR<CovoiturageUpdateInput, CovoiturageUncheckedUpdateInput>
     /**
-     * Choose, which Property to update.
+     * Choose, which Covoiturage to update.
      */
-    where: PropertyWhereUniqueInput
+    where: CovoiturageWhereUniqueInput
   }
 
   /**
-   * Property updateMany
+   * Covoiturage updateMany
    */
-  export type PropertyUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Properties.
+     * The data used to update Covoiturages.
      */
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyInput>
+    data: XOR<CovoiturageUpdateManyMutationInput, CovoiturageUncheckedUpdateManyInput>
     /**
-     * Filter which Properties to update
+     * Filter which Covoiturages to update
      */
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
     /**
-     * Limit how many Properties to update.
+     * Limit how many Covoiturages to update.
      */
     limit?: number
   }
 
   /**
-   * Property updateManyAndReturn
+   * Covoiturage updateManyAndReturn
    */
-  export type PropertyUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelectUpdateManyAndReturn<ExtArgs> | null
+    select?: CovoiturageSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
-     * The data used to update Properties.
+     * The data used to update Covoiturages.
      */
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyInput>
+    data: XOR<CovoiturageUpdateManyMutationInput, CovoiturageUncheckedUpdateManyInput>
     /**
-     * Filter which Properties to update
+     * Filter which Covoiturages to update
      */
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
     /**
-     * Limit how many Properties to update.
+     * Limit how many Covoiturages to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: CovoiturageIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Property upsert
+   * Covoiturage upsert
    */
-  export type PropertyUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * The filter to search for the Property to update in case it exists.
+     * The filter to search for the Covoiturage to update in case it exists.
      */
-    where: PropertyWhereUniqueInput
+    where: CovoiturageWhereUniqueInput
     /**
-     * In case the Property found by the `where` argument doesn't exist, create a new Property with this data.
+     * In case the Covoiturage found by the `where` argument doesn't exist, create a new Covoiturage with this data.
      */
-    create: XOR<PropertyCreateInput, PropertyUncheckedCreateInput>
+    create: XOR<CovoiturageCreateInput, CovoiturageUncheckedCreateInput>
     /**
-     * In case the Property was found with the provided `where` argument, update it with this data.
+     * In case the Covoiturage was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<PropertyUpdateInput, PropertyUncheckedUpdateInput>
+    update: XOR<CovoiturageUpdateInput, CovoiturageUncheckedUpdateInput>
   }
 
   /**
-   * Property delete
+   * Covoiturage delete
    */
-  export type PropertyDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
     /**
-     * Filter which Property to delete.
+     * Filter which Covoiturage to delete.
      */
-    where: PropertyWhereUniqueInput
+    where: CovoiturageWhereUniqueInput
   }
 
   /**
-   * Property deleteMany
+   * Covoiturage deleteMany
    */
-  export type PropertyDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Properties to delete
+     * Filter which Covoiturages to delete
      */
-    where?: PropertyWhereInput
+    where?: CovoiturageWhereInput
     /**
-     * Limit how many Properties to delete.
+     * Limit how many Covoiturages to delete.
      */
     limit?: number
   }
 
   /**
-   * Property.leases
+   * Covoiturage.leases
    */
-  export type Property$leasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Covoiturage$leasesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Lease
      */
@@ -2876,9 +2864,9 @@ export namespace Prisma {
   }
 
   /**
-   * Property.applications
+   * Covoiturage.applications
    */
-  export type Property$applicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Covoiturage$applicationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Application
      */
@@ -2900,9 +2888,9 @@ export namespace Prisma {
   }
 
   /**
-   * Property.favoritedBy
+   * Covoiturage.favoritedBy
    */
-  export type Property$favoritedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Covoiturage$favoritedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Passager
      */
@@ -2924,9 +2912,9 @@ export namespace Prisma {
   }
 
   /**
-   * Property.passagers
+   * Covoiturage.passagers
    */
-  export type Property$passagersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Covoiturage$passagersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Passager
      */
@@ -2948,21 +2936,21 @@ export namespace Prisma {
   }
 
   /**
-   * Property without action
+   * Covoiturage without action
    */
-  export type PropertyDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CovoiturageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
+    include?: CovoiturageInclude<ExtArgs> | null
   }
 
 
@@ -3164,7 +3152,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-    conducteurProperties?: boolean | Conducteur$conducteurPropertiesArgs<ExtArgs>
+    conducteurCovoiturages?: boolean | Conducteur$conducteurCovoituragesArgs<ExtArgs>
     _count?: boolean | ConducteurCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["conducteur"]>
 
@@ -3194,7 +3182,7 @@ export namespace Prisma {
 
   export type ConducteurOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cognitoId" | "name" | "email" | "phoneNumber", ExtArgs["result"]["conducteur"]>
   export type ConducteurInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    conducteurProperties?: boolean | Conducteur$conducteurPropertiesArgs<ExtArgs>
+    conducteurCovoiturages?: boolean | Conducteur$conducteurCovoituragesArgs<ExtArgs>
     _count?: boolean | ConducteurCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ConducteurIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3203,7 +3191,7 @@ export namespace Prisma {
   export type $ConducteurPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Conducteur"
     objects: {
-      conducteurProperties: Prisma.$PropertyPayload<ExtArgs>[]
+      conducteurCovoiturages: Prisma.$CovoituragePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3605,7 +3593,7 @@ export namespace Prisma {
    */
   export interface Prisma__ConducteurClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    conducteurProperties<T extends Conducteur$conducteurPropertiesArgs<ExtArgs> = {}>(args?: Subset<T, Conducteur$conducteurPropertiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    conducteurCovoiturages<T extends Conducteur$conducteurCovoituragesArgs<ExtArgs> = {}>(args?: Subset<T, Conducteur$conducteurCovoituragesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4028,27 +4016,27 @@ export namespace Prisma {
   }
 
   /**
-   * Conducteur.conducteurProperties
+   * Conducteur.conducteurCovoiturages
    */
-  export type Conducteur$conducteurPropertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Conducteur$conducteurCovoituragesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
-    where?: PropertyWhereInput
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
-    cursor?: PropertyWhereUniqueInput
+    include?: CovoiturageInclude<ExtArgs> | null
+    where?: CovoiturageWhereInput
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
+    cursor?: CovoiturageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: PropertyScalarFieldEnum | PropertyScalarFieldEnum[]
+    distinct?: CovoiturageScalarFieldEnum | CovoiturageScalarFieldEnum[]
   }
 
   /**
@@ -4268,7 +4256,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
-    properties?: boolean | Passager$propertiesArgs<ExtArgs>
+    covoiturages?: boolean | Passager$covoituragesArgs<ExtArgs>
     favorites?: boolean | Passager$favoritesArgs<ExtArgs>
     applications?: boolean | Passager$applicationsArgs<ExtArgs>
     leases?: boolean | Passager$leasesArgs<ExtArgs>
@@ -4301,7 +4289,7 @@ export namespace Prisma {
 
   export type PassagerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cognitoId" | "name" | "email" | "phoneNumber", ExtArgs["result"]["passager"]>
   export type PassagerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    properties?: boolean | Passager$propertiesArgs<ExtArgs>
+    covoiturages?: boolean | Passager$covoituragesArgs<ExtArgs>
     favorites?: boolean | Passager$favoritesArgs<ExtArgs>
     applications?: boolean | Passager$applicationsArgs<ExtArgs>
     leases?: boolean | Passager$leasesArgs<ExtArgs>
@@ -4313,8 +4301,8 @@ export namespace Prisma {
   export type $PassagerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Passager"
     objects: {
-      properties: Prisma.$PropertyPayload<ExtArgs>[]
-      favorites: Prisma.$PropertyPayload<ExtArgs>[]
+      covoiturages: Prisma.$CovoituragePayload<ExtArgs>[]
+      favorites: Prisma.$CovoituragePayload<ExtArgs>[]
       applications: Prisma.$ApplicationPayload<ExtArgs>[]
       leases: Prisma.$LeasePayload<ExtArgs>[]
     }
@@ -4718,8 +4706,8 @@ export namespace Prisma {
    */
   export interface Prisma__PassagerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    properties<T extends Passager$propertiesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$propertiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    favorites<T extends Passager$favoritesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$favoritesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    covoiturages<T extends Passager$covoituragesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$covoituragesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favorites<T extends Passager$favoritesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$favoritesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     applications<T extends Passager$applicationsArgs<ExtArgs> = {}>(args?: Subset<T, Passager$applicationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     leases<T extends Passager$leasesArgs<ExtArgs> = {}>(args?: Subset<T, Passager$leasesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
@@ -5144,27 +5132,27 @@ export namespace Prisma {
   }
 
   /**
-   * Passager.properties
+   * Passager.covoiturages
    */
-  export type Passager$propertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Passager$covoituragesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
-    where?: PropertyWhereInput
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
-    cursor?: PropertyWhereUniqueInput
+    include?: CovoiturageInclude<ExtArgs> | null
+    where?: CovoiturageWhereInput
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
+    cursor?: CovoiturageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: PropertyScalarFieldEnum | PropertyScalarFieldEnum[]
+    distinct?: CovoiturageScalarFieldEnum | CovoiturageScalarFieldEnum[]
   }
 
   /**
@@ -5172,23 +5160,23 @@ export namespace Prisma {
    */
   export type Passager$favoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
-    where?: PropertyWhereInput
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
-    cursor?: PropertyWhereUniqueInput
+    include?: CovoiturageInclude<ExtArgs> | null
+    where?: CovoiturageWhereInput
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
+    cursor?: CovoiturageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: PropertyScalarFieldEnum | PropertyScalarFieldEnum[]
+    distinct?: CovoiturageScalarFieldEnum | CovoiturageScalarFieldEnum[]
   }
 
   /**
@@ -5464,7 +5452,7 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     postalCode?: boolean
-    properties?: boolean | Location$propertiesArgs<ExtArgs>
+    covoiturages?: boolean | Location$covoituragesArgs<ExtArgs>
     _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["location"]>
 
@@ -5489,7 +5477,7 @@ export namespace Prisma {
 
   export type LocationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "address" | "city" | "state" | "country" | "postalCode", ExtArgs["result"]["location"]>
   export type LocationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    properties?: boolean | Location$propertiesArgs<ExtArgs>
+    covoiturages?: boolean | Location$covoituragesArgs<ExtArgs>
     _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type LocationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -5497,7 +5485,7 @@ export namespace Prisma {
   export type $LocationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Location"
     objects: {
-      properties: Prisma.$PropertyPayload<ExtArgs>[]
+      covoiturages: Prisma.$CovoituragePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -5829,7 +5817,7 @@ export namespace Prisma {
    */
   export interface Prisma__LocationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    properties<T extends Location$propertiesArgs<ExtArgs> = {}>(args?: Subset<T, Location$propertiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    covoiturages<T extends Location$covoituragesArgs<ExtArgs> = {}>(args?: Subset<T, Location$covoituragesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6171,27 +6159,27 @@ export namespace Prisma {
   }
 
   /**
-   * Location.properties
+   * Location.covoiturages
    */
-  export type Location$propertiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Location$covoituragesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Property
+     * Select specific fields to fetch from the Covoiturage
      */
-    select?: PropertySelect<ExtArgs> | null
+    select?: CovoiturageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Property
+     * Omit specific fields from the Covoiturage
      */
-    omit?: PropertyOmit<ExtArgs> | null
+    omit?: CovoiturageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PropertyInclude<ExtArgs> | null
-    where?: PropertyWhereInput
-    orderBy?: PropertyOrderByWithRelationInput | PropertyOrderByWithRelationInput[]
-    cursor?: PropertyWhereUniqueInput
+    include?: CovoiturageInclude<ExtArgs> | null
+    where?: CovoiturageWhereInput
+    orderBy?: CovoiturageOrderByWithRelationInput | CovoiturageOrderByWithRelationInput[]
+    cursor?: CovoiturageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: PropertyScalarFieldEnum | PropertyScalarFieldEnum[]
+    distinct?: CovoiturageScalarFieldEnum | CovoiturageScalarFieldEnum[]
   }
 
   /**
@@ -6227,13 +6215,13 @@ export namespace Prisma {
 
   export type ApplicationAvgAggregateOutputType = {
     id: number | null
-    propertyId: number | null
+    covoiturageId: number | null
     leaseId: number | null
   }
 
   export type ApplicationSumAggregateOutputType = {
     id: number | null
-    propertyId: number | null
+    covoiturageId: number | null
     leaseId: number | null
   }
 
@@ -6241,7 +6229,7 @@ export namespace Prisma {
     id: number | null
     applicationDate: Date | null
     status: $Enums.ApplicationStatus | null
-    propertyId: number | null
+    covoiturageId: number | null
     passagerCognitoId: string | null
     name: string | null
     email: string | null
@@ -6254,7 +6242,7 @@ export namespace Prisma {
     id: number | null
     applicationDate: Date | null
     status: $Enums.ApplicationStatus | null
-    propertyId: number | null
+    covoiturageId: number | null
     passagerCognitoId: string | null
     name: string | null
     email: string | null
@@ -6267,7 +6255,7 @@ export namespace Prisma {
     id: number
     applicationDate: number
     status: number
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: number
     name: number
     email: number
@@ -6280,13 +6268,13 @@ export namespace Prisma {
 
   export type ApplicationAvgAggregateInputType = {
     id?: true
-    propertyId?: true
+    covoiturageId?: true
     leaseId?: true
   }
 
   export type ApplicationSumAggregateInputType = {
     id?: true
-    propertyId?: true
+    covoiturageId?: true
     leaseId?: true
   }
 
@@ -6294,7 +6282,7 @@ export namespace Prisma {
     id?: true
     applicationDate?: true
     status?: true
-    propertyId?: true
+    covoiturageId?: true
     passagerCognitoId?: true
     name?: true
     email?: true
@@ -6307,7 +6295,7 @@ export namespace Prisma {
     id?: true
     applicationDate?: true
     status?: true
-    propertyId?: true
+    covoiturageId?: true
     passagerCognitoId?: true
     name?: true
     email?: true
@@ -6320,7 +6308,7 @@ export namespace Prisma {
     id?: true
     applicationDate?: true
     status?: true
-    propertyId?: true
+    covoiturageId?: true
     passagerCognitoId?: true
     name?: true
     email?: true
@@ -6420,7 +6408,7 @@ export namespace Prisma {
     id: number
     applicationDate: Date
     status: $Enums.ApplicationStatus
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     name: string
     email: string
@@ -6452,14 +6440,14 @@ export namespace Prisma {
     id?: boolean
     applicationDate?: boolean
     status?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
     message?: boolean
     leaseId?: boolean
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }, ExtArgs["result"]["application"]>
@@ -6468,14 +6456,14 @@ export namespace Prisma {
     id?: boolean
     applicationDate?: boolean
     status?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
     message?: boolean
     leaseId?: boolean
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }, ExtArgs["result"]["application"]>
@@ -6484,14 +6472,14 @@ export namespace Prisma {
     id?: boolean
     applicationDate?: boolean
     status?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
     message?: boolean
     leaseId?: boolean
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }, ExtArgs["result"]["application"]>
@@ -6500,7 +6488,7 @@ export namespace Prisma {
     id?: boolean
     applicationDate?: boolean
     status?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
     name?: boolean
     email?: boolean
@@ -6509,19 +6497,19 @@ export namespace Prisma {
     leaseId?: boolean
   }
 
-  export type ApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "applicationDate" | "status" | "propertyId" | "passagerCognitoId" | "name" | "email" | "phoneNumber" | "message" | "leaseId", ExtArgs["result"]["application"]>
+  export type ApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "applicationDate" | "status" | "covoiturageId" | "passagerCognitoId" | "name" | "email" | "phoneNumber" | "message" | "leaseId", ExtArgs["result"]["application"]>
   export type ApplicationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }
   export type ApplicationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }
   export type ApplicationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     lease?: boolean | Application$leaseArgs<ExtArgs>
   }
@@ -6529,7 +6517,7 @@ export namespace Prisma {
   export type $ApplicationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Application"
     objects: {
-      property: Prisma.$PropertyPayload<ExtArgs>
+      covoiturage: Prisma.$CovoituragePayload<ExtArgs>
       passager: Prisma.$PassagerPayload<ExtArgs>
       lease: Prisma.$LeasePayload<ExtArgs> | null
     }
@@ -6537,7 +6525,7 @@ export namespace Prisma {
       id: number
       applicationDate: Date
       status: $Enums.ApplicationStatus
-      propertyId: number
+      covoiturageId: number
       passagerCognitoId: string
       name: string
       email: string
@@ -6938,7 +6926,7 @@ export namespace Prisma {
    */
   export interface Prisma__ApplicationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    property<T extends PropertyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PropertyDefaultArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    covoiturage<T extends CovoiturageDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CovoiturageDefaultArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     passager<T extends PassagerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PassagerDefaultArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     lease<T extends Application$leaseArgs<ExtArgs> = {}>(args?: Subset<T, Application$leaseArgs<ExtArgs>>): Prisma__LeaseClient<$Result.GetResult<Prisma.$LeasePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
@@ -6973,7 +6961,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Application", 'Int'>
     readonly applicationDate: FieldRef<"Application", 'DateTime'>
     readonly status: FieldRef<"Application", 'ApplicationStatus'>
-    readonly propertyId: FieldRef<"Application", 'Int'>
+    readonly covoiturageId: FieldRef<"Application", 'Int'>
     readonly passagerCognitoId: FieldRef<"Application", 'String'>
     readonly name: FieldRef<"Application", 'String'>
     readonly email: FieldRef<"Application", 'String'>
@@ -7427,19 +7415,19 @@ export namespace Prisma {
 
   export type LeaseAvgAggregateOutputType = {
     id: number | null
-    propertyId: number | null
+    covoiturageId: number | null
   }
 
   export type LeaseSumAggregateOutputType = {
     id: number | null
-    propertyId: number | null
+    covoiturageId: number | null
   }
 
   export type LeaseMinAggregateOutputType = {
     id: number | null
     startDate: Date | null
     endDate: Date | null
-    propertyId: number | null
+    covoiturageId: number | null
     passagerCognitoId: string | null
   }
 
@@ -7447,7 +7435,7 @@ export namespace Prisma {
     id: number | null
     startDate: Date | null
     endDate: Date | null
-    propertyId: number | null
+    covoiturageId: number | null
     passagerCognitoId: string | null
   }
 
@@ -7455,7 +7443,7 @@ export namespace Prisma {
     id: number
     startDate: number
     endDate: number
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: number
     _all: number
   }
@@ -7463,19 +7451,19 @@ export namespace Prisma {
 
   export type LeaseAvgAggregateInputType = {
     id?: true
-    propertyId?: true
+    covoiturageId?: true
   }
 
   export type LeaseSumAggregateInputType = {
     id?: true
-    propertyId?: true
+    covoiturageId?: true
   }
 
   export type LeaseMinAggregateInputType = {
     id?: true
     startDate?: true
     endDate?: true
-    propertyId?: true
+    covoiturageId?: true
     passagerCognitoId?: true
   }
 
@@ -7483,7 +7471,7 @@ export namespace Prisma {
     id?: true
     startDate?: true
     endDate?: true
-    propertyId?: true
+    covoiturageId?: true
     passagerCognitoId?: true
   }
 
@@ -7491,7 +7479,7 @@ export namespace Prisma {
     id?: true
     startDate?: true
     endDate?: true
-    propertyId?: true
+    covoiturageId?: true
     passagerCognitoId?: true
     _all?: true
   }
@@ -7586,7 +7574,7 @@ export namespace Prisma {
     id: number
     startDate: Date
     endDate: Date
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     _count: LeaseCountAggregateOutputType | null
     _avg: LeaseAvgAggregateOutputType | null
@@ -7613,9 +7601,9 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     application?: boolean | Lease$applicationArgs<ExtArgs>
     payments?: boolean | Lease$paymentsArgs<ExtArgs>
@@ -7626,9 +7614,9 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["lease"]>
 
@@ -7636,9 +7624,9 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["lease"]>
 
@@ -7646,31 +7634,31 @@ export namespace Prisma {
     id?: boolean
     startDate?: boolean
     endDate?: boolean
-    propertyId?: boolean
+    covoiturageId?: boolean
     passagerCognitoId?: boolean
   }
 
-  export type LeaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startDate" | "endDate" | "propertyId" | "passagerCognitoId", ExtArgs["result"]["lease"]>
+  export type LeaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startDate" | "endDate" | "covoiturageId" | "passagerCognitoId", ExtArgs["result"]["lease"]>
   export type LeaseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
     application?: boolean | Lease$applicationArgs<ExtArgs>
     payments?: boolean | Lease$paymentsArgs<ExtArgs>
     _count?: boolean | LeaseCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type LeaseIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }
   export type LeaseIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    property?: boolean | PropertyDefaultArgs<ExtArgs>
+    covoiturage?: boolean | CovoiturageDefaultArgs<ExtArgs>
     passager?: boolean | PassagerDefaultArgs<ExtArgs>
   }
 
   export type $LeasePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Lease"
     objects: {
-      property: Prisma.$PropertyPayload<ExtArgs>
+      covoiturage: Prisma.$CovoituragePayload<ExtArgs>
       passager: Prisma.$PassagerPayload<ExtArgs>
       application: Prisma.$ApplicationPayload<ExtArgs> | null
       payments: Prisma.$PaymentPayload<ExtArgs>[]
@@ -7679,7 +7667,7 @@ export namespace Prisma {
       id: number
       startDate: Date
       endDate: Date
-      propertyId: number
+      covoiturageId: number
       passagerCognitoId: string
     }, ExtArgs["result"]["lease"]>
     composites: {}
@@ -8075,7 +8063,7 @@ export namespace Prisma {
    */
   export interface Prisma__LeaseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    property<T extends PropertyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PropertyDefaultArgs<ExtArgs>>): Prisma__PropertyClient<$Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    covoiturage<T extends CovoiturageDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CovoiturageDefaultArgs<ExtArgs>>): Prisma__CovoiturageClient<$Result.GetResult<Prisma.$CovoituragePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     passager<T extends PassagerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PassagerDefaultArgs<ExtArgs>>): Prisma__PassagerClient<$Result.GetResult<Prisma.$PassagerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     application<T extends Lease$applicationArgs<ExtArgs> = {}>(args?: Subset<T, Lease$applicationArgs<ExtArgs>>): Prisma__ApplicationClient<$Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     payments<T extends Lease$paymentsArgs<ExtArgs> = {}>(args?: Subset<T, Lease$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -8111,7 +8099,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Lease", 'Int'>
     readonly startDate: FieldRef<"Lease", 'DateTime'>
     readonly endDate: FieldRef<"Lease", 'DateTime'>
-    readonly propertyId: FieldRef<"Lease", 'Int'>
+    readonly covoiturageId: FieldRef<"Lease", 'Int'>
     readonly passagerCognitoId: FieldRef<"Lease", 'String'>
   }
     
@@ -9714,7 +9702,7 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const PropertyScalarFieldEnum: {
+  export const CovoiturageScalarFieldEnum: {
     id: 'id',
     name: 'name',
     description: 'description',
@@ -9728,7 +9716,7 @@ export namespace Prisma {
     conducteurCognitoId: 'conducteurCognitoId'
   };
 
-  export type PropertyScalarFieldEnum = (typeof PropertyScalarFieldEnum)[keyof typeof PropertyScalarFieldEnum]
+  export type CovoiturageScalarFieldEnum = (typeof CovoiturageScalarFieldEnum)[keyof typeof CovoiturageScalarFieldEnum]
 
 
   export const ConducteurScalarFieldEnum: {
@@ -9769,7 +9757,7 @@ export namespace Prisma {
     id: 'id',
     applicationDate: 'applicationDate',
     status: 'status',
-    propertyId: 'propertyId',
+    covoiturageId: 'covoiturageId',
     passagerCognitoId: 'passagerCognitoId',
     name: 'name',
     email: 'email',
@@ -9785,7 +9773,7 @@ export namespace Prisma {
     id: 'id',
     startDate: 'startDate',
     endDate: 'endDate',
-    propertyId: 'propertyId',
+    covoiturageId: 'covoiturageId',
     passagerCognitoId: 'passagerCognitoId'
   };
 
@@ -9942,21 +9930,21 @@ export namespace Prisma {
    */
 
 
-  export type PropertyWhereInput = {
-    AND?: PropertyWhereInput | PropertyWhereInput[]
-    OR?: PropertyWhereInput[]
-    NOT?: PropertyWhereInput | PropertyWhereInput[]
-    id?: IntFilter<"Property"> | number
-    name?: StringFilter<"Property"> | string
-    description?: StringFilter<"Property"> | string
-    photoUrls?: StringNullableListFilter<"Property">
-    isPetsAllowed?: BoolFilter<"Property"> | boolean
-    carType?: EnumCarTypeFilter<"Property"> | $Enums.CarType
-    postedDate?: DateTimeFilter<"Property"> | Date | string
-    averageRating?: FloatNullableFilter<"Property"> | number | null
-    numberOfReviews?: IntNullableFilter<"Property"> | number | null
-    locationId?: IntFilter<"Property"> | number
-    conducteurCognitoId?: StringFilter<"Property"> | string
+  export type CovoiturageWhereInput = {
+    AND?: CovoiturageWhereInput | CovoiturageWhereInput[]
+    OR?: CovoiturageWhereInput[]
+    NOT?: CovoiturageWhereInput | CovoiturageWhereInput[]
+    id?: IntFilter<"Covoiturage"> | number
+    name?: StringFilter<"Covoiturage"> | string
+    description?: StringFilter<"Covoiturage"> | string
+    photoUrls?: StringNullableListFilter<"Covoiturage">
+    isPetsAllowed?: BoolFilter<"Covoiturage"> | boolean
+    carType?: EnumCarTypeFilter<"Covoiturage"> | $Enums.CarType
+    postedDate?: DateTimeFilter<"Covoiturage"> | Date | string
+    averageRating?: FloatNullableFilter<"Covoiturage"> | number | null
+    numberOfReviews?: IntNullableFilter<"Covoiturage"> | number | null
+    locationId?: IntFilter<"Covoiturage"> | number
+    conducteurCognitoId?: StringFilter<"Covoiturage"> | string
     location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
     conducteur?: XOR<ConducteurScalarRelationFilter, ConducteurWhereInput>
     leases?: LeaseListRelationFilter
@@ -9965,7 +9953,7 @@ export namespace Prisma {
     passagers?: PassagerListRelationFilter
   }
 
-  export type PropertyOrderByWithRelationInput = {
+  export type CovoiturageOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -9985,21 +9973,21 @@ export namespace Prisma {
     passagers?: PassagerOrderByRelationAggregateInput
   }
 
-  export type PropertyWhereUniqueInput = Prisma.AtLeast<{
+  export type CovoiturageWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: PropertyWhereInput | PropertyWhereInput[]
-    OR?: PropertyWhereInput[]
-    NOT?: PropertyWhereInput | PropertyWhereInput[]
-    name?: StringFilter<"Property"> | string
-    description?: StringFilter<"Property"> | string
-    photoUrls?: StringNullableListFilter<"Property">
-    isPetsAllowed?: BoolFilter<"Property"> | boolean
-    carType?: EnumCarTypeFilter<"Property"> | $Enums.CarType
-    postedDate?: DateTimeFilter<"Property"> | Date | string
-    averageRating?: FloatNullableFilter<"Property"> | number | null
-    numberOfReviews?: IntNullableFilter<"Property"> | number | null
-    locationId?: IntFilter<"Property"> | number
-    conducteurCognitoId?: StringFilter<"Property"> | string
+    AND?: CovoiturageWhereInput | CovoiturageWhereInput[]
+    OR?: CovoiturageWhereInput[]
+    NOT?: CovoiturageWhereInput | CovoiturageWhereInput[]
+    name?: StringFilter<"Covoiturage"> | string
+    description?: StringFilter<"Covoiturage"> | string
+    photoUrls?: StringNullableListFilter<"Covoiturage">
+    isPetsAllowed?: BoolFilter<"Covoiturage"> | boolean
+    carType?: EnumCarTypeFilter<"Covoiturage"> | $Enums.CarType
+    postedDate?: DateTimeFilter<"Covoiturage"> | Date | string
+    averageRating?: FloatNullableFilter<"Covoiturage"> | number | null
+    numberOfReviews?: IntNullableFilter<"Covoiturage"> | number | null
+    locationId?: IntFilter<"Covoiturage"> | number
+    conducteurCognitoId?: StringFilter<"Covoiturage"> | string
     location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
     conducteur?: XOR<ConducteurScalarRelationFilter, ConducteurWhereInput>
     leases?: LeaseListRelationFilter
@@ -10008,7 +9996,7 @@ export namespace Prisma {
     passagers?: PassagerListRelationFilter
   }, "id">
 
-  export type PropertyOrderByWithAggregationInput = {
+  export type CovoiturageOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -10020,28 +10008,28 @@ export namespace Prisma {
     numberOfReviews?: SortOrderInput | SortOrder
     locationId?: SortOrder
     conducteurCognitoId?: SortOrder
-    _count?: PropertyCountOrderByAggregateInput
-    _avg?: PropertyAvgOrderByAggregateInput
-    _max?: PropertyMaxOrderByAggregateInput
-    _min?: PropertyMinOrderByAggregateInput
-    _sum?: PropertySumOrderByAggregateInput
+    _count?: CovoiturageCountOrderByAggregateInput
+    _avg?: CovoiturageAvgOrderByAggregateInput
+    _max?: CovoiturageMaxOrderByAggregateInput
+    _min?: CovoiturageMinOrderByAggregateInput
+    _sum?: CovoiturageSumOrderByAggregateInput
   }
 
-  export type PropertyScalarWhereWithAggregatesInput = {
-    AND?: PropertyScalarWhereWithAggregatesInput | PropertyScalarWhereWithAggregatesInput[]
-    OR?: PropertyScalarWhereWithAggregatesInput[]
-    NOT?: PropertyScalarWhereWithAggregatesInput | PropertyScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Property"> | number
-    name?: StringWithAggregatesFilter<"Property"> | string
-    description?: StringWithAggregatesFilter<"Property"> | string
-    photoUrls?: StringNullableListFilter<"Property">
-    isPetsAllowed?: BoolWithAggregatesFilter<"Property"> | boolean
-    carType?: EnumCarTypeWithAggregatesFilter<"Property"> | $Enums.CarType
-    postedDate?: DateTimeWithAggregatesFilter<"Property"> | Date | string
-    averageRating?: FloatNullableWithAggregatesFilter<"Property"> | number | null
-    numberOfReviews?: IntNullableWithAggregatesFilter<"Property"> | number | null
-    locationId?: IntWithAggregatesFilter<"Property"> | number
-    conducteurCognitoId?: StringWithAggregatesFilter<"Property"> | string
+  export type CovoiturageScalarWhereWithAggregatesInput = {
+    AND?: CovoiturageScalarWhereWithAggregatesInput | CovoiturageScalarWhereWithAggregatesInput[]
+    OR?: CovoiturageScalarWhereWithAggregatesInput[]
+    NOT?: CovoiturageScalarWhereWithAggregatesInput | CovoiturageScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Covoiturage"> | number
+    name?: StringWithAggregatesFilter<"Covoiturage"> | string
+    description?: StringWithAggregatesFilter<"Covoiturage"> | string
+    photoUrls?: StringNullableListFilter<"Covoiturage">
+    isPetsAllowed?: BoolWithAggregatesFilter<"Covoiturage"> | boolean
+    carType?: EnumCarTypeWithAggregatesFilter<"Covoiturage"> | $Enums.CarType
+    postedDate?: DateTimeWithAggregatesFilter<"Covoiturage"> | Date | string
+    averageRating?: FloatNullableWithAggregatesFilter<"Covoiturage"> | number | null
+    numberOfReviews?: IntNullableWithAggregatesFilter<"Covoiturage"> | number | null
+    locationId?: IntWithAggregatesFilter<"Covoiturage"> | number
+    conducteurCognitoId?: StringWithAggregatesFilter<"Covoiturage"> | string
   }
 
   export type ConducteurWhereInput = {
@@ -10053,7 +10041,7 @@ export namespace Prisma {
     name?: StringFilter<"Conducteur"> | string
     email?: StringFilter<"Conducteur"> | string
     phoneNumber?: StringFilter<"Conducteur"> | string
-    conducteurProperties?: PropertyListRelationFilter
+    conducteurCovoiturages?: CovoiturageListRelationFilter
   }
 
   export type ConducteurOrderByWithRelationInput = {
@@ -10062,7 +10050,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
-    conducteurProperties?: PropertyOrderByRelationAggregateInput
+    conducteurCovoiturages?: CovoiturageOrderByRelationAggregateInput
   }
 
   export type ConducteurWhereUniqueInput = Prisma.AtLeast<{
@@ -10074,7 +10062,7 @@ export namespace Prisma {
     name?: StringFilter<"Conducteur"> | string
     email?: StringFilter<"Conducteur"> | string
     phoneNumber?: StringFilter<"Conducteur"> | string
-    conducteurProperties?: PropertyListRelationFilter
+    conducteurCovoiturages?: CovoiturageListRelationFilter
   }, "id" | "cognitoId">
 
   export type ConducteurOrderByWithAggregationInput = {
@@ -10110,8 +10098,8 @@ export namespace Prisma {
     name?: StringFilter<"Passager"> | string
     email?: StringFilter<"Passager"> | string
     phoneNumber?: StringFilter<"Passager"> | string
-    properties?: PropertyListRelationFilter
-    favorites?: PropertyListRelationFilter
+    covoiturages?: CovoiturageListRelationFilter
+    favorites?: CovoiturageListRelationFilter
     applications?: ApplicationListRelationFilter
     leases?: LeaseListRelationFilter
   }
@@ -10122,8 +10110,8 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
-    properties?: PropertyOrderByRelationAggregateInput
-    favorites?: PropertyOrderByRelationAggregateInput
+    covoiturages?: CovoiturageOrderByRelationAggregateInput
+    favorites?: CovoiturageOrderByRelationAggregateInput
     applications?: ApplicationOrderByRelationAggregateInput
     leases?: LeaseOrderByRelationAggregateInput
   }
@@ -10137,8 +10125,8 @@ export namespace Prisma {
     name?: StringFilter<"Passager"> | string
     email?: StringFilter<"Passager"> | string
     phoneNumber?: StringFilter<"Passager"> | string
-    properties?: PropertyListRelationFilter
-    favorites?: PropertyListRelationFilter
+    covoiturages?: CovoiturageListRelationFilter
+    favorites?: CovoiturageListRelationFilter
     applications?: ApplicationListRelationFilter
     leases?: LeaseListRelationFilter
   }, "id" | "cognitoId">
@@ -10177,7 +10165,7 @@ export namespace Prisma {
     state?: StringFilter<"Location"> | string
     country?: StringFilter<"Location"> | string
     postalCode?: StringFilter<"Location"> | string
-    properties?: PropertyListRelationFilter
+    covoiturages?: CovoiturageListRelationFilter
   }
 
   export type LocationOrderByWithRelationInput = {
@@ -10187,7 +10175,7 @@ export namespace Prisma {
     state?: SortOrder
     country?: SortOrder
     postalCode?: SortOrder
-    properties?: PropertyOrderByRelationAggregateInput
+    covoiturages?: CovoiturageOrderByRelationAggregateInput
   }
 
   export type LocationWhereUniqueInput = Prisma.AtLeast<{
@@ -10200,7 +10188,7 @@ export namespace Prisma {
     state?: StringFilter<"Location"> | string
     country?: StringFilter<"Location"> | string
     postalCode?: StringFilter<"Location"> | string
-    properties?: PropertyListRelationFilter
+    covoiturages?: CovoiturageListRelationFilter
   }, "id">
 
   export type LocationOrderByWithAggregationInput = {
@@ -10236,14 +10224,14 @@ export namespace Prisma {
     id?: IntFilter<"Application"> | number
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
-    propertyId?: IntFilter<"Application"> | number
+    covoiturageId?: IntFilter<"Application"> | number
     passagerCognitoId?: StringFilter<"Application"> | string
     name?: StringFilter<"Application"> | string
     email?: StringFilter<"Application"> | string
     phoneNumber?: StringFilter<"Application"> | string
     message?: StringNullableFilter<"Application"> | string | null
     leaseId?: IntNullableFilter<"Application"> | number | null
-    property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
+    covoiturage?: XOR<CovoiturageScalarRelationFilter, CovoiturageWhereInput>
     passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     lease?: XOR<LeaseNullableScalarRelationFilter, LeaseWhereInput> | null
   }
@@ -10252,14 +10240,14 @@ export namespace Prisma {
     id?: SortOrder
     applicationDate?: SortOrder
     status?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
     message?: SortOrderInput | SortOrder
     leaseId?: SortOrderInput | SortOrder
-    property?: PropertyOrderByWithRelationInput
+    covoiturage?: CovoiturageOrderByWithRelationInput
     passager?: PassagerOrderByWithRelationInput
     lease?: LeaseOrderByWithRelationInput
   }
@@ -10272,13 +10260,13 @@ export namespace Prisma {
     NOT?: ApplicationWhereInput | ApplicationWhereInput[]
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
-    propertyId?: IntFilter<"Application"> | number
+    covoiturageId?: IntFilter<"Application"> | number
     passagerCognitoId?: StringFilter<"Application"> | string
     name?: StringFilter<"Application"> | string
     email?: StringFilter<"Application"> | string
     phoneNumber?: StringFilter<"Application"> | string
     message?: StringNullableFilter<"Application"> | string | null
-    property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
+    covoiturage?: XOR<CovoiturageScalarRelationFilter, CovoiturageWhereInput>
     passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     lease?: XOR<LeaseNullableScalarRelationFilter, LeaseWhereInput> | null
   }, "id" | "leaseId">
@@ -10287,7 +10275,7 @@ export namespace Prisma {
     id?: SortOrder
     applicationDate?: SortOrder
     status?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -10308,7 +10296,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Application"> | number
     applicationDate?: DateTimeWithAggregatesFilter<"Application"> | Date | string
     status?: EnumApplicationStatusWithAggregatesFilter<"Application"> | $Enums.ApplicationStatus
-    propertyId?: IntWithAggregatesFilter<"Application"> | number
+    covoiturageId?: IntWithAggregatesFilter<"Application"> | number
     passagerCognitoId?: StringWithAggregatesFilter<"Application"> | string
     name?: StringWithAggregatesFilter<"Application"> | string
     email?: StringWithAggregatesFilter<"Application"> | string
@@ -10324,9 +10312,9 @@ export namespace Prisma {
     id?: IntFilter<"Lease"> | number
     startDate?: DateTimeFilter<"Lease"> | Date | string
     endDate?: DateTimeFilter<"Lease"> | Date | string
-    propertyId?: IntFilter<"Lease"> | number
+    covoiturageId?: IntFilter<"Lease"> | number
     passagerCognitoId?: StringFilter<"Lease"> | string
-    property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
+    covoiturage?: XOR<CovoiturageScalarRelationFilter, CovoiturageWhereInput>
     passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     application?: XOR<ApplicationNullableScalarRelationFilter, ApplicationWhereInput> | null
     payments?: PaymentListRelationFilter
@@ -10336,9 +10324,9 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
-    property?: PropertyOrderByWithRelationInput
+    covoiturage?: CovoiturageOrderByWithRelationInput
     passager?: PassagerOrderByWithRelationInput
     application?: ApplicationOrderByWithRelationInput
     payments?: PaymentOrderByRelationAggregateInput
@@ -10351,9 +10339,9 @@ export namespace Prisma {
     NOT?: LeaseWhereInput | LeaseWhereInput[]
     startDate?: DateTimeFilter<"Lease"> | Date | string
     endDate?: DateTimeFilter<"Lease"> | Date | string
-    propertyId?: IntFilter<"Lease"> | number
+    covoiturageId?: IntFilter<"Lease"> | number
     passagerCognitoId?: StringFilter<"Lease"> | string
-    property?: XOR<PropertyScalarRelationFilter, PropertyWhereInput>
+    covoiturage?: XOR<CovoiturageScalarRelationFilter, CovoiturageWhereInput>
     passager?: XOR<PassagerScalarRelationFilter, PassagerWhereInput>
     application?: XOR<ApplicationNullableScalarRelationFilter, ApplicationWhereInput> | null
     payments?: PaymentListRelationFilter
@@ -10363,7 +10351,7 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
     _count?: LeaseCountOrderByAggregateInput
     _avg?: LeaseAvgOrderByAggregateInput
@@ -10379,7 +10367,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Lease"> | number
     startDate?: DateTimeWithAggregatesFilter<"Lease"> | Date | string
     endDate?: DateTimeWithAggregatesFilter<"Lease"> | Date | string
-    propertyId?: IntWithAggregatesFilter<"Lease"> | number
+    covoiturageId?: IntWithAggregatesFilter<"Lease"> | number
     passagerCognitoId?: StringWithAggregatesFilter<"Lease"> | string
   }
 
@@ -10450,28 +10438,28 @@ export namespace Prisma {
     leaseId?: IntWithAggregatesFilter<"Payment"> | number
   }
 
-  export type PropertyCreateInput = {
+  export type CovoiturageCreateInput = {
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    location: LocationCreateNestedOneWithoutPropertiesInput
-    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
-    leases?: LeaseCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationCreateNestedManyWithoutPropertyInput
+    location: LocationCreateNestedOneWithoutCovoituragesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurCovoituragesInput
+    leases?: LeaseCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyUncheckedCreateInput = {
+  export type CovoiturageUncheckedCreateInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -10479,34 +10467,34 @@ export namespace Prisma {
     numberOfReviews?: number | null
     locationId: number
     conducteurCognitoId: string
-    leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyUpdateInput = {
+  export type CovoiturageUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
-    leases?: LeaseUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUpdateManyWithoutPropertyNestedInput
+    location?: LocationUpdateOneRequiredWithoutCovoituragesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurCovoituragesNestedInput
+    leases?: LeaseUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateInput = {
+  export type CovoiturageUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10514,17 +10502,17 @@ export namespace Prisma {
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
     conducteurCognitoId?: StringFieldUpdateOperationsInput | string
-    leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyCreateManyInput = {
+  export type CovoiturageCreateManyInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -10534,10 +10522,10 @@ export namespace Prisma {
     conducteurCognitoId: string
   }
 
-  export type PropertyUpdateManyMutationInput = {
+  export type CovoiturageUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10545,11 +10533,11 @@ export namespace Prisma {
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type PropertyUncheckedUpdateManyInput = {
+  export type CovoiturageUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10564,7 +10552,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    conducteurProperties?: PropertyCreateNestedManyWithoutConducteurInput
+    conducteurCovoiturages?: CovoiturageCreateNestedManyWithoutConducteurInput
   }
 
   export type ConducteurUncheckedCreateInput = {
@@ -10573,7 +10561,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    conducteurProperties?: PropertyUncheckedCreateNestedManyWithoutConducteurInput
+    conducteurCovoiturages?: CovoiturageUncheckedCreateNestedManyWithoutConducteurInput
   }
 
   export type ConducteurUpdateInput = {
@@ -10581,7 +10569,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    conducteurProperties?: PropertyUpdateManyWithoutConducteurNestedInput
+    conducteurCovoiturages?: CovoiturageUpdateManyWithoutConducteurNestedInput
   }
 
   export type ConducteurUncheckedUpdateInput = {
@@ -10590,7 +10578,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    conducteurProperties?: PropertyUncheckedUpdateManyWithoutConducteurNestedInput
+    conducteurCovoiturages?: CovoiturageUncheckedUpdateManyWithoutConducteurNestedInput
   }
 
   export type ConducteurCreateManyInput = {
@@ -10621,8 +10609,8 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutPassagersInput
-    favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
+    covoiturages?: CovoiturageCreateNestedManyWithoutPassagersInput
+    favorites?: CovoiturageCreateNestedManyWithoutFavoritedByInput
     applications?: ApplicationCreateNestedManyWithoutPassagerInput
     leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
@@ -10633,8 +10621,8 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
-    favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
+    covoiturages?: CovoiturageUncheckedCreateNestedManyWithoutPassagersInput
+    favorites?: CovoiturageUncheckedCreateNestedManyWithoutFavoritedByInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
     leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
@@ -10644,8 +10632,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutPassagersNestedInput
-    favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
+    covoiturages?: CovoiturageUpdateManyWithoutPassagersNestedInput
+    favorites?: CovoiturageUpdateManyWithoutFavoritedByNestedInput
     applications?: ApplicationUpdateManyWithoutPassagerNestedInput
     leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
@@ -10656,8 +10644,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
-    favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
+    covoiturages?: CovoiturageUncheckedUpdateManyWithoutPassagersNestedInput
+    favorites?: CovoiturageUncheckedUpdateManyWithoutFavoritedByNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
     leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
@@ -10691,7 +10679,7 @@ export namespace Prisma {
     state?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     postalCode?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutLocationNestedInput
+    covoiturages?: CovoiturageUpdateManyWithoutLocationNestedInput
   }
 
   export type LocationUncheckedUpdateInput = {
@@ -10701,7 +10689,7 @@ export namespace Prisma {
     state?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     postalCode?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutLocationNestedInput
+    covoiturages?: CovoiturageUncheckedUpdateManyWithoutLocationNestedInput
   }
 
   export type LocationUpdateManyMutationInput = {
@@ -10728,7 +10716,7 @@ export namespace Prisma {
     email: string
     phoneNumber: string
     message?: string | null
-    property: PropertyCreateNestedOneWithoutApplicationsInput
+    covoiturage: CovoiturageCreateNestedOneWithoutApplicationsInput
     passager: PassagerCreateNestedOneWithoutApplicationsInput
     lease?: LeaseCreateNestedOneWithoutApplicationInput
   }
@@ -10737,7 +10725,7 @@ export namespace Prisma {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     name: string
     email: string
@@ -10753,7 +10741,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
     message?: NullableStringFieldUpdateOperationsInput | string | null
-    property?: PropertyUpdateOneRequiredWithoutApplicationsNestedInput
+    covoiturage?: CovoiturageUpdateOneRequiredWithoutApplicationsNestedInput
     passager?: PassagerUpdateOneRequiredWithoutApplicationsNestedInput
     lease?: LeaseUpdateOneWithoutApplicationNestedInput
   }
@@ -10762,7 +10750,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
@@ -10775,7 +10763,7 @@ export namespace Prisma {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     name: string
     email: string
@@ -10797,7 +10785,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
@@ -10809,7 +10797,7 @@ export namespace Prisma {
   export type LeaseCreateInput = {
     startDate: Date | string
     endDate: Date | string
-    property: PropertyCreateNestedOneWithoutLeasesInput
+    covoiturage: CovoiturageCreateNestedOneWithoutLeasesInput
     passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
@@ -10819,7 +10807,7 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
@@ -10828,7 +10816,7 @@ export namespace Prisma {
   export type LeaseUpdateInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
+    covoiturage?: CovoiturageUpdateOneRequiredWithoutLeasesNestedInput
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
@@ -10838,7 +10826,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
@@ -10848,7 +10836,7 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
   }
 
@@ -10861,7 +10849,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -11055,7 +11043,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type PropertyCountOrderByAggregateInput = {
+  export type CovoiturageCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -11069,27 +11057,14 @@ export namespace Prisma {
     conducteurCognitoId?: SortOrder
   }
 
-  export type PropertyAvgOrderByAggregateInput = {
+  export type CovoiturageAvgOrderByAggregateInput = {
     id?: SortOrder
     averageRating?: SortOrder
     numberOfReviews?: SortOrder
     locationId?: SortOrder
   }
 
-  export type PropertyMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    isPetsAllowed?: SortOrder
-    carType?: SortOrder
-    postedDate?: SortOrder
-    averageRating?: SortOrder
-    numberOfReviews?: SortOrder
-    locationId?: SortOrder
-    conducteurCognitoId?: SortOrder
-  }
-
-  export type PropertyMinOrderByAggregateInput = {
+  export type CovoiturageMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -11102,7 +11077,20 @@ export namespace Prisma {
     conducteurCognitoId?: SortOrder
   }
 
-  export type PropertySumOrderByAggregateInput = {
+  export type CovoiturageMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    isPetsAllowed?: SortOrder
+    carType?: SortOrder
+    postedDate?: SortOrder
+    averageRating?: SortOrder
+    numberOfReviews?: SortOrder
+    locationId?: SortOrder
+    conducteurCognitoId?: SortOrder
+  }
+
+  export type CovoiturageSumOrderByAggregateInput = {
     id?: SortOrder
     averageRating?: SortOrder
     numberOfReviews?: SortOrder
@@ -11207,13 +11195,13 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type PropertyListRelationFilter = {
-    every?: PropertyWhereInput
-    some?: PropertyWhereInput
-    none?: PropertyWhereInput
+  export type CovoiturageListRelationFilter = {
+    every?: CovoiturageWhereInput
+    some?: CovoiturageWhereInput
+    none?: CovoiturageWhereInput
   }
 
-  export type PropertyOrderByRelationAggregateInput = {
+  export type CovoiturageOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -11338,9 +11326,9 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type PropertyScalarRelationFilter = {
-    is?: PropertyWhereInput
-    isNot?: PropertyWhereInput
+  export type CovoiturageScalarRelationFilter = {
+    is?: CovoiturageWhereInput
+    isNot?: CovoiturageWhereInput
   }
 
   export type PassagerScalarRelationFilter = {
@@ -11357,7 +11345,7 @@ export namespace Prisma {
     id?: SortOrder
     applicationDate?: SortOrder
     status?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -11368,7 +11356,7 @@ export namespace Prisma {
 
   export type ApplicationAvgOrderByAggregateInput = {
     id?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     leaseId?: SortOrder
   }
 
@@ -11376,7 +11364,7 @@ export namespace Prisma {
     id?: SortOrder
     applicationDate?: SortOrder
     status?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -11389,7 +11377,7 @@ export namespace Prisma {
     id?: SortOrder
     applicationDate?: SortOrder
     status?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -11400,7 +11388,7 @@ export namespace Prisma {
 
   export type ApplicationSumOrderByAggregateInput = {
     id?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     leaseId?: SortOrder
   }
 
@@ -11451,20 +11439,20 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
   }
 
   export type LeaseAvgOrderByAggregateInput = {
     id?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
   }
 
   export type LeaseMaxOrderByAggregateInput = {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
   }
 
@@ -11472,13 +11460,13 @@ export namespace Prisma {
     id?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
     passagerCognitoId?: SortOrder
   }
 
   export type LeaseSumOrderByAggregateInput = {
     id?: SortOrder
-    propertyId?: SortOrder
+    covoiturageId?: SortOrder
   }
 
   export type FloatFilter<$PrismaModel = never> = {
@@ -11574,31 +11562,31 @@ export namespace Prisma {
     _max?: NestedEnumPaymentStatusFilter<$PrismaModel>
   }
 
-  export type PropertyCreatephotoUrlsInput = {
+  export type CovoiturageCreatephotoUrlsInput = {
     set: string[]
   }
 
-  export type LocationCreateNestedOneWithoutPropertiesInput = {
+  export type LocationCreateNestedOneWithoutCovoituragesInput = {
     connect?: LocationWhereUniqueInput
   }
 
-  export type ConducteurCreateNestedOneWithoutConducteurPropertiesInput = {
-    create?: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
-    connectOrCreate?: ConducteurCreateOrConnectWithoutConducteurPropertiesInput
+  export type ConducteurCreateNestedOneWithoutConducteurCovoituragesInput = {
+    create?: XOR<ConducteurCreateWithoutConducteurCovoituragesInput, ConducteurUncheckedCreateWithoutConducteurCovoituragesInput>
+    connectOrCreate?: ConducteurCreateOrConnectWithoutConducteurCovoituragesInput
     connect?: ConducteurWhereUniqueInput
   }
 
-  export type LeaseCreateNestedManyWithoutPropertyInput = {
-    create?: XOR<LeaseCreateWithoutPropertyInput, LeaseUncheckedCreateWithoutPropertyInput> | LeaseCreateWithoutPropertyInput[] | LeaseUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutPropertyInput | LeaseCreateOrConnectWithoutPropertyInput[]
-    createMany?: LeaseCreateManyPropertyInputEnvelope
+  export type LeaseCreateNestedManyWithoutCovoiturageInput = {
+    create?: XOR<LeaseCreateWithoutCovoiturageInput, LeaseUncheckedCreateWithoutCovoiturageInput> | LeaseCreateWithoutCovoiturageInput[] | LeaseUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutCovoiturageInput | LeaseCreateOrConnectWithoutCovoiturageInput[]
+    createMany?: LeaseCreateManyCovoiturageInputEnvelope
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
   }
 
-  export type ApplicationCreateNestedManyWithoutPropertyInput = {
-    create?: XOR<ApplicationCreateWithoutPropertyInput, ApplicationUncheckedCreateWithoutPropertyInput> | ApplicationCreateWithoutPropertyInput[] | ApplicationUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutPropertyInput | ApplicationCreateOrConnectWithoutPropertyInput[]
-    createMany?: ApplicationCreateManyPropertyInputEnvelope
+  export type ApplicationCreateNestedManyWithoutCovoiturageInput = {
+    create?: XOR<ApplicationCreateWithoutCovoiturageInput, ApplicationUncheckedCreateWithoutCovoiturageInput> | ApplicationCreateWithoutCovoiturageInput[] | ApplicationUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutCovoiturageInput | ApplicationCreateOrConnectWithoutCovoiturageInput[]
+    createMany?: ApplicationCreateManyCovoiturageInputEnvelope
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
   }
 
@@ -11608,23 +11596,23 @@ export namespace Prisma {
     connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
-  export type PassagerCreateNestedManyWithoutPropertiesInput = {
-    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
+  export type PassagerCreateNestedManyWithoutCovoituragesInput = {
+    create?: XOR<PassagerCreateWithoutCovoituragesInput, PassagerUncheckedCreateWithoutCovoituragesInput> | PassagerCreateWithoutCovoituragesInput[] | PassagerUncheckedCreateWithoutCovoituragesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutCovoituragesInput | PassagerCreateOrConnectWithoutCovoituragesInput[]
     connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
-  export type LeaseUncheckedCreateNestedManyWithoutPropertyInput = {
-    create?: XOR<LeaseCreateWithoutPropertyInput, LeaseUncheckedCreateWithoutPropertyInput> | LeaseCreateWithoutPropertyInput[] | LeaseUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutPropertyInput | LeaseCreateOrConnectWithoutPropertyInput[]
-    createMany?: LeaseCreateManyPropertyInputEnvelope
+  export type LeaseUncheckedCreateNestedManyWithoutCovoiturageInput = {
+    create?: XOR<LeaseCreateWithoutCovoiturageInput, LeaseUncheckedCreateWithoutCovoiturageInput> | LeaseCreateWithoutCovoiturageInput[] | LeaseUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutCovoiturageInput | LeaseCreateOrConnectWithoutCovoiturageInput[]
+    createMany?: LeaseCreateManyCovoiturageInputEnvelope
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
   }
 
-  export type ApplicationUncheckedCreateNestedManyWithoutPropertyInput = {
-    create?: XOR<ApplicationCreateWithoutPropertyInput, ApplicationUncheckedCreateWithoutPropertyInput> | ApplicationCreateWithoutPropertyInput[] | ApplicationUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutPropertyInput | ApplicationCreateOrConnectWithoutPropertyInput[]
-    createMany?: ApplicationCreateManyPropertyInputEnvelope
+  export type ApplicationUncheckedCreateNestedManyWithoutCovoiturageInput = {
+    create?: XOR<ApplicationCreateWithoutCovoiturageInput, ApplicationUncheckedCreateWithoutCovoiturageInput> | ApplicationCreateWithoutCovoiturageInput[] | ApplicationUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutCovoiturageInput | ApplicationCreateOrConnectWithoutCovoiturageInput[]
+    createMany?: ApplicationCreateManyCovoiturageInputEnvelope
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
   }
 
@@ -11634,9 +11622,9 @@ export namespace Prisma {
     connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
-  export type PassagerUncheckedCreateNestedManyWithoutPropertiesInput = {
-    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
+  export type PassagerUncheckedCreateNestedManyWithoutCovoituragesInput = {
+    create?: XOR<PassagerCreateWithoutCovoituragesInput, PassagerUncheckedCreateWithoutCovoituragesInput> | PassagerCreateWithoutCovoituragesInput[] | PassagerUncheckedCreateWithoutCovoituragesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutCovoituragesInput | PassagerCreateOrConnectWithoutCovoituragesInput[]
     connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
   }
 
@@ -11644,7 +11632,7 @@ export namespace Prisma {
     set?: string
   }
 
-  export type PropertyUpdatephotoUrlsInput = {
+  export type CovoiturageUpdatephotoUrlsInput = {
     set?: string[]
     push?: string | string[]
   }
@@ -11677,44 +11665,44 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type LocationUpdateOneRequiredWithoutPropertiesNestedInput = {
+  export type LocationUpdateOneRequiredWithoutCovoituragesNestedInput = {
     connect?: LocationWhereUniqueInput
-    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutPropertiesInput, LocationUpdateWithoutPropertiesInput>, LocationUncheckedUpdateWithoutPropertiesInput>
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutCovoituragesInput, LocationUpdateWithoutCovoituragesInput>, LocationUncheckedUpdateWithoutCovoituragesInput>
   }
 
-  export type ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput = {
-    create?: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
-    connectOrCreate?: ConducteurCreateOrConnectWithoutConducteurPropertiesInput
-    upsert?: ConducteurUpsertWithoutConducteurPropertiesInput
+  export type ConducteurUpdateOneRequiredWithoutConducteurCovoituragesNestedInput = {
+    create?: XOR<ConducteurCreateWithoutConducteurCovoituragesInput, ConducteurUncheckedCreateWithoutConducteurCovoituragesInput>
+    connectOrCreate?: ConducteurCreateOrConnectWithoutConducteurCovoituragesInput
+    upsert?: ConducteurUpsertWithoutConducteurCovoituragesInput
     connect?: ConducteurWhereUniqueInput
-    update?: XOR<XOR<ConducteurUpdateToOneWithWhereWithoutConducteurPropertiesInput, ConducteurUpdateWithoutConducteurPropertiesInput>, ConducteurUncheckedUpdateWithoutConducteurPropertiesInput>
+    update?: XOR<XOR<ConducteurUpdateToOneWithWhereWithoutConducteurCovoituragesInput, ConducteurUpdateWithoutConducteurCovoituragesInput>, ConducteurUncheckedUpdateWithoutConducteurCovoituragesInput>
   }
 
-  export type LeaseUpdateManyWithoutPropertyNestedInput = {
-    create?: XOR<LeaseCreateWithoutPropertyInput, LeaseUncheckedCreateWithoutPropertyInput> | LeaseCreateWithoutPropertyInput[] | LeaseUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutPropertyInput | LeaseCreateOrConnectWithoutPropertyInput[]
-    upsert?: LeaseUpsertWithWhereUniqueWithoutPropertyInput | LeaseUpsertWithWhereUniqueWithoutPropertyInput[]
-    createMany?: LeaseCreateManyPropertyInputEnvelope
+  export type LeaseUpdateManyWithoutCovoiturageNestedInput = {
+    create?: XOR<LeaseCreateWithoutCovoiturageInput, LeaseUncheckedCreateWithoutCovoiturageInput> | LeaseCreateWithoutCovoiturageInput[] | LeaseUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutCovoiturageInput | LeaseCreateOrConnectWithoutCovoiturageInput[]
+    upsert?: LeaseUpsertWithWhereUniqueWithoutCovoiturageInput | LeaseUpsertWithWhereUniqueWithoutCovoiturageInput[]
+    createMany?: LeaseCreateManyCovoiturageInputEnvelope
     set?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     disconnect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     delete?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
-    update?: LeaseUpdateWithWhereUniqueWithoutPropertyInput | LeaseUpdateWithWhereUniqueWithoutPropertyInput[]
-    updateMany?: LeaseUpdateManyWithWhereWithoutPropertyInput | LeaseUpdateManyWithWhereWithoutPropertyInput[]
+    update?: LeaseUpdateWithWhereUniqueWithoutCovoiturageInput | LeaseUpdateWithWhereUniqueWithoutCovoiturageInput[]
+    updateMany?: LeaseUpdateManyWithWhereWithoutCovoiturageInput | LeaseUpdateManyWithWhereWithoutCovoiturageInput[]
     deleteMany?: LeaseScalarWhereInput | LeaseScalarWhereInput[]
   }
 
-  export type ApplicationUpdateManyWithoutPropertyNestedInput = {
-    create?: XOR<ApplicationCreateWithoutPropertyInput, ApplicationUncheckedCreateWithoutPropertyInput> | ApplicationCreateWithoutPropertyInput[] | ApplicationUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutPropertyInput | ApplicationCreateOrConnectWithoutPropertyInput[]
-    upsert?: ApplicationUpsertWithWhereUniqueWithoutPropertyInput | ApplicationUpsertWithWhereUniqueWithoutPropertyInput[]
-    createMany?: ApplicationCreateManyPropertyInputEnvelope
+  export type ApplicationUpdateManyWithoutCovoiturageNestedInput = {
+    create?: XOR<ApplicationCreateWithoutCovoiturageInput, ApplicationUncheckedCreateWithoutCovoiturageInput> | ApplicationCreateWithoutCovoiturageInput[] | ApplicationUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutCovoiturageInput | ApplicationCreateOrConnectWithoutCovoiturageInput[]
+    upsert?: ApplicationUpsertWithWhereUniqueWithoutCovoiturageInput | ApplicationUpsertWithWhereUniqueWithoutCovoiturageInput[]
+    createMany?: ApplicationCreateManyCovoiturageInputEnvelope
     set?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     disconnect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     delete?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
-    update?: ApplicationUpdateWithWhereUniqueWithoutPropertyInput | ApplicationUpdateWithWhereUniqueWithoutPropertyInput[]
-    updateMany?: ApplicationUpdateManyWithWhereWithoutPropertyInput | ApplicationUpdateManyWithWhereWithoutPropertyInput[]
+    update?: ApplicationUpdateWithWhereUniqueWithoutCovoiturageInput | ApplicationUpdateWithWhereUniqueWithoutCovoiturageInput[]
+    updateMany?: ApplicationUpdateManyWithWhereWithoutCovoiturageInput | ApplicationUpdateManyWithWhereWithoutCovoiturageInput[]
     deleteMany?: ApplicationScalarWhereInput | ApplicationScalarWhereInput[]
   }
 
@@ -11731,16 +11719,16 @@ export namespace Prisma {
     deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
-  export type PassagerUpdateManyWithoutPropertiesNestedInput = {
-    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
-    upsert?: PassagerUpsertWithWhereUniqueWithoutPropertiesInput | PassagerUpsertWithWhereUniqueWithoutPropertiesInput[]
+  export type PassagerUpdateManyWithoutCovoituragesNestedInput = {
+    create?: XOR<PassagerCreateWithoutCovoituragesInput, PassagerUncheckedCreateWithoutCovoituragesInput> | PassagerCreateWithoutCovoituragesInput[] | PassagerUncheckedCreateWithoutCovoituragesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutCovoituragesInput | PassagerCreateOrConnectWithoutCovoituragesInput[]
+    upsert?: PassagerUpsertWithWhereUniqueWithoutCovoituragesInput | PassagerUpsertWithWhereUniqueWithoutCovoituragesInput[]
     set?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
     disconnect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
     delete?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
     connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
-    update?: PassagerUpdateWithWhereUniqueWithoutPropertiesInput | PassagerUpdateWithWhereUniqueWithoutPropertiesInput[]
-    updateMany?: PassagerUpdateManyWithWhereWithoutPropertiesInput | PassagerUpdateManyWithWhereWithoutPropertiesInput[]
+    update?: PassagerUpdateWithWhereUniqueWithoutCovoituragesInput | PassagerUpdateWithWhereUniqueWithoutCovoituragesInput[]
+    updateMany?: PassagerUpdateManyWithWhereWithoutCovoituragesInput | PassagerUpdateManyWithWhereWithoutCovoituragesInput[]
     deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
@@ -11752,31 +11740,31 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type LeaseUncheckedUpdateManyWithoutPropertyNestedInput = {
-    create?: XOR<LeaseCreateWithoutPropertyInput, LeaseUncheckedCreateWithoutPropertyInput> | LeaseCreateWithoutPropertyInput[] | LeaseUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: LeaseCreateOrConnectWithoutPropertyInput | LeaseCreateOrConnectWithoutPropertyInput[]
-    upsert?: LeaseUpsertWithWhereUniqueWithoutPropertyInput | LeaseUpsertWithWhereUniqueWithoutPropertyInput[]
-    createMany?: LeaseCreateManyPropertyInputEnvelope
+  export type LeaseUncheckedUpdateManyWithoutCovoiturageNestedInput = {
+    create?: XOR<LeaseCreateWithoutCovoiturageInput, LeaseUncheckedCreateWithoutCovoiturageInput> | LeaseCreateWithoutCovoiturageInput[] | LeaseUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: LeaseCreateOrConnectWithoutCovoiturageInput | LeaseCreateOrConnectWithoutCovoiturageInput[]
+    upsert?: LeaseUpsertWithWhereUniqueWithoutCovoiturageInput | LeaseUpsertWithWhereUniqueWithoutCovoiturageInput[]
+    createMany?: LeaseCreateManyCovoiturageInputEnvelope
     set?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     disconnect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     delete?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
-    update?: LeaseUpdateWithWhereUniqueWithoutPropertyInput | LeaseUpdateWithWhereUniqueWithoutPropertyInput[]
-    updateMany?: LeaseUpdateManyWithWhereWithoutPropertyInput | LeaseUpdateManyWithWhereWithoutPropertyInput[]
+    update?: LeaseUpdateWithWhereUniqueWithoutCovoiturageInput | LeaseUpdateWithWhereUniqueWithoutCovoiturageInput[]
+    updateMany?: LeaseUpdateManyWithWhereWithoutCovoiturageInput | LeaseUpdateManyWithWhereWithoutCovoiturageInput[]
     deleteMany?: LeaseScalarWhereInput | LeaseScalarWhereInput[]
   }
 
-  export type ApplicationUncheckedUpdateManyWithoutPropertyNestedInput = {
-    create?: XOR<ApplicationCreateWithoutPropertyInput, ApplicationUncheckedCreateWithoutPropertyInput> | ApplicationCreateWithoutPropertyInput[] | ApplicationUncheckedCreateWithoutPropertyInput[]
-    connectOrCreate?: ApplicationCreateOrConnectWithoutPropertyInput | ApplicationCreateOrConnectWithoutPropertyInput[]
-    upsert?: ApplicationUpsertWithWhereUniqueWithoutPropertyInput | ApplicationUpsertWithWhereUniqueWithoutPropertyInput[]
-    createMany?: ApplicationCreateManyPropertyInputEnvelope
+  export type ApplicationUncheckedUpdateManyWithoutCovoiturageNestedInput = {
+    create?: XOR<ApplicationCreateWithoutCovoiturageInput, ApplicationUncheckedCreateWithoutCovoiturageInput> | ApplicationCreateWithoutCovoiturageInput[] | ApplicationUncheckedCreateWithoutCovoiturageInput[]
+    connectOrCreate?: ApplicationCreateOrConnectWithoutCovoiturageInput | ApplicationCreateOrConnectWithoutCovoiturageInput[]
+    upsert?: ApplicationUpsertWithWhereUniqueWithoutCovoiturageInput | ApplicationUpsertWithWhereUniqueWithoutCovoiturageInput[]
+    createMany?: ApplicationCreateManyCovoiturageInputEnvelope
     set?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     disconnect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     delete?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
     connect?: ApplicationWhereUniqueInput | ApplicationWhereUniqueInput[]
-    update?: ApplicationUpdateWithWhereUniqueWithoutPropertyInput | ApplicationUpdateWithWhereUniqueWithoutPropertyInput[]
-    updateMany?: ApplicationUpdateManyWithWhereWithoutPropertyInput | ApplicationUpdateManyWithWhereWithoutPropertyInput[]
+    update?: ApplicationUpdateWithWhereUniqueWithoutCovoiturageInput | ApplicationUpdateWithWhereUniqueWithoutCovoiturageInput[]
+    updateMany?: ApplicationUpdateManyWithWhereWithoutCovoiturageInput | ApplicationUpdateManyWithWhereWithoutCovoiturageInput[]
     deleteMany?: ApplicationScalarWhereInput | ApplicationScalarWhereInput[]
   }
 
@@ -11793,71 +11781,71 @@ export namespace Prisma {
     deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
-  export type PassagerUncheckedUpdateManyWithoutPropertiesNestedInput = {
-    create?: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput> | PassagerCreateWithoutPropertiesInput[] | PassagerUncheckedCreateWithoutPropertiesInput[]
-    connectOrCreate?: PassagerCreateOrConnectWithoutPropertiesInput | PassagerCreateOrConnectWithoutPropertiesInput[]
-    upsert?: PassagerUpsertWithWhereUniqueWithoutPropertiesInput | PassagerUpsertWithWhereUniqueWithoutPropertiesInput[]
+  export type PassagerUncheckedUpdateManyWithoutCovoituragesNestedInput = {
+    create?: XOR<PassagerCreateWithoutCovoituragesInput, PassagerUncheckedCreateWithoutCovoituragesInput> | PassagerCreateWithoutCovoituragesInput[] | PassagerUncheckedCreateWithoutCovoituragesInput[]
+    connectOrCreate?: PassagerCreateOrConnectWithoutCovoituragesInput | PassagerCreateOrConnectWithoutCovoituragesInput[]
+    upsert?: PassagerUpsertWithWhereUniqueWithoutCovoituragesInput | PassagerUpsertWithWhereUniqueWithoutCovoituragesInput[]
     set?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
     disconnect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
     delete?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
     connect?: PassagerWhereUniqueInput | PassagerWhereUniqueInput[]
-    update?: PassagerUpdateWithWhereUniqueWithoutPropertiesInput | PassagerUpdateWithWhereUniqueWithoutPropertiesInput[]
-    updateMany?: PassagerUpdateManyWithWhereWithoutPropertiesInput | PassagerUpdateManyWithWhereWithoutPropertiesInput[]
+    update?: PassagerUpdateWithWhereUniqueWithoutCovoituragesInput | PassagerUpdateWithWhereUniqueWithoutCovoituragesInput[]
+    updateMany?: PassagerUpdateManyWithWhereWithoutCovoituragesInput | PassagerUpdateManyWithWhereWithoutCovoituragesInput[]
     deleteMany?: PassagerScalarWhereInput | PassagerScalarWhereInput[]
   }
 
-  export type PropertyCreateNestedManyWithoutConducteurInput = {
-    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
-    createMany?: PropertyCreateManyConducteurInputEnvelope
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
+  export type CovoiturageCreateNestedManyWithoutConducteurInput = {
+    create?: XOR<CovoiturageCreateWithoutConducteurInput, CovoiturageUncheckedCreateWithoutConducteurInput> | CovoiturageCreateWithoutConducteurInput[] | CovoiturageUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutConducteurInput | CovoiturageCreateOrConnectWithoutConducteurInput[]
+    createMany?: CovoiturageCreateManyConducteurInputEnvelope
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
   }
 
-  export type PropertyUncheckedCreateNestedManyWithoutConducteurInput = {
-    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
-    createMany?: PropertyCreateManyConducteurInputEnvelope
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
+  export type CovoiturageUncheckedCreateNestedManyWithoutConducteurInput = {
+    create?: XOR<CovoiturageCreateWithoutConducteurInput, CovoiturageUncheckedCreateWithoutConducteurInput> | CovoiturageCreateWithoutConducteurInput[] | CovoiturageUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutConducteurInput | CovoiturageCreateOrConnectWithoutConducteurInput[]
+    createMany?: CovoiturageCreateManyConducteurInputEnvelope
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
   }
 
-  export type PropertyUpdateManyWithoutConducteurNestedInput = {
-    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutConducteurInput | PropertyUpsertWithWhereUniqueWithoutConducteurInput[]
-    createMany?: PropertyCreateManyConducteurInputEnvelope
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutConducteurInput | PropertyUpdateWithWhereUniqueWithoutConducteurInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutConducteurInput | PropertyUpdateManyWithWhereWithoutConducteurInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUpdateManyWithoutConducteurNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutConducteurInput, CovoiturageUncheckedCreateWithoutConducteurInput> | CovoiturageCreateWithoutConducteurInput[] | CovoiturageUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutConducteurInput | CovoiturageCreateOrConnectWithoutConducteurInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutConducteurInput | CovoiturageUpsertWithWhereUniqueWithoutConducteurInput[]
+    createMany?: CovoiturageCreateManyConducteurInputEnvelope
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutConducteurInput | CovoiturageUpdateWithWhereUniqueWithoutConducteurInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutConducteurInput | CovoiturageUpdateManyWithWhereWithoutConducteurInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
-  export type PropertyUncheckedUpdateManyWithoutConducteurNestedInput = {
-    create?: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput> | PropertyCreateWithoutConducteurInput[] | PropertyUncheckedCreateWithoutConducteurInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutConducteurInput | PropertyCreateOrConnectWithoutConducteurInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutConducteurInput | PropertyUpsertWithWhereUniqueWithoutConducteurInput[]
-    createMany?: PropertyCreateManyConducteurInputEnvelope
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutConducteurInput | PropertyUpdateWithWhereUniqueWithoutConducteurInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutConducteurInput | PropertyUpdateManyWithWhereWithoutConducteurInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUncheckedUpdateManyWithoutConducteurNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutConducteurInput, CovoiturageUncheckedCreateWithoutConducteurInput> | CovoiturageCreateWithoutConducteurInput[] | CovoiturageUncheckedCreateWithoutConducteurInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutConducteurInput | CovoiturageCreateOrConnectWithoutConducteurInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutConducteurInput | CovoiturageUpsertWithWhereUniqueWithoutConducteurInput[]
+    createMany?: CovoiturageCreateManyConducteurInputEnvelope
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutConducteurInput | CovoiturageUpdateWithWhereUniqueWithoutConducteurInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutConducteurInput | CovoiturageUpdateManyWithWhereWithoutConducteurInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
-  export type PropertyCreateNestedManyWithoutPassagersInput = {
-    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
+  export type CovoiturageCreateNestedManyWithoutPassagersInput = {
+    create?: XOR<CovoiturageCreateWithoutPassagersInput, CovoiturageUncheckedCreateWithoutPassagersInput> | CovoiturageCreateWithoutPassagersInput[] | CovoiturageUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutPassagersInput | CovoiturageCreateOrConnectWithoutPassagersInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
   }
 
-  export type PropertyCreateNestedManyWithoutFavoritedByInput = {
-    create?: XOR<PropertyCreateWithoutFavoritedByInput, PropertyUncheckedCreateWithoutFavoritedByInput> | PropertyCreateWithoutFavoritedByInput[] | PropertyUncheckedCreateWithoutFavoritedByInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutFavoritedByInput | PropertyCreateOrConnectWithoutFavoritedByInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
+  export type CovoiturageCreateNestedManyWithoutFavoritedByInput = {
+    create?: XOR<CovoiturageCreateWithoutFavoritedByInput, CovoiturageUncheckedCreateWithoutFavoritedByInput> | CovoiturageCreateWithoutFavoritedByInput[] | CovoiturageUncheckedCreateWithoutFavoritedByInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutFavoritedByInput | CovoiturageCreateOrConnectWithoutFavoritedByInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
   }
 
   export type ApplicationCreateNestedManyWithoutPassagerInput = {
@@ -11874,16 +11862,16 @@ export namespace Prisma {
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
   }
 
-  export type PropertyUncheckedCreateNestedManyWithoutPassagersInput = {
-    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
+  export type CovoiturageUncheckedCreateNestedManyWithoutPassagersInput = {
+    create?: XOR<CovoiturageCreateWithoutPassagersInput, CovoiturageUncheckedCreateWithoutPassagersInput> | CovoiturageCreateWithoutPassagersInput[] | CovoiturageUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutPassagersInput | CovoiturageCreateOrConnectWithoutPassagersInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
   }
 
-  export type PropertyUncheckedCreateNestedManyWithoutFavoritedByInput = {
-    create?: XOR<PropertyCreateWithoutFavoritedByInput, PropertyUncheckedCreateWithoutFavoritedByInput> | PropertyCreateWithoutFavoritedByInput[] | PropertyUncheckedCreateWithoutFavoritedByInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutFavoritedByInput | PropertyCreateOrConnectWithoutFavoritedByInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
+  export type CovoiturageUncheckedCreateNestedManyWithoutFavoritedByInput = {
+    create?: XOR<CovoiturageCreateWithoutFavoritedByInput, CovoiturageUncheckedCreateWithoutFavoritedByInput> | CovoiturageCreateWithoutFavoritedByInput[] | CovoiturageUncheckedCreateWithoutFavoritedByInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutFavoritedByInput | CovoiturageCreateOrConnectWithoutFavoritedByInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
   }
 
   export type ApplicationUncheckedCreateNestedManyWithoutPassagerInput = {
@@ -11900,30 +11888,30 @@ export namespace Prisma {
     connect?: LeaseWhereUniqueInput | LeaseWhereUniqueInput[]
   }
 
-  export type PropertyUpdateManyWithoutPassagersNestedInput = {
-    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutPassagersInput | PropertyUpsertWithWhereUniqueWithoutPassagersInput[]
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutPassagersInput | PropertyUpdateWithWhereUniqueWithoutPassagersInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutPassagersInput | PropertyUpdateManyWithWhereWithoutPassagersInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUpdateManyWithoutPassagersNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutPassagersInput, CovoiturageUncheckedCreateWithoutPassagersInput> | CovoiturageCreateWithoutPassagersInput[] | CovoiturageUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutPassagersInput | CovoiturageCreateOrConnectWithoutPassagersInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutPassagersInput | CovoiturageUpsertWithWhereUniqueWithoutPassagersInput[]
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutPassagersInput | CovoiturageUpdateWithWhereUniqueWithoutPassagersInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutPassagersInput | CovoiturageUpdateManyWithWhereWithoutPassagersInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
-  export type PropertyUpdateManyWithoutFavoritedByNestedInput = {
-    create?: XOR<PropertyCreateWithoutFavoritedByInput, PropertyUncheckedCreateWithoutFavoritedByInput> | PropertyCreateWithoutFavoritedByInput[] | PropertyUncheckedCreateWithoutFavoritedByInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutFavoritedByInput | PropertyCreateOrConnectWithoutFavoritedByInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutFavoritedByInput | PropertyUpsertWithWhereUniqueWithoutFavoritedByInput[]
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutFavoritedByInput | PropertyUpdateWithWhereUniqueWithoutFavoritedByInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutFavoritedByInput | PropertyUpdateManyWithWhereWithoutFavoritedByInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUpdateManyWithoutFavoritedByNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutFavoritedByInput, CovoiturageUncheckedCreateWithoutFavoritedByInput> | CovoiturageCreateWithoutFavoritedByInput[] | CovoiturageUncheckedCreateWithoutFavoritedByInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutFavoritedByInput | CovoiturageCreateOrConnectWithoutFavoritedByInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutFavoritedByInput | CovoiturageUpsertWithWhereUniqueWithoutFavoritedByInput[]
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutFavoritedByInput | CovoiturageUpdateWithWhereUniqueWithoutFavoritedByInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutFavoritedByInput | CovoiturageUpdateManyWithWhereWithoutFavoritedByInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
   export type ApplicationUpdateManyWithoutPassagerNestedInput = {
@@ -11954,30 +11942,30 @@ export namespace Prisma {
     deleteMany?: LeaseScalarWhereInput | LeaseScalarWhereInput[]
   }
 
-  export type PropertyUncheckedUpdateManyWithoutPassagersNestedInput = {
-    create?: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput> | PropertyCreateWithoutPassagersInput[] | PropertyUncheckedCreateWithoutPassagersInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutPassagersInput | PropertyCreateOrConnectWithoutPassagersInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutPassagersInput | PropertyUpsertWithWhereUniqueWithoutPassagersInput[]
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutPassagersInput | PropertyUpdateWithWhereUniqueWithoutPassagersInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutPassagersInput | PropertyUpdateManyWithWhereWithoutPassagersInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUncheckedUpdateManyWithoutPassagersNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutPassagersInput, CovoiturageUncheckedCreateWithoutPassagersInput> | CovoiturageCreateWithoutPassagersInput[] | CovoiturageUncheckedCreateWithoutPassagersInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutPassagersInput | CovoiturageCreateOrConnectWithoutPassagersInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutPassagersInput | CovoiturageUpsertWithWhereUniqueWithoutPassagersInput[]
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutPassagersInput | CovoiturageUpdateWithWhereUniqueWithoutPassagersInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutPassagersInput | CovoiturageUpdateManyWithWhereWithoutPassagersInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
-  export type PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput = {
-    create?: XOR<PropertyCreateWithoutFavoritedByInput, PropertyUncheckedCreateWithoutFavoritedByInput> | PropertyCreateWithoutFavoritedByInput[] | PropertyUncheckedCreateWithoutFavoritedByInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutFavoritedByInput | PropertyCreateOrConnectWithoutFavoritedByInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutFavoritedByInput | PropertyUpsertWithWhereUniqueWithoutFavoritedByInput[]
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutFavoritedByInput | PropertyUpdateWithWhereUniqueWithoutFavoritedByInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutFavoritedByInput | PropertyUpdateManyWithWhereWithoutFavoritedByInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUncheckedUpdateManyWithoutFavoritedByNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutFavoritedByInput, CovoiturageUncheckedCreateWithoutFavoritedByInput> | CovoiturageCreateWithoutFavoritedByInput[] | CovoiturageUncheckedCreateWithoutFavoritedByInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutFavoritedByInput | CovoiturageCreateOrConnectWithoutFavoritedByInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutFavoritedByInput | CovoiturageUpsertWithWhereUniqueWithoutFavoritedByInput[]
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutFavoritedByInput | CovoiturageUpdateWithWhereUniqueWithoutFavoritedByInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutFavoritedByInput | CovoiturageUpdateManyWithWhereWithoutFavoritedByInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
   export type ApplicationUncheckedUpdateManyWithoutPassagerNestedInput = {
@@ -12008,38 +11996,38 @@ export namespace Prisma {
     deleteMany?: LeaseScalarWhereInput | LeaseScalarWhereInput[]
   }
 
-  export type PropertyUpdateManyWithoutLocationNestedInput = {
-    create?: XOR<PropertyCreateWithoutLocationInput, PropertyUncheckedCreateWithoutLocationInput> | PropertyCreateWithoutLocationInput[] | PropertyUncheckedCreateWithoutLocationInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutLocationInput | PropertyCreateOrConnectWithoutLocationInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutLocationInput | PropertyUpsertWithWhereUniqueWithoutLocationInput[]
-    createMany?: PropertyCreateManyLocationInputEnvelope
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutLocationInput | PropertyUpdateWithWhereUniqueWithoutLocationInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutLocationInput | PropertyUpdateManyWithWhereWithoutLocationInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutLocationInput, CovoiturageUncheckedCreateWithoutLocationInput> | CovoiturageCreateWithoutLocationInput[] | CovoiturageUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutLocationInput | CovoiturageCreateOrConnectWithoutLocationInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutLocationInput | CovoiturageUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: CovoiturageCreateManyLocationInputEnvelope
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutLocationInput | CovoiturageUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutLocationInput | CovoiturageUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
-  export type PropertyUncheckedUpdateManyWithoutLocationNestedInput = {
-    create?: XOR<PropertyCreateWithoutLocationInput, PropertyUncheckedCreateWithoutLocationInput> | PropertyCreateWithoutLocationInput[] | PropertyUncheckedCreateWithoutLocationInput[]
-    connectOrCreate?: PropertyCreateOrConnectWithoutLocationInput | PropertyCreateOrConnectWithoutLocationInput[]
-    upsert?: PropertyUpsertWithWhereUniqueWithoutLocationInput | PropertyUpsertWithWhereUniqueWithoutLocationInput[]
-    createMany?: PropertyCreateManyLocationInputEnvelope
-    set?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    disconnect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    delete?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    connect?: PropertyWhereUniqueInput | PropertyWhereUniqueInput[]
-    update?: PropertyUpdateWithWhereUniqueWithoutLocationInput | PropertyUpdateWithWhereUniqueWithoutLocationInput[]
-    updateMany?: PropertyUpdateManyWithWhereWithoutLocationInput | PropertyUpdateManyWithWhereWithoutLocationInput[]
-    deleteMany?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
+  export type CovoiturageUncheckedUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutLocationInput, CovoiturageUncheckedCreateWithoutLocationInput> | CovoiturageCreateWithoutLocationInput[] | CovoiturageUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutLocationInput | CovoiturageCreateOrConnectWithoutLocationInput[]
+    upsert?: CovoiturageUpsertWithWhereUniqueWithoutLocationInput | CovoiturageUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: CovoiturageCreateManyLocationInputEnvelope
+    set?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    disconnect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    delete?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    connect?: CovoiturageWhereUniqueInput | CovoiturageWhereUniqueInput[]
+    update?: CovoiturageUpdateWithWhereUniqueWithoutLocationInput | CovoiturageUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: CovoiturageUpdateManyWithWhereWithoutLocationInput | CovoiturageUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
   }
 
-  export type PropertyCreateNestedOneWithoutApplicationsInput = {
-    create?: XOR<PropertyCreateWithoutApplicationsInput, PropertyUncheckedCreateWithoutApplicationsInput>
-    connectOrCreate?: PropertyCreateOrConnectWithoutApplicationsInput
-    connect?: PropertyWhereUniqueInput
+  export type CovoiturageCreateNestedOneWithoutApplicationsInput = {
+    create?: XOR<CovoiturageCreateWithoutApplicationsInput, CovoiturageUncheckedCreateWithoutApplicationsInput>
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutApplicationsInput
+    connect?: CovoiturageWhereUniqueInput
   }
 
   export type PassagerCreateNestedOneWithoutApplicationsInput = {
@@ -12062,12 +12050,12 @@ export namespace Prisma {
     set?: string | null
   }
 
-  export type PropertyUpdateOneRequiredWithoutApplicationsNestedInput = {
-    create?: XOR<PropertyCreateWithoutApplicationsInput, PropertyUncheckedCreateWithoutApplicationsInput>
-    connectOrCreate?: PropertyCreateOrConnectWithoutApplicationsInput
-    upsert?: PropertyUpsertWithoutApplicationsInput
-    connect?: PropertyWhereUniqueInput
-    update?: XOR<XOR<PropertyUpdateToOneWithWhereWithoutApplicationsInput, PropertyUpdateWithoutApplicationsInput>, PropertyUncheckedUpdateWithoutApplicationsInput>
+  export type CovoiturageUpdateOneRequiredWithoutApplicationsNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutApplicationsInput, CovoiturageUncheckedCreateWithoutApplicationsInput>
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutApplicationsInput
+    upsert?: CovoiturageUpsertWithoutApplicationsInput
+    connect?: CovoiturageWhereUniqueInput
+    update?: XOR<XOR<CovoiturageUpdateToOneWithWhereWithoutApplicationsInput, CovoiturageUpdateWithoutApplicationsInput>, CovoiturageUncheckedUpdateWithoutApplicationsInput>
   }
 
   export type PassagerUpdateOneRequiredWithoutApplicationsNestedInput = {
@@ -12088,10 +12076,10 @@ export namespace Prisma {
     update?: XOR<XOR<LeaseUpdateToOneWithWhereWithoutApplicationInput, LeaseUpdateWithoutApplicationInput>, LeaseUncheckedUpdateWithoutApplicationInput>
   }
 
-  export type PropertyCreateNestedOneWithoutLeasesInput = {
-    create?: XOR<PropertyCreateWithoutLeasesInput, PropertyUncheckedCreateWithoutLeasesInput>
-    connectOrCreate?: PropertyCreateOrConnectWithoutLeasesInput
-    connect?: PropertyWhereUniqueInput
+  export type CovoiturageCreateNestedOneWithoutLeasesInput = {
+    create?: XOR<CovoiturageCreateWithoutLeasesInput, CovoiturageUncheckedCreateWithoutLeasesInput>
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutLeasesInput
+    connect?: CovoiturageWhereUniqueInput
   }
 
   export type PassagerCreateNestedOneWithoutLeasesInput = {
@@ -12126,12 +12114,12 @@ export namespace Prisma {
     connect?: PaymentWhereUniqueInput | PaymentWhereUniqueInput[]
   }
 
-  export type PropertyUpdateOneRequiredWithoutLeasesNestedInput = {
-    create?: XOR<PropertyCreateWithoutLeasesInput, PropertyUncheckedCreateWithoutLeasesInput>
-    connectOrCreate?: PropertyCreateOrConnectWithoutLeasesInput
-    upsert?: PropertyUpsertWithoutLeasesInput
-    connect?: PropertyWhereUniqueInput
-    update?: XOR<XOR<PropertyUpdateToOneWithWhereWithoutLeasesInput, PropertyUpdateWithoutLeasesInput>, PropertyUncheckedUpdateWithoutLeasesInput>
+  export type CovoiturageUpdateOneRequiredWithoutLeasesNestedInput = {
+    create?: XOR<CovoiturageCreateWithoutLeasesInput, CovoiturageUncheckedCreateWithoutLeasesInput>
+    connectOrCreate?: CovoiturageCreateOrConnectWithoutLeasesInput
+    upsert?: CovoiturageUpsertWithoutLeasesInput
+    connect?: CovoiturageWhereUniqueInput
+    update?: XOR<XOR<CovoiturageUpdateToOneWithWhereWithoutLeasesInput, CovoiturageUpdateWithoutLeasesInput>, CovoiturageUncheckedUpdateWithoutLeasesInput>
   }
 
   export type PassagerUpdateOneRequiredWithoutLeasesNestedInput = {
@@ -12475,14 +12463,14 @@ export namespace Prisma {
     _max?: NestedEnumPaymentStatusFilter<$PrismaModel>
   }
 
-  export type ConducteurCreateWithoutConducteurPropertiesInput = {
+  export type ConducteurCreateWithoutConducteurCovoituragesInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
   }
 
-  export type ConducteurUncheckedCreateWithoutConducteurPropertiesInput = {
+  export type ConducteurUncheckedCreateWithoutConducteurCovoituragesInput = {
     id?: number
     cognitoId: string
     name: string
@@ -12490,12 +12478,12 @@ export namespace Prisma {
     phoneNumber: string
   }
 
-  export type ConducteurCreateOrConnectWithoutConducteurPropertiesInput = {
+  export type ConducteurCreateOrConnectWithoutConducteurCovoituragesInput = {
     where: ConducteurWhereUniqueInput
-    create: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
+    create: XOR<ConducteurCreateWithoutConducteurCovoituragesInput, ConducteurUncheckedCreateWithoutConducteurCovoituragesInput>
   }
 
-  export type LeaseCreateWithoutPropertyInput = {
+  export type LeaseCreateWithoutCovoiturageInput = {
     startDate: Date | string
     endDate: Date | string
     passager: PassagerCreateNestedOneWithoutLeasesInput
@@ -12503,7 +12491,7 @@ export namespace Prisma {
     payments?: PaymentCreateNestedManyWithoutLeaseInput
   }
 
-  export type LeaseUncheckedCreateWithoutPropertyInput = {
+  export type LeaseUncheckedCreateWithoutCovoiturageInput = {
     id?: number
     startDate: Date | string
     endDate: Date | string
@@ -12512,17 +12500,17 @@ export namespace Prisma {
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
   }
 
-  export type LeaseCreateOrConnectWithoutPropertyInput = {
+  export type LeaseCreateOrConnectWithoutCovoiturageInput = {
     where: LeaseWhereUniqueInput
-    create: XOR<LeaseCreateWithoutPropertyInput, LeaseUncheckedCreateWithoutPropertyInput>
+    create: XOR<LeaseCreateWithoutCovoiturageInput, LeaseUncheckedCreateWithoutCovoiturageInput>
   }
 
-  export type LeaseCreateManyPropertyInputEnvelope = {
-    data: LeaseCreateManyPropertyInput | LeaseCreateManyPropertyInput[]
+  export type LeaseCreateManyCovoiturageInputEnvelope = {
+    data: LeaseCreateManyCovoiturageInput | LeaseCreateManyCovoiturageInput[]
     skipDuplicates?: boolean
   }
 
-  export type ApplicationCreateWithoutPropertyInput = {
+  export type ApplicationCreateWithoutCovoiturageInput = {
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
     name: string
@@ -12533,7 +12521,7 @@ export namespace Prisma {
     lease?: LeaseCreateNestedOneWithoutApplicationInput
   }
 
-  export type ApplicationUncheckedCreateWithoutPropertyInput = {
+  export type ApplicationUncheckedCreateWithoutCovoiturageInput = {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
@@ -12545,13 +12533,13 @@ export namespace Prisma {
     leaseId?: number | null
   }
 
-  export type ApplicationCreateOrConnectWithoutPropertyInput = {
+  export type ApplicationCreateOrConnectWithoutCovoiturageInput = {
     where: ApplicationWhereUniqueInput
-    create: XOR<ApplicationCreateWithoutPropertyInput, ApplicationUncheckedCreateWithoutPropertyInput>
+    create: XOR<ApplicationCreateWithoutCovoiturageInput, ApplicationUncheckedCreateWithoutCovoiturageInput>
   }
 
-  export type ApplicationCreateManyPropertyInputEnvelope = {
-    data: ApplicationCreateManyPropertyInput | ApplicationCreateManyPropertyInput[]
+  export type ApplicationCreateManyCovoiturageInputEnvelope = {
+    data: ApplicationCreateManyCovoiturageInput | ApplicationCreateManyCovoiturageInput[]
     skipDuplicates?: boolean
   }
 
@@ -12560,7 +12548,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutPassagersInput
+    covoiturages?: CovoiturageCreateNestedManyWithoutPassagersInput
     applications?: ApplicationCreateNestedManyWithoutPassagerInput
     leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
@@ -12571,7 +12559,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
+    covoiturages?: CovoiturageUncheckedCreateNestedManyWithoutPassagersInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
     leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
@@ -12581,38 +12569,38 @@ export namespace Prisma {
     create: XOR<PassagerCreateWithoutFavoritesInput, PassagerUncheckedCreateWithoutFavoritesInput>
   }
 
-  export type PassagerCreateWithoutPropertiesInput = {
+  export type PassagerCreateWithoutCovoituragesInput = {
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
+    favorites?: CovoiturageCreateNestedManyWithoutFavoritedByInput
     applications?: ApplicationCreateNestedManyWithoutPassagerInput
     leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
 
-  export type PassagerUncheckedCreateWithoutPropertiesInput = {
+  export type PassagerUncheckedCreateWithoutCovoituragesInput = {
     id?: number
     cognitoId: string
     name: string
     email: string
     phoneNumber: string
-    favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
+    favorites?: CovoiturageUncheckedCreateNestedManyWithoutFavoritedByInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
     leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
 
-  export type PassagerCreateOrConnectWithoutPropertiesInput = {
+  export type PassagerCreateOrConnectWithoutCovoituragesInput = {
     where: PassagerWhereUniqueInput
-    create: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput>
+    create: XOR<PassagerCreateWithoutCovoituragesInput, PassagerUncheckedCreateWithoutCovoituragesInput>
   }
 
-  export type LocationUpdateToOneWithWhereWithoutPropertiesInput = {
+  export type LocationUpdateToOneWithWhereWithoutCovoituragesInput = {
     where?: LocationWhereInput
-    data: XOR<LocationUpdateWithoutPropertiesInput, LocationUncheckedUpdateWithoutPropertiesInput>
+    data: XOR<LocationUpdateWithoutCovoituragesInput, LocationUncheckedUpdateWithoutCovoituragesInput>
   }
 
-  export type LocationUpdateWithoutPropertiesInput = {
+  export type LocationUpdateWithoutCovoituragesInput = {
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
     state?: StringFieldUpdateOperationsInput | string
@@ -12620,7 +12608,7 @@ export namespace Prisma {
     postalCode?: StringFieldUpdateOperationsInput | string
   }
 
-  export type LocationUncheckedUpdateWithoutPropertiesInput = {
+  export type LocationUncheckedUpdateWithoutCovoituragesInput = {
     id?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -12629,25 +12617,25 @@ export namespace Prisma {
     postalCode?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ConducteurUpsertWithoutConducteurPropertiesInput = {
-    update: XOR<ConducteurUpdateWithoutConducteurPropertiesInput, ConducteurUncheckedUpdateWithoutConducteurPropertiesInput>
-    create: XOR<ConducteurCreateWithoutConducteurPropertiesInput, ConducteurUncheckedCreateWithoutConducteurPropertiesInput>
+  export type ConducteurUpsertWithoutConducteurCovoituragesInput = {
+    update: XOR<ConducteurUpdateWithoutConducteurCovoituragesInput, ConducteurUncheckedUpdateWithoutConducteurCovoituragesInput>
+    create: XOR<ConducteurCreateWithoutConducteurCovoituragesInput, ConducteurUncheckedCreateWithoutConducteurCovoituragesInput>
     where?: ConducteurWhereInput
   }
 
-  export type ConducteurUpdateToOneWithWhereWithoutConducteurPropertiesInput = {
+  export type ConducteurUpdateToOneWithWhereWithoutConducteurCovoituragesInput = {
     where?: ConducteurWhereInput
-    data: XOR<ConducteurUpdateWithoutConducteurPropertiesInput, ConducteurUncheckedUpdateWithoutConducteurPropertiesInput>
+    data: XOR<ConducteurUpdateWithoutConducteurCovoituragesInput, ConducteurUncheckedUpdateWithoutConducteurCovoituragesInput>
   }
 
-  export type ConducteurUpdateWithoutConducteurPropertiesInput = {
+  export type ConducteurUpdateWithoutConducteurCovoituragesInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ConducteurUncheckedUpdateWithoutConducteurPropertiesInput = {
+  export type ConducteurUncheckedUpdateWithoutConducteurCovoituragesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -12655,20 +12643,20 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type LeaseUpsertWithWhereUniqueWithoutPropertyInput = {
+  export type LeaseUpsertWithWhereUniqueWithoutCovoiturageInput = {
     where: LeaseWhereUniqueInput
-    update: XOR<LeaseUpdateWithoutPropertyInput, LeaseUncheckedUpdateWithoutPropertyInput>
-    create: XOR<LeaseCreateWithoutPropertyInput, LeaseUncheckedCreateWithoutPropertyInput>
+    update: XOR<LeaseUpdateWithoutCovoiturageInput, LeaseUncheckedUpdateWithoutCovoiturageInput>
+    create: XOR<LeaseCreateWithoutCovoiturageInput, LeaseUncheckedCreateWithoutCovoiturageInput>
   }
 
-  export type LeaseUpdateWithWhereUniqueWithoutPropertyInput = {
+  export type LeaseUpdateWithWhereUniqueWithoutCovoiturageInput = {
     where: LeaseWhereUniqueInput
-    data: XOR<LeaseUpdateWithoutPropertyInput, LeaseUncheckedUpdateWithoutPropertyInput>
+    data: XOR<LeaseUpdateWithoutCovoiturageInput, LeaseUncheckedUpdateWithoutCovoiturageInput>
   }
 
-  export type LeaseUpdateManyWithWhereWithoutPropertyInput = {
+  export type LeaseUpdateManyWithWhereWithoutCovoiturageInput = {
     where: LeaseScalarWhereInput
-    data: XOR<LeaseUpdateManyMutationInput, LeaseUncheckedUpdateManyWithoutPropertyInput>
+    data: XOR<LeaseUpdateManyMutationInput, LeaseUncheckedUpdateManyWithoutCovoiturageInput>
   }
 
   export type LeaseScalarWhereInput = {
@@ -12678,24 +12666,24 @@ export namespace Prisma {
     id?: IntFilter<"Lease"> | number
     startDate?: DateTimeFilter<"Lease"> | Date | string
     endDate?: DateTimeFilter<"Lease"> | Date | string
-    propertyId?: IntFilter<"Lease"> | number
+    covoiturageId?: IntFilter<"Lease"> | number
     passagerCognitoId?: StringFilter<"Lease"> | string
   }
 
-  export type ApplicationUpsertWithWhereUniqueWithoutPropertyInput = {
+  export type ApplicationUpsertWithWhereUniqueWithoutCovoiturageInput = {
     where: ApplicationWhereUniqueInput
-    update: XOR<ApplicationUpdateWithoutPropertyInput, ApplicationUncheckedUpdateWithoutPropertyInput>
-    create: XOR<ApplicationCreateWithoutPropertyInput, ApplicationUncheckedCreateWithoutPropertyInput>
+    update: XOR<ApplicationUpdateWithoutCovoiturageInput, ApplicationUncheckedUpdateWithoutCovoiturageInput>
+    create: XOR<ApplicationCreateWithoutCovoiturageInput, ApplicationUncheckedCreateWithoutCovoiturageInput>
   }
 
-  export type ApplicationUpdateWithWhereUniqueWithoutPropertyInput = {
+  export type ApplicationUpdateWithWhereUniqueWithoutCovoiturageInput = {
     where: ApplicationWhereUniqueInput
-    data: XOR<ApplicationUpdateWithoutPropertyInput, ApplicationUncheckedUpdateWithoutPropertyInput>
+    data: XOR<ApplicationUpdateWithoutCovoiturageInput, ApplicationUncheckedUpdateWithoutCovoiturageInput>
   }
 
-  export type ApplicationUpdateManyWithWhereWithoutPropertyInput = {
+  export type ApplicationUpdateManyWithWhereWithoutCovoiturageInput = {
     where: ApplicationScalarWhereInput
-    data: XOR<ApplicationUpdateManyMutationInput, ApplicationUncheckedUpdateManyWithoutPropertyInput>
+    data: XOR<ApplicationUpdateManyMutationInput, ApplicationUncheckedUpdateManyWithoutCovoiturageInput>
   }
 
   export type ApplicationScalarWhereInput = {
@@ -12705,7 +12693,7 @@ export namespace Prisma {
     id?: IntFilter<"Application"> | number
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
-    propertyId?: IntFilter<"Application"> | number
+    covoiturageId?: IntFilter<"Application"> | number
     passagerCognitoId?: StringFilter<"Application"> | string
     name?: StringFilter<"Application"> | string
     email?: StringFilter<"Application"> | string
@@ -12741,119 +12729,119 @@ export namespace Prisma {
     phoneNumber?: StringFilter<"Passager"> | string
   }
 
-  export type PassagerUpsertWithWhereUniqueWithoutPropertiesInput = {
+  export type PassagerUpsertWithWhereUniqueWithoutCovoituragesInput = {
     where: PassagerWhereUniqueInput
-    update: XOR<PassagerUpdateWithoutPropertiesInput, PassagerUncheckedUpdateWithoutPropertiesInput>
-    create: XOR<PassagerCreateWithoutPropertiesInput, PassagerUncheckedCreateWithoutPropertiesInput>
+    update: XOR<PassagerUpdateWithoutCovoituragesInput, PassagerUncheckedUpdateWithoutCovoituragesInput>
+    create: XOR<PassagerCreateWithoutCovoituragesInput, PassagerUncheckedCreateWithoutCovoituragesInput>
   }
 
-  export type PassagerUpdateWithWhereUniqueWithoutPropertiesInput = {
+  export type PassagerUpdateWithWhereUniqueWithoutCovoituragesInput = {
     where: PassagerWhereUniqueInput
-    data: XOR<PassagerUpdateWithoutPropertiesInput, PassagerUncheckedUpdateWithoutPropertiesInput>
+    data: XOR<PassagerUpdateWithoutCovoituragesInput, PassagerUncheckedUpdateWithoutCovoituragesInput>
   }
 
-  export type PassagerUpdateManyWithWhereWithoutPropertiesInput = {
+  export type PassagerUpdateManyWithWhereWithoutCovoituragesInput = {
     where: PassagerScalarWhereInput
-    data: XOR<PassagerUpdateManyMutationInput, PassagerUncheckedUpdateManyWithoutPropertiesInput>
+    data: XOR<PassagerUpdateManyMutationInput, PassagerUncheckedUpdateManyWithoutCovoituragesInput>
   }
 
-  export type PropertyCreateWithoutConducteurInput = {
+  export type CovoiturageCreateWithoutConducteurInput = {
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    location: LocationCreateNestedOneWithoutPropertiesInput
-    leases?: LeaseCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationCreateNestedManyWithoutPropertyInput
+    location: LocationCreateNestedOneWithoutCovoituragesInput
+    leases?: LeaseCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyUncheckedCreateWithoutConducteurInput = {
+  export type CovoiturageUncheckedCreateWithoutConducteurInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
     locationId: number
-    leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyCreateOrConnectWithoutConducteurInput = {
-    where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput>
+  export type CovoiturageCreateOrConnectWithoutConducteurInput = {
+    where: CovoiturageWhereUniqueInput
+    create: XOR<CovoiturageCreateWithoutConducteurInput, CovoiturageUncheckedCreateWithoutConducteurInput>
   }
 
-  export type PropertyCreateManyConducteurInputEnvelope = {
-    data: PropertyCreateManyConducteurInput | PropertyCreateManyConducteurInput[]
+  export type CovoiturageCreateManyConducteurInputEnvelope = {
+    data: CovoiturageCreateManyConducteurInput | CovoiturageCreateManyConducteurInput[]
     skipDuplicates?: boolean
   }
 
-  export type PropertyUpsertWithWhereUniqueWithoutConducteurInput = {
-    where: PropertyWhereUniqueInput
-    update: XOR<PropertyUpdateWithoutConducteurInput, PropertyUncheckedUpdateWithoutConducteurInput>
-    create: XOR<PropertyCreateWithoutConducteurInput, PropertyUncheckedCreateWithoutConducteurInput>
+  export type CovoiturageUpsertWithWhereUniqueWithoutConducteurInput = {
+    where: CovoiturageWhereUniqueInput
+    update: XOR<CovoiturageUpdateWithoutConducteurInput, CovoiturageUncheckedUpdateWithoutConducteurInput>
+    create: XOR<CovoiturageCreateWithoutConducteurInput, CovoiturageUncheckedCreateWithoutConducteurInput>
   }
 
-  export type PropertyUpdateWithWhereUniqueWithoutConducteurInput = {
-    where: PropertyWhereUniqueInput
-    data: XOR<PropertyUpdateWithoutConducteurInput, PropertyUncheckedUpdateWithoutConducteurInput>
+  export type CovoiturageUpdateWithWhereUniqueWithoutConducteurInput = {
+    where: CovoiturageWhereUniqueInput
+    data: XOR<CovoiturageUpdateWithoutConducteurInput, CovoiturageUncheckedUpdateWithoutConducteurInput>
   }
 
-  export type PropertyUpdateManyWithWhereWithoutConducteurInput = {
-    where: PropertyScalarWhereInput
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutConducteurInput>
+  export type CovoiturageUpdateManyWithWhereWithoutConducteurInput = {
+    where: CovoiturageScalarWhereInput
+    data: XOR<CovoiturageUpdateManyMutationInput, CovoiturageUncheckedUpdateManyWithoutConducteurInput>
   }
 
-  export type PropertyScalarWhereInput = {
-    AND?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
-    OR?: PropertyScalarWhereInput[]
-    NOT?: PropertyScalarWhereInput | PropertyScalarWhereInput[]
-    id?: IntFilter<"Property"> | number
-    name?: StringFilter<"Property"> | string
-    description?: StringFilter<"Property"> | string
-    photoUrls?: StringNullableListFilter<"Property">
-    isPetsAllowed?: BoolFilter<"Property"> | boolean
-    carType?: EnumCarTypeFilter<"Property"> | $Enums.CarType
-    postedDate?: DateTimeFilter<"Property"> | Date | string
-    averageRating?: FloatNullableFilter<"Property"> | number | null
-    numberOfReviews?: IntNullableFilter<"Property"> | number | null
-    locationId?: IntFilter<"Property"> | number
-    conducteurCognitoId?: StringFilter<"Property"> | string
+  export type CovoiturageScalarWhereInput = {
+    AND?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
+    OR?: CovoiturageScalarWhereInput[]
+    NOT?: CovoiturageScalarWhereInput | CovoiturageScalarWhereInput[]
+    id?: IntFilter<"Covoiturage"> | number
+    name?: StringFilter<"Covoiturage"> | string
+    description?: StringFilter<"Covoiturage"> | string
+    photoUrls?: StringNullableListFilter<"Covoiturage">
+    isPetsAllowed?: BoolFilter<"Covoiturage"> | boolean
+    carType?: EnumCarTypeFilter<"Covoiturage"> | $Enums.CarType
+    postedDate?: DateTimeFilter<"Covoiturage"> | Date | string
+    averageRating?: FloatNullableFilter<"Covoiturage"> | number | null
+    numberOfReviews?: IntNullableFilter<"Covoiturage"> | number | null
+    locationId?: IntFilter<"Covoiturage"> | number
+    conducteurCognitoId?: StringFilter<"Covoiturage"> | string
   }
 
-  export type PropertyCreateWithoutPassagersInput = {
+  export type CovoiturageCreateWithoutPassagersInput = {
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    location: LocationCreateNestedOneWithoutPropertiesInput
-    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
-    leases?: LeaseCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationCreateNestedManyWithoutPropertyInput
+    location: LocationCreateNestedOneWithoutCovoituragesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurCovoituragesInput
+    leases?: LeaseCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
   }
 
-  export type PropertyUncheckedCreateWithoutPassagersInput = {
+  export type CovoiturageUncheckedCreateWithoutPassagersInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -12861,37 +12849,37 @@ export namespace Prisma {
     numberOfReviews?: number | null
     locationId: number
     conducteurCognitoId: string
-    leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
   }
 
-  export type PropertyCreateOrConnectWithoutPassagersInput = {
-    where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput>
+  export type CovoiturageCreateOrConnectWithoutPassagersInput = {
+    where: CovoiturageWhereUniqueInput
+    create: XOR<CovoiturageCreateWithoutPassagersInput, CovoiturageUncheckedCreateWithoutPassagersInput>
   }
 
-  export type PropertyCreateWithoutFavoritedByInput = {
+  export type CovoiturageCreateWithoutFavoritedByInput = {
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    location: LocationCreateNestedOneWithoutPropertiesInput
-    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
-    leases?: LeaseCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationCreateNestedManyWithoutPropertyInput
-    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
+    location: LocationCreateNestedOneWithoutCovoituragesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurCovoituragesInput
+    leases?: LeaseCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationCreateNestedManyWithoutCovoiturageInput
+    passagers?: PassagerCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyUncheckedCreateWithoutFavoritedByInput = {
+  export type CovoiturageUncheckedCreateWithoutFavoritedByInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -12899,14 +12887,14 @@ export namespace Prisma {
     numberOfReviews?: number | null
     locationId: number
     conducteurCognitoId: string
-    leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
-    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutCovoiturageInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyCreateOrConnectWithoutFavoritedByInput = {
-    where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutFavoritedByInput, PropertyUncheckedCreateWithoutFavoritedByInput>
+  export type CovoiturageCreateOrConnectWithoutFavoritedByInput = {
+    where: CovoiturageWhereUniqueInput
+    create: XOR<CovoiturageCreateWithoutFavoritedByInput, CovoiturageUncheckedCreateWithoutFavoritedByInput>
   }
 
   export type ApplicationCreateWithoutPassagerInput = {
@@ -12916,7 +12904,7 @@ export namespace Prisma {
     email: string
     phoneNumber: string
     message?: string | null
-    property: PropertyCreateNestedOneWithoutApplicationsInput
+    covoiturage: CovoiturageCreateNestedOneWithoutApplicationsInput
     lease?: LeaseCreateNestedOneWithoutApplicationInput
   }
 
@@ -12924,7 +12912,7 @@ export namespace Prisma {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
-    propertyId: number
+    covoiturageId: number
     name: string
     email: string
     phoneNumber: string
@@ -12945,7 +12933,7 @@ export namespace Prisma {
   export type LeaseCreateWithoutPassagerInput = {
     startDate: Date | string
     endDate: Date | string
-    property: PropertyCreateNestedOneWithoutLeasesInput
+    covoiturage: CovoiturageCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
   }
@@ -12954,7 +12942,7 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    propertyId: number
+    covoiturageId: number
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
   }
@@ -12969,36 +12957,36 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type PropertyUpsertWithWhereUniqueWithoutPassagersInput = {
-    where: PropertyWhereUniqueInput
-    update: XOR<PropertyUpdateWithoutPassagersInput, PropertyUncheckedUpdateWithoutPassagersInput>
-    create: XOR<PropertyCreateWithoutPassagersInput, PropertyUncheckedCreateWithoutPassagersInput>
+  export type CovoiturageUpsertWithWhereUniqueWithoutPassagersInput = {
+    where: CovoiturageWhereUniqueInput
+    update: XOR<CovoiturageUpdateWithoutPassagersInput, CovoiturageUncheckedUpdateWithoutPassagersInput>
+    create: XOR<CovoiturageCreateWithoutPassagersInput, CovoiturageUncheckedCreateWithoutPassagersInput>
   }
 
-  export type PropertyUpdateWithWhereUniqueWithoutPassagersInput = {
-    where: PropertyWhereUniqueInput
-    data: XOR<PropertyUpdateWithoutPassagersInput, PropertyUncheckedUpdateWithoutPassagersInput>
+  export type CovoiturageUpdateWithWhereUniqueWithoutPassagersInput = {
+    where: CovoiturageWhereUniqueInput
+    data: XOR<CovoiturageUpdateWithoutPassagersInput, CovoiturageUncheckedUpdateWithoutPassagersInput>
   }
 
-  export type PropertyUpdateManyWithWhereWithoutPassagersInput = {
-    where: PropertyScalarWhereInput
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutPassagersInput>
+  export type CovoiturageUpdateManyWithWhereWithoutPassagersInput = {
+    where: CovoiturageScalarWhereInput
+    data: XOR<CovoiturageUpdateManyMutationInput, CovoiturageUncheckedUpdateManyWithoutPassagersInput>
   }
 
-  export type PropertyUpsertWithWhereUniqueWithoutFavoritedByInput = {
-    where: PropertyWhereUniqueInput
-    update: XOR<PropertyUpdateWithoutFavoritedByInput, PropertyUncheckedUpdateWithoutFavoritedByInput>
-    create: XOR<PropertyCreateWithoutFavoritedByInput, PropertyUncheckedCreateWithoutFavoritedByInput>
+  export type CovoiturageUpsertWithWhereUniqueWithoutFavoritedByInput = {
+    where: CovoiturageWhereUniqueInput
+    update: XOR<CovoiturageUpdateWithoutFavoritedByInput, CovoiturageUncheckedUpdateWithoutFavoritedByInput>
+    create: XOR<CovoiturageCreateWithoutFavoritedByInput, CovoiturageUncheckedCreateWithoutFavoritedByInput>
   }
 
-  export type PropertyUpdateWithWhereUniqueWithoutFavoritedByInput = {
-    where: PropertyWhereUniqueInput
-    data: XOR<PropertyUpdateWithoutFavoritedByInput, PropertyUncheckedUpdateWithoutFavoritedByInput>
+  export type CovoiturageUpdateWithWhereUniqueWithoutFavoritedByInput = {
+    where: CovoiturageWhereUniqueInput
+    data: XOR<CovoiturageUpdateWithoutFavoritedByInput, CovoiturageUncheckedUpdateWithoutFavoritedByInput>
   }
 
-  export type PropertyUpdateManyWithWhereWithoutFavoritedByInput = {
-    where: PropertyScalarWhereInput
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutFavoritedByInput>
+  export type CovoiturageUpdateManyWithWhereWithoutFavoritedByInput = {
+    where: CovoiturageScalarWhereInput
+    data: XOR<CovoiturageUpdateManyMutationInput, CovoiturageUncheckedUpdateManyWithoutFavoritedByInput>
   }
 
   export type ApplicationUpsertWithWhereUniqueWithoutPassagerInput = {
@@ -13033,86 +13021,86 @@ export namespace Prisma {
     data: XOR<LeaseUpdateManyMutationInput, LeaseUncheckedUpdateManyWithoutPassagerInput>
   }
 
-  export type PropertyCreateWithoutLocationInput = {
+  export type CovoiturageCreateWithoutLocationInput = {
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
-    leases?: LeaseCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationCreateNestedManyWithoutPropertyInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurCovoituragesInput
+    leases?: LeaseCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyUncheckedCreateWithoutLocationInput = {
+  export type CovoiturageUncheckedCreateWithoutLocationInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
     conducteurCognitoId: string
-    leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
-    applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutCovoiturageInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyCreateOrConnectWithoutLocationInput = {
-    where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutLocationInput, PropertyUncheckedCreateWithoutLocationInput>
+  export type CovoiturageCreateOrConnectWithoutLocationInput = {
+    where: CovoiturageWhereUniqueInput
+    create: XOR<CovoiturageCreateWithoutLocationInput, CovoiturageUncheckedCreateWithoutLocationInput>
   }
 
-  export type PropertyUpsertWithWhereUniqueWithoutLocationInput = {
-    where: PropertyWhereUniqueInput
-    update: XOR<PropertyUpdateWithoutLocationInput, PropertyUncheckedUpdateWithoutLocationInput>
-    create: XOR<PropertyCreateWithoutLocationInput, PropertyUncheckedCreateWithoutLocationInput>
+  export type CovoiturageUpsertWithWhereUniqueWithoutLocationInput = {
+    where: CovoiturageWhereUniqueInput
+    update: XOR<CovoiturageUpdateWithoutLocationInput, CovoiturageUncheckedUpdateWithoutLocationInput>
+    create: XOR<CovoiturageCreateWithoutLocationInput, CovoiturageUncheckedCreateWithoutLocationInput>
   }
 
-  export type PropertyCreateManyLocationInputEnvelope = {
-    data: PropertyCreateManyLocationInput | PropertyCreateManyLocationInput[]
+  export type CovoiturageCreateManyLocationInputEnvelope = {
+    data: CovoiturageCreateManyLocationInput | CovoiturageCreateManyLocationInput[]
     skipDuplicates?: boolean
   }
 
-  export type PropertyUpdateWithWhereUniqueWithoutLocationInput = {
-    where: PropertyWhereUniqueInput
-    data: XOR<PropertyUpdateWithoutLocationInput, PropertyUncheckedUpdateWithoutLocationInput>
+  export type CovoiturageUpdateWithWhereUniqueWithoutLocationInput = {
+    where: CovoiturageWhereUniqueInput
+    data: XOR<CovoiturageUpdateWithoutLocationInput, CovoiturageUncheckedUpdateWithoutLocationInput>
   }
 
-  export type PropertyUpdateManyWithWhereWithoutLocationInput = {
-    where: PropertyScalarWhereInput
-    data: XOR<PropertyUpdateManyMutationInput, PropertyUncheckedUpdateManyWithoutLocationInput>
+  export type CovoiturageUpdateManyWithWhereWithoutLocationInput = {
+    where: CovoiturageScalarWhereInput
+    data: XOR<CovoiturageUpdateManyMutationInput, CovoiturageUncheckedUpdateManyWithoutLocationInput>
   }
 
-  export type PropertyCreateWithoutApplicationsInput = {
+  export type CovoiturageCreateWithoutApplicationsInput = {
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    location: LocationCreateNestedOneWithoutPropertiesInput
-    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
-    leases?: LeaseCreateNestedManyWithoutPropertyInput
+    location: LocationCreateNestedOneWithoutCovoituragesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurCovoituragesInput
+    leases?: LeaseCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyUncheckedCreateWithoutApplicationsInput = {
+  export type CovoiturageUncheckedCreateWithoutApplicationsInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -13120,14 +13108,14 @@ export namespace Prisma {
     numberOfReviews?: number | null
     locationId: number
     conducteurCognitoId: string
-    leases?: LeaseUncheckedCreateNestedManyWithoutPropertyInput
+    leases?: LeaseUncheckedCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyCreateOrConnectWithoutApplicationsInput = {
-    where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutApplicationsInput, PropertyUncheckedCreateWithoutApplicationsInput>
+  export type CovoiturageCreateOrConnectWithoutApplicationsInput = {
+    where: CovoiturageWhereUniqueInput
+    create: XOR<CovoiturageCreateWithoutApplicationsInput, CovoiturageUncheckedCreateWithoutApplicationsInput>
   }
 
   export type PassagerCreateWithoutApplicationsInput = {
@@ -13135,8 +13123,8 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutPassagersInput
-    favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
+    covoiturages?: CovoiturageCreateNestedManyWithoutPassagersInput
+    favorites?: CovoiturageCreateNestedManyWithoutFavoritedByInput
     leases?: LeaseCreateNestedManyWithoutPassagerInput
   }
 
@@ -13146,8 +13134,8 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
-    favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
+    covoiturages?: CovoiturageUncheckedCreateNestedManyWithoutPassagersInput
+    favorites?: CovoiturageUncheckedCreateNestedManyWithoutFavoritedByInput
     leases?: LeaseUncheckedCreateNestedManyWithoutPassagerInput
   }
 
@@ -13159,7 +13147,7 @@ export namespace Prisma {
   export type LeaseCreateWithoutApplicationInput = {
     startDate: Date | string
     endDate: Date | string
-    property: PropertyCreateNestedOneWithoutLeasesInput
+    covoiturage: CovoiturageCreateNestedOneWithoutLeasesInput
     passager: PassagerCreateNestedOneWithoutLeasesInput
     payments?: PaymentCreateNestedManyWithoutLeaseInput
   }
@@ -13168,7 +13156,7 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     payments?: PaymentUncheckedCreateNestedManyWithoutLeaseInput
   }
@@ -13178,38 +13166,38 @@ export namespace Prisma {
     create: XOR<LeaseCreateWithoutApplicationInput, LeaseUncheckedCreateWithoutApplicationInput>
   }
 
-  export type PropertyUpsertWithoutApplicationsInput = {
-    update: XOR<PropertyUpdateWithoutApplicationsInput, PropertyUncheckedUpdateWithoutApplicationsInput>
-    create: XOR<PropertyCreateWithoutApplicationsInput, PropertyUncheckedCreateWithoutApplicationsInput>
-    where?: PropertyWhereInput
+  export type CovoiturageUpsertWithoutApplicationsInput = {
+    update: XOR<CovoiturageUpdateWithoutApplicationsInput, CovoiturageUncheckedUpdateWithoutApplicationsInput>
+    create: XOR<CovoiturageCreateWithoutApplicationsInput, CovoiturageUncheckedCreateWithoutApplicationsInput>
+    where?: CovoiturageWhereInput
   }
 
-  export type PropertyUpdateToOneWithWhereWithoutApplicationsInput = {
-    where?: PropertyWhereInput
-    data: XOR<PropertyUpdateWithoutApplicationsInput, PropertyUncheckedUpdateWithoutApplicationsInput>
+  export type CovoiturageUpdateToOneWithWhereWithoutApplicationsInput = {
+    where?: CovoiturageWhereInput
+    data: XOR<CovoiturageUpdateWithoutApplicationsInput, CovoiturageUncheckedUpdateWithoutApplicationsInput>
   }
 
-  export type PropertyUpdateWithoutApplicationsInput = {
+  export type CovoiturageUpdateWithoutApplicationsInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
-    leases?: LeaseUpdateManyWithoutPropertyNestedInput
+    location?: LocationUpdateOneRequiredWithoutCovoituragesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurCovoituragesNestedInput
+    leases?: LeaseUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutApplicationsInput = {
+  export type CovoiturageUncheckedUpdateWithoutApplicationsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13217,9 +13205,9 @@ export namespace Prisma {
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
     conducteurCognitoId?: StringFieldUpdateOperationsInput | string
-    leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutCovoituragesNestedInput
   }
 
   export type PassagerUpsertWithoutApplicationsInput = {
@@ -13238,8 +13226,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutPassagersNestedInput
-    favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
+    covoiturages?: CovoiturageUpdateManyWithoutPassagersNestedInput
+    favorites?: CovoiturageUpdateManyWithoutFavoritedByNestedInput
     leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
 
@@ -13249,8 +13237,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
-    favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
+    covoiturages?: CovoiturageUncheckedUpdateManyWithoutPassagersNestedInput
+    favorites?: CovoiturageUncheckedUpdateManyWithoutFavoritedByNestedInput
     leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
@@ -13268,7 +13256,7 @@ export namespace Prisma {
   export type LeaseUpdateWithoutApplicationInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
+    covoiturage?: CovoiturageUpdateOneRequiredWithoutLeasesNestedInput
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
   }
@@ -13277,32 +13265,32 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
   }
 
-  export type PropertyCreateWithoutLeasesInput = {
+  export type CovoiturageCreateWithoutLeasesInput = {
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
     averageRating?: number | null
     numberOfReviews?: number | null
-    location: LocationCreateNestedOneWithoutPropertiesInput
-    conducteur: ConducteurCreateNestedOneWithoutConducteurPropertiesInput
-    applications?: ApplicationCreateNestedManyWithoutPropertyInput
+    location: LocationCreateNestedOneWithoutCovoituragesInput
+    conducteur: ConducteurCreateNestedOneWithoutConducteurCovoituragesInput
+    applications?: ApplicationCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyUncheckedCreateWithoutLeasesInput = {
+  export type CovoiturageUncheckedCreateWithoutLeasesInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -13310,14 +13298,14 @@ export namespace Prisma {
     numberOfReviews?: number | null
     locationId: number
     conducteurCognitoId: string
-    applications?: ApplicationUncheckedCreateNestedManyWithoutPropertyInput
+    applications?: ApplicationUncheckedCreateNestedManyWithoutCovoiturageInput
     favoritedBy?: PassagerUncheckedCreateNestedManyWithoutFavoritesInput
-    passagers?: PassagerUncheckedCreateNestedManyWithoutPropertiesInput
+    passagers?: PassagerUncheckedCreateNestedManyWithoutCovoituragesInput
   }
 
-  export type PropertyCreateOrConnectWithoutLeasesInput = {
-    where: PropertyWhereUniqueInput
-    create: XOR<PropertyCreateWithoutLeasesInput, PropertyUncheckedCreateWithoutLeasesInput>
+  export type CovoiturageCreateOrConnectWithoutLeasesInput = {
+    where: CovoiturageWhereUniqueInput
+    create: XOR<CovoiturageCreateWithoutLeasesInput, CovoiturageUncheckedCreateWithoutLeasesInput>
   }
 
   export type PassagerCreateWithoutLeasesInput = {
@@ -13325,8 +13313,8 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyCreateNestedManyWithoutPassagersInput
-    favorites?: PropertyCreateNestedManyWithoutFavoritedByInput
+    covoiturages?: CovoiturageCreateNestedManyWithoutPassagersInput
+    favorites?: CovoiturageCreateNestedManyWithoutFavoritedByInput
     applications?: ApplicationCreateNestedManyWithoutPassagerInput
   }
 
@@ -13336,8 +13324,8 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
-    properties?: PropertyUncheckedCreateNestedManyWithoutPassagersInput
-    favorites?: PropertyUncheckedCreateNestedManyWithoutFavoritedByInput
+    covoiturages?: CovoiturageUncheckedCreateNestedManyWithoutPassagersInput
+    favorites?: CovoiturageUncheckedCreateNestedManyWithoutFavoritedByInput
     applications?: ApplicationUncheckedCreateNestedManyWithoutPassagerInput
   }
 
@@ -13353,7 +13341,7 @@ export namespace Prisma {
     email: string
     phoneNumber: string
     message?: string | null
-    property: PropertyCreateNestedOneWithoutApplicationsInput
+    covoiturage: CovoiturageCreateNestedOneWithoutApplicationsInput
     passager: PassagerCreateNestedOneWithoutApplicationsInput
   }
 
@@ -13361,7 +13349,7 @@ export namespace Prisma {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     name: string
     email: string
@@ -13401,38 +13389,38 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type PropertyUpsertWithoutLeasesInput = {
-    update: XOR<PropertyUpdateWithoutLeasesInput, PropertyUncheckedUpdateWithoutLeasesInput>
-    create: XOR<PropertyCreateWithoutLeasesInput, PropertyUncheckedCreateWithoutLeasesInput>
-    where?: PropertyWhereInput
+  export type CovoiturageUpsertWithoutLeasesInput = {
+    update: XOR<CovoiturageUpdateWithoutLeasesInput, CovoiturageUncheckedUpdateWithoutLeasesInput>
+    create: XOR<CovoiturageCreateWithoutLeasesInput, CovoiturageUncheckedCreateWithoutLeasesInput>
+    where?: CovoiturageWhereInput
   }
 
-  export type PropertyUpdateToOneWithWhereWithoutLeasesInput = {
-    where?: PropertyWhereInput
-    data: XOR<PropertyUpdateWithoutLeasesInput, PropertyUncheckedUpdateWithoutLeasesInput>
+  export type CovoiturageUpdateToOneWithWhereWithoutLeasesInput = {
+    where?: CovoiturageWhereInput
+    data: XOR<CovoiturageUpdateWithoutLeasesInput, CovoiturageUncheckedUpdateWithoutLeasesInput>
   }
 
-  export type PropertyUpdateWithoutLeasesInput = {
+  export type CovoiturageUpdateWithoutLeasesInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
-    applications?: ApplicationUpdateManyWithoutPropertyNestedInput
+    location?: LocationUpdateOneRequiredWithoutCovoituragesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurCovoituragesNestedInput
+    applications?: ApplicationUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutLeasesInput = {
+  export type CovoiturageUncheckedUpdateWithoutLeasesInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13440,9 +13428,9 @@ export namespace Prisma {
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
     conducteurCognitoId?: StringFieldUpdateOperationsInput | string
-    applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutCovoituragesNestedInput
   }
 
   export type PassagerUpsertWithoutLeasesInput = {
@@ -13461,8 +13449,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutPassagersNestedInput
-    favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
+    covoiturages?: CovoiturageUpdateManyWithoutPassagersNestedInput
+    favorites?: CovoiturageUpdateManyWithoutFavoritedByNestedInput
     applications?: ApplicationUpdateManyWithoutPassagerNestedInput
   }
 
@@ -13472,8 +13460,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
-    favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
+    covoiturages?: CovoiturageUncheckedUpdateManyWithoutPassagersNestedInput
+    favorites?: CovoiturageUncheckedUpdateManyWithoutFavoritedByNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
@@ -13495,7 +13483,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
     message?: NullableStringFieldUpdateOperationsInput | string | null
-    property?: PropertyUpdateOneRequiredWithoutApplicationsNestedInput
+    covoiturage?: CovoiturageUpdateOneRequiredWithoutApplicationsNestedInput
     passager?: PassagerUpdateOneRequiredWithoutApplicationsNestedInput
   }
 
@@ -13503,7 +13491,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
@@ -13543,7 +13531,7 @@ export namespace Prisma {
   export type LeaseCreateWithoutPaymentsInput = {
     startDate: Date | string
     endDate: Date | string
-    property: PropertyCreateNestedOneWithoutLeasesInput
+    covoiturage: CovoiturageCreateNestedOneWithoutLeasesInput
     passager: PassagerCreateNestedOneWithoutLeasesInput
     application?: ApplicationCreateNestedOneWithoutLeaseInput
   }
@@ -13552,7 +13540,7 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    propertyId: number
+    covoiturageId: number
     passagerCognitoId: string
     application?: ApplicationUncheckedCreateNestedOneWithoutLeaseInput
   }
@@ -13576,7 +13564,7 @@ export namespace Prisma {
   export type LeaseUpdateWithoutPaymentsInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
+    covoiturage?: CovoiturageUpdateOneRequiredWithoutLeasesNestedInput
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
   }
@@ -13585,19 +13573,19 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
   }
 
-  export type LeaseCreateManyPropertyInput = {
+  export type LeaseCreateManyCovoiturageInput = {
     id?: number
     startDate: Date | string
     endDate: Date | string
     passagerCognitoId: string
   }
 
-  export type ApplicationCreateManyPropertyInput = {
+  export type ApplicationCreateManyCovoiturageInput = {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
@@ -13609,7 +13597,7 @@ export namespace Prisma {
     leaseId?: number | null
   }
 
-  export type LeaseUpdateWithoutPropertyInput = {
+  export type LeaseUpdateWithoutCovoiturageInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
     passager?: PassagerUpdateOneRequiredWithoutLeasesNestedInput
@@ -13617,7 +13605,7 @@ export namespace Prisma {
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
   }
 
-  export type LeaseUncheckedUpdateWithoutPropertyInput = {
+  export type LeaseUncheckedUpdateWithoutCovoiturageInput = {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13626,14 +13614,14 @@ export namespace Prisma {
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
   }
 
-  export type LeaseUncheckedUpdateManyWithoutPropertyInput = {
+  export type LeaseUncheckedUpdateManyWithoutCovoiturageInput = {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
     passagerCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ApplicationUpdateWithoutPropertyInput = {
+  export type ApplicationUpdateWithoutCovoiturageInput = {
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
     name?: StringFieldUpdateOperationsInput | string
@@ -13644,7 +13632,7 @@ export namespace Prisma {
     lease?: LeaseUpdateOneWithoutApplicationNestedInput
   }
 
-  export type ApplicationUncheckedUpdateWithoutPropertyInput = {
+  export type ApplicationUncheckedUpdateWithoutCovoiturageInput = {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
@@ -13656,7 +13644,7 @@ export namespace Prisma {
     leaseId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type ApplicationUncheckedUpdateManyWithoutPropertyInput = {
+  export type ApplicationUncheckedUpdateManyWithoutCovoiturageInput = {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
@@ -13673,7 +13661,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUpdateManyWithoutPassagersNestedInput
+    covoiturages?: CovoiturageUpdateManyWithoutPassagersNestedInput
     applications?: ApplicationUpdateManyWithoutPassagerNestedInput
     leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
@@ -13684,7 +13672,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    properties?: PropertyUncheckedUpdateManyWithoutPassagersNestedInput
+    covoiturages?: CovoiturageUncheckedUpdateManyWithoutPassagersNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
     leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
@@ -13697,28 +13685,28 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type PassagerUpdateWithoutPropertiesInput = {
+  export type PassagerUpdateWithoutCovoituragesInput = {
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    favorites?: PropertyUpdateManyWithoutFavoritedByNestedInput
+    favorites?: CovoiturageUpdateManyWithoutFavoritedByNestedInput
     applications?: ApplicationUpdateManyWithoutPassagerNestedInput
     leases?: LeaseUpdateManyWithoutPassagerNestedInput
   }
 
-  export type PassagerUncheckedUpdateWithoutPropertiesInput = {
+  export type PassagerUncheckedUpdateWithoutCovoituragesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
-    favorites?: PropertyUncheckedUpdateManyWithoutFavoritedByNestedInput
+    favorites?: CovoiturageUncheckedUpdateManyWithoutFavoritedByNestedInput
     applications?: ApplicationUncheckedUpdateManyWithoutPassagerNestedInput
     leases?: LeaseUncheckedUpdateManyWithoutPassagerNestedInput
   }
 
-  export type PassagerUncheckedUpdateManyWithoutPropertiesInput = {
+  export type PassagerUncheckedUpdateManyWithoutCovoituragesInput = {
     id?: IntFieldUpdateOperationsInput | number
     cognitoId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -13726,11 +13714,11 @@ export namespace Prisma {
     phoneNumber?: StringFieldUpdateOperationsInput | string
   }
 
-  export type PropertyCreateManyConducteurInput = {
+  export type CovoiturageCreateManyConducteurInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -13739,44 +13727,44 @@ export namespace Prisma {
     locationId: number
   }
 
-  export type PropertyUpdateWithoutConducteurInput = {
+  export type CovoiturageUpdateWithoutConducteurInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    leases?: LeaseUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUpdateManyWithoutPropertyNestedInput
+    location?: LocationUpdateOneRequiredWithoutCovoituragesNestedInput
+    leases?: LeaseUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutConducteurInput = {
+  export type CovoiturageUncheckedUpdateWithoutConducteurInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
-    leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateManyWithoutConducteurInput = {
+  export type CovoiturageUncheckedUpdateManyWithoutConducteurInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13789,7 +13777,7 @@ export namespace Prisma {
     id?: number
     applicationDate: Date | string
     status: $Enums.ApplicationStatus
-    propertyId: number
+    covoiturageId: number
     name: string
     email: string
     phoneNumber: string
@@ -13801,30 +13789,30 @@ export namespace Prisma {
     id?: number
     startDate: Date | string
     endDate: Date | string
-    propertyId: number
+    covoiturageId: number
   }
 
-  export type PropertyUpdateWithoutPassagersInput = {
+  export type CovoiturageUpdateWithoutPassagersInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
-    leases?: LeaseUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUpdateManyWithoutPropertyNestedInput
+    location?: LocationUpdateOneRequiredWithoutCovoituragesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurCovoituragesNestedInput
+    leases?: LeaseUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutPassagersInput = {
+  export type CovoiturageUncheckedUpdateWithoutPassagersInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13832,16 +13820,16 @@ export namespace Prisma {
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
     conducteurCognitoId?: StringFieldUpdateOperationsInput | string
-    leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
   }
 
-  export type PropertyUncheckedUpdateManyWithoutPassagersInput = {
+  export type CovoiturageUncheckedUpdateManyWithoutPassagersInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13851,27 +13839,27 @@ export namespace Prisma {
     conducteurCognitoId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type PropertyUpdateWithoutFavoritedByInput = {
+  export type CovoiturageUpdateWithoutFavoritedByInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    location?: LocationUpdateOneRequiredWithoutPropertiesNestedInput
-    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
-    leases?: LeaseUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUpdateManyWithoutPropertyNestedInput
-    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
+    location?: LocationUpdateOneRequiredWithoutCovoituragesNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurCovoituragesNestedInput
+    leases?: LeaseUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUpdateManyWithoutCovoiturageNestedInput
+    passagers?: PassagerUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutFavoritedByInput = {
+  export type CovoiturageUncheckedUpdateWithoutFavoritedByInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13879,16 +13867,16 @@ export namespace Prisma {
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     locationId?: IntFieldUpdateOperationsInput | number
     conducteurCognitoId?: StringFieldUpdateOperationsInput | string
-    leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
-    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutCovoiturageNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateManyWithoutFavoritedByInput = {
+  export type CovoiturageUncheckedUpdateManyWithoutFavoritedByInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13905,7 +13893,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
     message?: NullableStringFieldUpdateOperationsInput | string | null
-    property?: PropertyUpdateOneRequiredWithoutApplicationsNestedInput
+    covoiturage?: CovoiturageUpdateOneRequiredWithoutApplicationsNestedInput
     lease?: LeaseUpdateOneWithoutApplicationNestedInput
   }
 
@@ -13913,7 +13901,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -13925,7 +13913,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
@@ -13936,7 +13924,7 @@ export namespace Prisma {
   export type LeaseUpdateWithoutPassagerInput = {
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    property?: PropertyUpdateOneRequiredWithoutLeasesNestedInput
+    covoiturage?: CovoiturageUpdateOneRequiredWithoutLeasesNestedInput
     application?: ApplicationUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUpdateManyWithoutLeaseNestedInput
   }
@@ -13945,7 +13933,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
     application?: ApplicationUncheckedUpdateOneWithoutLeaseNestedInput
     payments?: PaymentUncheckedUpdateManyWithoutLeaseNestedInput
   }
@@ -13954,47 +13942,47 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startDate?: DateTimeFieldUpdateOperationsInput | Date | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    propertyId?: IntFieldUpdateOperationsInput | number
+    covoiturageId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type PropertyUpdateWithoutLocationInput = {
+  export type CovoiturageUpdateWithoutLocationInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
-    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurPropertiesNestedInput
-    leases?: LeaseUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUpdateManyWithoutPropertyNestedInput
+    conducteur?: ConducteurUpdateOneRequiredWithoutConducteurCovoituragesNestedInput
+    leases?: LeaseUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyUncheckedUpdateWithoutLocationInput = {
+  export type CovoiturageUncheckedUpdateWithoutLocationInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
     numberOfReviews?: NullableIntFieldUpdateOperationsInput | number | null
     conducteurCognitoId?: StringFieldUpdateOperationsInput | string
-    leases?: LeaseUncheckedUpdateManyWithoutPropertyNestedInput
-    applications?: ApplicationUncheckedUpdateManyWithoutPropertyNestedInput
+    leases?: LeaseUncheckedUpdateManyWithoutCovoiturageNestedInput
+    applications?: ApplicationUncheckedUpdateManyWithoutCovoiturageNestedInput
     favoritedBy?: PassagerUncheckedUpdateManyWithoutFavoritesNestedInput
-    passagers?: PassagerUncheckedUpdateManyWithoutPropertiesNestedInput
+    passagers?: PassagerUncheckedUpdateManyWithoutCovoituragesNestedInput
   }
 
-  export type PropertyCreateManyLocationInput = {
+  export type CovoiturageCreateManyLocationInput = {
     id?: number
     name: string
     description: string
-    photoUrls?: PropertyCreatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageCreatephotoUrlsInput | string[]
     isPetsAllowed?: boolean
     carType: $Enums.CarType
     postedDate?: Date | string
@@ -14003,11 +13991,11 @@ export namespace Prisma {
     conducteurCognitoId: string
   }
 
-  export type PropertyUncheckedUpdateManyWithoutLocationInput = {
+  export type CovoiturageUncheckedUpdateManyWithoutLocationInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    photoUrls?: PropertyUpdatephotoUrlsInput | string[]
+    photoUrls?: CovoiturageUpdatephotoUrlsInput | string[]
     isPetsAllowed?: BoolFieldUpdateOperationsInput | boolean
     carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
     postedDate?: DateTimeFieldUpdateOperationsInput | Date | string

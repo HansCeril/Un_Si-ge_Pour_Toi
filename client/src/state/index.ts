@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface FiltersState {
   location: string;
-  propertyType: string;
+  covoiturageType: string;
   coordinates: [number, number];
 }
 
@@ -15,7 +15,7 @@ interface InitialStateTypes {
 export const initialState: InitialStateTypes = {
   filters: {
     location: "Los Angeles",
-    propertyType: "any",
+    covoiturageType: "any",
     coordinates: [-118.25, 34.05],
   },
   isFiltersFullOpen: false,

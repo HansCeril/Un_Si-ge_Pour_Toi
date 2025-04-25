@@ -3,21 +3,21 @@
 import Card from "@/components/Card";
 import Header from "@/components/Header";
 import Loading from "@/components/Loading";
-import { useGetAuthUserQuery, useGetConducteurPropertiesQuery } from "@/state/api";
+import { useGetAuthUserQuery, useGetConducteurCovoituragesQuery } from "@/state/api";
 import React from "react";
 
-const Properties = () => {
+const Covoiturages = () => {
   const { data: authUser } = useGetAuthUserQuery();
   const {
-    data: conducteurProperties,
+    data: conducteurCovoiturages,
     isLoading,
     error,
-  } = useGetConducteurPropertiesQuery(authUser?.cognitoInfo?.userId || "", {
+  } = useGetConducteurCovoituragesQuery(authUser?.cognitoInfo?.userId || "", {
     skip: !authUser?.cognitoInfo?.userId,
   });
 
   if (isLoading) return <Loading />;
-  if (error) return <div>Error loading conducteur properties</div>;
+  if (error) return <div>Error loading conducteur covoiturage</div>;
 
   return (
     <div className="dashboard-container">
@@ -26,22 +26,22 @@ const Properties = () => {
         subtitle="Gérer mes offres de covoiturage"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {conducteurProperties?.map((property) => (
+        {conducteurCovoiturages?.map((covoiturage) => (
           <Card
-            key={property.id}
-            property={property}
+            key={covoiturage.id}
+            covoiturage={covoiturage}
             isFavorite={false}
             onFavoriteToggle={() => {}}
             showFavoriteButton={false}
-            propertyLink={`/conducteurs/properties/${property.id}`}
+            covoiturageLink={`/conducteurs/covoiturages/${covoiturage.id}`}
           />
         ))}
       </div>
-      {(!conducteurProperties || conducteurProperties.length === 0) && (
+      {(!conducteurCovoiturages || conducteurCovoiturages.length === 0) && (
         <p>Vous n&lsquo;avez encore proposé aucun trajet</p>
       )}
     </div>
   );
 };
 
-export default Properties;
+export default Covoiturages;

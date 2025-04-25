@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 const ApplicationModal = ({
   isOpen,
   onClose,
-  propertyId,
+  covoiturageId,
 }: ApplicationModalProps) => {
   const [createApplication] = useCreateApplicationMutation();
   const { data: authUser } = useGetAuthUserQuery();
@@ -43,7 +43,7 @@ const ApplicationModal = ({
       ...data,
       applicationDate: new Date().toISOString(),
       status: "Pending",
-      propertyId: propertyId,
+      covoiturageId: covoiturageId,
       passagerCognitoId: authUser.cognitoInfo.userId,
     });
     onClose();
@@ -53,7 +53,7 @@ const ApplicationModal = ({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-white">
         <DialogHeader className="mb-4">
-          <DialogTitle>Submit Application for this Property</DialogTitle>
+          <DialogTitle>Submit Application for this Covoiturage</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">

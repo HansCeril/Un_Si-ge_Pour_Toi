@@ -18,13 +18,13 @@ const ContactWidget = ({ onOpenModal }: ContactWidgetProps) => {
 
   return (
     <div className="bg-white border border-primary-200 rounded-2xl p-7 h-fit min-w-[300px]">
-      {/* Contact Property */}
+      {/* Contact Covoiturage */}
       <div className="flex items-center gap-5 mb-4 border border-primary-200 p-4 rounded-xl">
         <div className="flex items-center p-4 bg-primary-900 rounded-full">
           <Phone className="text-primary-50" size={15} />
         </div>
         <div>
-          <p>Contact This Property</p>
+          <p>Contact This Covoiturage</p>
           <div className="text-lg font-bold text-primary-800">
             (424) 340-5574
           </div>

@@ -42,11 +42,11 @@ const Residences = () => {
         {currentCovoiturages?.map((covoiturage) => (
           <Card
             key={covoiturage.id}
-            property={covoiturage}
+            covoiturage={covoiturage}
             isFavorite={passager?.favorites.includes(covoiturage.id) || false}
             onFavoriteToggle={() => {}}
             showFavoriteButton={false}
-            propertyLink={`/passagers/courses/${covoiturage.id}`}
+            covoiturageLink={`/passagers/courses/${covoiturage.id}`}
           />
         ))}
       </div>

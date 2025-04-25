@@ -129,11 +129,11 @@ import {
             </Button>
           </div>
   
-          {/* Property Type */}
+          {/* Covoiturage Type */}
           <Select
-            value={filters.propertyType || "any"}
+            value={filters.covoiturageType || "any"}
             onValueChange={(value) =>
-              handleFilterChange("propertyType", value, null)
+              handleFilterChange("covoiturageType", value, null)
             }
           >
             <SelectTrigger className="w-32 rounded-xl border-primary-400">

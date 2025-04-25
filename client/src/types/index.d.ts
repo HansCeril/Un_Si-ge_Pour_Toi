@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 import { AuthUser } from "aws-amplify/auth";
-import { Conducteur, Property, Application, Passager } from "./prismaTypes";
+import { Conducteur, Covoiturage, Application, Passager } from "./prismaTypes";
 import { MotionProps as OriginalMotionProps } from "framer-motion";
 
 declare module "framer-motion" {
@@ -44,7 +44,7 @@ declare global {
     QuietNeighborhood = "QuietNeighborhood",
   }
 
-  enum PropertyTypeEnum {
+  enum CovoiturageTypeEnum {
     Rooms = "Rooms",
     Tinyhouse = "Tinyhouse",
     Apartment = "Apartment",
@@ -59,14 +59,14 @@ declare global {
     label: string;
   }
 
-  interface PropertyOverviewProps {
-    propertyId: number;
+  interface CovoiturageOverviewProps {
+    covoiturageId: number;
   }
 
   interface ApplicationModalProps {
     isOpen: boolean;
     onClose: () => void;
-    propertyId: number;
+    covoiturageId: number;
   }
 
   interface ContactWidgetProps {
@@ -77,16 +77,16 @@ declare global {
     images: string[];
   }
 
-  interface PropertyDetailsProps {
-    propertyId: number;
+  interface CovoiturageDetailsProps {
+    covoiturageId: number;
   }
 
-  interface PropertyOverviewProps {
-    propertyId: number;
+  interface CovoiturageOverviewProps {
+    covoiturageId: number;
   }
 
-  interface PropertyLocationProps {
-    propertyId: number;
+  interface CovoiturageLocationProps {
+    covoiturageId: number;
   }
 
   interface ApplicationCardProps {
@@ -96,19 +96,19 @@ declare global {
   }
 
   interface CardProps {
-    property: Property;
+    covoiturage: Covoiturage;
     isFavorite: boolean;
     onFavoriteToggle: () => void;
     showFavoriteButton?: boolean;
-    propertyLink?: string;
+    covoiturageLink?: string;
   }
 
   interface CardCompactProps {
-    property: Property;
+    covoiturage: Covoiturage;
     isFavorite: boolean;
     onFavoriteToggle: () => void;
     showFavoriteButton?: boolean;
-    propertyLink?: string;
+    covoiturageLink?: string;
   }
 
   interface HeaderProps {

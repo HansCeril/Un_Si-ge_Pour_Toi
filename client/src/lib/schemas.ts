@@ -1,7 +1,7 @@
 import * as z from "zod";
 import { CarTypeEnum } from "@/lib/constants";
 
-export const propertySchema = z.object({
+export const covoiturageSchema = z.object({
   name: z.string().min(1, "Name is required"),
   description: z.string().min(1, "Description is required"),
   isPetsAllowed: z.boolean(),
@@ -16,7 +16,7 @@ export const propertySchema = z.object({
   postalCode: z.string().min(1, "Postal code is required"),
 });
 
-export type PropertyFormData = z.infer<typeof propertySchema>;
+export type CovoiturageFormData = z.infer<typeof covoiturageSchema>;
 
 export const applicationSchema = z.object({
   name: z.string().min(1, "Name is required"),

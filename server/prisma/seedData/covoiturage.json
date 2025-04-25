@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Sunny Downtown Apartment",
     "description": "A beautiful apartment in the heart of downtown with plenty of natural light.",
     "photoUrls": [
@@ -16,7 +15,6 @@
     "conducteurCognitoId": "010be580-60a1-70ae-780e-18a6fd94ad32"
   },
   {
-    "id": 2,
     "name": "Cozy Beach House",
     "description": "A charming beach house with stunning ocean views.",
     "photoUrls": [
@@ -32,7 +30,6 @@
     "conducteurCognitoId": "us-east-2:23456789-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 3,
     "name": "Modern City Loft",
     "description": "Sleek and stylish loft in the heart of the city.",
     "photoUrls": [
@@ -48,7 +45,6 @@
     "conducteurCognitoId": "us-east-2:34567890-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 4,
     "name": "Spacious Family Home",
     "description": "Large family home with a beautiful backyard and modern amenities.",
     "photoUrls": [
@@ -64,7 +60,6 @@
     "conducteurCognitoId": "us-east-2:45678901-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 5,
     "name": "Luxury Penthouse",
     "description": "Stunning penthouse with panoramic city views and high-end finishes.",
     "photoUrls": [
@@ -80,7 +75,6 @@
     "conducteurCognitoId": "us-east-2:56789012-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 6,
     "name": "Cozy Studio Apartment",
     "description": "Efficient studio apartment perfect for students or young professionals.",
     "photoUrls": [
@@ -96,7 +90,6 @@
     "conducteurCognitoId": "us-east-2:67890123-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 7,
     "name": "Historic Brownstone",
     "description": "Charming brownstone with original features and modern updates.",
     "photoUrls": [
@@ -112,7 +105,6 @@
     "conducteurCognitoId": "us-east-2:78901234-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 8,
     "name": "Urban Micro-Apartment",
     "description": "Compact and efficient living space in the heart of the city.",
     "photoUrls": [
@@ -128,7 +120,6 @@
     "conducteurCognitoId": "us-east-2:89012345-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 9,
     "name": "Mountain View Cabin",
     "description": "Rustic cabin with breathtaking mountain views and modern amenities.",
     "photoUrls": [
@@ -144,7 +135,6 @@
     "conducteurCognitoId": "us-east-2:90123456-90ab-cdef-1234-567890abcdef"
   },
   {
-    "id": 10,
     "name": "Eco-Friendly Tiny House",
     "description": "Sustainable living in a compact, well-designed tiny house.",
     "photoUrls": [

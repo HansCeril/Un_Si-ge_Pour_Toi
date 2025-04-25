@@ -81,10 +81,10 @@ async function main() {
   const orderedFileNames = [
     "location.json", // No dependencies
     "conducteur.json", // No dependencies
-    "property.json", // Depends on location and conducteur
     "passager.json", // No dependencies
-    "lease.json", // Depends on property and tenant
-    "application.json", // Depends on property and passager
+    "covoiturage.json", // Depends on location and conducteur
+    "application.json", // Depends on covoiturage and passager
+    "lease.json", // Depends on covoiturage and tenant
     "payment.json", // Depends on lease
   ];
 

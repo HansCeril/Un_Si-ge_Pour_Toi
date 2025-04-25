@@ -35,7 +35,7 @@ enum PaymentStatus {
   Overdue
 }
 
-model Property {
+model Covoiturage {
   id                Int          @id @default(autoincrement())
   name              String
   description       String
@@ -52,7 +52,7 @@ model Property {
   leases       Lease[]
   applications Application[]
   favoritedBy  Passager[]      @relation("PassagerFavorites")
-  passagers      Passager[]      @relation("PassagerProperties")
+  passagers      Passager[]      @relation("PassagerCovoiturages")
 }
 
 model Conducteur {
@@ -62,7 +62,7 @@ model Conducteur {
   email       String
   phoneNumber String
 
-  conducteurProperties Property[]
+  conducteurCovoiturages Covoiturage[]
 }
 
 model Passager {
@@ -72,8 +72,8 @@ model Passager {
   email       String
   phoneNumber String
 
-  properties   Property[]    @relation("PassagerProperties")
-  favorites    Property[]    @relation("PassagerFavorites")
+  covoiturages   Covoiturage[]    @relation("PassagerCovoiturages")
+  favorites    Covoiturage[]    @relation("PassagerFavorites")
   applications Application[]
   leases       Lease[]
 }
@@ -87,21 +87,21 @@ model Location {
   postalCode  String
   coordinates Unsupported("geography(Point, 4326)")
 
-  properties Property[]
+  covoiturages Covoiturage[]
 }
 
 model Application {
   id              Int               @id @default(autoincrement())
   applicationDate DateTime
   status          ApplicationStatus
-  propertyId      Int
+  covoiturageId      Int
   passagerCognitoId String
   name            String
   email           String
   phoneNumber     String
   message         String?
   leaseId         Int?              @unique
-  property Property @relation(fields: [propertyId], references: [id])
+  covoiturage Covoiturage @relation(fields: [covoiturageId], references: [id])
   passager   Passager   @relation(fields: [passagerCognitoId], references: [cognitoId])
   lease    Lease?   @relation(fields: [leaseId], references: [id])
 }
@@ -110,9 +110,9 @@ model Lease {
   id              Int      @id @default(autoincrement())
   startDate       DateTime
   endDate         DateTime
-  propertyId      Int
+  covoiturageId      Int
   passagerCognitoId String
-  property    Property     @relation(fields: [propertyId], references: [id])
+  covoiturage    Covoiturage     @relation(fields: [covoiturageId], references: [id])
   passager      Passager       @relation(fields: [passagerCognitoId], references: [cognitoId])
   application Application?
   payments    Payment[]

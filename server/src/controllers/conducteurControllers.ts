@@ -75,32 +75,32 @@ export const updateConducteur = async (
   }
 };
 
-export const getConducteurProperties = async (
+export const getConducteurCovoiturages = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
     const { cognitoId } = req.params;
-    const properties = await prisma.property.findMany({
+    const covoiturages = await prisma.covoiturage.findMany({
       where: { conducteurCognitoId: cognitoId },
       include: {
         location: true,
       },
     });
 
-    const propertiesWithFormattedLocation = await Promise.all(
-      properties.map(async (property) => {
+    const covoituragesWithFormattedLocation = await Promise.all(
+      covoiturages.map(async (covoiturage) => {
         const coordinates: { coordinates: string }[] =
-          await prisma.$queryRaw`SELECT ST_asText(coordinates) as coordinates from "Location" where id = ${property.location.id}`;
+          await prisma.$queryRaw`SELECT ST_asText(coordinates) as coordinates from "Location" where id = ${covoiturage.location.id}`;
 
         const geoJSON: any = wktToGeoJSON(coordinates[0]?.coordinates || "");
         const longitude = geoJSON.coordinates[0];
         const latitude = geoJSON.coordinates[1];
 
         return {
-          ...property,
+          ...covoiturage,
           location: {
-            ...property.location,
+            ...covoiturage.location,
             coordinates: {
               longitude,
               latitude,
@@ -110,10 +110,10 @@ export const getConducteurProperties = async (
       })
     );
 
-    res.json(propertiesWithFormattedLocation);
+    res.json(covoituragesWithFormattedLocation);
   } catch (err: any) {
     res
       .status(500)
-      .json({ message: `Error retrieving conducteur properties: ${err.message}` });
+      .json({ message: `Error retrieving conducteur covoiturage: ${err.message}` });
   }
 };

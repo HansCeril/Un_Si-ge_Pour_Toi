@@ -17,7 +17,7 @@ export const listApplications = async (
         whereClause = { passagerCognitoId: String(userId) };
       } else if (userType === "conducteur") {
         whereClause = {
-          property: {
+          covoiturage: {
             conducteurCognitoId: String(userId),
           },
         };
@@ -27,7 +27,7 @@ export const listApplications = async (
     const applications = await prisma.application.findMany({
       where: whereClause,
       include: {
-        property: {
+        covoiturage: {
           include: {
             location: true,
             conducteur: true,
@@ -53,18 +53,18 @@ export const listApplications = async (
             passager: {
               cognitoId: app.passagerCognitoId,
             },
-            propertyId: app.propertyId,
+            covoiturageId: app.covoiturageId,
           },
           orderBy: { startDate: "desc" },
         });
 
         return {
           ...app,
-          property: {
-            ...app.property,
-            address: app.property.location.address,
+          covoiturage: {
+            ...app.covoiturage,
+            address: app.covoiturage.location.address,
           },
-          conducteur: app.property.conducteur,
+          conducteur: app.covoiturage.conducteur,
           lease: lease
             ? {
                 ...lease,
@@ -91,7 +91,7 @@ export const createApplication = async (
     const {
       applicationDate,
       status,
-      propertyId,
+      covoiturageId,
       passagerCognitoId,
       name,
       email,
@@ -99,11 +99,11 @@ export const createApplication = async (
       message,
     } = req.body;
     
-    const property = await prisma.property.findUnique({
-      where: { id: propertyId }
+    const covoiturage = await prisma.covoiturage.findUnique({
+      where: { id: covoiturageId }
     })
-    if (!property) {
-      res.status(404).json({ message: "Property not found" });
+    if (!covoiturage) {
+      res.status(404).json({ message: "covoiturage not found" });
       return;
     }
 
@@ -115,8 +115,8 @@ export const createApplication = async (
           endDate: new Date(
             new Date().setFullYear(new Date().getFullYear() + 1)
           ), // 1 year from today
-          property: {
-            connect: { id: propertyId },
+          covoiturage: {
+            connect: { id: covoiturageId },
           },
           passager: {
             connect: { cognitoId: passagerCognitoId },
@@ -135,8 +135,8 @@ export const createApplication = async (
           email,
           phoneNumber,
           message,
-          property: {
-            connect: { id: propertyId },
+          covoiturage: {
+            connect: { id: covoiturageId },
           },
           passager: {
             connect: { cognitoId: passagerCognitoId },
@@ -146,7 +146,7 @@ export const createApplication = async (
           },
         },
         include: {
-          property: true,
+          covoiturage: true,
           passager: true,
           lease: true,
         },
@@ -177,7 +177,7 @@ export const updateApplicationStatus = async (
     const application = await prisma.application.findUnique({
       where: { id: Number(id) },
       include: {
-        property: true,
+        covoiturage: true,
         passager: true,
       },
     });
@@ -194,14 +194,14 @@ export const updateApplicationStatus = async (
           endDate: new Date(
             new Date().setFullYear(new Date().getFullYear() + 1)
           ),
-          propertyId: application.propertyId,
+          covoiturageId: application.covoiturageId,
           passagerCognitoId: application.passagerCognitoId,
         },
       });
 
-      // Update the property to connect the passager
-      await prisma.property.update({
-        where: { id: application.propertyId },
+      // Update the covoiturage to connect the passager
+      await prisma.covoiturage.update({
+        where: { id: application.covoiturageId },
         data: {
           passagers: {
             connect: { cognitoId: application.passagerCognitoId },
@@ -214,7 +214,7 @@ export const updateApplicationStatus = async (
         where: { id: Number(id) },
         data: { status, leaseId: newLease.id },
         include: {
-          property: true,
+          covoiturage: true,
           passager: true,
           lease: true,
         },
@@ -231,7 +231,7 @@ export const updateApplicationStatus = async (
     const updatedApplication = await prisma.application.findUnique({
       where: { id: Number(id) },
       include: {
-        property: true,
+        covoiturage: true,
         passager: true,
         lease: true,
       },

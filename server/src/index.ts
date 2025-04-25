@@ -10,9 +10,9 @@ import { authMiddleware } from "./middleware/authMiddleware";
 import passagerRoutes from "./routes/passagerRoutes";
 import conducteurRoutes from "./routes/conducteurRoutes"
 // import managerRoutes from "./routes/managerRoutes";
-import propertyRoutes from "./routes/propertyRoutes";
 import leaseRoutes from "./routes/leaseRoutes";
 import applicationRoutes from "./routes/applicationRoutes";
+import covoiturageRoutes from "./routes/covoiturageRoutes";
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   });
 
 app.use("/applications", applicationRoutes);
-app.use("/properties", propertyRoutes);
+app.use("/covoiturages", covoiturageRoutes);
 app.use("/leases", leaseRoutes);
 app.use("/passagers", authMiddleware(["passager"]), passagerRoutes);
 app.use("/conducteurs", authMiddleware(["conducteur"]), conducteurRoutes);

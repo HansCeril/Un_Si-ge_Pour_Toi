@@ -8,7 +8,7 @@ export const getLeases = async (req: Request, res: Response): Promise<void> => {
     const leases = await prisma.lease.findMany({
       include: {
         passager: true,
-        property: true,
+        covoiturage: true,
       },
     });
     res.json(leases);

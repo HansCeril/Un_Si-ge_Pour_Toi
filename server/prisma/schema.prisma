@@ -9,10 +9,6 @@ datasource db {
   extensions = [postgis]
 }
 
-enum Highlight {
-  eating
-  SmokeFree
-}
 
 enum CarType {
   Berline
@@ -35,7 +31,7 @@ enum PaymentStatus {
   Overdue
 }
 
-model Property {
+model Covoiturage {
   id                Int          @id @default(autoincrement())
   name              String
   description       String
@@ -47,75 +43,78 @@ model Property {
   numberOfReviews   Int?         @default(0)
   locationId        Int
   conducteurCognitoId  String
-  location     Location      @relation(fields: [locationId], references: [id])
-  conducteur      Conducteur       @relation(fields: [conducteurCognitoId], references: [cognitoId])
-  leases       Lease[]
-  applications Application[]
-  favoritedBy  Passager[]      @relation("PassagerFavorites")
-  passagers      Passager[]      @relation("PassagerProperties")
+
+  location       Location     @relation(fields: [locationId], references: [id])
+  conducteur     Conducteur   @relation(fields: [conducteurCognitoId], references: [cognitoId])
+  leases         Lease[]
+  applications   Application[]
+  favoritedBy    Passager[]   @relation("PassagerFavorites")
+  passagers      Passager[]   @relation("PassagerCovoiturages")
 }
 
 model Conducteur {
-  id          Int    @id @default(autoincrement())
-  cognitoId   String @unique
-  name        String
-  email       String
-  phoneNumber String
+  id                    Int            @id @default(autoincrement())
+  cognitoId             String         @unique
+  name                  String
+  email                 String
+  phoneNumber           String
 
-  conducteurProperties Property[]
+  conducteurCovoiturages Covoiturage[]
 }
 
 model Passager {
-  id          Int    @id @default(autoincrement())
-  cognitoId   String @unique
-  name        String
-  email       String
-  phoneNumber String
+  id             Int          @id @default(autoincrement())
+  cognitoId      String       @unique
+  name           String
+  email          String
+  phoneNumber    String
 
-  properties   Property[]    @relation("PassagerProperties")
-  favorites    Property[]    @relation("PassagerFavorites")
-  applications Application[]
-  leases       Lease[]
+  covoiturages   Covoiturage[] @relation("PassagerCovoiturages")
+  favorites      Covoiturage[] @relation("PassagerFavorites")
+  applications   Application[]
+  leases         Lease[]
 }
 
 model Location {
-  id          Int                                   @id @default(autoincrement())
-  address     String
-  city        String
-  state       String
-  country     String
-  postalCode  String
-  coordinates Unsupported("geography(Point, 4326)")
+  id           Int      @id @default(autoincrement())
+  address      String
+  city         String
+  state        String
+  country      String
+  postalCode   String
+  coordinates  Unsupported("geography(Point, 4326)")
 
-  properties Property[]
+  covoiturages Covoiturage[]
 }
 
 model Application {
-  id              Int               @id @default(autoincrement())
-  applicationDate DateTime
-  status          ApplicationStatus
-  propertyId      Int
+  id                Int               @id @default(autoincrement())
+  applicationDate   DateTime
+  status            ApplicationStatus
+  covoiturageId     Int
   passagerCognitoId String
-  name            String
-  email           String
-  phoneNumber     String
-  message         String?
-  leaseId         Int?              @unique
-  property Property @relation(fields: [propertyId], references: [id])
-  passager   Passager   @relation(fields: [passagerCognitoId], references: [cognitoId])
-  lease    Lease?   @relation(fields: [leaseId], references: [id])
+  name              String
+  email             String
+  phoneNumber       String
+  message           String?
+  leaseId           Int?              @unique
+
+  covoiturage Covoiturage @relation(fields: [covoiturageId], references: [id])
+  passager    Passager    @relation(fields: [passagerCognitoId], references: [cognitoId])
+  lease       Lease?      @relation(fields: [leaseId], references: [id])
 }
 
 model Lease {
-  id              Int      @id @default(autoincrement())
-  startDate       DateTime
-  endDate         DateTime
-  propertyId      Int
+  id                Int        @id @default(autoincrement())
+  startDate         DateTime
+  endDate           DateTime
+  covoiturageId     Int
   passagerCognitoId String
-  property    Property     @relation(fields: [propertyId], references: [id])
-  passager      Passager       @relation(fields: [passagerCognitoId], references: [cognitoId])
-  application Application?
-  payments    Payment[]
+
+  covoiturage   Covoiturage @relation(fields: [covoiturageId], references: [id])
+  passager      Passager    @relation(fields: [passagerCognitoId], references: [cognitoId])
+  application   Application?
+  payments      Payment[]
 }
 
 model Payment {

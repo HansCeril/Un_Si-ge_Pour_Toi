@@ -2,9 +2,6 @@
 CREATE EXTENSION IF NOT EXISTS "postgis";
 
 -- CreateEnum
-CREATE TYPE "Highlight" AS ENUM ('eating', 'SmokeFree');
-
--- CreateEnum
 CREATE TYPE "CarType" AS ENUM ('Berline', 'Break', 'Coupe', 'Cabriolet', 'Suv');
 
 -- CreateEnum
@@ -14,7 +11,7 @@ CREATE TYPE "ApplicationStatus" AS ENUM ('Pending', 'Denied', 'Approved');
 CREATE TYPE "PaymentStatus" AS ENUM ('Pending', 'Paid', 'PartiallyPaid', 'Overdue');
 
 -- CreateTable
-CREATE TABLE "Property" (
+CREATE TABLE "Covoiturage" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
@@ -27,7 +24,7 @@ CREATE TABLE "Property" (
     "locationId" INTEGER NOT NULL,
     "conducteurCognitoId" TEXT NOT NULL,
 
-    CONSTRAINT "Property_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Covoiturage_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -70,7 +67,7 @@ CREATE TABLE "Application" (
     "id" SERIAL NOT NULL,
     "applicationDate" TIMESTAMP(3) NOT NULL,
     "status" "ApplicationStatus" NOT NULL,
-    "propertyId" INTEGER NOT NULL,
+    "covoiturageId" INTEGER NOT NULL,
     "passagerCognitoId" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
@@ -86,7 +83,7 @@ CREATE TABLE "Lease" (
     "id" SERIAL NOT NULL,
     "startDate" TIMESTAMP(3) NOT NULL,
     "endDate" TIMESTAMP(3) NOT NULL,
-    "propertyId" INTEGER NOT NULL,
+    "covoiturageId" INTEGER NOT NULL,
     "passagerCognitoId" TEXT NOT NULL,
 
     CONSTRAINT "Lease_pkey" PRIMARY KEY ("id")
@@ -106,19 +103,19 @@ CREATE TABLE "Payment" (
 );
 
 -- CreateTable
-CREATE TABLE "_PassagerProperties" (
-    "A" INTEGER NOT NULL,
-    "B" INTEGER NOT NULL,
-
-    CONSTRAINT "_PassagerProperties_AB_pkey" PRIMARY KEY ("A","B")
-);
-
--- CreateTable
 CREATE TABLE "_PassagerFavorites" (
     "A" INTEGER NOT NULL,
     "B" INTEGER NOT NULL,
 
     CONSTRAINT "_PassagerFavorites_AB_pkey" PRIMARY KEY ("A","B")
+);
+
+-- CreateTable
+CREATE TABLE "_PassagerCovoiturages" (
+    "A" INTEGER NOT NULL,
+    "B" INTEGER NOT NULL,
+
+    CONSTRAINT "_PassagerCovoiturages_AB_pkey" PRIMARY KEY ("A","B")
 );
 
 -- CreateIndex
@@ -131,19 +128,19 @@ CREATE UNIQUE INDEX "Passager_cognitoId_key" ON "Passager"("cognitoId");
 CREATE UNIQUE INDEX "Application_leaseId_key" ON "Application"("leaseId");
 
 -- CreateIndex
-CREATE INDEX "_PassagerProperties_B_index" ON "_PassagerProperties"("B");
-
--- CreateIndex
 CREATE INDEX "_PassagerFavorites_B_index" ON "_PassagerFavorites"("B");
 
--- AddForeignKey
-ALTER TABLE "Property" ADD CONSTRAINT "Property_locationId_fkey" FOREIGN KEY ("locationId") REFERENCES "Location"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+-- CreateIndex
+CREATE INDEX "_PassagerCovoiturages_B_index" ON "_PassagerCovoiturages"("B");
 
 -- AddForeignKey
-ALTER TABLE "Property" ADD CONSTRAINT "Property_conducteurCognitoId_fkey" FOREIGN KEY ("conducteurCognitoId") REFERENCES "Conducteur"("cognitoId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Covoiturage" ADD CONSTRAINT "Covoiturage_locationId_fkey" FOREIGN KEY ("locationId") REFERENCES "Location"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Application" ADD CONSTRAINT "Application_propertyId_fkey" FOREIGN KEY ("propertyId") REFERENCES "Property"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Covoiturage" ADD CONSTRAINT "Covoiturage_conducteurCognitoId_fkey" FOREIGN KEY ("conducteurCognitoId") REFERENCES "Conducteur"("cognitoId") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Application" ADD CONSTRAINT "Application_covoiturageId_fkey" FOREIGN KEY ("covoiturageId") REFERENCES "Covoiturage"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Application" ADD CONSTRAINT "Application_passagerCognitoId_fkey" FOREIGN KEY ("passagerCognitoId") REFERENCES "Passager"("cognitoId") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -152,7 +149,7 @@ ALTER TABLE "Application" ADD CONSTRAINT "Application_passagerCognitoId_fkey" FO
 ALTER TABLE "Application" ADD CONSTRAINT "Application_leaseId_fkey" FOREIGN KEY ("leaseId") REFERENCES "Lease"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Lease" ADD CONSTRAINT "Lease_propertyId_fkey" FOREIGN KEY ("propertyId") REFERENCES "Property"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Lease" ADD CONSTRAINT "Lease_covoiturageId_fkey" FOREIGN KEY ("covoiturageId") REFERENCES "Covoiturage"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Lease" ADD CONSTRAINT "Lease_passagerCognitoId_fkey" FOREIGN KEY ("passagerCognitoId") REFERENCES "Passager"("cognitoId") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -161,13 +158,13 @@ ALTER TABLE "Lease" ADD CONSTRAINT "Lease_passagerCognitoId_fkey" FOREIGN KEY ("
 ALTER TABLE "Payment" ADD CONSTRAINT "Payment_leaseId_fkey" FOREIGN KEY ("leaseId") REFERENCES "Lease"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_PassagerProperties" ADD CONSTRAINT "_PassagerProperties_A_fkey" FOREIGN KEY ("A") REFERENCES "Passager"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_PassagerFavorites" ADD CONSTRAINT "_PassagerFavorites_A_fkey" FOREIGN KEY ("A") REFERENCES "Covoiturage"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_PassagerProperties" ADD CONSTRAINT "_PassagerProperties_B_fkey" FOREIGN KEY ("B") REFERENCES "Property"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_PassagerFavorites" ADD CONSTRAINT "_PassagerFavorites_B_fkey" FOREIGN KEY ("B") REFERENCES "Passager"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_PassagerFavorites" ADD CONSTRAINT "_PassagerFavorites_A_fkey" FOREIGN KEY ("A") REFERENCES "Passager"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_PassagerCovoiturages" ADD CONSTRAINT "_PassagerCovoiturages_A_fkey" FOREIGN KEY ("A") REFERENCES "Covoiturage"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_PassagerFavorites" ADD CONSTRAINT "_PassagerFavorites_B_fkey" FOREIGN KEY ("B") REFERENCES "Property"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_PassagerCovoiturages" ADD CONSTRAINT "_PassagerCovoiturages_B_fkey" FOREIGN KEY ("B") REFERENCES "Passager"("id") ON DELETE CASCADE ON UPDATE CASCADE;

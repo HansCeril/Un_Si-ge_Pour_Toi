@@ -12,14 +12,14 @@ const s3Client = new S3Client({
   region: process.env.AWS_REGION,
 });
 
-export const getProperties = async (
+export const getCovoiturages = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
     const {
       favoriteIds,
-      propertyType,
+      covoiturageType,
       latitude,
       longitude,
     } = req.query;
@@ -33,9 +33,9 @@ export const getProperties = async (
       );
     }
 
-    if (propertyType && propertyType !== "any") {
+    if (covoiturageType && covoiturageType !== "any") {
       whereConditions.push(
-        Prisma.sql`p."propertyType" = ${propertyType}::"PropertyType"`
+        Prisma.sql`p."covoiturageType" = ${covoiturageType}::"covoiturageType"`
       );
     }
 
@@ -69,7 +69,7 @@ export const getProperties = async (
             'latitude', ST_Y(l."coordinates"::geometry)
           )
         ) as location
-      FROM "Property" p
+      FROM "Covoiturage" p
       JOIN "Location" l ON p."locationId" = l.id
       ${
         whereConditions.length > 0
@@ -78,57 +78,57 @@ export const getProperties = async (
       }
     `;
 
-    const properties = await prisma.$queryRaw(completeQuery);
+    const covoiturages = await prisma.$queryRaw(completeQuery);
 
-    res.json(properties);
+    res.json(covoiturages);
   } catch (error: any) {
     res
       .status(500)
-      .json({ message: `Error retrieving properties: ${error.message}` });
+      .json({ message: `Error retrieving covoiturages: ${error.message}` });
   }
 };
 
-export const getProperty = async (
+export const getCovoiturage = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
     const { id } = req.params;
-    const property = await prisma.property.findUnique({
+    const covoiturage = await prisma.covoiturage.findUnique({
       where: { id: Number(id) },
       include: {
         location: true,
       },
     });
 
-    if (property) {
+    if (covoiturage) {
       const coordinates: { coordinates: string }[] =
-        await prisma.$queryRaw`SELECT ST_asText(coordinates) as coordinates from "Location" where id = ${property.location.id}`;
+        await prisma.$queryRaw`SELECT ST_asText(coordinates) as coordinates from "Location" where id = ${covoiturage.location.id}`;
 
       const geoJSON: any = wktToGeoJSON(coordinates[0]?.coordinates || "");
       const longitude = geoJSON.coordinates[0];
       const latitude = geoJSON.coordinates[1];
 
-      const propertyWithCoordinates = {
-        ...property,
+      const covoiturageWithCoordinates = {
+        ...covoiturage,
         location: {
-          ...property.location,
+          ...covoiturage.location,
           coordinates: {
             longitude,
             latitude,
           },
         },
       };
-      res.json(propertyWithCoordinates);
+      res.json(covoiturageWithCoordinates);
     }
   } catch (err: any) {
     res
       .status(500)
-      .json({ message: `Error retrieving property: ${err.message}` });
+      .json({ message: `Error retrieving covoiturage: ${err.message}` });
   }
 };
 
-export const createProperty = async (
+export const createCovoiturage = async (
   req: Request,
   res: Response
 ): Promise<void> => {
@@ -141,16 +141,16 @@ export const createProperty = async (
       country,
       postalCode,
       conducteurCognitoId,
-      ...propertyData
+      ...covoiturageData
     } = req.body;
 
-    console.log(propertyData)
+    console.log(covoiturageData)
 
     // const photoUrls = await Promise.all(
     //   files.map(async (file) => {
     //     const uploadParams = {
     //       Bucket: process.env.S3_BUCKET_NAME!,
-    //       Key: `properties/${Date.now()}-${file.originalname}`,
+    //       Key: `covoiturages/${Date.now()}-${file.originalname}`,
     //       Body: file.buffer,
     //       ContentType: file.mimetype,
     //     };
@@ -194,14 +194,14 @@ export const createProperty = async (
       RETURNING id, address, city, state, country, "postalCode", ST_AsText(coordinates) as coordinates;
     `;
 
-    // create property
-    const newProperty = await prisma.property.create({
+    // create covoiturage
+    const newCovoiturage = await prisma.covoiturage.create({
       data: {
-        ...propertyData,
+        ...covoiturageData,
         // photoUrls,
         locationId: location.id,
         conducteurCognitoId,
-        isPetsAllowed: propertyData.isPetsAllowed === "true",
+        isPetsAllowed: covoiturageData.isPetsAllowed === "true",
       },
       include: {
         location: true,
@@ -209,10 +209,10 @@ export const createProperty = async (
       },
     });
 
-    res.status(201).json(newProperty);
+    res.status(201).json(newCovoiturage);
   } catch (err: any) {
     res
       .status(500)
-      .json({ message: `Error creating property: ${err.message}` });
+      .json({ message: `Error creating covoiturage: ${err.message}` });
   }
 };

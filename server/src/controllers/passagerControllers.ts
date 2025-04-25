@@ -78,32 +78,32 @@ export const updatePassager = async (
 };
 
 
-export const getCurrentProperties = async (
+export const getCurrentCovoiturage = async (
     req: Request,
     res: Response
   ): Promise<void> => {
     try {
         const { cognitoId } = req.params;
-        const properties = await prisma.property.findMany({
+        const covoiturages = await prisma.covoiturage.findMany({
         where: { passagers: { some: { cognitoId } } },
         include: {
           location: true,
         },
       });
   
-      const propertiesWithFormattedLocation = await Promise.all(
-        properties.map(async (property) => {
+      const covoituragesWithFormattedLocation = await Promise.all(
+        covoiturages.map(async (covoiturage) => {
           const coordinates: { coordinates: string }[] =
-            await prisma.$queryRaw`SELECT ST_asText(coordinates) as coordinates from "Location" where id = ${property.location.id}`;
+            await prisma.$queryRaw`SELECT ST_asText(coordinates) as coordinates from "Location" where id = ${covoiturage.location.id}`;
   
           const geoJSON: any = wktToGeoJSON(coordinates[0]?.coordinates || "");
           const longitude = geoJSON.coordinates[0];
           const latitude = geoJSON.coordinates[1];
   
           return {
-            ...property,
+            ...covoiturage,
             location: {
-              ...property.location,
+              ...covoiturage.location,
               coordinates: {
                 longitude,
                 latitude,
@@ -113,22 +113,22 @@ export const getCurrentProperties = async (
         })
       );
   
-      res.json(propertiesWithFormattedLocation);
+      res.json(covoituragesWithFormattedLocation);
     } catch (err: any) {
       res
         .status(500)
-        .json({ message: `Error retrieving manager properties: ${err.message}` });
+        .json({ message: `Error retrieving manager covoiturages: ${err.message}` });
     }
   };
 
 
 
-export const addFavoriteProperty = async (
+export const addFavoriteCovoiturage = async (
     req: Request,
     res: Response
   ): Promise<void> => {
     try {
-      const { cognitoId, propertyId } = req.params;
+      const { cognitoId, covoiturageId } = req.params;
       const passager = await prisma.passager.findUnique({
         where: { cognitoId },
         include: { favorites: true },
@@ -139,43 +139,43 @@ export const addFavoriteProperty = async (
         return;
       }
   
-      const propertyIdNumber = Number(propertyId);
+      const covoiturageIdNumber = Number(covoiturageId);
       const existingFavorites = passager.favorites || [];
   
-      if (!existingFavorites.some((fav) => fav.id === propertyIdNumber)) {
+      if (!existingFavorites.some((fav) => fav.id === covoiturageIdNumber)) {
         const updatedTenant = await prisma.passager.update({
           where: { cognitoId },
           data: {
             favorites: {
-              connect: { id: propertyIdNumber },
+              connect: { id: covoiturageIdNumber },
             },
           },
           include: { favorites: true },
         });
         res.json(updatedTenant);
       } else {
-        res.status(409).json({ message: "Property already added as favorite" });
+        res.status(409).json({ message: "covoiturage already added as favorite" });
       }
     } catch (error: any) {
       res
         .status(500)
-        .json({ message: `Error adding favorite property: ${error.message}` });
+        .json({ message: `Error adding favorite covoiturage: ${error.message}` });
     }
   };
   
-export const removeFavoriteProperty = async (
+export const removeFavoriteCovoiturage = async (
     req: Request,
     res: Response
   ): Promise<void> => {
     try {
-      const { cognitoId, propertyId } = req.params;
-      const propertyIdNumber = Number(propertyId);
+      const { cognitoId, covoiturageId } = req.params;
+      const covoiturageIdNumber = Number(covoiturageId);
   
       const updatedPassager = await prisma.passager.update({
         where: { cognitoId },
         data: {
           favorites: {
-            disconnect: { id: propertyIdNumber },
+            disconnect: { id: covoiturageIdNumber },
           },
         },
         include: { favorites: true },
@@ -185,6 +185,6 @@ export const removeFavoriteProperty = async (
     } catch (err: any) {
       res
         .status(500)
-        .json({ message: `Error removing favorite property: ${err.message}` });
+        .json({ message: `Error removing favorite covoiturage: ${err.message}` });
     }
   };

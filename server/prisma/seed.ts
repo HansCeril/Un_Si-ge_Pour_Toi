@@ -81,13 +81,12 @@ async function main() {
   const orderedFileNames = [
     "location.json", // No dependencies
     "conducteur.json", // No dependencies
-    "property.json", // Depends on location and conducteur
+    "covoiturage.json", // Depends on location and conducteur
     "passager.json", // No dependencies
-    "lease.json", // Depends on property and tenant
-    "application.json", // Depends on property and passager
+    "lease.json", // Depends on covoiturage and passager
+    "application.json", // Depends on covoiturage and passager
     "payment.json", // Depends on lease
   ];
-
   // Delete all existing data
   await deleteAllData(orderedFileNames);
 
